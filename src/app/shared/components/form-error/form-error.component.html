@@ -1,0 +1,22 @@
+<div *ngIf="!model.valid && (model.dirty || model.touched)" class="validation-alert">
+    <div *ngIf="model.errors && model.errors.required" id="fieldIsrequiredErrorMessage{{ modelName }}Id">
+        {{inputLabel ? inputLabel : 'The field'}} is required.
+    </div>
+    <div *ngIf="model.errors && model.errors.maxlength" id="maxLengthErrorMessage{{ modelName }}Id">
+        {{inputLabel ? inputLabel : 'The field'}} must be maximum {{model.errors.maxlength.requiredLength}} characters
+        long.
+    </div>
+    <div *ngIf="model.errors && model.errors.minlength" id="minLengthErrorMessage{{ modelName }}Id">
+        {{inputLabel ? inputLabel : 'The field'}} must be minimum {{model.errors.minlength.requiredLength}} characters
+        long.
+    </div>
+    <div *ngIf="model.errors && model.errors.email" id="emailErrorMessage{{ modelName }}Id">
+        {{inputLabel ? inputLabel : 'The field'}} must be valid email.
+    </div>
+    <div *ngIf="model.errors && model.errors.pattern" id="patternErrorMessage{{ modelName }}Id">
+        {{inputLabel ? inputLabel : 'The field'}} does not meet requirements.
+    </div>
+    <div *ngIf="model.errors && model.errors.emailNotTaken" id="emailNotTakenErrorMessage{{ modelName }}Id">
+        This email is already taken.
+    </div>
+</div>

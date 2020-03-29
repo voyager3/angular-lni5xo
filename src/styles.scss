@@ -1,0 +1,190 @@
+@import './variables.scss';
+
+@import './kendo-theme.scss';
+
+$menu-open-width: 15.9375rem;
+$menu-closed-width: 2.8125rem;
+$menu-item-separator-color: #787878;
+$menu-item-color: #444444;
+$inner-menu-item-color: #343434;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+.wrapper {
+  background-image: url("../assets/background_burgundy.png");
+}
+
+.wrapper.logged-in {
+  background-image: url("../assets/Versant_pattern_grey_v04.png");
+  margin-left: $menu-closed-width;
+  transition: margin-left .6s ease 0s;
+}
+
+footer {
+  background-color: $white;
+  color: $gray-900;
+  line-height: 3.125rem;
+  height: 3.125rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+header {
+  position: fixed;
+  background-color: $white;
+  top: 0;
+  height: 3.875rem;
+  width: 100%;
+  z-index: 10000;
+}
+
+#container {
+  padding-bottom: 3.125rem;
+  padding-left: 1.875rem;
+  padding-right: 1.875rem;
+  --overflow-x: hidden;
+  min-height: 100%;
+}
+
+header + #container {
+  padding-top: 3.875rem;
+}
+
+// menu css start
+
+.sidenav {
+  height: 100%;
+  width: $menu-open-width;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $menu-item-color;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  margin-left: $menu-closed-width - $menu-open-width;
+  transition: margin-left .6s ease 0s;
+  color: $white;
+  cursor: pointer;
+}
+
+.sidenav::-webkit-scrollbar { /* WebKit */
+  width: 0rem;
+}
+
+.sidenav.open {
+  width: $menu-open-width;
+  margin-left: 0rem;
+}
+
+.sidenav.open ~ .wrapper.logged-in {
+  margin-left: $menu-open-width;
+  transition: margin-left .6s ease 0s;
+}
+
+.sidenav .toggle-menu {
+  padding: 1.125rem 0.5rem 0.75rem 0.5rem;
+  text-align: right;
+}
+
+.sidenav .toggle-menu span {
+  font-size: 1.75rem;
+}
+
+.log-out {
+  font-size: 0.80rem;
+  font-weight: bold;
+  padding: 0.8em 0.6em 0.8em 0.5em;
+  border-top: 0.0625rem solid $menu-item-separator-color;
+}
+
+.log-out i {
+  font-size: 1.95em;
+}
+
+side-menu-item {
+  display: none;
+}
+
+side-menu-item.open {
+  display: block;
+}
+
+.menu-item { 
+  font-size: 0.75rem;
+  font-weight: bold;
+  height: 2.5rem;
+  padding: 0.8em 0.6em 0.8em 0.5em;
+  border-top: 0.0625rem solid $menu-item-separator-color;
+}
+
+.menu-item.inner {
+  background-color: $inner-menu-item-color;
+}
+
+.menu-item.active {
+  background-color: $versant-color;
+}
+
+.menu-item-separator {
+  width: 100%;
+  height: 0.4rem;
+  margin: 0;
+  padding: 0;
+  background-color: $menu-item-separator-color;
+  display: none;
+}
+
+.menu-item-separator.active {
+  display: block;
+}
+
+ .menu-item i.toggle { 
+  font-size: 1em;
+  margin-top: -0.75em;
+  margin-right: 1.2em;
+  padding: 1.2em 0.35em 0.9em 0.35em;
+  border-right: 0.0625rem solid $menu-item-separator-color;
+  border-left: 0.0625rem solid $menu-item-separator-color;
+  float: right;
+}
+
+.menu-item i.icon { 
+  font-size: 1.95em;
+}
+
+// menu css end
+
+.navbar-light .navbar-brand {
+  color: $versant-color;
+}
+
+.white-container {
+  background-color: $white;
+  padding: 0.625rem;
+  margin: 0.625rem 0rem;
+}
+
+.validation-alert {
+  color: $versant-color;
+  padding: 0.125rem 0rem;
+}
+
+a {
+  color: $bg-blue;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}

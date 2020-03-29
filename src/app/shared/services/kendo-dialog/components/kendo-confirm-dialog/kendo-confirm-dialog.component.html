@@ -1,0 +1,18 @@
+<kendo-dialog-titlebar class="close-none">
+    <div class="dialog-title-center">
+        <div class="text-container">
+            {{title}}
+        </div>   
+    </div>
+</kendo-dialog-titlebar>
+
+<div class="container">    
+    <div class="text-center">
+        {{content}}
+    </div>
+</div>
+
+<kendo-dialog-actions class="justify-content-center" layout="normal">
+    <button class="k-button k-primary" (click)="onConfirm()">Yes</button>
+    <button class="k-button" (click)="onDeny()">No</button>
+</kendo-dialog-actions>

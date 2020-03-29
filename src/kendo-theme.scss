@@ -1,0 +1,288 @@
+@import '~@progress/kendo-theme-bootstrap/dist/all.scss';
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+
+// INPUTS
+
+.k-dateinput, 
+.k-datepicker, 
+.k-datetimepicker, 
+.k-dropdown, 
+.k-multiselect, 
+.k-numerictextbox, 
+.k-maskedtextbox, 
+.k-timepicker, 
+.k-dropdowntree,
+.k-combobox {
+  background-color: transparent;
+  border-width: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+.k-button.k-primary, 
+.k-pager-numbers .k-link.k-state-selected,
+.k-datepicker .k-select,
+.k-datetimepicker .k-select,
+.k-list-container .k-button:active,
+.k-list .k-item.k-state-selected,
+.k-slider .k-draghandle {
+  background-color: $bg-blue;
+  border-color: $bg-blue;
+}
+
+.k-switch-on .k-switch-container {
+  background-color: $bg-blue;
+}
+
+.k-button.k-primary:hover, 
+.k-pager-numbers .k-link.k-state-selected:hover,
+.k-datepicker .k-select:hover,
+.k-datetimepicker .k-select:hover {
+  background-color: $bg-blue-hover;
+  border-color: $bg-blue-hover;
+}
+
+.k-pager-wrap .k-link, 
+.k-pager-wrap .k-pager-nav,
+.k-calendar .k-footer .k-nav-today, 
+.k-calendar .k-calendar-header .k-today {
+  color: $bg-blue;
+}
+
+.k-datepicker .k-select,
+.k-datetimepicker .k-select,
+.k-pager-numbers li .k-link.k-state-selected,
+.k-action-buttons .k-primary {
+  color: $white;
+}
+
+.k-pager-numbers li a.k-link {
+  color: $main-text-color;
+}
+
+.k-widget.k-state-invalid > .k-dateinput-wrap,
+.k-widget.k-state-invalid > .k-dropdown-wrap, 
+.k-widget.k-state-invalid > .k-picker-wrap, 
+.k-widget.k-state-invalid > .k-multiselect-wrap, 
+.k-widget.k-state-invalid > .k-numeric-wrap, 
+.ng-invalid.ng-touched > .k-dateinput-wrap, 
+.ng-invalid.ng-touched > .k-dropdown-wrap, 
+.ng-invalid.ng-touched > .k-picker-wrap, 
+.ng-invalid.ng-touched > .k-multiselect-wrap, 
+.ng-invalid.ng-touched > .k-numeric-wrap, 
+.ng-invalid.ng-touched.k-maskedtextbox > .k-textbox,
+.ng-invalid.ng-untouched > .k-dateinput-wrap, 
+.ng-invalid.ng-untouched > .k-dropdown-wrap, 
+.ng-invalid.ng-untouched > .k-picker-wrap, 
+.ng-invalid.ng-untouched > .k-multiselect-wrap, 
+.ng-invalid.ng-untouched > .k-numeric-wrap, 
+.ng-invalid.ng-untouched.k-maskedtextbox > .k-textbox,
+.ng-invalid.ng-dirty > .k-dateinput-wrap, 
+.ng-invalid.ng-dirty > .k-dropdown-wrap, 
+.ng-invalid.ng-dirty > .k-picker-wrap, 
+.ng-invalid.ng-dirty > .k-multiselect-wrap, 
+.ng-invalid.ng-dirty > .k-numeric-wrap,
+.k-textbox.k-invalid, 
+.k-textbox.k-state-invalid, 
+.k-textbox.ng-invalid.ng-touched, 
+.k-textbox.ng-invalid.ng-untouched, 
+.k-textbox.ng-invalid.ng-dirty, 
+.k-textarea.k-invalid, 
+.k-textarea.k-state-invalid, 
+.k-textarea.ng-invalid.ng-touched, 
+.k-textarea.ng-invalid.ng-untouched, 
+.k-textarea.ng-invalid.ng-dirty, 
+.k-input.k-textbox.k-invalid, 
+.k-input.k-textbox.k-state-invalid, 
+.k-input.k-textbox.ng-invalid.ng-touched, 
+.k-input.k-textbox.ng-invalid.ng-untouched, 
+.k-input.k-textbox.ng-invalid.ng-dirty {
+  border-left: 0.3125rem solid $versant-color;
+  border-top-color: initial;
+  border-top-color: rgba(0, 0, 0, 0.08);
+  border-bottom-color: initial;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  border-right-color: initial;
+  border-right-color: rgba(0, 0, 0, 0.08);
+  color: $main-text-color;
+}
+
+.ng-invalid.ng-touched.k-maskedtextbox > .k-textbox {
+  border-top-color: initial;
+  border-top-color: rgba(0, 0, 0, 0.08);
+  border-bottom-color: initial;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  border-right-color: initial;
+  border-right-color: rgba(0, 0, 0, 0.08);
+}
+
+.ng-invalid.ng-dirty > .k-picker-wrap  > .k-select,
+.ng-invalid.ng-touched > .k-picker-wrap > .k-select,
+.ng-invalid.ng-untouched > .k-picker-wrap > .k-select {
+  border-left: none;
+}
+
+.k-textbox.ng-valid:focus {
+    border-color: try-lighten( $accent, 25 );
+}
+
+.k-switch-label-on, 
+.k-switch-label-off {
+  display: block;
+}
+
+.k-switch {
+  width: 10em;
+}
+
+.k-switch-label-on {
+  text-align: center;
+}
+
+.k-checkbox,
+.k-checkbox:hover,
+.k-checkbox:focus,
+.k-radio,
+.k-radio:hover,
+.k-radio:focus {
+  border-color:  $bg-blue;
+  background-color: $white;
+}
+
+.k-checkbox:checked,
+.k-checkbox:checked:hover, 
+.k-checkbox:checked:focus,
+.k-radio:checked,
+.k-radio:checked:hover, 
+.k-radio:checked:focus {
+  border-color: $bg-blue;
+  background-color: $white;
+}
+
+.k-checkbox:checked::before,
+.k-radio:checked::before {
+  color: $bg-blue;
+}
+
+form .k-button  .k-button {
+  margin-left: 0.5rem;
+}
+
+.k-button.k-button-apply {
+  background-color: $success;
+  color: $white;
+}
+
+.k-button.k-button-apply:hover {
+  background-color: try-darken( $success, 10% );
+}
+
+.k-button.k-button-delete {
+  background-color: $danger;
+  color: $white;
+}
+
+.k-button.k-button-delete:hover {
+  background-color: $danger;
+  background-color: try-darken( $danger, 10% );
+}
+
+.k-pager-sizes.k-label {
+  right: 0rem;
+  position: absolute;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-group label:not(.k-checkbox-label),
+.form-group label:not(.k-radio-label) {
+    font-weight: 600;
+}
+
+.form-group label.k-checkbox-label,
+.form-group label.k-radio-label {
+    font-weight: normal;
+}
+
+.k-list .k-item:hover {
+  background-color: $secondary;
+}
+
+// GRID
+
+kendo-grid[hide-filter-buttons=true] kendo-grid-filter-cell-operators {
+    display: none;
+}
+
+.k-grid .k-loading-mask {
+  color: $primary;
+}
+
+// LOADER
+
+.k-i-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 4rem;
+  background-color: rgba(255,255,255,.3);
+  color: $primary;
+}
+
+.k-i-loading::before, .k-i-loading::after {
+  border-width: 0.015em;
+}
+
+.k-dialog .k-i-loading {
+  z-index: 10003;
+}
+
+.k-i-loading.opaque {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.global-loader, .k-i-loading {
+  z-index: 99999;
+}
+
+kendo-dialog-titlebar.close-none .k-window-actions.k-dialog-actions {
+  display: none;
+}
+
+kendo-dialog-titlebar.close-none {
+  padding: 0rem;
+}
+
+.dialog-title-center .text-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.k-widget.k-window.k-dialog {
+  border: none;
+}
+
+.dialog-title-center {
+  width: 100%;  
+  text-align: center;  
+}
+
+.bar-danger, .bar-info {  
+  height: 1rem;
+}
+
+.bar-danger {
+  background-color: $danger;
+}
+
+.bar-info {
+  background-color: $bg-blue;
+}
