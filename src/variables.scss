@@ -1,14 +1,49 @@
-$versant-color: #ad1d40;
+// COLOR VARIABLES
+
+// Main colors used throughout
+$burgundy: #ad1d40;
+$pale-blue: #EEF4FF; //hover table bg
+$primary-blue: #5B87DA; 
+$bright-blue: #72A3FF;
+$green: #0EAF70;
+$red: #E04747;
+$bright-red: #FF3434;
+$yellow: #FFD011;
+$brand-grey: #767676;
+$bg-grey: #F5F5F5;
+$light-grey: #DDDDDD;
+$dark-grey: #434343;
+
+// Colors ONLY for charts and graphs
+$dark-blue: #23408A;
+$purple: #7A56A1;
+$teal: #48BBCB;
+$orange: #F17D18;
+$mint: #79DFB7;
+$heatmap-gradient: linear-gradient(90deg, rgba(14,175,112,1) 0%, rgba(255,208,17,1) 50%, rgba(194,10,10,1) 100%);
+$blue-green-gradient: linear-gradient(90deg, rgba(35,64,138,1) 0%, rgba(82,196,212,1) 100%);
+
+// Colors applied to elements;
+$primary: $primary-blue;
+$success: $green;
+$danger: $red;
+$warning: $yellow;
+$main-text-color: #4A4A4A;
+
+/* depricate */ $versant-color: $burgundy;
+/* depricate */ $bg-blue: #5B87DA;
+/* depricate */ $button-text: #444;
+/* depricate */ $bg-blue-hover: #24498f;
+/* depricate */ $white: #fff;
+
+
+
+// OTHER TEXT VARIABLES
 
 $font-family: 'Open Sans', Helvetica, sans-serif;
-$bg-blue: #5B87DA;
-$border-radius: 0rem;
-$button-text: #444;
-$primary: $versant-color;
-$success: #329943;
-$danger: #e04747;
 
-$main-text-color: #4A4A4A;
-$bg-blue-hover: #24498f;
-$white: #fff;
-$light-grey: #eee;
+
+
+// LAYOUT VARIABLES
+
+$border-radius: 0.3rem;
