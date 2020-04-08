@@ -2,8 +2,63 @@
 
 @import '~bootstrap/scss/bootstrap.scss';
 
+body {
+  font-family: $font-family;
+}
 
 // INPUTS
+
+.k-button {
+  padding: .5rem 1rem;
+}
+.k-button:focus:enabled, .k-outline:focus:enabled {
+  outline-color: $bright-blue;
+  outline-width: 1px;
+  outline-offset: 3px;
+  outline-style: dotted;
+}
+
+.k-button-small {
+  border-radius: 2rem;
+  font-size: 80%;
+  font-weight: 400;
+  padding: .35rem 1rem;
+}
+
+.k-outline {
+  border-color: $brand-grey !important;
+  color: $dark-grey !important;
+  border-width: 2px;
+}
+
+.k-outline:hover {
+  border-color: $dark-grey !important;
+  background-color: $brand-grey !important;
+  color: white !important;
+}
+
+.k-button-secondary {
+  border-color: $primary-blue !important;
+  color: $primary-blue !important;
+  border-width: 2px;
+  background: none;
+}
+
+.k-button-secondary:hover {
+  background-color: $primary-blue;
+  color: white !important;
+}
+
+.k-button-ghost {
+  border: none;
+  background: none;
+  color: $primary-blue;
+}
+
+.k-button-ghost:hover {
+  background-color: $bright-blue;
+  color: white;
+}
 
 .k-dateinput, 
 .k-datepicker, 
@@ -30,27 +85,27 @@
 .k-list-container .k-button:active,
 .k-list .k-item.k-state-selected,
 .k-slider .k-draghandle {
-  background-color: $bg-blue;
-  border-color: $bg-blue;
+  background-color: $primary-blue;
+  border-color: $primary-blue;
 }
 
 .k-switch-on .k-switch-container {
-  background-color: $bg-blue;
+  background-color: $primary-blue;
 }
 
 .k-button.k-primary:hover, 
 .k-pager-numbers .k-link.k-state-selected:hover,
 .k-datepicker .k-select:hover,
 .k-datetimepicker .k-select:hover {
-  background-color: $bg-blue-hover;
-  border-color: $bg-blue-hover;
+  background-color: $bright-blue;
+  border-color: $bright-blue;
 }
 
 .k-pager-wrap .k-link, 
 .k-pager-wrap .k-pager-nav,
 .k-calendar .k-footer .k-nav-today, 
 .k-calendar .k-calendar-header .k-today {
-  color: $bg-blue;
+  color: $primary-blue;
 }
 
 .k-datepicker .k-select,
@@ -144,13 +199,20 @@
 }
 
 .k-checkbox,
+.k-radio {
+  border-color:  $dark-grey;
+  background-color: $white;
+}
+
+.k-checkbox {
+  border-radius: .25rem;
+}
+
 .k-checkbox:hover,
 .k-checkbox:focus,
-.k-radio,
 .k-radio:hover,
 .k-radio:focus {
-  border-color:  $bg-blue;
-  background-color: $white;
+  border-color:  $primary-blue;
 }
 
 .k-checkbox:checked,
@@ -159,13 +221,13 @@
 .k-radio:checked,
 .k-radio:checked:hover, 
 .k-radio:checked:focus {
-  border-color: $bg-blue;
-  background-color: $white;
+  border-color: $primary-blue;
+  background-color: $primary-blue;
 }
 
 .k-checkbox:checked::before,
 .k-radio:checked::before {
-  color: $bg-blue;
+  color: white;
 }
 
 form .k-button  .k-button {
@@ -188,7 +250,7 @@ form .k-button  .k-button {
 
 .k-button.k-button-delete:hover {
   background-color: $danger;
-  background-color: try-darken( $danger, 10% );
+  background-color: $bright-red;
 }
 
 .k-pager-sizes.k-label {
@@ -284,5 +346,5 @@ kendo-dialog-titlebar.close-none {
 }
 
 .bar-info {
-  background-color: $bg-blue;
+  background-color: $primary-blue;
 }

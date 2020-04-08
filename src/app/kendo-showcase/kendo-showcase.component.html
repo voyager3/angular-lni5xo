@@ -18,22 +18,32 @@
             <div class="pb-2">
                 <button kendoButton [primary]="true">Primary</button> &nbsp;
                 <button kendoButton [primary]="true" icon="folder">Primary with icon</button> &nbsp;
-                <button kendoButton [disabled]="true" [primary]="true">Primary disabled</button>
+                <button kendoButton [disabled]="true" [primary]="true">Primary disabled</button> &nbsp;
+                <button kendoButton [primary]="true" class="k-button-small ">Primary small</button>
+            </div>
+            <div class="pb-2">
+                <button kendoButton class="k-button-secondary">Secondary</button> &nbsp;
+                <button kendoButton class="k-button-secondary" icon="folder">Secondary with icon</button> &nbsp;
+                <button kendoButton [disabled]="true" class="k-button-secondary">Secondary disabled</button> &nbsp;
+                <button kendoButton class="k-button-secondary k-button-small">Secondary</button>
             </div>
             <div class="pb-2">
                 <button kendoButton look="outline">Cancel</button> &nbsp;
                 <button kendoButton look="outline" icon="cancel">Cancel with icon</button> &nbsp;
-                <button kendoButton look="outline" [disabled]="true">Cancel disabled</button>
+                <button kendoButton look="outline" [disabled]="true">Cancel disabled</button> &nbsp;
+                <button kendoButton look="outline" class="k-button-small">Cancel</button>
+            </div>
+            <div class="pb-2">
+                <button kendoButton class="k-button-ghost">Ghost</button> &nbsp;
+                <button kendoButton class="k-button-ghost" icon="folder">Ghost with icon</button> &nbsp;
+                <button kendoButton [disabled]="true" class="k-button-ghost">Ghost disabled</button> &nbsp;
+                <button kendoButton class="k-button-ghost k-button-small">Ghost</button>
             </div>
             <div class="pb-2">
                 <button kendoButton class="k-button-delete">Delete</button> &nbsp;
                 <button kendoButton class="k-button-delete" icon="delete">Delete with icon</button> &nbsp;
-                <button kendoButton class="k-button-delete" [disabled]="true">Delete disabled</button>
-            </div>
-            <div class="pb-2">
-                <button kendoButton class="k-button-apply">Apply</button> &nbsp;
-                <button kendoButton class="k-button-apply" icon="save">Apply with icon</button> &nbsp;
-                <button kendoButton class="k-button-apply" [disabled]="true">Apply</button>
+                <button kendoButton class="k-button-delete" [disabled]="true">Delete disabled</button> &nbsp;
+                <button kendoButton class="k-button-delete k-button-small">Delete</button>
             </div>
         </div>
     </div>
@@ -320,8 +330,8 @@
                                 </form-error>
                             </div>
     
-                            <div class="text-right">
-                                <button kendoButton>Cancel</button>
+                            <div class="text-right button-group-right-align">
+                                <button kendoButton look="outline">Cancel</button>
                                 <button kendoButton (click)="onFormSubmit()" primary="true"
                                     [disabled]="!myForm.valid">Save</button>
                             </div>
@@ -352,8 +362,8 @@
                                 <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
                             </div>
     
-                            <div class="text-left">
-                                <button kendoButton>Cancel</button>
+                            <div class="text-left button-group-left-align">
+                                <button kendoButton look="outline">Cancel</button>
                                 <button kendoButton (click)="onFormSubmit()" primary="true"
                                     [disabled]="!iForm.valid">Save</button>
                             </div>
@@ -384,8 +394,8 @@
                                 <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
                             </div>
     
-                            <div class="text-left">
-                                <button kendoButton>Cancel</button>
+                            <div class="text-left button-group-left-align">
+                                <button kendoButton look="outline">Cancel</button>
                                 <button kendoButton (click)="onFormSubmit()" primary="true"
                                     [disabled]="!mbForm.valid">Save</button>
                             </div>
@@ -417,8 +427,8 @@
                                 <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
                             </div>
     
-                            <div class="text-left">
-                                <button kendoButton>Cancel</button>
+                            <div class="text-left button-group-left-align">
+                                <button kendoButton look="outline">Cancel</button>
                                 <button kendoButton (click)="onFormSubmit()" primary="true"
                                     [disabled]="!ntbForm.valid">Save</button>
                             </div>
@@ -450,8 +460,8 @@
                                 <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
                             </div>
     
-                            <div class="text-left">
-                                <button kendoButton>Cancel</button>
+                            <div class="text-left button-group-left-align">
+                                <button kendoButton look="outline">Cancel</button>
                                 <button kendoButton (click)="onFormSubmit()" primary="true"
                                     [disabled]="!ddlForm.valid">Save</button>
                             </div>
@@ -483,8 +493,8 @@
                                 <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
                             </div>
     
-                            <div class="text-left">
-                                <button kendoButton>Cancel</button>
+                            <div class="text-left button-group-left-align">
+                                <button kendoButton look="outline">Cancel</button>
                                 <button kendoButton (click)="onFormSubmit()" primary="true"
                                     [disabled]="!cbForm.valid">Save</button>
                             </div>
@@ -516,8 +526,8 @@
                                 <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
                             </div>
     
-                            <div class="text-left">
-                                <button kendoButton>Cancel</button>
+                            <div class="text-left button-group-left-align">
+                                <button kendoButton look="outline">Cancel</button>
                                 <button kendoButton (click)="onFormSubmit()" primary="true"
                                     [disabled]="!msForm.valid">Save</button>
                             </div>
@@ -548,8 +558,8 @@
                                 <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
                             </div>
     
-                            <div class="text-left">
-                                <button kendoButton>Cancel</button>
+                            <div class="text-left button-group-left-align">
+                                <button kendoButton look="outline">Cancel</button>
                                 <button kendoButton (click)="onFormSubmit()" primary="true"
                                     [disabled]="!swForm.valid">Save</button>
                             </div>
@@ -579,8 +589,8 @@
                                 <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
                             </div>
     
-                            <div class="text-left">
-                                <button kendoButton>Cancel</button>
+                            <div class="text-left button-group-left-align">
+                                <button kendoButton look="outline">Cancel</button>
                                 <button kendoButton (click)="onFormSubmit()" primary="true"
                                     [disabled]="!slForm.valid">Save</button>
                             </div>
@@ -612,8 +622,8 @@
                                 <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
                             </div>
     
-                            <div class="text-left">
-                                <button kendoButton>Cancel</button>
+                            <div class="text-left button-group-left-align">
+                                <button kendoButton look="outline">Cancel</button>
                                 <button kendoButton (click)="onFormSubmit()" primary="true"
                                     [disabled]="!cpForm.valid">Save</button>
                             </div>
@@ -634,8 +644,8 @@
                                     name="input-disabled" [(ngModel)]="formModel.cb2" />
                                 <label class="k-checkbox-label" for="inputFormD">Disabled</label>
                             </div>
-                            <div class="text-left">
-                                <button kendoButton>Cancel</button>
+                            <div class="text-left button-group-left-align">
+                                <button kendoButton look="outline">Cancel</button>
                                 <button kendoButton (click)="onFormSubmit()" primary="true"
                                     [disabled]="!cbForm.valid">Save</button>
                             </div>
@@ -664,8 +674,8 @@
                                         name="input-disabled" [(ngModel)]="formModel.cb2" />
                                     <label class="k-checkbox-label" for="inputFormD">Disabled</label>
                                 </div>
-                                <div class="text-left">
-                                    <button kendoButton>Cancel</button>
+                                <div class="text-left button-group-left-align">
+                                    <button kendoButton look="outline">Cancel</button>
                                     <button kendoButton (click)="onFormSubmit()" primary="true"
                                         [disabled]="!rbForm.valid">Save</button>
                                 </div>

@@ -12,6 +12,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  font-family: $font-family;
 }
 
 .wrapper {
@@ -188,3 +189,18 @@ a {
 .cursor-pointer{
   cursor: pointer;
 }
+
+
+// BUTTON GROUPS
+
+.button-group-left-align .k-button {
+  margin-top: 2rem;
+  margin-right: .5rem;
+}
+
+.button-group-right-align .k-button {
+  margin-top: 2rem;
+  margin-left: .5rem;
+}
+
+
