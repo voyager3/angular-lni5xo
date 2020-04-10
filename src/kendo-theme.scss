@@ -63,12 +63,10 @@ body {
 .k-dateinput, 
 .k-datepicker, 
 .k-datetimepicker, 
-.k-dropdown, 
 .k-multiselect, 
 .k-numerictextbox, 
 .k-maskedtextbox, 
 .k-timepicker, 
-.k-dropdowntree,
 .k-combobox {
   background-color: transparent;
   border-width: 0px;
@@ -76,6 +74,16 @@ body {
   border-right-width: 0px;
   border-bottom-width: 0px;
   border-left-width: 0px;
+}
+
+.k-dropdown,
+.k-dropdown-wrap,
+.k-dropdowntree {
+  border: 0px !important;
+  border-color: $bg-grey;
+  background-color: $bg-grey !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid $primary-blue !important;
 }
 
 .k-button.k-primary, 
