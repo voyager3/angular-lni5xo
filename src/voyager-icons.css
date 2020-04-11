@@ -1,0 +1,436 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?i9bu04');
+  src:  url('../fonts/icomoon.eot?i9bu04#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.woff2?i9bu04') format('woff2'),
+    url('../fonts/icomoon.ttf?i9bu04') format('truetype'),
+    url('../fonts/icomoon.woff?i9bu04') format('woff'),
+    url('../fonts/icomoon.svg?i9bu04#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="v"], [class*=" v"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.vicon-2point-graph:before {
+  content: "\e900";
+}
+.vicon-add-alt:before {
+  content: "\e901";
+}
+.vicon-add-user:before {
+  content: "\e902";
+}
+.vicon-add:before {
+  content: "\e903";
+}
+.vicon-archive:before {
+  content: "\e904";
+}
+.vicon-area-chart:before {
+  content: "\e905";
+}
+.vicon-arrow-down-alt:before {
+  content: "\e906";
+}
+.vicon-arrow-down:before {
+  content: "\e907";
+}
+.vicon-arrow-left-alt:before {
+  content: "\e908";
+}
+.vicon-arrow-left:before {
+  content: "\e909";
+}
+.vicon-arrow-right-alt:before {
+  content: "\e90a";
+}
+.vicon-arrow-right:before {
+  content: "\e90b";
+}
+.vicon-arrow-up-alt:before {
+  content: "\e90c";
+}
+.vicon-arrow-up:before {
+  content: "\e90d";
+}
+.vicon-assets:before {
+  content: "\e90e";
+}
+.vicon-audio:before {
+  content: "\e90f";
+}
+.vicon-audit:before {
+  content: "\e910";
+}
+.vicon-back-top:before {
+  content: "\e911";
+}
+.vicon-bar-chart:before {
+  content: "\e912";
+}
+.vicon-bulletin:before {
+  content: "\e913";
+}
+.vicon-calendar-blank:before {
+  content: "\e914";
+}
+.vicon-calendar:before {
+  content: "\e915";
+}
+.vicon-cart-empty:before {
+  content: "\e916";
+}
+.vicon-cart-full:before {
+  content: "\e917";
+}
+.vicon-case-study:before {
+  content: "\e918";
+}
+.vicon-check-alt:before {
+  content: "\e919";
+}
+.vicon-check:before {
+  content: "\e91a";
+}
+.vicon-checklist:before {
+  content: "\e91b";
+}
+.vicon-class-activity:before {
+  content: "\e91c";
+}
+.vicon-class:before {
+  content: "\e91d";
+}
+.vicon-close-alt:before {
+  content: "\e91e";
+}
+.vicon-close:before {
+  content: "\e91f";
+}
+.vicon-comment:before {
+  content: "\e920";
+}
+.vicon-competency-validation:before {
+  content: "\e921";
+}
+.vicon-competency:before {
+  content: "\e922";
+}
+.vicon-curved-line-graph:before {
+  content: "\e923";
+}
+.vicon-data-presentation:before {
+  content: "\e924";
+}
+.vicon-debriefing:before {
+  content: "\e925";
+}
+.vicon-delete:before {
+  content: "\e926";
+}
+.vicon-disabled:before {
+  content: "\e927";
+}
+.vicon-doc-blank:before {
+  content: "\e928";
+}
+.vicon-doc-history:before {
+  content: "\e929";
+}
+.vicon-doc-text:before {
+  content: "\e92a";
+}
+.vicon-donut-chart:before {
+  content: "\e92b";
+}
+.vicon-download:before {
+  content: "\e92c";
+}
+.vicon-drag:before {
+  content: "\e92d";
+}
+.vicon-edit:before {
+  content: "\e92e";
+}
+.vicon-ellipses:before {
+  content: "\e92f";
+}
+.vicon-export:before {
+  content: "\e930";
+}
+.vicon-fforward:before {
+  content: "\e931";
+}
+.vicon-filter:before {
+  content: "\e932";
+}
+.vicon-flag:before {
+  content: "\e933";
+}
+.vicon-folder:before {
+  content: "\e934";
+}
+.vicon-folders:before {
+  content: "\e935";
+}
+.vicon-fullscreen:before {
+  content: "\e936";
+}
+.vicon-general-activity:before {
+  content: "\e937";
+}
+.vicon-general-answers:before {
+  content: "\e938";
+}
+.vicon-grid:before {
+  content: "\e939";
+}
+.vicon-help:before {
+  content: "\e93a";
+}
+.vicon-iem:before {
+  content: "\e93b";
+}
+.vicon-image-grid:before {
+  content: "\e93c";
+}
+.vicon-image:before {
+  content: "\e93d";
+}
+.vicon-images:before {
+  content: "\e93e";
+}
+.vicon-info:before {
+  content: "\e93f";
+}
+.vicon-job-aid:before {
+  content: "\e940";
+}
+.vicon-learner-guide:before {
+  content: "\e941";
+}
+.vicon-learning-plan:before {
+  content: "\e942";
+}
+.vicon-line-graph:before {
+  content: "\e943";
+}
+.vicon-link:before {
+  content: "\e944";
+}
+.vicon-list:before {
+  content: "\e945";
+}
+.vicon-locked:before {
+  content: "\e946";
+}
+.vicon-log-in-out:before {
+  content: "\e947";
+}
+.vicon-looping:before {
+  content: "\e948";
+}
+.vicon-mail-open:before {
+  content: "\e949";
+}
+.vicon-mail:before {
+  content: "\e94a";
+}
+.vicon-management:before {
+  content: "\e94b";
+}
+.vicon-match-activity:before {
+  content: "\e94c";
+}
+.vicon-match-answers:before {
+  content: "\e94d";
+}
+.vicon-mentoring:before {
+  content: "\e94e";
+}
+.vicon-menu:before {
+  content: "\e94f";
+}
+.vicon-metrics-management:before {
+  content: "\e950";
+}
+.vicon-minscreen:before {
+  content: "\e951";
+}
+.vicon-mobile:before {
+  content: "\e952";
+}
+.vicon-multi-activity:before {
+  content: "\e953";
+}
+.vicon-multi-answers:before {
+  content: "\e954";
+}
+.vicon-mute:before {
+  content: "\e955";
+}
+.vicon-notification:before {
+  content: "\e956";
+}
+.vicon-organization:before {
+  content: "\e957";
+}
+.vicon-outcomes-management:before {
+  content: "\e958";
+}
+.vicon-outcomes-metrics:before {
+  content: "\e959";
+}
+.vicon-pages:before {
+  content: "\e95a";
+}
+.vicon-pause:before {
+  content: "\e95b";
+}
+.vicon-performance-portfolio:before {
+  content: "\e95c";
+}
+.vicon-permissions:before {
+  content: "\e95d";
+}
+.vicon-pga-management:before {
+  content: "\e95e";
+}
+.vicon-phone:before {
+  content: "\e95f";
+}
+.vicon-play:before {
+  content: "\e960";
+}
+.vicon-powerpoint:before {
+  content: "\e961";
+}
+.vicon-preceptor-remediation:before {
+  content: "\e962";
+}
+.vicon-print:before {
+  content: "\e963";
+}
+.vicon-progress-notes:before {
+  content: "\e964";
+}
+.vicon-pst:before {
+  content: "\e965";
+}
+.vicon-ready:before {
+  content: "\e966";
+}
+.vicon-reference:before {
+  content: "\e967";
+}
+.vicon-refresh:before {
+  content: "\e968";
+}
+.vicon-remediate:before {
+  content: "\e969";
+}
+.vicon-remove-user:before {
+  content: "\e96a";
+}
+.vicon-reset:before {
+  content: "\e96b";
+}
+.vicon-revert:before {
+  content: "\e96c";
+}
+.vicon-save:before {
+  content: "\e96d";
+}
+.vicon-scatter-chart:before {
+  content: "\e96e";
+}
+.vicon-scenarios:before {
+  content: "\e96f";
+}
+.vicon-search:before {
+  content: "\e970";
+}
+.vicon-select-user:before {
+  content: "\e971";
+}
+.vicon-settings:before {
+  content: "\e972";
+}
+.vicon-share:before {
+  content: "\e973";
+}
+.vicon-skills-lab:before {
+  content: "\e974";
+}
+.vicon-skip:before {
+  content: "\e975";
+}
+.vicon-spider-chart:before {
+  content: "\e976";
+}
+.vicon-stop:before {
+  content: "\e977";
+}
+.vicon-subtract:before {
+  content: "\e978";
+  color: #4a4a4a;
+}
+.vicon-tag:before {
+  content: "\e979";
+}
+.vicon-unlocked:before {
+  content: "\e97a";
+}
+.vicon-upload:before {
+  content: "\e97b";
+}
+.vicon-user-alt:before {
+  content: "\e97c";
+}
+.vicon-user-help:before {
+  content: "\e97d";
+}
+.vicon-user-settings:before {
+  content: "\e97e";
+}
+.vicon-user:before {
+  content: "\e97f";
+}
+.vicon-validated:before {
+  content: "\e980";
+}
+.vicon-video:before {
+  content: "\e981";
+}
+.vicon-view:before {
+  content: "\e982";
+}
+.vicon-vignette-collection:before {
+  content: "\e983";
+}
+.vicon-vignette:before {
+  content: "\e984";
+}
+.vicon-warning:before {
+  content: "\e985";
+}
+.vicon-writing-activity:before {
+  content: "\e986";
+}
+.vicon-writing-answers:before {
+  content: "\e987";
+}

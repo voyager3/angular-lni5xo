@@ -60,7 +60,9 @@ body {
   color: white;
 }
 
-.k-dateinput, 
+.k-dateinput,
+.k-picker-wrap,
+.k-dateinput-wrap, 
 .k-datepicker, 
 .k-datetimepicker, 
 .k-multiselect, 
@@ -75,21 +77,52 @@ body {
   border-bottom-width: 0px;
   border-left-width: 0px;
 }
+.k-picker-wrap {
+  border: 0px !important;
 
-.k-dropdown,
+  .k-select {
+    border-width: 0px !important;
+    border-color: $bg-grey;
+    background-color: $bg-grey !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid $primary-blue !important;
+    padding: .35rem !important;
+    margin: 0 !important;
+
+    .k-icon {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.k-picker-wrap:hover {
+  .k-select{
+    background-color: $bright-blue;
+    color: white;
+  }
+}
+
 .k-dropdown-wrap,
-.k-dropdowntree {
+.k-dropdowntree,
+.k-multiselect-wrap,
+.k-floatwrap,
+.k-textbox,
+.k-numeric-wrap,
+.k-dateinput-wrap {
   border: 0px !important;
   border-color: $bg-grey;
   background-color: $bg-grey !important;
   border-radius: 0 !important;
   border-bottom: 1px solid $primary-blue !important;
+
+  .k-select {
+    background-color: transparent !important;
+    border-color: transparent !important;
+  }
 }
 
 .k-button.k-primary, 
 .k-pager-numbers .k-link.k-state-selected,
-.k-datepicker .k-select,
-.k-datetimepicker .k-select,
 .k-list-container .k-button:active,
 .k-list .k-item.k-state-selected,
 .k-slider .k-draghandle {
@@ -99,6 +132,10 @@ body {
 
 .k-switch-on .k-switch-container {
   background-color: $primary-blue;
+}
+
+.k-switch-off .k-switch-container {
+  background-color: $light-grey;
 }
 
 .k-button.k-primary:hover, 
@@ -116,8 +153,7 @@ body {
   color: $primary-blue;
 }
 
-.k-datepicker .k-select,
-.k-datetimepicker .k-select,
+
 .k-pager-numbers li .k-link.k-state-selected,
 .k-action-buttons .k-primary {
   color: $white;
