@@ -16,6 +16,7 @@ import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { TooltipModule } from '@progress/kendo-angular-tooltip';
+import { CardButtonComponent } from './components/card-button/card-button.component';
 
 export const kendoUIModules = [
   ButtonsModule,
@@ -35,7 +36,7 @@ export const kendoUIModules = [
     CommonModule,
     kendoUIModules
   ],
-  declarations: [  ...components, ...directives,  ...dialogComponents  ],
+  declarations: [  ...components, ...directives,  ...dialogComponents, CardButtonComponent  ],
   exports: [ ...components, ...directives, ...kendoUIModules],
   providers: [    
     { provide: DialogService, useClass: KendoDialogService }

@@ -1,0 +1,6 @@
+<div>
+    <card-button *ngFor="let cardBtn of cardButtons"
+        [model]="cardBtn"
+        (onSelect)="applySelection($event)">
+    </card-button>
+</div>

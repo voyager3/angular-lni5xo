@@ -1,5 +1,5 @@
 <div class="white-container">
-    <h1>Kendo UI Components Showcase</h1>
+    <h1>Voyager 3 Showcase</h1>
     <div>To use specific Kendo UI For Angular component you should:
         <ol>
             <li>Add the package in npm: <code>ng add @progress/kendo-angular-inputs</code></li>
@@ -10,7 +10,7 @@
             <li>Override the component styles in kendo-theme.scss if needed.</li>
         </ol>
     </div>
-    
+    <h2>Kendo UI Angular components</h2>
     <div class="row p-2">
         <div class="col-md-2">Buttons</div>
         <div class="col-md-10">
@@ -71,12 +71,31 @@
                <div class="row">
                 <div class="col-2">Split button</div>
                 <div class="col">
-                  <kendo-splitbutton [data]="splitButtonData" [text]="splitButtonText"></kendo-splitbutton>
+                    Basic Usage
+                    <div class="row">
+                      <div class="col">
+                        <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste">
+                            Paste
+                        </kendo-splitbutton> &nbsp;
+                        <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste" [look]="'flat'">
+                            Paste
+                        </kendo-splitbutton> &nbsp;
+                        <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste" [look]="'outline'">
+                            Paste
+                        </kendo-splitbutton> &nbsp;
+                      </div>
+                    </div>
                 </div>
                 <div class="col">
-                   <kendo-splitbutton [data]="splitButtonData">
-                      <u>R</u>eply
-                  </kendo-splitbutton>
+                  Content Setup
+                  <div class="row">
+                    <div class="col">
+                      <kendo-splitbutton [data]="splitButtonTextData" [text]="splitButtonText"></kendo-splitbutton> &nbsp;
+                       <kendo-splitbutton [data]="splitButtonTextData">
+                          <u>R</u>eply
+                      </kendo-splitbutton> &nbsp;
+                    </div>
+                  </div>
                 </div>
                </div>
             </div>
@@ -119,10 +138,10 @@
             <div kendoTooltip>
               <button class="k-button k-primary" title="Saves the current document">
                   Save
-              </button>
+              </button> &nbsp;
               <button class="k-button" title="Discards all changes">
                   Cancel
-              </button>
+              </button> &nbsp;
             </div>
           </div>
           <div class="col">
@@ -183,71 +202,48 @@
     </div>
 
     <div class="row p-2">
-        <div class="col-md-2">Dialog Service</div>
-        <div class="col-md-2">
-            <button kendoButton (click)="openInfoDialog()">Info</button>            
-        </div>
-        <div class="col-md-2">
-            <button kendoButton (click)="openWarningDialog()">Warning</button>            
-        </div>
-        <div class="col-md-6">
-            <button kendoButton (click)="openConfirmDialog()">Confirm</button>            
-        </div>
-    </div>
-
-    <div class="row p-2">
-        <div class="col-md-2">Dialog Service Window Sizes</div>
-        <div class="col-md-2">
-            <button kendoButton (click)="openStandardSizeInfoDialog(DialogSize.Small)">Small</button>            
-        </div>
-        <div class="col-md-2">
-            <button kendoButton (click)="openStandardSizeInfoDialog(DialogSize.Medium)">Medium</button>             
-        </div>
-        <div class="col-md-6">
-            <button kendoButton (click)="openStandardSizeInfoDialog(DialogSize.Large)">Large</button>             
-        </div>
-    </div>
-
-    <div class="row p-2">
-        <div class="col-md-2">Dialog</div>        
+      <div class="col-md-2">Dialog</div>        
         <div class="col-md-10">
-            <p><button kendoButton (click)="open('dialog')">Open dialog</button>    
-                <kendo-dialog title="Edit user" *ngIf="dialogOpened" (close)="close('dialog')" [minWidth]="250"
-                    [width]="450">
-                    <div *ngIf="dialogLoader" appLoader></div>
-                    <form #dialogForm="ngForm">
-                        <div class="form-group">
-                            <label [for]="username">Username</label>
-                            <input type="text" #username #usernameModel="ngModel" class="k-textbox form-control" name="form-textbox"
-                                [(ngModel)]="dialogModel.username" required />
-                            <form-error [model]="usernameModel" inputLabel="Username">
-                            </form-error>
-                        </div>
+            <div class="pb-2">
+                <div class="row">
+                    <div class="col">
+                        <button kendoButton (click)="open('dialog')">Open dialog</button>    
+                        <kendo-dialog title="Edit user" *ngIf="dialogOpened" (close)="close('dialog')" [minWidth]="250"
+                            [width]="450">
+                            <div *ngIf="dialogLoader" appLoader></div>
+                            <form #dialogForm="ngForm">
+                                <div class="form-group">
+                                    <label [for]="username">Username</label>
+                                    <input type="text" #username #usernameModel="ngModel" class="k-textbox form-control" name="form-textbox"
+                                        [(ngModel)]="dialogModel.username" required />
+                                    <form-error [model]="usernameModel" inputLabel="Username">
+                                    </form-error>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label [for]="years">Years</label>
+                                    <kendo-numerictextbox #years #yearsModel="ngModel" class="form-control" [(ngModel)]="dialogModel.years"
+                                        [min]="0" [max]="100" name="form-numeric" required>
+                                    </kendo-numerictextbox>
+                                    <form-error [model]="yearsModel" inputLabel="Years">
+                                    </form-error>
+                                </div>
+                                <div *ngIf="dialogLoader" appLoader [opaque]="true"></div>
+                            </form>
+                            <kendo-dialog-actions layout="normal">
+                                <button kendoButton (click)="action('cancel')">Cancel</button>
+                                <button kendoButton [primary]="true" (click)="action('save')" [disabled]="!dialogForm.valid">Save</button>
+                            </kendo-dialog-actions>
+                        </kendo-dialog>
+                    </div>
+                    <div class="col">
+                        <button kendoButton (click)="confirm()">Open confirm dialog</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                        <div class="form-group">
-                            <label [for]="years">Years</label>
-                            <kendo-numerictextbox #years #yearsModel="ngModel" class="form-control" [(ngModel)]="dialogModel.years"
-                                [min]="0" [max]="100" name="form-numeric" required>
-                            </kendo-numerictextbox>
-                            <form-error [model]="yearsModel" inputLabel="Years">
-                            </form-error>
-                        </div>
-                        <div *ngIf="dialogLoader" appLoader [opaque]="true"></div>
-                    </form>
-                    <kendo-dialog-actions layout="normal">
-                        <button kendoButton (click)="action('cancel')">Cancel</button>
-                        <button kendoButton [primary]="true" (click)="action('save')" [disabled]="!dialogForm.valid">Save</button>
-                    </kendo-dialog-actions>
-                </kendo-dialog>
-            </p>
-        </div>
-    </div>
-    <div class="row p-2">
-        <div class="col-md-2">Confirm</div>
-        <div class="col-md-10">
-            <button kendoButton (click)="confirm()">Open confirm dialog</button>
-        </div>
-    </div>
     <div class="row p-2">
         <div class="col-md-2">Loader</div>
         <div class="col-md-10">
@@ -775,5 +771,47 @@
             </kendo-tabstrip>
     
         </div>
+    </div>
+    <h2>Custom components</h2>
+
+    <div class="row p-2">
+        <div class="col-md-2">Dialog Service</div>
+        <div class="col-md-10">
+            <div class="row pb-2">
+                <div class="col-2">Types</div>
+                <div class="col">
+                    <button kendoButton (click)="openInfoDialog()">Info</button>
+                </div>
+                <div class="col">
+                    <button kendoButton (click)="openWarningDialog()">Warning</button>
+                </div>
+                <div class="col">
+                    <button kendoButton (click)="openConfirmDialog()">Confirm</button>
+                </div>
+            </div>
+            <div class="row pb-2">
+                <div class="col-2">Sizes</div>
+                <div class="col">
+                    <button kendoButton (click)="openStandardSizeInfoDialog(DialogSize.Small)">Small</button>            
+                </div>
+                <div class="col">
+                    <button kendoButton (click)="openStandardSizeInfoDialog(DialogSize.Medium)">Medium</button>             
+                </div>
+                <div class="col">
+                    <button kendoButton (click)="openStandardSizeInfoDialog(DialogSize.Large)">Large</button>             
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-2">
+      <div class="col-2">Button Filter</div>
+      <div class="col-6">
+          <card-button-filter 
+              column="type.text"
+              [cardButtons]="cardBtnModel" 
+              (onFilterChange)="onButtonFilterChange($event)">
+          </card-button-filter>
+      </div>
     </div>
 </div>

@@ -205,4 +205,21 @@ a {
   margin-left: .5rem;
 }
 
+/* CARD BUTTON */
+.card-button {
+    border: none;
+    width: 6.5625rem;
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: $white;
+    padding: 0.1875rem;
+    margin: 0.1875rem;
+    cursor: default;
+}
+
+.card-button.card-selected{
+    background-color: #480000 !important;
+}
+
+
 

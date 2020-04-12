@@ -1,0 +1,6 @@
+<button class="card-button"
+    [id]="model.id"
+    [style.backgroundColor]="model.color"
+    [ngClass]="{'card-selected': model.selected && allowSelection, 'cursor-default': !allowSelection}"
+    (click)="select()">{{model.text}}
+</button>

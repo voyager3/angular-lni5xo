@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PagerSettings, PageChangeEvent, GridDataResult, SortSettings } from '@progress/kendo-angular-grid';
-import { SortDescriptor, orderBy } from '@progress/kendo-data-query';
+import { SortDescriptor, orderBy, filterBy, CompositeFilterDescriptor } from '@progress/kendo-data-query';
 import {
   DialogRef,
   DialogCloseResult,
@@ -10,6 +10,7 @@ import * as KendoAngularDialog from '@progress/kendo-angular-dialog';
 import { DialogSize } from '../shared/enums/dialog-size';
 import { DialogService } from '../shared/services/abstracts/dialog.service';
 import { DialogResultModel } from '../shared/models/dialog/dialog-result-model';
+import { CardButtonModel } from '../shared/models/card-button.model';
 
 @Component({
   selector: 'kendo-showcase',
@@ -34,8 +35,26 @@ export class KendoShowcaseComponent implements OnInit {
   dateTimePickerValue: any;
 
   /* SPLITBUTTON */
+
+  public splitButtonDefaultData: Array<any> = [{
+      text: 'Keep Text Only',
+      icon: 'paste-plain-text',
+      click: () => { console.log('Keep Text Only'); }
+  }, {
+      text: 'Paste as HTML',
+      icon: 'paste-as-html',
+      click: () => { console.log('Paste as HTML'); }
+  }, {
+      text: 'Paste Markdown',
+      icon: 'paste-markdown',
+      click: () => { console.log('Paste Markdown'); }
+  }, {
+      text: 'Set Default Paste',
+      click: () => { console.log('Set Default Paste'); }
+  }];
+
   public splitButtonText: string = 'Reply';
-  public splitButtonData: Array<any> = [{
+  public splitButtonTextData: Array<any> = [{
       text: 'Reply All'
   }, {
       text: 'Forward'
@@ -44,6 +63,7 @@ export class KendoShowcaseComponent implements OnInit {
   }];
 
   /* CHIP */
+
   public contacts: Array<{ label: string, iconClass: string }> = [
       { label: 'Pedro Afonso', iconClass: 'k-chip-avatar k-icon k-i-user'},
       { label: 'Maria Shore', iconClass: 'k-chip-avatar k-icon k-i-user' },
@@ -134,6 +154,12 @@ export class KendoShowcaseComponent implements OnInit {
     readOnly: false
   };
 
+  /* CARD BUTTON FILTER */
+  cardBtnModel: CardButtonModel[] = [
+    {id:1, text: 'TYPE 1', color: 'rgb(91, 135, 218)', selected: false }, 
+    {id:2, text: 'TYPE 2', color: 'green',selected: false },
+    {id:3, text: 'TYPE3',  color: 'yellow', selected: false }]
+
   constructor(private dialogService: KendoAngularDialog.DialogService, private kendoDialogService: DialogService) {
     this.data = this.source.slice();
     this.loadProducts();
@@ -168,6 +194,12 @@ export class KendoShowcaseComponent implements OnInit {
       data: orderBy(this.products, this.sort).slice(this.skip, this.skip + this.pageSize),
       total: this.products.length
     };
+  }
+
+  /* DROPDOWN BUTTON */
+
+  public onPaste(): void {
+    console.log('Paste');
   }
 
   /* CHIP BUTTON */
@@ -274,5 +306,11 @@ export class KendoShowcaseComponent implements OnInit {
       size: size
     })
     .subscribe((x: DialogResultModel) => {console.log(x);});
+  }
+
+  /* CARD BUTTOn FILTER */
+  onButtonFilterChange(filter: CompositeFilterDescriptor): void {
+    // this.products = filterBy(this.productsSource, filter);
+    // this.loadProducts();
   }
 }
