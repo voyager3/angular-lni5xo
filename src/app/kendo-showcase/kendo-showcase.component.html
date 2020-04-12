@@ -45,7 +45,95 @@
                 <button kendoButton class="k-button-delete" [disabled]="true">Delete disabled</button> &nbsp;
                 <button kendoButton class="k-button-delete k-button-small">Delete</button>
             </div>
+            <div class="pb-2">
+               <div class="row">
+                <div class="col-2">Button group</div>
+                <div class="col">
+                  <p>Single selection mode</p>
+                  <kendo-buttongroup [selection]="'single'">
+                      <button kendoButton [toggleable]="true" [icon]="'align-left'"></button>
+                      <button kendoButton [toggleable]="true" [icon]="'align-center'"></button>
+                      <button kendoButton [toggleable]="true" [icon]="'align-right'"></button>
+                      <button kendoButton [toggleable]="true" [icon]="'align-justify'"></button>
+                  </kendo-buttongroup>
+                </div>
+                <div class="col">
+                  <p>Multiple selection mode</p>
+                  <kendo-buttongroup>
+                      <button kendoButton [toggleable]="true" [icon]="'bold'"></button>
+                      <button kendoButton [toggleable]="true" [icon]="'italic'"></button>
+                      <button kendoButton [toggleable]="true" [icon]="'underline'"></button>
+                  </kendo-buttongroup>
+                </div>
+               </div>
+            </div>
+            <div class="pb-2">
+               <div class="row">
+                <div class="col-2">Split button</div>
+                <div class="col">
+                  <kendo-splitbutton [data]="splitButtonData" [text]="splitButtonText"></kendo-splitbutton>
+                </div>
+                <div class="col">
+                   <kendo-splitbutton [data]="splitButtonData">
+                      <u>R</u>eply
+                  </kendo-splitbutton>
+                </div>
+               </div>
+            </div>
+            <div class="pb-2">
+               <div class="row">
+                <div class="col-2">Dropdown button</div>
+                <div class="col">
+                  <kendo-dropdownbutton [data]="ddbSettings" [icon]="ddbIco">
+                      User Settings
+                  </kendo-dropdownbutton>
+                </div>
+                <div class="col">
+                  <kendo-dropdownbutton [data]="ddbSettings" [icon]="ddbIco"></kendo-dropdownbutton>
+                </div>
+               </div>
+            </div>
+            <div class="pb-2">
+               <div class="row">
+                <div class="col-2">Chip</div>
+                <div class="col">
+                   <kendo-chip
+                        *ngFor="let contact of selectedContacts"
+                        [label]="contact.label"
+                        [removable]="true"
+                        [iconClass]="contact.iconClass"
+                        (remove)="onRemove($event)"
+                    >
+                    </kendo-chip>
+                </div>
+               </div>
+            </div>
         </div>
+    </div>
+    <div class="row p-2">
+      <div class="col-md-2">Tooltip</div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col">
+            <p>Default</p>
+            <div kendoTooltip>
+              <button class="k-button k-primary" title="Saves the current document">
+                  Save
+              </button>
+              <button class="k-button" title="Discards all changes">
+                  Cancel
+              </button>
+            </div>
+          </div>
+          <div class="col">
+              <p>Closable</p>
+              <div kendoTooltip position="right" closable="true" showOn="click">
+              <button class="k-button" title="Closable tooltip content">Show tooltip</button>
+          </div>
+          </div>
+        </div>
+        
+      </div>
     </div>
     <div class="row p-2">
         <div class="col-md-2">Dropdowns</div>

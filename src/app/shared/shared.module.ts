@@ -15,6 +15,7 @@ import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { LayoutModule } from '@progress/kendo-angular-layout';
+import { TooltipModule } from '@progress/kendo-angular-tooltip';
 
 export const kendoUIModules = [
   ButtonsModule,
@@ -25,7 +26,8 @@ export const kendoUIModules = [
   DateInputsModule,
   DialogsModule,
   LabelModule,
-  LayoutModule
+  LayoutModule,
+  TooltipModule
 ]
 
 @NgModule({

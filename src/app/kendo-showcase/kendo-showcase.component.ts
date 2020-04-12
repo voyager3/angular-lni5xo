@@ -5,6 +5,7 @@ import {
   DialogRef,
   DialogCloseResult,
   DialogResult} from '@progress/kendo-angular-dialog';
+import { ChipRemoveEvent } from '@progress/kendo-angular-buttons';
 import * as KendoAngularDialog from '@progress/kendo-angular-dialog';
 import { DialogSize } from '../shared/enums/dialog-size';
 import { DialogService } from '../shared/services/abstracts/dialog.service';
@@ -31,6 +32,43 @@ export class KendoShowcaseComponent implements OnInit {
   datePickerValue: any;
   format: 'dd/MM/YYYY';
   dateTimePickerValue: any;
+
+  /* SPLITBUTTON */
+  public splitButtonText: string = 'Reply';
+  public splitButtonData: Array<any> = [{
+      text: 'Reply All'
+  }, {
+      text: 'Forward'
+  }, {
+      text: 'Reply & Delete'
+  }];
+
+  /* CHIP */
+  public contacts: Array<{ label: string, iconClass: string }> = [
+      { label: 'Pedro Afonso', iconClass: 'k-chip-avatar k-icon k-i-user'},
+      { label: 'Maria Shore', iconClass: 'k-chip-avatar k-icon k-i-user' },
+      { label: 'Thomas Hardy', iconClass: 'k-chip-avatar k-icon k-i-user' },
+      { label: 'Christina Berg', iconClass: 'k-chip-avatar k-icon k-i-user' },
+      { label: 'Paula Wilson', iconClass: 'k-chip-avatar k-icon k-i-user' }
+  ];
+
+  public selectedContacts: Array<any> = [this.contacts[1], this.contacts[2]];
+
+  /* DROPDOWN BUTTON */
+
+  ddbIco: string = 'cog';
+  ddbSettings: Array<any> = [{
+      text: 'My Profile'
+  }, {
+      text: 'Friend Requests'
+  }, {
+      text: 'Account Settings'
+  }, {
+      text: 'Support'
+  }, {
+      text: 'Log Out'
+  }];
+
 
   /* DROPDOWNLIST */
   source: Array<string> = ['Albania', 'Andorra', 'Armenia', 'Austria', 'Azerbaijan'];
@@ -132,6 +170,14 @@ export class KendoShowcaseComponent implements OnInit {
     };
   }
 
+  /* CHIP BUTTON */
+  
+  public onRemove(e: ChipRemoveEvent): void {
+    console.log('Remove event arguments: ', e);
+    const index = this.selectedContacts.map(c => c.label).indexOf(e.sender.label);
+    this.selectedContacts.splice(index, 1);
+  }
+
   /* DIALOG */
 
   close(component: any) {
@@ -195,6 +241,7 @@ export class KendoShowcaseComponent implements OnInit {
   onFormSubmit() {
   }
 
+  /* DIALOG TYPES */
 
   openInfoDialog(){
     this.kendoDialogService.info({
