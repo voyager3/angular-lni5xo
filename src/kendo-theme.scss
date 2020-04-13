@@ -10,7 +10,15 @@ body {
 
 .k-button {
   padding: .5rem 1rem;
+  background-color: white;
+  border: 1px solid $brand-grey;
 }
+
+.k-button:hover {
+  background-color: try-darken( $light-grey, 10% );
+  border-color: try-darken( $brand-grey, 10% );
+}
+
 .k-button:focus:enabled, .k-outline:focus:enabled {
   outline-color: $bright-blue;
   outline-width: 1px;
@@ -44,20 +52,34 @@ body {
   background: none;
 }
 
-.k-button-secondary:hover {
-  background-color: $primary-blue;
+.k-flat {
+  border: none;
+  background: none;
+  color: $primary-blue !important;
+  transition: none !important;
+}
+
+.k-flat:hover {
+  background-color: $bright-blue !important;
   color: white !important;
 }
 
-.k-button-ghost {
-  border: none;
-  background: none;
-  color: $primary-blue;
+.k-chip {
+  margin-right: .5rem;
 }
 
-.k-button-ghost:hover {
-  background-color: $bright-blue;
-  color: white;
+.k-chip-filled {
+  border-color: $light-grey;
+  background-color: $bg-grey;
+
+  .k-remove-icon {
+    color: $alt-grey;
+  }
+}
+
+.k-chip-filled:hover {
+  //border-color: $primary-blue;
+  background-color: $light-grey;
 }
 
 .k-dateinput,
@@ -125,9 +147,23 @@ body {
 .k-pager-numbers .k-link.k-state-selected,
 .k-list-container .k-button:active,
 .k-list .k-item.k-state-selected,
-.k-slider .k-draghandle {
-  background-color: $primary-blue;
+.k-slider .k-draghandle,
+.k-button-group .k-state-active {
+  background-color: $primary-blue !important;
   border-color: $primary-blue;
+}
+
+.k-list .k-item {
+  padding:.5rem 1rem;
+}
+
+.k-list .k-item:hover {
+  background-color: $pale-blue;
+}
+
+.k-split-button .k-button:last-child {
+  padding: .75rem .375rem !important;
+  height: 100%;
 }
 
 .k-switch-on .k-switch-container {
@@ -138,12 +174,14 @@ body {
   background-color: $light-grey;
 }
 
-.k-button.k-primary:hover, 
+.k-primary:hover, 
+.k-button-secondary:hover,
 .k-pager-numbers .k-link.k-state-selected:hover,
 .k-datepicker .k-select:hover,
 .k-datetimepicker .k-select:hover {
-  background-color: $bright-blue;
-  border-color: $bright-blue;
+  background-color: $bright-blue !important;
+  border-color: $bright-blue !important;
+  color: white !important;
 }
 
 .k-pager-wrap .k-link, 
@@ -316,9 +354,19 @@ form .k-button  .k-button {
     font-weight: normal;
 }
 
-.k-list .k-item:hover {
-  background-color: $secondary;
+.k-tooltip {
+  padding: 1rem;
+  background-color: $dark-grey;
 }
+
+.k-tooltip .k-callout {
+  color: $dark-grey;
+}
+
+.k-tooltip-button {
+  top: 3%;
+}
+
 
 // GRID
 

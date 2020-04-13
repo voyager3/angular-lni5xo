@@ -25,19 +25,19 @@
                 <button kendoButton class="k-button-secondary">Secondary</button> &nbsp;
                 <button kendoButton class="k-button-secondary" icon="folder">Secondary with icon</button> &nbsp;
                 <button kendoButton [disabled]="true" class="k-button-secondary">Secondary disabled</button> &nbsp;
-                <button kendoButton class="k-button-secondary k-button-small">Secondary</button>
+                <button kendoButton class="k-button-secondary k-button-small">Secondary small</button>
             </div>
             <div class="pb-2">
                 <button kendoButton look="outline">Cancel</button> &nbsp;
                 <button kendoButton look="outline" icon="cancel">Cancel with icon</button> &nbsp;
                 <button kendoButton look="outline" [disabled]="true">Cancel disabled</button> &nbsp;
-                <button kendoButton look="outline" class="k-button-small">Cancel</button>
+                <button kendoButton look="outline" class="k-button-small">Cancel small</button>
             </div>
             <div class="pb-2">
-                <button kendoButton class="k-button-ghost">Ghost</button> &nbsp;
-                <button kendoButton class="k-button-ghost" icon="folder">Ghost with icon</button> &nbsp;
-                <button kendoButton [disabled]="true" class="k-button-ghost">Ghost disabled</button> &nbsp;
-                <button kendoButton class="k-button-ghost k-button-small">Ghost</button>
+                <button kendoButton [look]="'flat'">Flat</button> &nbsp;
+                <button kendoButton [look]="'flat'" icon="folder">Flat with icon</button> &nbsp;
+                <button kendoButton [disabled]="true" [look]="'flat'">Flat disabled</button> &nbsp;
+                <button kendoButton [look]="'flat'" class="k-button-small">Flat small</button>
             </div>
             <div class="pb-2">
                 <button kendoButton class="k-button-delete">Delete</button> &nbsp;
@@ -77,12 +77,12 @@
                         <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste">
                             Paste
                         </kendo-splitbutton> &nbsp;
-                        <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste" [look]="'flat'">
+                        <!-- <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste" [look]="'flat'">
                             Paste
                         </kendo-splitbutton> &nbsp;
                         <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste" [look]="'outline'">
                             Paste
-                        </kendo-splitbutton> &nbsp;
+                        </kendo-splitbutton> &nbsp;-->
                       </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
               <button class="k-button k-primary" title="Saves the current document">
                   Save
               </button> &nbsp;
-              <button class="k-button" title="Discards all changes">
+              <button kendoButton look="outline" title="Discards all changes">
                   Cancel
               </button> &nbsp;
             </div>
@@ -147,7 +147,7 @@
           <div class="col">
               <p>Closable</p>
               <div kendoTooltip position="right" closable="true" showOn="click">
-              <button class="k-button" title="Closable tooltip content">Show tooltip</button>
+              <button kendoButton [primary]="true" title="Closable tooltip content">Show tooltip</button>
           </div>
           </div>
         </div>
