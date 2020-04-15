@@ -144,7 +144,6 @@ body {
 }
 
 .k-button.k-primary, 
-.k-pager-numbers .k-link.k-state-selected,
 .k-list-container .k-button:active,
 .k-list .k-item.k-state-selected,
 .k-slider .k-draghandle,
@@ -176,7 +175,6 @@ body {
 
 .k-primary:hover, 
 .k-button-secondary:hover,
-.k-pager-numbers .k-link.k-state-selected:hover,
 .k-datepicker .k-select:hover,
 .k-datetimepicker .k-select:hover {
   background-color: $bright-blue !important;
@@ -184,21 +182,40 @@ body {
   color: white !important;
 }
 
+// START PAGINATION STYLES
+
+.k-pager-numbers li {
+  border-color: transparent !important;
+}
+
+.k-pager-numbers .k-link.k-state-selected {
+
+}
+
+.k-pager-numbers .k-link.k-state-selected:hover {
+
+}
+
 .k-pager-wrap .k-link, 
-.k-pager-wrap .k-pager-nav,
+.k-pager-wrap .k-pager-nav {
+
+}
+
+.k-pager-numbers li .k-link.k-state-selected {
+
+}
+
+.k-pager-numbers li a.k-link {
+  color: $main-text-color;
+}
+
 .k-calendar .k-footer .k-nav-today, 
 .k-calendar .k-calendar-header .k-today {
   color: $primary-blue;
 }
 
-
-.k-pager-numbers li .k-link.k-state-selected,
 .k-action-buttons .k-primary {
   color: $white;
-}
-
-.k-pager-numbers li a.k-link {
-  color: $main-text-color;
 }
 
 .k-widget.k-state-invalid > .k-dateinput-wrap,
@@ -365,6 +382,18 @@ form .k-button  .k-button {
 
 .k-tooltip-button {
   top: 3%;
+}
+
+.k-multiselect .k-multiselect-wrap li.k-button {
+  background-color: $primary-blue;
+  border: none;
+  border-radius: 1rem;
+  padding: 0 .75rem;
+  color: white;
+}
+
+.k-multiselect .k-multiselect-wrap .k-button .k-select {
+  margin-left: .6rem;
 }
 
 
