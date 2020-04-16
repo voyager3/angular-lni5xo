@@ -30,9 +30,12 @@ export class KendoShowcaseComponent implements OnInit {
   inputValue: string;
   inputValueDisabled: string;
 
-  datePickerValue: any;
-  format: 'dd/MM/YYYY';
-  dateTimePickerValue: any;
+  dateInputValue = new Date(2000, 2, 10);
+  datePickerValue = new Date(2019, 5, 1, 22);
+  format: string = 'MM/dd/yyyy HH:mm';
+  dateTimePickerValue = new Date(2019, 5, 1, 22, 40);
+  range = { start: null, end: null };
+  timePickerValue = new Date(2000, 2, 10, 10, 30, 0);
 
   /* SPLITBUTTON */
 

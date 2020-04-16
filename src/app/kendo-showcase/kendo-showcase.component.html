@@ -157,50 +157,147 @@
     <div class="row p-2">
         <div class="col-md-2">Dropdowns</div>
         <div class="col-md-10">
-            <h5>Single</h5>
-            <p>
+            <div class="row pb-2">
+              <div class="col-">
+                Single
+              </div>
+              <div class="col">
                 <kendo-dropdownlist [data]="data" [filterable]="true" (filterChange)="filterChange($event)">
                 </kendo-dropdownlist>
-            </p>
-            <h5>Multiple</h5>
-            <p>
+              </div>
+              <div class="col">
+                Multiple
+              </div>
+              <div class="col-6">
                 <kendo-multiselect [data]="listItems" [(ngModel)]="valueMs"></kendo-multiselect>
-            </p>
+              </div>
+            </div>
         </div>
     </div>
     <div class="row p-2">
-        <div class="col-md-2">Input</div>
-        <div class="col-md-10">
-            <p><input kendoTextBox /></p>
-            <p>
-                <kendo-maskedtextbox [mask]="mask" [value]="maskValue"></kendo-maskedtextbox>
-            </p>
-            <p>
-                <kendo-numerictextbox [value]="numericValue" [min]="0" [max]="100" [autoCorrect]="true">
-                </kendo-numerictextbox>
-            </p>
-            <p>
-                <kendo-switch [(ngModel)]="switchChecked" onLabel="Active" offLabel="Inactive"></kendo-switch>
-            </p>
-            <p>
-                <kendo-slider tickPlacement="none" [min]="0" [max]="15" [smallStep]="1" [(ngModel)]="valueHorizontal">
-                </kendo-slider>
-            </p>
+      <div class="col-md-2">Input</div>
+      <div class="col-md-10">
+        <div class="row pb-2">
+            <div class="col-2">
+              Textbox
+            </div>
+            <div class="col">
+              <input kendoTextBox/>
+            </div>
+            <div class="col-2">
+              Textbox with placeholder
+            </div>
+            <div class="col">
+              <input kendoTextBox placeholder="Enter a value..."/>
+            </div>
         </div>
-    </div>
-    <div class="row p-2">
+        <div class="row pb-2">
+            <div class="col-2">
+              Masked Textbox
+            </div>
+            <div class="col">
+              <kendo-maskedtextbox [mask]="mask" [value]="maskValue"></kendo-maskedtextbox>
+            </div>
+            <div class="col-2">
+              Numeric Textbox
+            </div>
+            <div class="col">
+              <kendo-numerictextbox [value]="numericValue" [min]="0" [max]="100" [autoCorrect]="true">
+              </kendo-numerictextbox>
+            </div>
+        </div>
+        <div class="row pb-2">
+          <div class="col-2">
+            Switch
+          </div>
+          <div class="col">
+            <kendo-switch [(ngModel)]="switchChecked"></kendo-switch>
+          </div>
+            <div class="col-2">
+            Slider
+          </div>
+          <div class="col">
+            <kendo-slider tickPlacement="none" [min]="0" [max]="15" [smallStep]="1" [(ngModel)]="valueHorizontal">
+              </kendo-slider>
+          </div>
+        </div>
+      </div>
+   </div>
+   <div class="row p-2">
         <div class="col-md-2">Dates</div>
         <div class="col-md-10">
-            <p>
+           <div class="row pb-2">
+              <div class="col-2">Date input</div>
+              <div class="col">
+                  <kendo-dateinput [(value)]="dateInputValue"></kendo-dateinput>
+                   <p>(use ← and →  to navigate, ↑ to increment and ↓ to decrement the value)</p>
+              </div>
+              <!-- <div class="col">
+                  <kendo-dateinput  [disabled]="true" [(value)]="dateInputValue"></kendo-dateinput>
+              </div>
+              <div class="col">
+                  <kendo-dateinput  [readonly]="true" [(value)]="dateInputValue"></kendo-dateinput>
+              </div> -->
+            </div>
+            <div class="row pb-2">
+              <div class="col-2">Datepicker</div>
+              <div class="col">
                 <kendo-datepicker [(value)]="datePickerValue"></kendo-datepicker>
-            </p>
-            <p>
+                 <p>(use Alt+↓ to open the calendar, ← and →  to navigate, ↑ to increment and ↓ to decrement the value)</p>
+              </div>
+              <!-- <div class="col">
+                <kendo-datepicker [disabled]="true" [(value)]="datePickerValue"></kendo-datepicker>
+              </div>
+                <div class="col">
+                <kendo-datepicker [readonly]="true" [(value)]="datePickerValue"></kendo-datepicker>
+              </div> -->
+            </div>
+            <div class="row pb-2">
+              <div class="col-2">Datetimepicker</div>
+              <div class="col">
                 <kendo-datetimepicker [format]="format" [(value)]="dateTimePickerValue">
                 </kendo-datetimepicker>
-            </p>
+                <p>(use Alt + ↓ to open the calendar, Alt + ← and Alt + →  to change the tabs)</p>
+              </div>
+              <!-- <div class="col">
+                <kendo-datetimepicker [disabled]="true" [format]="format" [(value)]="dateTimePickerValue">
+                </kendo-datetimepicker>
+              </div>
+               <div class="col">
+                <kendo-datetimepicker [readonly]="true" [format]="format" [(value)]="dateTimePickerValue">
+                </kendo-datetimepicker>
+              </div> -->
+            </div>
+            <div class="row pb-2">
+              <div class="col-2">Date range</div>
+              <div class="col">
+                 <kendo-daterange>
+                    <label>
+                        <span class="label">Start</span>
+                        <kendo-dateinput kendoDateRangeStartInput [(value)]="range.start"></kendo-dateinput>
+                    </label>
+                    <label>
+                        <span class="label">End</span>
+                        <kendo-dateinput kendoDateRangeEndInput [(value)]="range.end"></kendo-dateinput>
+                    </label>
+                  </kendo-daterange>
+              </div>
+            </div>
+            <div class="row pb-2">
+              <div class="col-2">Time picker</div>
+              <div class="col">
+                  <kendo-timepicker [(value)]="timePickerValue"></kendo-timepicker>
+                  <p>(use Alt+↓ to open the time list, Tab to move to the next time section in the popup, ↑ to increment and ↓ to decrement the val)</p>
+              </div>
+              <!-- <div class="col">
+                  <kendo-timepicker [disabled]="true" [(value)]="timePickerValue"></kendo-timepicker>
+              </div>
+              <div class="col">
+                  <kendo-timepicker [readonly]="true" [(value)]="timePickerValue"></kendo-timepicker>
+              </div> -->
+            </div>
         </div>
     </div>
-
     <div class="row p-2">
       <div class="col-md-2">Dialog</div>        
         <div class="col-md-10">
