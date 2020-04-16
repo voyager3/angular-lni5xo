@@ -40,7 +40,7 @@ body {
 }
 
 .k-outline:hover {
-  border-color: $dark-grey !important;
+  border-color: $brand-grey !important;
   background-color: $brand-grey !important;
   color: white !important;
 }
@@ -344,12 +344,13 @@ form .k-button  .k-button {
 
 .k-button.k-button-delete {
   background-color: $danger;
+  border-color: $danger;
   color: $white;
 }
 
 .k-button.k-button-delete:hover {
-  background-color: $danger;
   background-color: $bright-red;
+  border-color: $bright-red;
 }
 
 .k-pager-sizes.k-label {
@@ -468,4 +469,10 @@ kendo-dialog-titlebar.close-none {
 
 .bar-info {
   background-color: $primary-blue;
+}
+
+.label {
+  font-size: .9em;
+  font-weight: 600;
+  margin: .5rem;
 }
