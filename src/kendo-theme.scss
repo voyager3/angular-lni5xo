@@ -184,25 +184,66 @@ body {
 
 // START PAGINATION STYLES
 
-.k-pager-numbers li {
+.k-grid,
+.k-grid-aria-root {
+  border-radius: $border-radius !important;
+  border-color: $light-grey;
+}
+
+.k-grid tbody tr:hover {
+  background-color: $pale-blue !important;
+}
+
+.k-pager-wrap,
+.k-grid-pager {
+  border-radius: 0 0 $border-radius $border-radius !important;
+  background-color: $bg-grey;
+}
+
+.k-grid-header {
+  background-color: $bg-grey;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  font-weight: 600;
+}
+
+.k-grid-header:hover {
+  background-color: $bg-grey !important;
+}
+
+.k-pager-nav.k-link,
+.k-pager-numbers .k-link {
   border-color: transparent !important;
+  background-color: transparent;
+  border-radius: 2rem;
+  font-size: .9rem;
+  margin: .2rem;
+  min-width: calc( 1.25em + .5rem + 4px);
+  height: calc( 1.25em + .5rem + 4px);
+}
+
+.k-pager-numbers .k-link:hover {
+  background-color: $light-grey;
+  color: $dark-grey;
+  border-radius: 2rem;
 }
 
 .k-pager-numbers .k-link.k-state-selected {
-
+  background-color: $primary-blue;
+  //font-weight: 700;
 }
 
 .k-pager-numbers .k-link.k-state-selected:hover {
-
+  color: white;
 }
 
-.k-pager-wrap .k-link, 
-.k-pager-wrap .k-pager-nav {
-
+.k-pager-sizes.k-label {
+  font-size: .9rem;
 }
 
-.k-pager-numbers li .k-link.k-state-selected {
-
+.k-pager-sizes>select {
+  text-align:right;
+  border-color: $light-grey;
+  padding: 1rem;
 }
 
 .k-pager-numbers li a.k-link {
