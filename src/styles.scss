@@ -62,7 +62,7 @@ header + #container {
   padding-top: 3.875rem;
 }
 
-// menu css start
+/* MENU CSS START */
 
 .sidenav {
   height: 100%;
@@ -167,7 +167,7 @@ side-menu-item.open {
   font-size: 1.95em;
 }
 
-// menu css end
+/* MENU CSS END */
 
 .navbar-light .navbar-brand {
   color: $versant-color;
@@ -180,7 +180,7 @@ side-menu-item.open {
 }
 
 .validation-alert {
-  color: $versant-color;
+  color: $red;
   padding: 0.125rem 0rem;
 }
 
@@ -193,7 +193,7 @@ a {
 }
 
 
-// GROUPED BUTTONS
+/* GROUPED BUTTONS */
 
 .grouped-buttons-left-align .k-button {
   margin-top: 1.5rem;
@@ -222,5 +222,31 @@ a {
     background-color: #480000 !important;
 }
 
+/* TYPOGRAPHY */
+.large-body {
+  font-size: 1.2rem;
+}
 
+h1 {
+  font-weight: 600;
+}
+h2 {
+  font-weight: 600;
+}
+h3 {
+  font-weight: 600;
+}
+h4 {
+  font-weight: 600;
+}
+h5 {
+  font-weight: 600;
+}
+h6 {
+  font-weight: 600;
+}
+
+.h-special {
+  font-weight: 200;
+}
 

@@ -250,6 +250,10 @@ body {
   color: $main-text-color;
 }
 
+.k-pager-nav.k-link .k-icon {
+  color: $primary-blue;
+}
+
 .k-calendar .k-footer .k-nav-today, 
 .k-calendar .k-calendar-header .k-today {
   color: $primary-blue;

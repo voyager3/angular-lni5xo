@@ -10,6 +10,39 @@
             <li>Override the component styles in kendo-theme.scss if needed.</li>
         </ol>
     </div>
+    <h2>Typography</h2>
+    <div class="row p-2">
+      <div class="col-md-2">Header text</div>
+      <div class="col-md-5">
+        <h1>H1 Style</h1>
+        <h2>H2 Style</h2>
+        <h3>H3 Style</h3>
+        <h4>H4 Style</h4>
+        <h5>H5 Style</h5>
+        <h6>H6 Style</h6>
+      </div>
+      <div class="col-md-5">
+        <h1 class="h-special">H1 Special</h1>
+        <h2 class="h-special">H2 Special</h2>
+        <h3 class="h-special">H3 Special</h3>
+        <h4 class="h-special">H4 Special</h4>
+      </div>
+    </div>
+    <div class="row p-2">
+      <div class="col-md-2">Body text</div>
+      <div class="col-md-10">
+        <p class="large-body">
+          Large body text | Nunc convallis risus vitae ligula vehicula, ac dapibus neque dictum. Sed urna augue, porttitor vitae finibus non, efficitur non odio. Proin felis leo, gravida sit amet hendrerit ut, elementum in mi.
+        </p>
+        <p>
+          Standard body text | Nunc convallis risus vitae ligula vehicula, ac dapibus neque dictum. Sed urna augue, porttitor vitae finibus non, efficitur non odio. Proin felis leo, gravida sit amet hendrerit ut, elementum in mi. 
+        </p>
+        <p class="small">
+          Small body text | Nunc convallis risus vitae ligula vehicula, ac dapibus neque dictum. Sed urna augue, porttitor vitae finibus non, efficitur non odio. Proin felis leo, gravida sit amet hendrerit ut, elementum in mi. 
+        </p>
+      </div>
+    </div>
+
     <h2>Kendo UI Angular components</h2>
     <div class="row p-2">
         <div class="col-md-2">Buttons</div>
@@ -330,7 +363,7 @@
                                 <div *ngIf="dialogLoader" appLoader [opaque]="true"></div>
                             </form>
                             <kendo-dialog-actions layout="normal">
-                                <button kendoButton (click)="action('cancel')">Cancel</button>
+                                <button kendoButton (click)="action('cancel')" look="outline">Cancel</button>
                                 <button kendoButton [primary]="true" (click)="action('save')" [disabled]="!dialogForm.valid">Save</button>
                             </kendo-dialog-actions>
                         </kendo-dialog>
@@ -369,7 +402,7 @@
                     </div>
     
                     <div class="text-right grouped-buttons-right-align">
-                        <button kendoButton>Cancel</button>
+                        <button kendoButton look="outline">Cancel</button>
                         <button kendoButton (click)="onFormSubmit()" primary="true"
                             [disabled]="!loaderForm.valid">Save</button>
                     </div>
@@ -438,7 +471,7 @@
                         <form #myForm="ngForm">
     
                             <div class="form-group">
-                                <label [for]="textInput">Input</label>
+                                <label [for]="textInput">Input*</label>
                                 <input type="text" #textInput #textInputModel="ngModel" class="k-textbox form-control" name="form-textbox" minlength="10" maxlength="20"
                                     [(ngModel)]="formModel.textbox" required />
                                 <form-error [model]="textInputModel" inputLabel="Input">
@@ -446,7 +479,7 @@
                             </div>
     
                             <div class="form-group">
-                                <label [for]="numericTextBox">NumericTextBox</label>
+                                <label [for]="numericTextBox">NumericTextBox*</label>
                                 <kendo-numerictextbox #numericTextBox #numericTextBoxModel="ngModel" class="form-control" [(ngModel)]="formModel.numeric"
                                     [min]="0" [max]="100" name="form-numeric" required>
                                 </kendo-numerictextbox>
@@ -455,7 +488,7 @@
                             </div>
     
                             <div class="form-group">
-                                <label [for]="dropDownList">DropDownList</label>
+                                <label [for]="dropDownList">DropDownList*</label>
                                 <kendo-dropdownlist #dropDownList #dropDownListModel="ngModel" class="form-control" [data]="listItems" name="form-ddl"
                                     [(ngModel)]="formModel.ddl" required>
                                 </kendo-dropdownlist>
@@ -464,7 +497,7 @@
                             </div>
     
                             <div class="form-group">
-                                <label [for]="comboBox">ComboBox</label>
+                                <label [for]="comboBox">ComboBox*</label>
                                 <kendo-combobox #comboBox #comboBoxModel="ngModel" class="form-control" [data]="listItems" name="form-combobox"
                                     [(ngModel)]="formModel.combobox" required>
                                 </kendo-combobox>
@@ -473,7 +506,7 @@
                             </div>
     
                             <div class="form-group">
-                                <label [for]="multiSelect">MultiSelect</label>
+                                <label [for]="multiSelect">MultiSelect*</label>
                                 <kendo-multiselect #multiSelect #multiSelectModel="ngModel" class="form-control" name="form-multiselect"
                                     [data]="listItems" [(ngModel)]="formModel.multiselect" required>
                                 </kendo-multiselect>
@@ -482,7 +515,7 @@
                             </div>
     
                             <div class="form-group">
-                                <label [for]="switch">Switch</label>
+                                <label [for]="switch">Switch*</label>
                                 <div class="input-group">
                                     <kendo-switch #switch #switchModel="ngModel" onLabel="Active" offLabel="Inactive" name="switch"
                                         [(ngModel)]="formModel.switch" required>
@@ -493,7 +526,7 @@
                             </div>
     
                             <div class="form-group">
-                                <label [for]="slider">Slider</label>
+                                <label [for]="slider">Slider*</label>
                                 <div class="input-group">
                                     <kendo-slider #slider #sliderModel="ngModel" name="slider" tickPlacement="none"  [min]="0" [max]="10" [smallStep]="1"
                                         [(ngModel)]="inputForm.slider"required></kendo-slider>
@@ -503,7 +536,7 @@
                             </div>
     
                             <div class="form-group">
-                                <label [for]="colorPicker">ColorPicker</label>
+                                <label [for]="colorPicker">ColorPicker*</label>
                                 <div class="input-group">
                                     <kendo-colorpicker #colorPicker #colorPickerModel="ngModel" view="combo" format="hex"
                                         name="colorPicker" [(ngModel)]="formModel.color" required>
