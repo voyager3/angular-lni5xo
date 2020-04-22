@@ -521,3 +521,60 @@ kendo-dialog-titlebar.close-none {
   font-weight: 600;
   margin: .5rem;
 }
+
+/* DIALOG */
+
+.k-overlay {
+  background-color: $brand-grey;
+}
+
+.k-widget.k-window.k-dialog {
+  border-radius: $border-radius;
+  box-shadow: $far-shadow;
+
+  .k-content,
+  .k-window-titlebar {
+    border: 0;
+  }
+
+  .k-content {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.bar-info {
+  height: 5px;
+  border-radius: $border-radius $border-radius 0 0;
+}
+
+.dialog-title-center {
+  // will delete this after discussing intent
+  font-size: 1.75rem;
+  font-weight: 200;
+  text-align: left;
+
+  .text-container {
+    margin: 2rem 1.75rem 0 1.75rem;
+  }
+}
+
+.text-center {
+  //will delete this after discussing intent
+  text-align: left !important;
+}
+
+.justify-content-center {
+  //will delete this after discussing intent
+  justify-content: flex-end !important;
+}
+
+.k-dialog-buttongroup {
+  text-align: right !important;
+  background-color: $bg-grey;
+  border: 0;
+  padding: 1.75rem;
+
+  .k-button {
+    min-width: 125px !important;
+  }
+}
