@@ -15,8 +15,7 @@ import { CardButtonModel } from '../shared/models/card-button.model';
 
 @Component({
   selector: 'kendo-showcase',
-  templateUrl: './kendo-showcase.component.html',
-  encapsulation: ViewEncapsulation.None
+  templateUrl: './kendo-showcase.component.html'
 })
 export class KendoShowcaseComponent implements OnInit {
  listItems: Array<string> = ['Baseball', 'Basketball', 'Cricket', 'Field Hockey', 'Football', 'Table Tennis', 'Tennis', 'Volleyball'];
