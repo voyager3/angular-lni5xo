@@ -643,7 +643,7 @@
                                 </div>
                                 <div *ngIf="dialogLoader" appLoader [opaque]="true"></div>
                             </form>
-                            <kendo-dialog-actions layout="normal">
+                            <kendo-dialog-actions layout="normal" class=:>
                                 <button kendoButton (click)="action('cancel')" look="outline">Cancel</button>
                                 <button kendoButton [primary]="true" (click)="action('save')" [disabled]="!dialogForm.valid">Save</button>
                             </kendo-dialog-actions>

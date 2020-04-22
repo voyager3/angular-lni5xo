@@ -578,3 +578,9 @@ kendo-dialog-titlebar.close-none {
     min-width: 125px !important;
   }
 }
+
+.k-grid-header .k-header[aria-sort="ascending"],
+.k-grid-header .k-header[aria-sort="descending"] {
+  border-bottom-color: $primary-blue;
+  border-bottom-width: 0.125rem;
+}
