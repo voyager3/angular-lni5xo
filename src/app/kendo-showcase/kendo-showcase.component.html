@@ -334,6 +334,287 @@
         </div>
     </div>
     <div class="row p-2">
+      <div class="col-md-2">Layout</div>        
+      <div class="col-md-10">
+        <div class="row pb-2">
+          <div class="col-2">Drawer</div>
+          <div class="col-10">
+            <div class="custom-toolbar">
+              <button
+                  kendoButton
+                  icon="menu"
+                  look="flat"
+                  (click)="drawer.toggle()"
+              ></button>
+              <span class="mail-box">Mail Box</span>
+              </div>
+              <kendo-drawer-container style="position: relative;">
+                <kendo-drawer #drawer
+                    [items]="drawerItems"
+                    [mode]="'push'"
+                    [mini]="true"
+                    [expanded]="true"
+                    (select)="drawerOnSelect($event)">
+                </kendo-drawer>
+
+                  <kendo-drawer-content>
+                    <div id="Inbox" *ngIf="drawerSelected === 'Inbox'">
+                      <ul class="inboxList">
+                          <li>
+                              <h6>Monday meeting</h6>
+                              <p>Hi Tom, Since Monday I'll be out of office, I'm rescheduling the meeting for Tuesday.</p>
+                          </li>
+                          <li>
+                              <h6>I'm sorry, Tom</h6>
+                              <p>Hi Tom, my aunt comes for a visit this Saturday, so I can't come back to St. Pete...</p>
+                          </li>
+                      </ul>
+                    </div>
+                    <div id="Notifications" *ngIf="drawerSelected === 'Notifications'">
+                      <ul>
+                          <li>Monday meeting</li>
+                          <li>Regarding org chart changes</li>
+                          <li>Meeting with Cliff</li>
+                          <li>Global Marketing Meeting</li>
+                          <li>Out tonight with collegues?</li>
+                      </ul>
+                    </div>
+                    <div id="Calendar" *ngIf="drawerSelected === 'Calendar'">
+                      <ul>
+                          <li>
+                              <h6>11/5 Monday</h6>
+                              <p>Martha Birthday</p>
+                          </li>
+                          <li>
+                              <h6>15/6 Sunday</h6>
+                              <p>Job interview for internal position</p>
+                          </li>
+                      </ul>
+                    </div>
+                    <div id="Attachments" *ngIf="drawerSelected === 'Attachments'">
+                      <ul>
+                          <li>Build enterprise apps</li>
+                          <li>Fw: Regarding Multiline textbox</li>
+                          <li>Away next week</li>
+                          <li>Fw: Your Costume is ready</li>
+                          <li>Update completed</li>
+                      </ul>
+                    </div>
+                    <div id="Favourites" *ngIf="drawerSelected === 'Favourites'">
+                      <ul>
+                          <li>70% Discount!</li>
+                          <li>90% Discount!</li>
+                          <li>One time offer!</li>
+                      </ul>
+                    </div>
+                  </kendo-drawer-content>
+              </kendo-drawer-container>
+          </div>
+        </div>
+        <div class="row pb-2">
+          <div class="col-2">Avatar</div>
+          <div class="col-10">        
+            <div class="list">
+              <div class="contact-list">Contacts</div>
+                <div class="contact" *ngFor="let contact of contactInitials">
+                    <div class="k-hbox">
+                        <kendo-avatar [shape]="'circle'" [initials]="contact.avatar"></kendo-avatar>
+                        <div>
+                            <h2>{{ contact.name }}</h2>
+                            <p>{{ contact.position }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact" *ngFor="let contact of contactImages">
+                    <div class="k-hbox">
+                        <kendo-avatar [shape]="'circle'" [imageSrc]="contact.avatar"></kendo-avatar>
+                        <div>
+                            <h2>{{ contact.name }}</h2>
+                            <p>{{ contact.position }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="k-hbox">
+                        <kendo-avatar [shape]="'circle'" [icon]="'user'"> </kendo-avatar>
+                        <div class="mate-info">
+                            <h2>Unknown</h2>
+                            <p>Not specified</p>
+                        </div>
+                    <div class="k-hbox"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pb-2">
+          <div class="col-2">Card</div>
+          <div class="col-10">
+            <div class="demo">
+              <kendo-card>
+                  <img kendoCardMedia src="https://www.telerik.com/kendo-angular-ui-develop/components/layout/card/assets/waffles.jpg" />
+                  <kendo-card-body>
+                      <h4>Pumpkin Waffles</h4>
+                      <div *ngIf="cardExpanded">
+                          <hr kendoCardSeparator />
+                          <div class="recipe-wrap">
+                              Mix together flour, baking powder, salt, cinnamon, nutmeg, ginger, and cloves in a large bowl.
+                              In a second bowl, add egg yolks, sugar, pumpkin, milk, and oil;
+                              Whip the egg until stiff peaks form.
+                              Gently fold in the flour mixture followed by the whipped egg whites.
+                              Cook according to your waffle iron directions. Serve with butter and maple syrup.
+                          </div>
+                      </div>
+                  </kendo-card-body>
+                  <hr kendoCardSeparator *ngIf="horizontalStretched" />
+                  <kendo-card-actions [orientation]="cardActionsOrientation" [layout]="cardActionsLayout">
+                      <button class="k-button k-flat" (click)="toggleLike()">
+                          <span [ngClass]="heartIcon()"></span>
+                          Like
+                      </button>
+                      <hr kendoCardSeparator [orientation]="'vertical'" *ngIf="horizontalStretched" />
+                      <button class="k-button k-primary k-flat" (click)="toggleRecipe()">
+                          <span class="k-icon k-i-more-vertical"></span>
+                          {{ cardBtnText }}
+                      </button>
+                  </kendo-card-actions>
+              </kendo-card>
+
+              <div class="example-config">
+                  <div>Actions Orientation</div>
+                  <label class="k-radio-label" for="horizontal">
+                      <input class="k-radio" type="radio" id="horizontal" value="horizontal" name="actionsOrientation" [(ngModel)]="cardActionsOrientation" />
+                      Horizontal
+                  </label>
+
+                  <label class="k-radio-label" for="vertical">
+                      <input class="k-radio" type="radio" id="vertical" value="vertical" name="actionsOrientation" [(ngModel)]="cardActionsOrientation" />
+                      Vertical
+                  </label>
+                  <hr />
+
+                  <div>Actions Layout</div>
+                  <label class="k-radio-label" for="start">
+                      <input class="k-radio" type="radio" id="start" value="start" name="actionsLayout" [(ngModel)]="cardActionsLayout" />
+                      Start
+                  </label>
+
+                  <label class="k-radio-label" for="end">
+                      <input class="k-radio" type="radio" id="end" value="end" name="actionsLayout" [(ngModel)]="cardActionsLayout" />
+                      End
+                  </label>
+
+                  <label class="k-radio-label" for="stretched">
+                      <input class="k-radio" type="radio" id="stretched" value="stretched" name="actionsLayout" [(ngModel)]="cardActionsLayout" />
+                      Stretched
+                  </label>
+
+                  <label class="k-radio-label" for="center">
+                      <input class="k-radio" type="radio" id="center" value="center" name="actionsLayout" [(ngModel)]="cardActionsLayout" />
+                      Center
+                  </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pb-2">
+          <div class="col-2">Panelbar</div>
+          <div class="col-10">
+             <kendo-panelbar [items]="panelBarItems">
+                <ng-template kendoPanelBarItemTemplate let-dataItem>
+                    <div class="custom-template">
+                        <h4>Custom template: </h4>
+                        <p>{{dataItem.content}}</p>
+                    </div>
+                </ng-template>
+              </kendo-panelbar>
+          </div>
+        </div>
+        <div class="row pb-2">
+          <div class="col-2">Spliter</div>
+          <div class="col-10">
+            <kendo-splitter orientation="vertical" style="height: 340px;">
+              <kendo-splitter-pane>
+                <kendo-splitter>
+
+                  <kendo-splitter-pane [collapsible]="true" size="30%">
+                    <div class="pane-content">
+                      <h3>Inner splitter / left pane</h3>
+                      <p>Resizable and collapsible.</p>
+                    </div>
+                  </kendo-splitter-pane>
+
+                  <kendo-splitter-pane>
+                    <div class="pane-content">
+                      <h3>Inner splitter / center pane</h3>
+                      <p>Resizable only.</p>
+                    </div>
+                  </kendo-splitter-pane>
+
+                  <kendo-splitter-pane [collapsible]="true" size="30%">
+                    <div class="pane-content">
+                      <h3>Inner splitter / right pane</h3>
+                      <p>Resizable and collapsible.</p>
+                    </div>
+                  </kendo-splitter-pane>
+
+                </kendo-splitter>
+              </kendo-splitter-pane>
+
+              <kendo-splitter-pane size="100px">
+                <div class="pane-content">
+                  <h3>Outer splitter / Middle pane</h3>
+                  <p>Resizable only.</p>
+                </div>
+              </kendo-splitter-pane>
+
+              <kendo-splitter-pane [resizable]="false" size="100px">
+                <div class="pane-content">
+                  <h3>Outer splitter / Bottom pane</h3>
+                  <p>Non-resizable and non-collapsible.</p>
+                </div>
+              </kendo-splitter-pane>
+            </kendo-splitter>
+          </div>
+        </div>
+        <div class="row pb-2">
+          <div class="col-2">TabStrip</div>
+          <div class="col-10">
+            <kendo-tabstrip (tabSelect)="onTabSelect($event)">
+              <kendo-tabstrip-tab [title]="'Paris'" [selected]="true">
+                <ng-template kendoTabContent>
+                  <p>
+                  Paris is the capital and most populous city of France. It has an area of 105 square kilometres (41 square miles) and a population in 2013 of 2,229,621 within its administrative limits. The city is both a commune and department, and forms the centre and headquarters of the Île-de-France, or Paris Region, which has an area of 12,012 square kilometres (4,638 square miles) and a population in 2014 of 12,005,077, comprising 18.2 percent of the population of France.
+                  </p>
+                </ng-template>
+              </kendo-tabstrip-tab>
+              <kendo-tabstrip-tab [title]="'New York City'">
+                <ng-template kendoTabContent>
+                  <p>
+                    The City of New York, often called New York City or simply New York, is the most populous city in the United States. With an estimated 2015 population of 8,550,405 distributed over a land area of just 305 square miles (790 km2), New York City is also the most densely populated major city in the United States. Located at the southern tip of the state of New York, the city is the center of the New York metropolitan area, one of the most populous urban agglomerations in the world.
+                  </p>
+                  <p>
+                    A global power city, New York City exerts a significant impact upon commerce, finance, media, art, fashion, research, technology, education, and entertainment, its fast pace defining the term New York minute. Home to the headquarters of the United Nations, New York is an important center for international diplomacy and has been described as the cultural and financial capital of the world.
+                  </p>
+                </ng-template>
+              </kendo-tabstrip-tab>
+              <kendo-tabstrip-tab [title]="'Tallinn'">
+                <ng-template kendoTabContent>
+                  <p>
+                    Tallinn is the capital and largest city of Estonia. It is situated on the northern coast of the country, on the shore of the Gulf of Finland, 80 km (50 mi) south of Helsinki, east of Stockholm and west of Saint Petersburg. From the 13th century until 1918 (and briefly during the Nazi occupation of Estonia from 1941 to 1944), the city was known as Reval. Tallinn occupies an area of 159.2 km2 (61.5 sq mi) and has a population of 443,894. Approximately 32% of Estonia's total population lives in Tallinn.
+                  </p>
+                  <p>
+                    Tallinn was founded in 1248, but the earliest human settlements are over 5,000 years old, making it one of the oldest capital cities of Northern Europe. Due to its strategic location, the city became a major trade hub, especially from the 14th to the 16th century, when it grew in importance as part of the Hanseatic League.
+                  </p>
+                </ng-template>
+              </kendo-tabstrip-tab>
+              <kendo-tabstrip-tab [title]="'Sydney'" [disabled]="true"></kendo-tabstrip-tab>
+            </kendo-tabstrip>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row p-2">
       <div class="col-md-2">Dialog</div>        
         <div class="col-md-10">
             <div class="pb-2">
@@ -438,28 +719,6 @@
                     </kendo-grid-column>
                 </kendo-grid>
             </p>
-        </div>
-    </div>
-    <div class="row p-2">
-        <div class="col-md-2">Tabs</div>
-        <div class="col-md-10">
-            <kendo-tabstrip>
-                <kendo-tabstrip-tab title="Tab 1" [selected]="true">
-                    <ng-template kendoTabContent>
-                        <p>Tab 1 Content</p>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-                <kendo-tabstrip-tab title="Tab 2 (disabled)" [disabled]="true">
-                    <ng-template kendoTabContent>
-                        <p>Tab 2 Content</p>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-                <kendo-tabstrip-tab title="Tab 3">
-                    <ng-template kendoTabContent>
-                        <p>Tab 3 Content</p>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-            </kendo-tabstrip>
         </div>
     </div>
     <div class="row p-2">

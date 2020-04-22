@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { PagerSettings, PageChangeEvent, GridDataResult, SortSettings } from '@progress/kendo-angular-grid';
 import { SortDescriptor, orderBy, filterBy, CompositeFilterDescriptor } from '@progress/kendo-data-query';
 import {
   DialogRef,
   DialogCloseResult,
   DialogResult} from '@progress/kendo-angular-dialog';
+import { Orientation, ActionsLayout, PanelBarItemModel, DrawerItem, DrawerSelectEvent } from '@progress/kendo-angular-layout';
 import { ChipRemoveEvent } from '@progress/kendo-angular-buttons';
 import * as KendoAngularDialog from '@progress/kendo-angular-dialog';
 import { DialogSize } from '../shared/enums/dialog-size';
@@ -14,7 +15,8 @@ import { CardButtonModel } from '../shared/models/card-button.model';
 
 @Component({
   selector: 'kendo-showcase',
-  templateUrl: './kendo-showcase.component.html'
+  templateUrl: './kendo-showcase.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class KendoShowcaseComponent implements OnInit {
  listItems: Array<string> = ['Baseball', 'Basketball', 'Cricket', 'Field Hockey', 'Football', 'Table Tennis', 'Tennis', 'Volleyball'];
@@ -99,6 +101,71 @@ export class KendoShowcaseComponent implements OnInit {
 
   /* MULTISELECT */
   valueMs: any = ['Baseball']
+
+  /* LAYOUT AVATAR */
+  public firstContactImage = 'https://demos.telerik.com/kendo-ui/content/web/Customers/RICSU.jpg';
+  public secondContactImage = 'https://demos.telerik.com/kendo-ui/content/web/Customers/GOURL.jpg';
+
+  public contactImages: Array<any> = [
+      { avatar: this.firstContactImage, name: 'Michael Holz', position: 'Manager' },
+      { avatar: this.secondContactImage, name: 'André Stewart', position: 'Product Manager' }
+  ];
+
+  public contactInitials: Array<any> = [
+      { avatar: 'JS', name: 'Jason Smith', position: 'UX Designer' },
+      { avatar: 'GP', name: 'George Porter', position: 'Software Engineer' }
+  ];
+
+  /* LAYOUT CARD */
+  public cardExpanded = false;
+  public cardLiked = false;
+  public cardBtnText = 'More';
+
+  public cardActionsOrientation: Orientation = 'horizontal';
+  public cardActionsLayout: ActionsLayout = 'end';
+
+  public get horizontalStretched(): boolean {
+      return this.cardActionsOrientation === 'horizontal' && this.cardActionsLayout === 'stretched';
+  }
+
+  public toggleRecipe(): void {
+      this.cardExpanded = !this.cardExpanded;
+      this.cardBtnText = this.cardExpanded ? 'Less' : 'More';
+  }
+
+  public toggleLike(): void {
+      this.cardLiked = !this.cardLiked;
+  }
+
+  public heartIcon(): string {
+      return this.cardLiked ? 'k-icon k-i-heart' : 'k-icon k-i-heart-outline';
+  }
+
+  /* LAYOUT PANELBAR */
+  private panelBarItems: Array<PanelBarItemModel> = [
+      <PanelBarItemModel> {title: "First item", content: "First item content", expanded: true },
+      <PanelBarItemModel> {title: "Second item", children: [
+              <PanelBarItemModel> {title: "Child item" }
+          ]
+      }
+  ];
+
+  /* LAYOUT DRAWER */
+  public drawerSelected = 'Inbox';
+
+  public drawerItems: Array<DrawerItem> = [
+      { text: 'Inbox', icon: 'k-i-inbox', selected: true },
+      { separator: true },
+      { text: 'Notifications', icon: 'k-i-bell' },
+      { text: 'Calendar', icon: 'k-i-calendar' },
+      { separator: true },
+      { text: 'Attachments', icon: 'k-i-hyperlink-email' },
+      { text: 'Favourites', icon: 'k-i-star-outline' }
+  ];
+
+  public drawerOnSelect(ev: DrawerSelectEvent): void {
+      this.drawerSelected = ev.item.text;
+  }
 
   /* GRID */
   gridView: GridDataResult;
