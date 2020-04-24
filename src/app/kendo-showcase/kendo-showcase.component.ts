@@ -233,6 +233,15 @@ export class KendoShowcaseComponent implements OnInit {
 
   constructor(private dialogService: KendoAngularDialog.DialogService, private kendoDialogService: DialogService) {
     this.data = this.source.slice();
+    this.products = Array(100).fill({}).map((x, idx) => ({
+      'type': this.cardBtnModel[idx % 3],
+      'ProductID': idx,
+      'ProductName': 'Product' + idx.toString(),
+      'Discontinued': idx % 2 === 0,
+      'Category': {CategoryName: 'category' + idx % 3},
+      'UnitsInStock': idx % 2,
+      'UnitPrice': idx % 2 * 4
+    }));
     this.productsSource = cloneDeep(this.products);
     this.loadProducts();
   }
