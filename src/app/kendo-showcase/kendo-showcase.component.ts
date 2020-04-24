@@ -12,6 +12,7 @@ import { DialogSize } from '../shared/enums/dialog-size';
 import { DialogService } from '../shared/services/abstracts/dialog.service';
 import { DialogResultModel } from '../shared/models/dialog/dialog-result-model';
 import { CardButtonModel } from '../shared/models/card-button.model';
+import { cloneDeep } from 'lodash';
 
 @Component({
   selector: 'kendo-showcase',
@@ -193,6 +194,7 @@ export class KendoShowcaseComponent implements OnInit {
     field: 'ProductName',
     dir: 'asc'
   }];
+  productsSource: any[];
 
   /* DIALOG */
 
@@ -231,6 +233,7 @@ export class KendoShowcaseComponent implements OnInit {
 
   constructor(private dialogService: KendoAngularDialog.DialogService, private kendoDialogService: DialogService) {
     this.data = this.source.slice();
+    this.productsSource = cloneDeep(this.products);
     this.loadProducts();
   }
 
@@ -377,9 +380,9 @@ export class KendoShowcaseComponent implements OnInit {
     .subscribe((x: DialogResultModel) => {console.log(x);});
   }
 
-  /* CARD BUTTOn FILTER */
+  /* CARD BUTTON FILTER */
   onButtonFilterChange(filter: CompositeFilterDescriptor): void {
-    // this.products = filterBy(this.productsSource, filter);
-    // this.loadProducts();
+    this.products = filterBy(this.productsSource, filter);
+    this.loadProducts();
   }
 }

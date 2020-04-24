@@ -1,5 +1,5 @@
 <div class="white-container">
-    <h1>Voyager 3 Showcase</h1><span class="icon-debriefing"></span>
+    <h1>Voyager 3 Showcase</h1>
     <div>To use specific Kendo UI For Angular component you should:
         <ol>
             <li>Add the package in npm: <code>ng add @progress/kendo-angular-inputs</code></li>
@@ -1197,12 +1197,46 @@
 
     <div class="row p-2">
       <div class="col-2">Button Filter</div>
-      <div class="col-6">
-          <card-button-filter 
+      <div class="col-6 pb-2">
+           <card-button-filter 
               column="type.text"
               [cardButtons]="cardBtnModel" 
               (onFilterChange)="onButtonFilterChange($event)">
           </card-button-filter>
+      </div>
+      <div class="col-12 pb-2">
+        <kendo-custom-search 
+            [searchableColumns]="['ProductName', 'UnitPrice']"
+            (onFilterChange)="onCustomFilterChange($event)">
+        </kendo-custom-search>
+      </div>
+      <div class="col-md-10 offset-md-2">
+        <kendo-grid [data]="gridView" [pageable]="pageSettings" [pageSize]="pageSize" [skip]="skip" [loading]="loader"
+            (pageChange)="pageChange($event)" [sortable]="sortSettings" [sort]="sort"
+            (sortChange)="sortChange($event)" scrollable="none">
+            <kendo-grid-column field="Type" title="Type" width="120">
+                <ng-template kendoGridCellTemplate let-dataItem>
+                    <card-button [allowSelection]="false" [model]="dataItem.type"></card-button>
+                </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="ProductID" title="ID" width="40">
+            </kendo-grid-column>
+            <kendo-grid-column field="ProductName" title="Name" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="Category.CategoryName" title="Category">
+            </kendo-grid-column>
+            <kendo-grid-column field="UnitPrice" title="Price" width="80">
+            </kendo-grid-column>
+            <kendo-grid-column field="UnitsInStock" title="In stock" width="80">
+            </kendo-grid-column>
+            <kendo-grid-column field="Discontinued" title="Discontinued" width="120">
+                <ng-template kendoGridCellTemplate let-dataItem>
+                    <input type="checkbox" id="grid-cb" class="k-checkbox" [(ngModel)]="dataItem.Discontinued" disabled
+                        name="input-required" />
+                    <label class="k-checkbox-label" for="grid-cb"></label>
+                </ng-template>
+            </kendo-grid-column>
+        </kendo-grid>
       </div>
     </div>
 </div>
