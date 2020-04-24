@@ -2,6 +2,8 @@
 
 @import '~bootstrap/scss/bootstrap.scss';
 
+@import url('https://amy-icomoon.s3.amazonaws.com/style.css');
+
 body {
   font-family: $font-family;
 }
@@ -584,3 +586,8 @@ kendo-dialog-titlebar.close-none {
   border-bottom-color: $primary-blue;
   border-bottom-width: 0.125rem;
 }
+
+// .k-widget.k-split-button .k-button .k-icon.k-i-arrow-s::before {
+//   font-family: icomoon;
+//   content: "\e61e";
+// }
