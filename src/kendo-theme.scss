@@ -151,7 +151,11 @@ body {
 .k-slider .k-draghandle,
 .k-button-group .k-state-active {
   background-color: $primary-blue !important;
-  border-color: $primary-blue;
+  border-color: $primary-blue !important;
+}
+
+.k-content[_ngcontent-pfu-c0] {
+  box-shadow: $close-shadow;
 }
 
 .k-list .k-item {
@@ -163,7 +167,7 @@ body {
 }
 
 .k-split-button .k-button:last-child {
-  padding: .75rem .375rem !important;
+  padding: .75rem .5rem !important;
   height: 100%;
 }
 
@@ -183,6 +187,85 @@ body {
   border-color: $bright-blue !important;
   color: white !important;
 }
+
+// .k-combobox .k-dropdown-wrap .k-select,
+// .k-widget.k-split-button .k-button,
+// .k-dropdown .k-dropdown-wrap .k-select {
+//   .k-icon.k-i-arrow-s::before {
+//     font-family: icomoon;
+//     font-weight: 700;
+//     font-size: 0.8rem;
+//     content: "\e63c";
+//   }
+// }
+
+.k-slider .k-button {
+  background-color: $pale-blue;
+  border-color: $pale-blue;
+}
+.k-slider .k-button:hover {
+  background-color: $bright-blue;
+  border-color: $primary-blue;
+  color: white;
+}
+
+// ICONS ICONS ICONS
+
+.k-icon.k-i-arrow-w::before {
+  font-family: icomoon;
+  // font-size: 1rem;
+  content: "\e600";
+  font-weight: 700;
+}
+.k-icon.k-i-arrow-e::before {
+  font-family: icomoon;
+  // font-size: 1rem;
+  content: "\e601";
+  font-weight: 700;
+}
+
+.k-pager-nav.k-link .k-icon.k-i-arrow-w::before {
+  font-family: "WebComponentsIcons";
+  content: "\e007";
+}
+.k-pager-nav.k-link .k-icon.k-i-arrow-e::before {
+  font-family: "WebComponentsIcons";
+  content: "\e005";
+}
+
+.k-i-arrow-s::before {
+  font-family: icomoon;
+  content: "\e63c";
+  // font-size: .9rem;
+  font-weight: 700;
+}
+.k-i-arrow-n::before {
+  font-family: icomoon;
+  content: "\e64c";
+  // font-size: .9rem;
+  font-weight: 700;
+}
+
+.k-icon.k-i-cog {
+  font-size: 1.3rem;
+}
+.k-icon.k-i-cog::before {
+  font-family: icomoon;
+  content: "\e612";
+}
+
+.k-icon.k-i-close-circle::before {
+  font-family: icomoon;
+  content: "\e605";
+  font-weight: 700;
+}
+
+// .k-multiselect .k-multiselect-wrap .k-i-close::before {  
+//   content: "\e605"; 
+//   font-family: icomoon;
+//   font-weight: 700;
+//   font-size: 1rem;
+// }
 
 // START PAGINATION STYLES
 
@@ -259,6 +342,18 @@ body {
 .k-calendar .k-footer .k-nav-today, 
 .k-calendar .k-calendar-header .k-today {
   color: $primary-blue;
+}
+
+.k-datepicker .k-picker-wrap .k-select .k-icon.k-i-calendar::before,
+.k-datetimepicker .k-picker-wrap .k-select .k-icon.k-i-calendar::before {
+  font-family: icomoon;
+  // font-weight: 700;
+  font-size: 1.5rem;
+  content: "\e611";
+}
+
+.k-colorpicker .k-picker-wrap .k-select .k-icon {
+  font-size: 1rem;
 }
 
 .k-action-buttons .k-primary {
@@ -455,6 +550,24 @@ kendo-grid[hide-filter-buttons=true] kendo-grid-filter-cell-operators {
   color: $primary;
 }
 
+.k-grid-header .k-header>.k-link>.k-icon.k-i-sort-asc-sm,
+.k-grid-header .k-header>.k-link>.k-icon.k-i-sort-desc-sm {
+  vertical-align: sub;
+  margin-left: calc( 1rem - 1px);
+}
+.k-grid-header .k-header>.k-link>.k-icon.k-i-sort-asc-sm::before {
+  font-family: icomoon;
+  font-weight: 700;
+  font-size: 1.25rem;
+  content: "\e64c";
+}
+.k-grid-header .k-header>.k-link>.k-icon.k-i-sort-desc-sm::before {
+  font-family: icomoon;
+  font-weight: 700;
+  font-size: 1.25rem;
+  content: "\e63c";
+}
+
 // LOADER
 
 .k-i-loading {
@@ -586,8 +699,3 @@ kendo-dialog-titlebar.close-none {
   border-bottom-color: $primary-blue;
   border-bottom-width: 0.125rem;
 }
-
-// .k-widget.k-split-button .k-button .k-icon.k-i-arrow-s::before {
-//   font-family: icomoon;
-//   content: "\e61e";
-// }
