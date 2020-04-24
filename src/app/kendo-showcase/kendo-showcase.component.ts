@@ -5,6 +5,7 @@ import {
   DialogRef,
   DialogCloseResult,
   DialogResult} from '@progress/kendo-angular-dialog';
+import { DragEndEvent } from '@progress/kendo-angular-sortable';
 import { Orientation, ActionsLayout, PanelBarItemModel, DrawerItem, DrawerSelectEvent } from '@progress/kendo-angular-layout';
 import { ChipRemoveEvent } from '@progress/kendo-angular-buttons';
 import * as KendoAngularDialog from '@progress/kendo-angular-dialog';
@@ -16,7 +17,8 @@ import { cloneDeep } from 'lodash';
 
 @Component({
   selector: 'kendo-showcase',
-  templateUrl: './kendo-showcase.component.html'
+  templateUrl: './kendo-showcase.component.html',
+  styleUrls: ['./kendo-showcase.component.scss']
 })
 export class KendoShowcaseComponent implements OnInit {
  listItems: Array<string> = ['Baseball', 'Basketball', 'Cricket', 'Field Hockey', 'Football', 'Table Tennis', 'Tennis', 'Volleyball'];
@@ -165,6 +167,19 @@ export class KendoShowcaseComponent implements OnInit {
 
   public drawerOnSelect(ev: DrawerSelectEvent): void {
       this.drawerSelected = ev.item.text;
+  }
+
+  /* DRAG AND DROP */
+  dragableData: any[] = [
+    {id: 1, name: 'Element 1', order: 1, color: '#e04747'},
+    {id: 2, name: 'Element 2', order: 2, color: '#329943'},
+    {id: 3, name: 'Element 3', order: 3, color: '#5B87DA'},
+    {id: 4, name: 'Element 4', order: 4, color: '#4A4A4A'},
+  ];
+
+  onDragEnd(event: DragEndEvent){
+    this.dragableData.forEach((item, index) => item.order = index + 1);
+    console.log(event)
   }
 
   /* GRID */

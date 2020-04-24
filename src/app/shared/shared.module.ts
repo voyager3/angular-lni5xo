@@ -16,6 +16,7 @@ import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { TooltipModule } from '@progress/kendo-angular-tooltip';
+import { SortableModule } from '@progress/kendo-angular-sortable';
 import { FormsModule } from '@angular/forms';
 
 export const kendoUIModules = [
@@ -28,7 +29,8 @@ export const kendoUIModules = [
   DialogsModule,
   LabelModule,
   LayoutModule,
-  TooltipModule
+  TooltipModule,
+  SortableModule
 ]
 
 @NgModule({
@@ -37,7 +39,7 @@ export const kendoUIModules = [
     FormsModule,
     kendoUIModules
   ],
-  declarations: [  ...components, ...directives,  ...dialogComponents, CardButtonComponent  ],
+  declarations: [  ...components, ...directives,  ...dialogComponents  ],
   exports: [ ...components, ...directives, ...kendoUIModules],
   providers: [    
     { provide: DialogService, useClass: KendoDialogService }

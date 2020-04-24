@@ -658,6 +658,24 @@
     </div>
 
     <div class="row p-2">
+        <div class="col-md-2">Sortable</div>        
+        <div class="col-md-10">
+          <div class="container-fluid">
+              <kendo-sortable
+                  [kendoSortableBinding]="dragableData"
+                  [navigatable]="true"
+                  [animation] = "true"
+                  class="row" 
+                  itemClass="col-3 p-0">
+                <ng-template let-dataItem="item">
+                    <div class="draggable-item" >{{dataItem.name}}</div>
+                </ng-template>
+              </kendo-sortable>
+          </div> 
+        </div>
+    </div>
+
+    <div class="row p-2">
         <div class="col-md-2">Loader</div>
         <div class="col-md-10">
             <div>

@@ -1,0 +1,24 @@
+@import '../../variables.scss';
+
+.draggable-item {
+    background-color: $primary-blue;
+    border: 1px solid #fff;
+    height: 70px;
+    line-height: 68px;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    cursor: move;
+    color: white;
+}
+
+.draggable-item:hover {
+    opacity: 0.8;
+}
+
+.draggable-item.active {
+    background-color: #27aceb;
+    color: #fff;
+    border-color: #27aceb;
+    z-index: 10;
+}
