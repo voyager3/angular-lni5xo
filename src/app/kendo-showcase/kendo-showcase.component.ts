@@ -17,6 +17,7 @@ import { HealthSystemHierarchyModel } from '../shared/models/hierarchies.model';
 import { cloneDeep } from 'lodash';
 import { of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { hsHierarchy, users } from './showcase-test-data';
 
 @Component({
   selector: 'kendo-showcase',
@@ -447,7 +448,7 @@ export class KendoShowcaseComponent implements OnInit {
 
   loadLocationHierarchyAsync(){
     this.subscriptions.push(
-      of(this.hsHierarchy)
+      of(hsHierarchy)
       .pipe(delay(500))
       .subscribe(res => this.hsHierarchy = res)
     );
