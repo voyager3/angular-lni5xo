@@ -13,6 +13,7 @@ import { DialogSize } from '../shared/enums/dialog-size';
 import { DialogService } from '../shared/services/abstracts/dialog.service';
 import { DialogResultModel } from '../shared/models/dialog/dialog-result-model';
 import { CardButtonModel } from '../shared/models/card-button.model';
+import { HealthSystemHierarchyModel } from '../shared/models/hierarchies.model';
 import { cloneDeep } from 'lodash';
 
 @Component({
@@ -408,5 +409,32 @@ export class KendoShowcaseComponent implements OnInit {
   onButtonFilterChange(filter: CompositeFilterDescriptor): void {
     this.products = filterBy(this.productsSource, filter);
     this.loadProducts();
+  }
+
+  /* EXTENDED MULTISELECT*/
+  msListItems: any = [
+    {id:1, name: 'HealthSystem 1'}, 
+    {id:2, name: 'HealthSystem 2'}, 
+    {id:3, name: 'HealthSystem 3'},
+    {id:4, name: 'HealthSystem 4'}, 
+    {id:5, name: 'HealthSystem 5'}, 
+    {id:6, name: 'HealthSystem 6'}
+  ];
+  selectedItems:number[] = [6];
+  selectedHS: number[] = [];
+  selectedF: number[] = [];
+  selectedD: number[] = [];
+  hsHierarchy: HealthSystemHierarchyModel[];
+  subscriptions: Subscription[] = [];
+  usersData: any = {};
+  users: any[];
+
+  
+  onSelectedValuesChange(event: any){
+    console.log(this.selectedItems)
+  }
+
+  isItemSelected(itemId: number): boolean {
+    return this.selectedItems.some(item => item === itemId)
   }
 }

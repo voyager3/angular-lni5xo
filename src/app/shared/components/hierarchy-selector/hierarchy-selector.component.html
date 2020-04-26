@@ -1,0 +1,79 @@
+<div class="hierarchy-container pt-3 pb-3" [ngClass]="{'row ml-0 mr-0': showAsRow}">
+    <div class="form-group" [ngClass]="showAsRow ? 'col-4' : 'col-12'">
+        <label>Health Systems</label>
+        <kendo-multiselect KMultiselectExtender
+            #healthSystemsModel="ngModel"  
+            class="form-control"
+            name="hs-multiselect"
+            placeholder="Select"
+            [msListItems]="healthSystems"
+            [(ngModel)]="selectedHealthSystemsIds"
+            (selectedValuesChange)="onHealthSystemChange($event)"
+            textField="name"
+            valueField="id"
+            [valuePrimitive]="true"
+            [autoClose]="closeOnSelect"
+            [showMetaItems]="false"
+            [required]="isRequired">
+            <ng-template kendoMultiSelectItemTemplate let-dataItem>
+                <input *ngIf="dataItem.id > -1" type="checkbox" class="k-checkbox"
+                [checked]="isItemSelected(locationItems.HealthSystem, dataItem.id)">
+                <i *ngIf="dataItem.id === -1" class="k-icon k-i-check"></i>
+                <i *ngIf="dataItem.id === -2" class="k-icon k-i-close"></i>
+                <label class="k-checkbox-label">{{ dataItem.name }}</label>
+            </ng-template>
+        </kendo-multiselect>
+        <form-error [model]="healthSystemsModel" inputLabel="Health Systems"></form-error>
+    </div>
+
+    <div *ngIf="!showChildOnSelect || (showChildOnSelect && facilities.length > 0)" class="form-group" [ngClass]="showAsRow ? 'col-4' : 'col-12'">
+        <label>Facilities</label>
+        <kendo-multiselect KMultiselectExtender
+            #facilitiesModel="ngModel"  
+            class="form-control"
+            name="f-multiselect"
+            placeholder="Select"
+            [msListItems]="facilities"
+            [(ngModel)]="selectedFacilitiesIds"
+            (selectedValuesChange)="onFacilityChange($event)"
+            textField="name"
+            valueField="id"
+            [valuePrimitive]="true"
+            [autoClose]="closeOnSelect">
+            <ng-template kendoMultiSelectItemTemplate let-dataItem>
+                <input *ngIf="dataItem.id > -1" type="checkbox" class="k-checkbox"
+                [checked]="isItemSelected(locationItems.Facility, dataItem.id)">
+                <i *ngIf="dataItem.id === -1" class="k-icon k-i-check"></i>
+                <i *ngIf="dataItem.id === -2" class="k-icon k-i-close"></i>
+                <label class="k-checkbox-label">{{ dataItem.name }}</label>
+            </ng-template> 
+        </kendo-multiselect>
+        <form-error [model]="facilitiesModel" inputLabel="Facilities"></form-error>
+    </div>
+
+    <div *ngIf="!showChildOnSelect || (showChildOnSelect && departments.length > 0)" class="form-group" [ngClass]="showAsRow ? 'col-4' : 'col-12'">
+        <label>Departments</label>
+        <kendo-multiselect KMultiselectExtender
+            #departmentsModel="ngModel"  
+            class="form-control"
+            name="d-multiselect"
+            placeholder="Select"
+            [msListItems]="departments"
+            [(ngModel)]="selectedDepartmentsIds"
+            (selectedValuesChange)="onDepartmentChange($event)"
+            textField="name"
+            valueField="id"
+            [valuePrimitive]="true"
+            [autoClose]="closeOnSelect">
+            <ng-template kendoMultiSelectItemTemplate let-dataItem>
+                <input *ngIf="dataItem.id > -1" type="checkbox" class="k-checkbox"
+                [checked]="isItemSelected(locationItems.Department, dataItem.id)">
+                <i *ngIf="dataItem.id === -1" class="k-icon k-i-check"></i>
+                <i *ngIf="dataItem.id === -2" class="k-icon k-i-close"></i>
+                <label class="k-checkbox-label">{{ dataItem.name }}</label>
+            </ng-template>
+        </kendo-multiselect>
+        <form-error [model]="departmentsModel" inputLabel="Departments"></form-error>
+    </div>
+
+</div>

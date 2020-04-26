@@ -1257,4 +1257,29 @@
         </kendo-grid>
       </div>
     </div>
+
+     <div class="row p-2">
+        <div class="col-2">Extended Multiselect</div>
+        <div class="col-8">
+            <kendo-multiselect
+                KMultiselectExtender
+                placeholder="Select"
+                [msListItems]="msListItems"
+                [(ngModel)]="selectedItems"
+                (selectedValuesChange)="onSelectedValuesChange($event)"
+                textField="name"
+                valueField="id"
+                [valuePrimitive]="true"
+                [autoClose]="false"
+                required>
+                <ng-template kendoMultiSelectItemTemplate let-dataItem>
+                    <input *ngIf="dataItem.id > -1" type="checkbox" class="k-checkbox"
+                      [checked]="isItemSelected(dataItem.id)">
+                    <i *ngIf="dataItem.id === -1" class="k-icon k-i-check"></i>
+                    <i *ngIf="dataItem.id === -2" class="k-icon k-i-close"></i>
+                    <label class="k-checkbox-label">{{ dataItem.name }}</label>
+                </ng-template>       
+            </kendo-multiselect>
+        </div>
+    </div>
 </div>
