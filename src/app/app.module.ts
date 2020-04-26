@@ -17,17 +17,24 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { KendoShowcaseComponent } from './kendo-showcase/kendo-showcase.component'
+import { CoreModule } from './core/core.module';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,  ButtonsModule, SharedModule,
+  imports:      [ 
+  BrowserModule, 
+  FormsModule,  
+  //ButtonsModule, 
+  SharedModule,
   BrowserAnimationsModule,
-  DropDownsModule,
-  InputsModule,
-  GridModule,
-  DateInputsModule,
-  DialogsModule,
-  LabelModule,
-  LayoutModule ],
+  // DropDownsModule,
+  // InputsModule,
+  CoreModule,
+  //GridModule,
+  //DateInputsModule,
+  // DialogsModule,
+  // LabelModule,
+ // LayoutModule 
+  ],
   declarations: [ AppComponent, HelloComponent, KendoShowcaseComponent ],
   bootstrap:    [ AppComponent ]
 })
