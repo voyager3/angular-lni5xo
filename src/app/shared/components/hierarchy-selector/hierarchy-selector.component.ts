@@ -5,8 +5,7 @@ import { LocationItem } from '../../enums/location-item.enum';
 
 @Component({
   selector: 'hierarchy-selector',
-  templateUrl: './hierarchy-selector.component.html',
-  styleUrls: ['./hierarchy-selector.component.scss']
+  templateUrl: './hierarchy-selector.component.html'
 })
 export class HierarchySelectorComponent {
 

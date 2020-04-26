@@ -1258,7 +1258,7 @@
       </div>
     </div>
 
-     <div class="row p-2">
+    <div class="row p-2">
         <div class="col-2">Extended Multiselect</div>
         <div class="col-8">
             <kendo-multiselect
@@ -1280,6 +1280,33 @@
                     <label class="k-checkbox-label">{{ dataItem.name }}</label>
                 </ng-template>       
             </kendo-multiselect>
+        </div>
+    </div>
+
+    <div class="row p-2">
+        <div class="col-2">Hierarcy Selector Vertical</div>
+        <div class="col-6 pl-0">
+            <hierarchy-selector 
+                [healthSystemHierarchy]="hsHierarchy"
+                [selectedHealthSystemsIds]="selectedHS"
+                [selectedFacilitiesIds]="selectedF"
+                [selectedDepartmentsIds]="selectedD"
+                [showChildOnSelect]="true">
+            </hierarchy-selector>
+        </div>
+    </div>
+
+    <div class="row p-2">
+        <div class="col-2">Hierarcy Selector Horisontal</div>
+        <div class="col-10 pl-0">
+            <hierarchy-selector 
+                [healthSystemHierarchy]="hsHierarchy" 
+                [showAsRow]="true"
+                [selectedHealthSystemsIds]="selectedHS"
+                [selectedFacilitiesIds]="selectedF"
+                [selectedDepartmentsIds]="selectedD"
+                (onFilterChange)="hierarchySelectorFilterChange($event)">
+            </hierarchy-selector>
         </div>
     </div>
 </div>
