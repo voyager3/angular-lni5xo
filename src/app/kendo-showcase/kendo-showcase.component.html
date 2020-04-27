@@ -1259,6 +1259,35 @@
     </div>
 
     <div class="row p-2">
+      <div class="col-md-2">Slide Accordion</div>
+      <div class=col-md-10>
+          <slide-accordion #slideAccordion
+              [title]="slideAccordionItem.title"
+              [expanded]="slideAccordionItem.expanded">
+              <div class="custom-template">
+                  Simple HTML
+                  <div>
+                      <textarea name="test" id="test" rows="5" 
+                          style="width:100%">
+                      </textarea>
+                  </div>                    
+              </div>
+          </slide-accordion>
+      </div>
+    </div>
+
+    <div class="row p-2">
+        <div class="col-2">Orderable List</div>
+        <div class="col-6">
+            <orderable-list 
+                [inputType]="inputType"
+                [listItems]="orderableListItems"
+                (onItemsChange)="onOrderableListChange($event)">
+            </orderable-list>
+        </div>
+    </div>
+
+    <div class="row p-2">
         <div class="col-2">Extended Multiselect</div>
         <div class="col-8">
             <kendo-multiselect

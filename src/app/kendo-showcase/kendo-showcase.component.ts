@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { PagerSettings, PageChangeEvent, GridDataResult, SortSettings } from '@progress/kendo-angular-grid';
 import { SortDescriptor, orderBy, filterBy, CompositeFilterDescriptor } from '@progress/kendo-data-query';
 import {
@@ -6,7 +6,7 @@ import {
   DialogCloseResult,
   DialogResult} from '@progress/kendo-angular-dialog';
 import { DragEndEvent } from '@progress/kendo-angular-sortable';
-import { Orientation, ActionsLayout, PanelBarItemModel, DrawerItem, DrawerSelectEvent } from '@progress/kendo-angular-layout';
+import { Orientation, ActionsLayout, DrawerItem, DrawerSelectEvent, PanelBarItemModel, PanelBarComponent, PanelBarItemComponent } from '@progress/kendo-angular-layout';
 import { ChipRemoveEvent } from '@progress/kendo-angular-buttons';
 import * as KendoAngularDialog from '@progress/kendo-angular-dialog';
 import { DialogSize } from '../shared/enums/dialog-size';
@@ -452,5 +452,32 @@ export class KendoShowcaseComponent implements OnInit {
       .pipe(delay(500))
       .subscribe(res => this.hsHierarchy = res)
     );
+  }
+    /* ORDERABLE LIST DATA */
+    inputType: string = 'url';
+    orderableListItems: any[] = [
+      {id:1, text: 'http://someurl.com', order: 1},
+      {id:2, text: 'test@test.com', order: 2}
+    ]
+
+   onOrderableListChange(event: any){
+    console.log(event)
+  }
+
+  /* SLIDEACCORDION */
+
+  slideAccordionItem: any = {
+    title: 'Title',
+    expanded: true
+  }
+
+  switchChecked1: boolean;
+  switchChecked2: boolean;
+
+  @ViewChild("kendoPanelBar") panelbar: PanelBarComponent;
+  @ViewChild("kendoPanelBarItem") panelbarItem: PanelBarItemComponent;
+
+  onValueChange(event: any){
+    this.panelbarItem.expanded = event;
   }
 }

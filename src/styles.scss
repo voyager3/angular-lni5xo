@@ -220,6 +220,37 @@ a {
     background-color: #480000 !important;
 }
 
+/* SLIDE ACCORDION */
+.slide-accordion .k-widget {
+  border: none;
+}
+
+.slide-accordion .k-panelbar .k-i-arrow-s::before,
+.slide-accordion .k-panelbar .k-i-arrow-n::before {
+  content: none;
+}
+
+.slide-accordion .k-panelbar > .k-item > .k-link.k-state-selected {
+  background-color: #f8f9fa;
+  color: #212529
+}
+
+.slide-accordion .k-panelbar > .k-item > .k-link.k-state-selected.k-state-focused {
+  box-shadow: none;
+}
+
+.slide-accordion .k-item > .k-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.slide-accordion .custom-template {
+  padding-left: 1.25rem;
+  padding-top: 0.75rem;
+}
+
 /* TYPOGRAPHY */
 .large-body {
   font-size: 1.2rem;

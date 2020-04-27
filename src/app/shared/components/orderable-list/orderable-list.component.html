@@ -1,0 +1,22 @@
+<div>
+    <button class="col-1 mb-3" kendoButton look="outline" icon="plus" (click)="addItem()"></button>
+</div>
+<form #orderableListForm="ngForm">
+    <kendo-sortable
+        [kendoSortableBinding]="listItems"
+        [animation]="true"
+        emptyText=""
+        (dragEnd)="onDragEnd($event)">
+        <ng-template let-dataItem="item" let-i="index" >
+            <div class="form-group cursor-move">
+                <input [type]="inputType" class="k-textbox form-control col-10" [name]="'form-textbox' + i" #inputModel="ngModel"
+                    [(ngModel)]="dataItem.text" (blur)="emitter.next()" [placeholder]="placeholder" [pattern]="pattern" [email]="isEmail" required/> 
+                <button class="col-1 ml-4" kendoButton look="outline" icon="minus" (click)="removeItem(dataItem)"></button>
+                <div class="row m-0"><form-error [model]="inputModel" [inputLabel]="inputType | titlecase"></form-error></div>
+            </div>
+        </ng-template>
+    </kendo-sortable>
+</form>
+
+
+

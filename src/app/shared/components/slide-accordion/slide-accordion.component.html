@@ -1,0 +1,12 @@
+<div class="panelbar-wrapper slide-accordion">
+    <kendo-panelbar #panelBar (stateChange)="onStateChange($event)">
+        <kendo-panelbar-item [title]="title" [expanded]="expanded">
+            <ng-template kendoPanelBarItemTitle>
+                <kendo-switch [(ngModel)]="expanded" (valueChange)="onValueChange($event)"></kendo-switch>
+            </ng-template>
+            <ng-template kendoPanelBarContent>    
+                <ng-content></ng-content>
+            </ng-template>
+        </kendo-panelbar-item>
+    </kendo-panelbar>
+</div>
