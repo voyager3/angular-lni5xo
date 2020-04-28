@@ -25,11 +25,52 @@ import { hsHierarchy, users } from './showcase-test-data';
   styleUrls: ['./kendo-showcase.component.scss']
 })
 export class KendoShowcaseComponent implements OnInit {
- listItems: Array<string> = ['Baseball', 'Basketball', 'Cricket', 'Field Hockey', 'Football', 'Table Tennis', 'Tennis', 'Volleyball'];
 
-  DialogSize: typeof DialogSize = DialogSize;
+  /* SHOWCASE ITEMS */
+
+  showcaseItems: Array<DrawerItem> = [
+    { text: 'Buttons', selected: true },
+    { text: 'Tooltip'},
+    { text: 'Dropdowns'},
+    { text: 'Input'},
+    { text: 'Dates'},
+    { text: 'Layout'},
+    { text: 'Dialog'},
+    { text: 'Grid'},
+    { text: 'Sortable'},
+    { text: 'Form'}
+  ];
+  selectedShocaseItem = 'Buttons';
+
+  onSelect(ev: DrawerSelectEvent): void {
+    this.selectedShocaseItem = ev.item.text;
+  }
+
+  showcaseCustomItems: Array<DrawerItem> = [
+    { text: 'Dialog Service', selected: true },
+    
+    { text: 'Loader'},
+    { text: 'Button Filter'},
+    { text: 'Date and Time'},
+    { text: 'Slide Accordion'},
+    { text: 'Orderable List'},
+    { text: 'Extended Multiselect'},
+    { text: 'Hierarcy Selector'},
+    { text: 'Meta info'}
+  ];
+  selectedCustomShocaseItem = 'Dialog Service';
+
+  onCustomSelect(ev: DrawerSelectEvent): void {
+    this.selectedCustomShocaseItem = ev.item.text;
+  }
+
+
+  /* DROPDOWNS */
+
+  listItems: Array<string> = ['Baseball', 'Basketball', 'Cricket', 'Field Hockey', 'Football', 'Table Tennis', 'Tennis', 'Volleyball'];
 
   /* INPUTS */
+
   maskValue: string = "359884123321";
   mask: string = "(999) 000-00-00-00";
   numericValue: number = 5;
@@ -38,16 +79,18 @@ export class KendoShowcaseComponent implements OnInit {
   inputValue: string;
   inputValueDisabled: string;
 
+  /* DATE INPUTS */
+
   dateInputValue = new Date(2000, 2, 10);
   datePickerValue = new Date(2019, 5, 1, 22);
   format: string = 'MM/dd/yyyy HH:mm';
   dateTimePickerValue = new Date(2019, 5, 1, 22, 40);
-  range = { start: null, end: null };
+  range: any = { start: null, end: null };
   timePickerValue = new Date(2000, 2, 10, 10, 30, 0);
 
-  /* SPLITBUTTON */
-
-  public splitButtonDefaultData: Array<any> = [{
+  /* BUTTONS -> SPLITBUTTON */
+  
+  splitButtonDefaultData: Array<any> = [{
       text: 'Keep Text Only',
       icon: 'paste-plain-text',
       click: () => { console.log('Keep Text Only'); }
@@ -64,8 +107,8 @@ export class KendoShowcaseComponent implements OnInit {
       click: () => { console.log('Set Default Paste'); }
   }];
 
-  public splitButtonText: string = 'Reply';
-  public splitButtonTextData: Array<any> = [{
+  splitButtonText: string = 'Reply';
+  splitButtonTextData: Array<any> = [{
       text: 'Reply All'
   }, {
       text: 'Forward'
@@ -73,9 +116,9 @@ export class KendoShowcaseComponent implements OnInit {
       text: 'Reply & Delete'
   }];
 
-  /* CHIP */
+  /* BUTTONS -> CHIP */
 
-  public contacts: Array<{ label: string, iconClass: string }> = [
+  contacts: Array<{ label: string, iconClass: string }> = [
       { label: 'Pedro Afonso', iconClass: 'k-chip-avatar k-icon k-i-user'},
       { label: 'Maria Shore', iconClass: 'k-chip-avatar k-icon k-i-user' },
       { label: 'Thomas Hardy', iconClass: 'k-chip-avatar k-icon k-i-user' },
@@ -83,10 +126,16 @@ export class KendoShowcaseComponent implements OnInit {
       { label: 'Paula Wilson', iconClass: 'k-chip-avatar k-icon k-i-user' }
   ];
 
-  public selectedContacts: Array<any> = [this.contacts[1], this.contacts[2]];
+  selectedContacts: Array<any> = [this.contacts[1], this.contacts[2]];
 
-  /* DROPDOWN BUTTON */
+  onRemove(e: ChipRemoveEvent): void {
+    console.log('Remove event arguments: ', e);
+    const index = this.selectedContacts.map(c => c.label).indexOf(e.sender.label);
+    this.selectedContacts.splice(index, 1);
+  }
 
+  /* BUTTONS -> DROPDOWNBUTTON */
+  
   ddbIco: string = 'cog';
   ddbSettings: Array<any> = [{
       text: 'My Profile'
@@ -99,56 +148,68 @@ export class KendoShowcaseComponent implements OnInit {
   }, {
       text: 'Log Out'
   }];
+  
+  onPaste(): void {
+    console.log('Paste');
+  }
 
+  /* DROPDOWNS -> DROPDOWNLIST */
 
-  /* DROPDOWNLIST */
   source: Array<string> = ['Albania', 'Andorra', 'Armenia', 'Austria', 'Azerbaijan'];
   data: Array<string>;
 
-  /* MULTISELECT */
-  valueMs: any = ['Baseball']
+  /* DROPDOWNS -> MULTISELECT */
 
-  /* LAYOUT AVATAR */
-  public firstContactImage = 'https://demos.telerik.com/kendo-ui/content/web/Customers/RICSU.jpg';
-  public secondContactImage = 'https://demos.telerik.com/kendo-ui/content/web/Customers/GOURL.jpg';
+  valueMs: any = ['Baseball'];
 
-  public contactImages: Array<any> = [
+  onSelectedValuesChange(event: any){
+    console.log(this.selectedItems)
+  }
+
+  /* LAYOUT -> AVATAR */
+
+  firstContactImage = 'https://demos.telerik.com/kendo-ui/content/web/Customers/RICSU.jpg';
+  secondContactImage = 'https://demos.telerik.com/kendo-ui/content/web/Customers/GOURL.jpg';
+
+  contactImages: Array<any> = [
       { avatar: this.firstContactImage, name: 'Michael Holz', position: 'Manager' },
       { avatar: this.secondContactImage, name: 'André Stewart', position: 'Product Manager' }
   ];
 
-  public contactInitials: Array<any> = [
+  contactInitials: Array<any> = [
       { avatar: 'JS', name: 'Jason Smith', position: 'UX Designer' },
       { avatar: 'GP', name: 'George Porter', position: 'Software Engineer' }
   ];
 
-  /* LAYOUT CARD */
-  public cardExpanded = false;
-  public cardLiked = false;
-  public cardBtnText = 'More';
+  /* LAYOUT -> CARD */
 
-  public cardActionsOrientation: Orientation = 'horizontal';
-  public cardActionsLayout: ActionsLayout = 'end';
+  cardExpanded = false;
+  cardLiked = false;
+  cardBtnText = 'More';
 
-  public get horizontalStretched(): boolean {
+  cardActionsOrientation: Orientation = 'horizontal';
+  cardActionsLayout: ActionsLayout = 'end';
+
+  get horizontalStretched(): boolean {
       return this.cardActionsOrientation === 'horizontal' && this.cardActionsLayout === 'stretched';
   }
 
-  public toggleRecipe(): void {
+  toggleRecipe(): void {
       this.cardExpanded = !this.cardExpanded;
       this.cardBtnText = this.cardExpanded ? 'Less' : 'More';
   }
 
-  public toggleLike(): void {
+  toggleLike(): void {
       this.cardLiked = !this.cardLiked;
   }
 
-  public heartIcon(): string {
+  heartIcon(): string {
       return this.cardLiked ? 'k-icon k-i-heart' : 'k-icon k-i-heart-outline';
   }
 
-  /* LAYOUT PANELBAR */
-  private panelBarItems: Array<PanelBarItemModel> = [
+  /* LAYOUT -> PANELBAR */
+
+  panelBarItems: Array<PanelBarItemModel> = [
       <PanelBarItemModel> {title: "First item", content: "First item content", expanded: true },
       <PanelBarItemModel> {title: "Second item", children: [
               <PanelBarItemModel> {title: "Child item" }
@@ -156,10 +217,11 @@ export class KendoShowcaseComponent implements OnInit {
       }
   ];
 
-  /* LAYOUT DRAWER */
-  public drawerSelected = 'Inbox';
+  /* LAYOUT -> DRAWER */
 
-  public drawerItems: Array<DrawerItem> = [
+  drawerSelected = 'Inbox';
+
+  drawerItems: Array<DrawerItem> = [
       { text: 'Inbox', icon: 'k-i-inbox', selected: true },
       { separator: true },
       { text: 'Notifications', icon: 'k-i-bell' },
@@ -169,24 +231,19 @@ export class KendoShowcaseComponent implements OnInit {
       { text: 'Favourites', icon: 'k-i-star-outline' }
   ];
 
-  public drawerOnSelect(ev: DrawerSelectEvent): void {
+  drawerOnSelect(ev: DrawerSelectEvent): void {
       this.drawerSelected = ev.item.text;
   }
 
-  /* DRAG AND DROP */
-  dragableData: any[] = [
-    {id: 1, name: 'Element 1', order: 1, color: '#e04747'},
-    {id: 2, name: 'Element 2', order: 2, color: '#329943'},
-    {id: 3, name: 'Element 3', order: 3, color: '#5B87DA'},
-    {id: 4, name: 'Element 4', order: 4, color: '#4A4A4A'},
-  ];
+  /* LAYOUT -> TABSTRIP */
 
-  onDragEnd(event: DragEndEvent){
-    this.dragableData.forEach((item, index) => item.order = index + 1);
-    console.log(event)
+  onTabSelect(e: any) {
+    console.log(e);
   }
 
   /* GRID */
+
+  products: any[];
   gridView: GridDataResult;
   pageSettings: PagerSettings = {
     buttonCount: 10,
@@ -197,14 +254,7 @@ export class KendoShowcaseComponent implements OnInit {
   };
   pageSize = 5;
   skip = 0;
-  products: any[] = Array(100).fill({}).map((x, idx) => ({
-    'ProductID': idx,
-    'ProductName': 'Product' + idx.toString(),
-    'Discontinued': idx % 2 === 0,
-    'Category': {CategoryName: 'category' + idx % 3},
-    'UnitsInStock': idx % 2,
-    'UnitPrice': idx % 2 * 4
-  }));;
+  productsSource: any[];
   sortSettings: SortSettings = {
     allowUnsort: false,
     mode: 'single'
@@ -213,7 +263,6 @@ export class KendoShowcaseComponent implements OnInit {
     field: 'ProductName',
     dir: 'asc'
   }];
-  productsSource: any[];
 
   /* DIALOG */
 
@@ -226,113 +275,6 @@ export class KendoShowcaseComponent implements OnInit {
   };
 
   dialogLoader = false;
-
-  /* LOADER */
-
-  loader: boolean;
-  opaqueLoader: boolean;
-
-  /* FORM */
-  formModel: any = {
-    cb: true
-  };
-
-  /* INPUT FORM */
-  inputForm: any = {
-    required: true,
-    disabled: false,
-    readOnly: false
-  };
-
-  /* CARD BUTTON FILTER */
-  cardBtnModel: CardButtonModel[] = [
-    {id:1, text: 'TYPE 1', color: 'rgb(91, 135, 218)', selected: false }, 
-    {id:2, text: 'TYPE 2', color: 'green',selected: false },
-    {id:3, text: 'TYPE3',  color: 'yellow', selected: false }]
-
-  constructor(private dialogService: KendoAngularDialog.DialogService, private kendoDialogService: DialogService) {
-    this.data = this.source.slice();
-    this.products = Array(100).fill({}).map((x, idx) => ({
-      'type': this.cardBtnModel[idx % 3],
-      'ProductID': idx,
-      'ProductName': 'Product' + idx.toString(),
-      'Discontinued': idx % 2 === 0,
-      'Category': {CategoryName: 'category' + idx % 3},
-      'UnitsInStock': idx % 2,
-      'UnitPrice': idx % 2 * 4
-    }));
-    this.productsSource = cloneDeep(this.products);
-    this.loadProducts();
-  }
-
-  
-  /* EXTENDED MULTISELECT*/
-  msListItems: any = [
-    {id:1, name: 'HealthSystem 1'}, 
-    {id:2, name: 'HealthSystem 2'}, 
-    {id:3, name: 'HealthSystem 3'},
-    {id:4, name: 'HealthSystem 4'}, 
-    {id:5, name: 'HealthSystem 5'}, 
-    {id:6, name: 'HealthSystem 6'}
-  ];
-  selectedItems:number[] = [6];
-  selectedHS: number[] = [];
-  selectedF: number[] = [];
-  selectedD: number[] = [];
-  subscriptions: Subscription[] = [];
-  hsHierarchy: HealthSystemHierarchyModel[];
-  usersData: any = {};
-  users: any[];
-
-  ngOnInit() {
-    this.loadLocationHierarchyAsync();
-  }
-
-  onButtonClick() {
-  }
-
- ngOnDestroy = () => this.subscriptions.forEach(s => s.unsubscribe())
-
-  filterChange(filter: string): void {
-    this.data = this.source.filter((s) => s.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
-  }
-
-  /* GIRD */
-
-  sortChange(sort: SortDescriptor[]): void {
-    this.sort = sort;
-    this.skip = 0;
-    this.loadProducts();
-  }
-
-  pageChange({ skip, take }: PageChangeEvent): void {
-    this.skip = skip;
-    this.pageSize = take;
-    this.loadProducts();
-  }
-
-  private loadProducts(): void {
-    this.gridView = {
-      data: orderBy(this.products, this.sort).slice(this.skip, this.skip + this.pageSize),
-      total: this.products.length
-    };
-  }
-
-  /* DROPDOWN BUTTON */
-
-  public onPaste(): void {
-    console.log('Paste');
-  }
-
-  /* CHIP BUTTON */
-  
-  public onRemove(e: ChipRemoveEvent): void {
-    console.log('Remove event arguments: ', e);
-    const index = this.selectedContacts.map(c => c.label).indexOf(e.sender.label);
-    this.selectedContacts.splice(index, 1);
-  }
-
-  /* DIALOG */
 
   close(component: any) {
     this['dialogOpened'] = false;
@@ -375,7 +317,25 @@ export class KendoShowcaseComponent implements OnInit {
     });
   }
 
+  
+  /* SORTABLE */
+
+  dragableData: any[] = [
+    {id: 1, name: 'Element 1', order: 1, color: '#e04747'},
+    {id: 2, name: 'Element 2', order: 2, color: '#329943'},
+    {id: 3, name: 'Element 3', order: 3, color: '#5B87DA'},
+    {id: 4, name: 'Element 4', order: 4, color: '#4A4A4A'},
+  ];
+
+  onDragEnd(event: DragEndEvent){
+    this.dragableData.forEach((item, index) => item.order = index + 1);
+    console.log(event)
+  }
+
   /* LOADER */
+
+  loader: boolean;
+  opaqueLoader: boolean;  
 
   showLoader() {
     this.loader = true;
@@ -392,10 +352,220 @@ export class KendoShowcaseComponent implements OnInit {
   }
 
   /* FORM */
+
+  formModel: any = {
+    cb: true
+  };
+
   onFormSubmit() {
   }
 
-  /* DIALOG TYPES */
+  /* ----- CUSTOM COMPONENTS -----*/
+
+  /* TIMEZONE */
+
+  // timeZone: string;
+  // dates: DatesShowcaseModel;
+  // tzDatePickerValue: Date;
+  // tzDateTimePickerValue: Date;
+
+  /* CARD BUTTON */
+
+  cardBtnModel: CardButtonModel[] = [
+    {id:1, text: 'TYPE 1', color: 'rgb(91, 135, 218)', selected: false }, 
+    {id:2, text: 'TYPE 2', color: 'green',selected: false },
+    {id:3, text: 'TYPE3',  color: 'yellow', selected: false }]
+
+
+  /* CHECKBOX TOGGLE ALL */
+
+  cbt: any = {
+    first: true,
+    second: false,
+    third: false
+  }
+
+  /* CHECKBOX ACTIVATOR */
+
+  cba: any = {
+    activate: true,
+    first: false,
+    second: false,
+    third: true
+  }
+
+  /* INPUT FORM */
+
+  inputForm: any = {
+    required: true,
+    disabled: false,
+    readOnly: false
+  };
+
+  /* META INFO DATA */
+
+  // url1: string = `${NomenclatureController.GetAudit}/Product/2`;
+  // url2: string = `${NomenclatureController.GetAudit}/User/64079`;
+  // activationDate = '2019-09-15';
+  // someOtherField = 'Test field';
+
+  /* ORDERABLE LIST DATA */
+
+  inputType: string = 'url';
+  orderableListItems: any[] = [
+    {id:1, text: 'http://someurl.com', order: 1},
+    {id:2, text: 'test@test.com', order: 2}
+  ]
+
+  /* EXTENDED MULTISELECT*/
+
+  msListItems: any = [
+    {id:1, name: 'HealthSystem 1'}, 
+    {id:2, name: 'HealthSystem 2'}, 
+    {id:3, name: 'HealthSystem 3'},
+    {id:4, name: 'HealthSystem 4'}, 
+    {id:5, name: 'HealthSystem 5'}, 
+    {id:6, name: 'HealthSystem 6'}
+  ];
+  selectedItems:number[] = [6];
+  selectedHS: number[] = [];
+  selectedF: number[] = [];
+  selectedD: number[] = [];
+  hsHierarchy: HealthSystemHierarchyModel[];
+  subscriptions: Subscription[] = [];
+  usersData: any = {};
+  users: any[];
+
+  isItemSelected(itemId: number): boolean {
+    return this.selectedItems.some(item => item === itemId)
+  }
+
+  /* SLIDEACCORDION */
+
+  slideAccordionItem: any = {
+    title: 'Title',
+    expanded: true
+  }
+  
+  constructor(
+      private dialogService: KendoAngularDialog.DialogService,
+      private kendoDialogService: DialogService//,
+      //private api: ApiService
+    ) {
+    this.products = Array(100).fill({}).map((x, idx) => ({
+      'type': this.cardBtnModel[idx % 3],
+      'ProductID': idx,
+      'ProductName': 'Product' + idx.toString(),
+      'Discontinued': idx % 2 === 0,
+      'Category': {CategoryName: 'category' + idx % 3},
+      'UnitsInStock': idx % 2,
+      'UnitPrice': idx % 2 * 4
+    }));
+    this.data = this.source.slice();
+    this.productsSource = cloneDeep(this.products);
+    this.users = cloneDeep(users);
+    this.loadProducts();
+    this.loadUsers();
+  }
+
+  
+  ngOnInit() {
+    // this.api.get(ShowcaseController.Dates).subscribe(dates => {
+    //   this.dates = new DatesShowcaseModel(dates.utcNoon, dates.utcNow);
+    // });
+    
+    this.loadLocationHierarchyAsync();
+  }
+
+  ngOnDestroy = () => this.subscriptions.forEach(s => s.unsubscribe())
+
+  /* HIERARCHY SELECTOR */
+
+  loadLocationHierarchyAsync(){
+    this.subscriptions.push(
+      of(hsHierarchy)
+      .pipe(delay(500))
+      .subscribe(res => this.hsHierarchy = res)
+    );
+  }
+
+  hierarchySelectorFilterChange(filter: HierarchySelectorFilter){
+    this.users = users
+      .filter(u => (filter.healthSystemIds.length === 0) || filter.healthSystemIds.indexOf(u.healthSystemId) !== -1)
+      .filter(u => (filter.facilityIds.length === 0) || filter.facilityIds.indexOf(u.facilityId) !== -1)
+      .filter(u => (filter.departmentIds.length === 0) || filter.departmentIds.indexOf(u.departmentId) !== -1)
+
+    this.loadUsers();
+  }
+
+  /* ORDERABLE LIST */
+
+  onOrderableListChange(event: any){
+    console.log(event)
+  }
+
+  /* DATE AND TIME */
+
+  // saveDate(date: Date) {
+  //   this.api.post(ShowcaseController.SaveDate, { date })
+  //     .subscribe(() => {
+  //       this.kendoDialogService.info(new DialogSettingsModel('Success', 'Date was successfully submitted to the server.'));
+  //     });
+  // }
+
+  /* DROPDOWNLIST */
+
+  filterChange(filter: string): void {
+    this.data = this.source.filter((s) => s.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
+  }
+
+  /* GIRD */
+
+  sortChange(sort: SortDescriptor[]): void {
+    this.sort = sort;
+    this.skip = 0;
+    this.loadProducts();
+    this.loadUsers();
+  }
+
+  pageChange({ skip, take }: PageChangeEvent): void {
+    this.skip = skip;
+    this.pageSize = take;
+    this.loadProducts();
+    this.loadUsers();
+  }
+
+  /* BUTTON FILTER */
+    
+  onCustomFilterChange(filter: CompositeFilterDescriptor): void {
+    this.products = filterBy(this.productsSource, filter);
+    this.skip = 0;
+    this.loadProducts();
+  }
+
+  onButtonFilterChange(filter: CompositeFilterDescriptor): void {
+    this.products = filterBy(this.productsSource, filter);
+    this.skip = 0;
+    this.loadProducts();
+  }
+
+  private loadProducts(): void {
+    this.gridView = {
+      data: orderBy(this.products, this.sort).slice(this.skip, this.skip + this.pageSize),
+      total: this.products.length
+    };
+  }
+
+  private loadUsers(): void {
+    this.usersData = {
+      data: orderBy(this.users, this.sort).slice(this.skip, this.skip + this.pageSize),
+      total: this.users.length
+    }
+  }
+
+  /* DIALOG SERVICE */
+
+  DialogSize: typeof DialogSize = DialogSize;
 
   openInfoDialog(){
     this.kendoDialogService.info({
@@ -430,54 +600,4 @@ export class KendoShowcaseComponent implements OnInit {
     .subscribe((x: DialogResultModel) => {console.log(x);});
   }
 
-  /* CARD BUTTON FILTER */
-  onButtonFilterChange(filter: CompositeFilterDescriptor): void {
-    this.products = filterBy(this.productsSource, filter);
-    this.loadProducts();
-  }
-
-  /* EXTENDED MULTISELECT*/
-  
-  onSelectedValuesChange(event: any){
-    console.log(this.selectedItems)
-  }
-
-  isItemSelected(itemId: number): boolean {
-    return this.selectedItems.some(item => item === itemId)
-  }
-
-  loadLocationHierarchyAsync(){
-    this.subscriptions.push(
-      of(hsHierarchy)
-      .pipe(delay(500))
-      .subscribe(res => this.hsHierarchy = res)
-    );
-  }
-    /* ORDERABLE LIST DATA */
-    inputType: string = 'url';
-    orderableListItems: any[] = [
-      {id:1, text: 'http://someurl.com', order: 1},
-      {id:2, text: 'test@test.com', order: 2}
-    ]
-
-   onOrderableListChange(event: any){
-    console.log(event)
-  }
-
-  /* SLIDEACCORDION */
-
-  slideAccordionItem: any = {
-    title: 'Title',
-    expanded: true
-  }
-
-  switchChecked1: boolean;
-  switchChecked2: boolean;
-
-  @ViewChild("kendoPanelBar") panelbar: PanelBarComponent;
-  @ViewChild("kendoPanelBarItem") panelbarItem: PanelBarItemComponent;
-
-  onValueChange(event: any){
-    this.panelbarItem.expanded = event;
-  }
 }

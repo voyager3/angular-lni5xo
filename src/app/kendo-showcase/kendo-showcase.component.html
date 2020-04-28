@@ -1,1341 +1,1320 @@
 <div class="white-container">
     <h1>Voyager 3 Showcase</h1>
     <div>To use specific Kendo UI For Angular component you should:
-        <ol>
-            <li>Add the package in npm: <code>ng add @progress/kendo-angular-inputs</code></li>
-            <li>Move the added dependencies (<code>InputsModule</code>) from app.module to shared.module in the array
-                <code>kendoUIModules</code>.</li>
-            <li>Add the component scss in kendo-theme.scss: <code>@import "~@progress/kendo-theme-bootstrap/scss/input";</code>.
-            </li>
-            <li>Override the component styles in kendo-theme.scss if needed.</li>
-        </ol>
+      <ol>
+          <li>Add the package in npm: <code>ng add @progress/kendo-angular-inputs</code></li>
+          <li>Move the added dependencies (<code>InputsModule</code>) from app.module to shared.module in the array
+              <code>kendoUIModules</code>.</li>
+          <li>Add the component scss in kendo-theme.scss: <code>@import "~@progress/kendo-theme-bootstrap/scss/input";</code>.
+          </li>
+          <li>Override the component styles in kendo-theme.scss if needed.</li>
+      </ol>
     </div>
-    <h2>Typography</h2>
-    <div class="row p-2">
-      <div class="col-md-2">Header text</div>
-      <div class="col-md-5">
-        <h1>H1 Style</h1>
-        <h2>H2 Style</h2>
-        <h3>H3 Style</h3>
-        <h4>H4 Style</h4>
-        <h5>H5 Style</h5>
-        <h6>H6 Style</h6>
-      </div>
-      <div class="col-md-5">
-        <h1 class="h-special">H1 Special</h1>
-        <h2 class="h-special">H2 Special</h2>
-        <h3 class="h-special">H3 Special</h3>
-        <h4 class="h-special">H4 Special</h4>
-      </div>
-    </div>
-    <div class="row p-2">
-      <div class="col-md-2">Body text</div>
-      <div class="col-md-10">
-        <p class="large-body">
-          Large body text | Nunc convallis risus vitae ligula vehicula, ac dapibus neque dictum. Sed urna augue, porttitor vitae finibus non, efficitur non odio. Proin felis leo, gravida sit amet hendrerit ut, elementum in mi.
-        </p>
-        <p>
-          Standard body text | Nunc convallis risus vitae ligula vehicula, ac dapibus neque dictum. Sed urna augue, porttitor vitae finibus non, efficitur non odio. Proin felis leo, gravida sit amet hendrerit ut, elementum in mi. 
-        </p>
-        <p class="small">
-          Small body text | Nunc convallis risus vitae ligula vehicula, ac dapibus neque dictum. Sed urna augue, porttitor vitae finibus non, efficitur non odio. Proin felis leo, gravida sit amet hendrerit ut, elementum in mi. 
-        </p>
-      </div>
-    </div>
-
-    <h2>Kendo UI Angular components</h2>
-    <div class="row p-2">
-        <div class="col-md-2">Buttons</div>
-        <div class="col-md-10">
-            <h5>Kendo</h5>
-            <div class="pb-2">
-                <button kendoButton [primary]="true">Primary</button> &nbsp;
-                <button kendoButton [primary]="true" icon="folder">Primary with icon</button> &nbsp;
-                <button kendoButton [disabled]="true" [primary]="true">Primary disabled</button> &nbsp;
-                <button kendoButton [primary]="true" class="k-button-small ">Primary small</button>
+    <kendo-tabstrip>
+        <kendo-tabstrip-tab [title]="'Typography'">
+        <ng-template kendoTabContent>
+          <div class="row p-2">
+            <div class="col-md-2">Header text</div>
+            <div class="col-md-5">
+              <h1>H1 Style</h1>
+              <h2>H2 Style</h2>
+              <h3>H3 Style</h3>
+              <h4>H4 Style</h4>
+              <h5>H5 Style</h5>
+              <h6>H6 Style</h6>
             </div>
-            <div class="pb-2">
-                <button kendoButton class="k-button-secondary">Secondary</button> &nbsp;
-                <button kendoButton class="k-button-secondary" icon="folder">Secondary with icon</button> &nbsp;
-                <button kendoButton [disabled]="true" class="k-button-secondary">Secondary disabled</button> &nbsp;
-                <button kendoButton class="k-button-secondary k-button-small">Secondary small</button>
-            </div>
-            <div class="pb-2">
-                <button kendoButton look="outline">Cancel</button> &nbsp;
-                <button kendoButton look="outline" icon="cancel">Cancel with icon</button> &nbsp;
-                <button kendoButton look="outline" [disabled]="true">Cancel disabled</button> &nbsp;
-                <button kendoButton look="outline" class="k-button-small">Cancel small</button>
-            </div>
-            <div class="pb-2">
-                <button kendoButton [look]="'flat'">Flat</button> &nbsp;
-                <button kendoButton [look]="'flat'" icon="folder">Flat with icon</button> &nbsp;
-                <button kendoButton [disabled]="true" [look]="'flat'">Flat disabled</button> &nbsp;
-                <button kendoButton [look]="'flat'" class="k-button-small">Flat small</button>
-            </div>
-            <div class="pb-2">
-                <button kendoButton class="k-button-delete">Delete</button> &nbsp;
-                <button kendoButton class="k-button-delete" icon="delete">Delete with icon</button> &nbsp;
-                <button kendoButton class="k-button-delete" [disabled]="true">Delete disabled</button> &nbsp;
-                <button kendoButton class="k-button-delete k-button-small">Delete</button>
-            </div>
-            <div class="pb-2">
-               <div class="row">
-                <div class="col-2">Button group</div>
-                <div class="col">
-                  <p>Single selection mode</p>
-                  <kendo-buttongroup [selection]="'single'">
-                      <button kendoButton [toggleable]="true" [icon]="'align-left'"></button>
-                      <button kendoButton [toggleable]="true" [icon]="'align-center'"></button>
-                      <button kendoButton [toggleable]="true" [icon]="'align-right'"></button>
-                      <button kendoButton [toggleable]="true" [icon]="'align-justify'"></button>
-                  </kendo-buttongroup>
-                </div>
-                <div class="col">
-                  <p>Multiple selection mode</p>
-                  <kendo-buttongroup>
-                      <button kendoButton [toggleable]="true" [icon]="'bold'"></button>
-                      <button kendoButton [toggleable]="true" [icon]="'italic'"></button>
-                      <button kendoButton [toggleable]="true" [icon]="'underline'"></button>
-                  </kendo-buttongroup>
-                </div>
-               </div>
-            </div>
-            <div class="pb-2">
-               <div class="row">
-                <div class="col-2">Split button</div>
-                <div class="col">
-                    Basic Usage
-                    <div class="row">
-                      <div class="col">
-                        <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste">
-                            Paste
-                        </kendo-splitbutton> &nbsp;
-                        <!-- <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste" [look]="'flat'">
-                            Paste
-                        </kendo-splitbutton> &nbsp;
-                        <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste" [look]="'outline'">
-                            Paste
-                        </kendo-splitbutton> &nbsp;-->
-                      </div>
-                    </div>
-                </div>
-                <!--
-                <div class="col">
-                  Content Setup
-                  <div class="row">
-                    <div class="col">
-                      <kendo-splitbutton [data]="splitButtonTextData" [text]="splitButtonText"></kendo-splitbutton> &nbsp;
-                       <kendo-splitbutton [data]="splitButtonTextData">
-                          <u>R</u>eply
-                      </kendo-splitbutton> &nbsp;
-                    </div>
-                  </div>
-                </div>
-                -->
-               </div>
-            </div>
-            <div class="pb-2">
-               <div class="row">
-                <div class="col-2">Dropdown button</div>
-                <div class="col">
-                  <kendo-dropdownbutton [data]="ddbSettings" [icon]="ddbIco">
-                      User Settings
-                  </kendo-dropdownbutton>
-                </div>
-                <div class="col">
-                  <kendo-dropdownbutton [data]="ddbSettings" [icon]="ddbIco"></kendo-dropdownbutton>
-                </div>
-               </div>
-            </div>
-            <div class="pb-2">
-               <div class="row">
-                <div class="col-2">Chip</div>
-                <div class="col">
-                   <kendo-chip
-                        *ngFor="let contact of selectedContacts"
-                        [label]="contact.label"
-                        [removable]="true"
-                        [iconClass]="contact.iconClass"
-                        (remove)="onRemove($event)"
-                    >
-                    </kendo-chip>
-                </div>
-               </div>
-            </div>
-        </div>
-    </div>
-    <div class="row p-2">
-      <div class="col-md-2">Tooltip</div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col">
-            <p>Default</p>
-            <div kendoTooltip>
-              <button class="k-button k-primary" title="Saves the current document">
-                  Save
-              </button> &nbsp;
-              <button kendoButton look="outline" title="Discards all changes">
-                  Cancel
-              </button> &nbsp;
+            <div class="col-md-5">
+              <h1 class="h-special">H1 Special</h1>
+              <h2 class="h-special">H2 Special</h2>
+              <h3 class="h-special">H3 Special</h3>
+              <h4 class="h-special">H4 Special</h4>
             </div>
           </div>
-          <!--<div class="col">
-            <p>Closable</p>
-            <div kendoTooltip position="right" closable="true" showOn="click">
-              <button kendoButton [primary]="true" title="Closable tooltip content">Show tooltip</button>
+          <div class="row p-2">
+            <div class="col-md-2">Body text</div>
+            <div class="col-md-10">
+              <p class="large-body">
+                Large body text | Nunc convallis risus vitae ligula vehicula, ac dapibus neque dictum. Sed urna augue, porttitor vitae finibus non, efficitur non odio. Proin felis leo, gravida sit amet hendrerit ut, elementum in mi.
+              </p>
+              <p>
+                Standard body text | Nunc convallis risus vitae ligula vehicula, ac dapibus neque dictum. Sed urna augue, porttitor vitae finibus non, efficitur non odio. Proin felis leo, gravida sit amet hendrerit ut, elementum in mi. 
+              </p>
+              <p class="small">
+                Small body text | Nunc convallis risus vitae ligula vehicula, ac dapibus neque dictum. Sed urna augue, porttitor vitae finibus non, efficitur non odio. Proin felis leo, gravida sit amet hendrerit ut, elementum in mi. 
+              </p>
             </div>
-          </div>-->
-        </div>
-        
-      </div>
-    </div>
-    <div class="row p-2">
-        <div class="col-md-2">Dropdowns</div>
-        <div class="col-md-10">
-            <div class="row pb-2">
-              <div class="col-">
-                Single
-              </div>
-              <div class="col">
-                <kendo-dropdownlist [data]="data" [filterable]="true" (filterChange)="filterChange($event)">
-                </kendo-dropdownlist>
-              </div>
-              <div class="col">
-                Multiple
-              </div>
-              <div class="col-6">
-                <kendo-multiselect [data]="listItems" [(ngModel)]="valueMs"></kendo-multiselect>
-              </div>
-            </div>
-        </div>
-    </div>
-    <div class="row p-2">
-      <div class="col-md-2">Input</div>
-      <div class="col-md-10">
-        <div class="row pb-2">
-            <div class="col-2">
-              Textbox
-            </div>
-            <div class="col">
-              <input kendoTextBox/>
-            </div>
-            <div class="col-2">
-              Textbox with placeholder
-            </div>
-            <div class="col">
-              <input kendoTextBox placeholder="Enter a value..."/>
-            </div>
-        </div>
-        <div class="row pb-2">
-            <div class="col-2">
-              Masked Textbox
-            </div>
-            <div class="col">
-              <kendo-maskedtextbox [mask]="mask" [value]="maskValue"></kendo-maskedtextbox>
-            </div>
-            <div class="col-2">
-              Numeric Textbox
-            </div>
-            <div class="col">
-              <kendo-numerictextbox [value]="numericValue" [min]="0" [max]="100" [autoCorrect]="true">
-              </kendo-numerictextbox>
-            </div>
-        </div>
-        <div class="row pb-2">
-          <div class="col-2">
-            Switch
           </div>
-          <div class="col">
-            <kendo-switch [(ngModel)]="switchChecked"></kendo-switch>
-          </div>
-            <div class="col-2">
-            Slider
-          </div>
-          <div class="col">
-            <kendo-slider tickPlacement="none" [min]="0" [max]="15" [smallStep]="1" [(ngModel)]="valueHorizontal">
-              </kendo-slider>
-          </div>
-        </div>
-      </div>
-   </div>
-   <div class="row p-2">
-        <div class="col-md-2">Dates</div>
-        <div class="col-md-10">
-           <div class="row pb-2">
-              <div class="col-2">Date input</div>
-              <div class="col">
-                  <kendo-dateinput [(value)]="dateInputValue"></kendo-dateinput>
-                   <p>(use ← and →  to navigate, ↑ to increment and ↓ to decrement the value)</p>
-              </div>
-              <!-- <div class="col">
-                  <kendo-dateinput  [disabled]="true" [(value)]="dateInputValue"></kendo-dateinput>
-              </div>
-              <div class="col">
-                  <kendo-dateinput  [readonly]="true" [(value)]="dateInputValue"></kendo-dateinput>
-              </div> -->
-            </div>
-            <div class="row pb-2">
-              <div class="col-2">Date picker</div>
-              <div class="col">
-                <kendo-datepicker [(value)]="datePickerValue"></kendo-datepicker>
-                 <p>(use Alt+↓ to open the calendar, ← and →  to navigate, ↑ to increment and ↓ to decrement the value)</p>
-              </div>
-              <!-- <div class="col">
-                <kendo-datepicker [disabled]="true" [(value)]="datePickerValue"></kendo-datepicker>
-              </div>
-                <div class="col">
-                <kendo-datepicker [readonly]="true" [(value)]="datePickerValue"></kendo-datepicker>
-              </div> -->
-            </div>
-            <div class="row pb-2">
-              <div class="col-2">Date/time picker</div>
-              <div class="col">
-                <kendo-datetimepicker [format]="format" [(value)]="dateTimePickerValue">
-                </kendo-datetimepicker>
-                <p>(use Alt + ↓ to open the calendar, Alt + ← and Alt + →  to change the tabs)</p>
-              </div>
-              <!-- <div class="col">
-                <kendo-datetimepicker [disabled]="true" [format]="format" [(value)]="dateTimePickerValue">
-                </kendo-datetimepicker>
-              </div>
-               <div class="col">
-                <kendo-datetimepicker [readonly]="true" [format]="format" [(value)]="dateTimePickerValue">
-                </kendo-datetimepicker>
-              </div> -->
-            </div>
-            <div class="row pb-2">
-              <div class="col-2">Date range</div>
-              <div class="col">
-                 <kendo-daterange>
-                    <label>
-                        <span class="label">Start</span>
-                        <kendo-dateinput kendoDateRangeStartInput [(value)]="range.start"></kendo-dateinput>
-                    </label>
-                    <label>
-                        <span class="label">End</span>
-                        <kendo-dateinput kendoDateRangeEndInput [(value)]="range.end"></kendo-dateinput>
-                    </label>
-                  </kendo-daterange>
-              </div>
-            </div>
-            <div class="row pb-2">
-              <div class="col-2">Time picker</div>
-              <div class="col">
-                  <kendo-timepicker [(value)]="timePickerValue"></kendo-timepicker>
-                  <p>(use Alt+↓ to open the time list, Tab to move to the next time section in the popup, ↑ to increment and ↓ to decrement the val)</p>
-              </div>
-              <!-- <div class="col">
-                  <kendo-timepicker [disabled]="true" [(value)]="timePickerValue"></kendo-timepicker>
-              </div>
-              <div class="col">
-                  <kendo-timepicker [readonly]="true" [(value)]="timePickerValue"></kendo-timepicker>
-              </div> -->
-            </div>
-        </div>
-    </div>
-    <div class="row p-2">
-      <div class="col-md-2">Layout</div>        
-      <div class="col-md-10">
-        <div class="row pb-2">
-          <div class="col-2">Drawer</div>
-          <div class="col-10">
-            <div class="custom-toolbar">
-              <button
+        </ng-template>
+      </kendo-tabstrip-tab>
+      <kendo-tabstrip-tab [title]="'Kendo UI Angular components'" [selected]="true">
+        <ng-template kendoTabContent>
+          <div class="custom-toolbar">
+              <!--<button
                   kendoButton
                   icon="menu"
                   look="flat"
-                  (click)="drawer.toggle()"
+                  (click)="showcaseDrawer.toggle()"
               ></button>
-              <span class="mail-box">Mail Box</span>
-              </div>
-              <kendo-drawer-container style="position: relative;">
-                <kendo-drawer #drawer
-                    [items]="drawerItems"
-                    [mode]="'push'"
-                    [mini]="true"
-                    [expanded]="true"
-                    (select)="drawerOnSelect($event)">
-                </kendo-drawer>
-
-                  <kendo-drawer-content>
-                    <div id="Inbox" *ngIf="drawerSelected === 'Inbox'">
-                      <ul class="inboxList">
-                          <li>
-                              <h6>Monday meeting</h6>
-                              <p>Hi Tom, Since Monday I'll be out of office, I'm rescheduling the meeting for Tuesday.</p>
-                          </li>
-                          <li>
-                              <h6>I'm sorry, Tom</h6>
-                              <p>Hi Tom, my aunt comes for a visit this Saturday, so I can't come back to St. Pete...</p>
-                          </li>
-                      </ul>
-                    </div>
-                    <div id="Notifications" *ngIf="drawerSelected === 'Notifications'">
-                      <ul>
-                          <li>Monday meeting</li>
-                          <li>Regarding org chart changes</li>
-                          <li>Meeting with Cliff</li>
-                          <li>Global Marketing Meeting</li>
-                          <li>Out tonight with collegues?</li>
-                      </ul>
-                    </div>
-                    <div id="Calendar" *ngIf="drawerSelected === 'Calendar'">
-                      <ul>
-                          <li>
-                              <h6>11/5 Monday</h6>
-                              <p>Martha Birthday</p>
-                          </li>
-                          <li>
-                              <h6>15/6 Sunday</h6>
-                              <p>Job interview for internal position</p>
-                          </li>
-                      </ul>
-                    </div>
-                    <div id="Attachments" *ngIf="drawerSelected === 'Attachments'">
-                      <ul>
-                          <li>Build enterprise apps</li>
-                          <li>Fw: Regarding Multiline textbox</li>
-                          <li>Away next week</li>
-                          <li>Fw: Your Costume is ready</li>
-                          <li>Update completed</li>
-                      </ul>
-                    </div>
-                    <div id="Favourites" *ngIf="drawerSelected === 'Favourites'">
-                      <ul>
-                          <li>70% Discount!</li>
-                          <li>90% Discount!</li>
-                          <li>One time offer!</li>
-                      </ul>
-                    </div>
-                  </kendo-drawer-content>
-              </kendo-drawer-container>
+              <!-- <span class="mail-box">Kendo UI Angular components</span> -->
           </div>
-        </div>
-        <div class="row pb-2">
-          <div class="col-2">Avatar</div>
-          <div class="col-10">        
-            <div class="list">
-              <div class="contact-list">Contacts</div>
-                <div class="contact" *ngFor="let contact of contactInitials">
-                    <div class="k-hbox">
-                        <kendo-avatar [shape]="'circle'" [initials]="contact.avatar"></kendo-avatar>
-                        <div>
-                            <h2>{{ contact.name }}</h2>
-                            <p>{{ contact.position }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact" *ngFor="let contact of contactImages">
-                    <div class="k-hbox">
-                        <kendo-avatar [shape]="'circle'" [imageSrc]="contact.avatar"></kendo-avatar>
-                        <div>
-                            <h2>{{ contact.name }}</h2>
-                            <p>{{ contact.position }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact">
-                    <div class="k-hbox">
-                        <kendo-avatar [shape]="'circle'" [icon]="'user'"> </kendo-avatar>
-                        <div class="mate-info">
-                            <h2>Unknown</h2>
-                            <p>Not specified</p>
-                        </div>
-                    <div class="k-hbox"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row pb-2">
-          <div class="col-2">Card</div>
-          <div class="col-10">
-            <div class="demo">
-              <kendo-card>
-                  <img kendoCardMedia src="https://www.telerik.com/kendo-angular-ui-develop/components/layout/card/assets/waffles.jpg" />
-                  <kendo-card-body>
-                      <h4>Pumpkin Waffles</h4>
-                      <div *ngIf="cardExpanded">
-                          <hr kendoCardSeparator />
-                          <div class="recipe-wrap">
-                              Mix together flour, baking powder, salt, cinnamon, nutmeg, ginger, and cloves in a large bowl.
-                              In a second bowl, add egg yolks, sugar, pumpkin, milk, and oil;
-                              Whip the egg until stiff peaks form.
-                              Gently fold in the flour mixture followed by the whipped egg whites.
-                              Cook according to your waffle iron directions. Serve with butter and maple syrup.
+          <kendo-drawer-container>
+              <kendo-drawer #showcaseDrawer
+                  [items]="showcaseItems"
+                  [mode]="'push'"
+                  [mini]="true"
+                  [expanded]="true"
+                  [autoCollapse]="false"
+                  (select)="onSelect($event)">
+              </kendo-drawer>
+      
+              <kendo-drawer-content>
+                  <div class="row p-2" id="Buttons" *ngIf="selectedShocaseItem === 'Buttons'">
+                      <div class="col-md-12">
+                          <div class="pb-2">
+                              <button kendoButton [primary]="true">Primary</button> &nbsp;
+                              <button kendoButton [primary]="true" icon="folder">Primary with icon</button> &nbsp;
+                              <button kendoButton [disabled]="true" [primary]="true">Primary disabled</button>
+                          </div>
+                          <div class="pb-2">
+                              <button kendoButton look="outline">Cancel</button> &nbsp;
+                              <button kendoButton look="outline" icon="cancel">Cancel with icon</button> &nbsp;
+                              <button kendoButton look="outline" [disabled]="true">Cancel disabled</button>
+                          </div>
+                          <div class="pb-2">
+                              <button kendoButton class="k-button-delete">Delete</button> &nbsp;
+                              <button kendoButton class="k-button-delete" icon="delete">Delete with icon</button> &nbsp;
+                              <button kendoButton class="k-button-delete" [disabled]="true">Delete disabled</button>
+                          </div>
+                          <div class="pb-2">
+                              <button kendoButton class="k-button-apply">Apply</button> &nbsp;
+                              <button kendoButton class="k-button-apply" icon="save">Apply with icon</button> &nbsp;
+                              <button kendoButton class="k-button-apply" [disabled]="true">Apply</button>
+                          </div>
+                      <div class="pb-2">
+                              <div class="row">
+                              <div class="col-2">Button group</div>
+                              <div class="col">
+                                  <p>Single selection mode</p>
+                                  <kendo-buttongroup [selection]="'single'">
+                                      <button kendoButton [toggleable]="true" [icon]="'align-left'"></button>
+                                      <button kendoButton [toggleable]="true" [icon]="'align-center'"></button>
+                                      <button kendoButton [toggleable]="true" [icon]="'align-right'"></button>
+                                      <button kendoButton [toggleable]="true" [icon]="'align-justify'"></button>
+                                  </kendo-buttongroup>
+                              </div>
+                              <div class="col">
+                                  <p>Multiple selection mode</p>
+                                  <kendo-buttongroup>
+                                      <button kendoButton [toggleable]="true" [icon]="'bold'"></button>
+                                      <button kendoButton [toggleable]="true" [icon]="'italic'"></button>
+                                      <button kendoButton [toggleable]="true" [icon]="'underline'"></button>
+                                  </kendo-buttongroup>
+                              </div>
+                              </div>
+                          </div>
+                          <div class="pb-2">
+                              <div class="row">
+                              <div class="col-2">Split button</div>
+                              <div class="col">
+                                  Basic Usage
+                                  <div class="row">
+                                      <div class="col">
+                                      <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="'paste'">
+                                          Paste
+                                      </kendo-splitbutton> &nbsp;
+                                      <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="'paste'" [look]="'flat'">
+                                          Paste
+                                      </kendo-splitbutton> &nbsp;
+                                      <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="'paste'" [look]="'outline'">
+                                          Paste
+                                      </kendo-splitbutton> &nbsp;
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col">
+                                  Content Setup
+                                  <div class="row">
+                                  <div class="col">
+                                      <kendo-splitbutton [data]="splitButtonTextData" [text]="splitButtonText"></kendo-splitbutton> &nbsp;
+                                      <kendo-splitbutton [data]="splitButtonTextData">
+                                          <u>R</u>eply
+                                      </kendo-splitbutton> &nbsp;
+                                  </div>
+                                  </div>
+                              </div>
+                              </div>
+                          </div>
+                          <div class="pb-2">
+                              <div class="row">
+                              <div class="col-2">Dropdown button</div>
+                              <div class="col">
+                                  <kendo-dropdownbutton [data]="ddbSettings" [icon]="ddbIco">
+                                      User Settings
+                                  </kendo-dropdownbutton>
+                              </div>
+                              <div class="col">
+                                  <kendo-dropdownbutton [data]="ddbSettings" [icon]="ddbIco"></kendo-dropdownbutton>
+                              </div>
+                              </div>
+                          </div>
+                          <div class="pb-2">
+                              <div class="row">
+                              <div class="col-2">Chip</div>
+                              <div class="col">
+                                  <kendo-chip
+                                      *ngFor="let contact of selectedContacts"
+                                      [label]="contact.label"
+                                      [removable]="true"
+                                      [iconClass]="contact.iconClass"
+                                      (remove)="onRemove($event)"
+                                  >
+                                  </kendo-chip>
+                              </div>
+                              </div>
                           </div>
                       </div>
-                  </kendo-card-body>
-                  <hr kendoCardSeparator *ngIf="horizontalStretched" />
-                  <kendo-card-actions [orientation]="cardActionsOrientation" [layout]="cardActionsLayout">
-                      <button class="k-button k-flat" (click)="toggleLike()">
-                          <span [ngClass]="heartIcon()"></span>
-                          Like
-                      </button>
-                      <hr kendoCardSeparator [orientation]="'vertical'" *ngIf="horizontalStretched" />
-                      <button class="k-button k-primary k-flat" (click)="toggleRecipe()">
-                          <span class="k-icon k-i-more-vertical"></span>
-                          {{ cardBtnText }}
-                      </button>
-                  </kendo-card-actions>
-              </kendo-card>
-
-              <div class="example-config">
-                  <div>Actions Orientation</div>
-                  <label class="k-radio-label" for="horizontal">
-                      <input class="k-radio" type="radio" id="horizontal" value="horizontal" name="actionsOrientation" [(ngModel)]="cardActionsOrientation" />
-                      Horizontal
-                  </label>
-
-                  <label class="k-radio-label" for="vertical">
-                      <input class="k-radio" type="radio" id="vertical" value="vertical" name="actionsOrientation" [(ngModel)]="cardActionsOrientation" />
-                      Vertical
-                  </label>
-                  <hr />
-
-                  <div>Actions Layout</div>
-                  <label class="k-radio-label" for="start">
-                      <input class="k-radio" type="radio" id="start" value="start" name="actionsLayout" [(ngModel)]="cardActionsLayout" />
-                      Start
-                  </label>
-
-                  <label class="k-radio-label" for="end">
-                      <input class="k-radio" type="radio" id="end" value="end" name="actionsLayout" [(ngModel)]="cardActionsLayout" />
-                      End
-                  </label>
-
-                  <label class="k-radio-label" for="stretched">
-                      <input class="k-radio" type="radio" id="stretched" value="stretched" name="actionsLayout" [(ngModel)]="cardActionsLayout" />
-                      Stretched
-                  </label>
-
-                  <label class="k-radio-label" for="center">
-                      <input class="k-radio" type="radio" id="center" value="center" name="actionsLayout" [(ngModel)]="cardActionsLayout" />
-                      Center
-                  </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row pb-2">
-          <div class="col-2">Panelbar</div>
-          <div class="col-10">
-             <kendo-panelbar [items]="panelBarItems">
-                <ng-template kendoPanelBarItemTemplate let-dataItem>
-                    <div class="custom-template">
-                        <h4>Custom template: </h4>
-                        <p>{{dataItem.content}}</p>
-                    </div>
-                </ng-template>
-              </kendo-panelbar>
-          </div>
-        </div>
-        <div class="row pb-2">
-          <div class="col-2">Spliter</div>
-          <div class="col-10">
-            <kendo-splitter orientation="vertical" style="height: 340px;">
-              <kendo-splitter-pane>
-                <kendo-splitter>
-
-                  <kendo-splitter-pane [collapsible]="true" size="30%">
-                    <div class="pane-content">
-                      <h3>Inner splitter / left pane</h3>
-                      <p>Resizable and collapsible.</p>
-                    </div>
-                  </kendo-splitter-pane>
-
-                  <kendo-splitter-pane>
-                    <div class="pane-content">
-                      <h3>Inner splitter / center pane</h3>
-                      <p>Resizable only.</p>
-                    </div>
-                  </kendo-splitter-pane>
-
-                  <kendo-splitter-pane [collapsible]="true" size="30%">
-                    <div class="pane-content">
-                      <h3>Inner splitter / right pane</h3>
-                      <p>Resizable and collapsible.</p>
-                    </div>
-                  </kendo-splitter-pane>
-
-                </kendo-splitter>
-              </kendo-splitter-pane>
-
-              <kendo-splitter-pane size="100px">
-                <div class="pane-content">
-                  <h3>Outer splitter / Middle pane</h3>
-                  <p>Resizable only.</p>
-                </div>
-              </kendo-splitter-pane>
-
-              <kendo-splitter-pane [resizable]="false" size="100px">
-                <div class="pane-content">
-                  <h3>Outer splitter / Bottom pane</h3>
-                  <p>Non-resizable and non-collapsible.</p>
-                </div>
-              </kendo-splitter-pane>
-            </kendo-splitter>
-          </div>
-        </div>
-        <div class="row pb-2">
-          <div class="col-2">TabStrip</div>
-          <div class="col-10">
-            <kendo-tabstrip (tabSelect)="onTabSelect($event)">
-              <kendo-tabstrip-tab [title]="'Paris'" [selected]="true">
-                <ng-template kendoTabContent>
-                  <p>
-                  Paris is the capital and most populous city of France. It has an area of 105 square kilometres (41 square miles) and a population in 2013 of 2,229,621 within its administrative limits. The city is both a commune and department, and forms the centre and headquarters of the Île-de-France, or Paris Region, which has an area of 12,012 square kilometres (4,638 square miles) and a population in 2014 of 12,005,077, comprising 18.2 percent of the population of France.
-                  </p>
-                </ng-template>
-              </kendo-tabstrip-tab>
-              <kendo-tabstrip-tab [title]="'New York City'">
-                <ng-template kendoTabContent>
-                  <p>
-                    The City of New York, often called New York City or simply New York, is the most populous city in the United States. With an estimated 2015 population of 8,550,405 distributed over a land area of just 305 square miles (790 km2), New York City is also the most densely populated major city in the United States. Located at the southern tip of the state of New York, the city is the center of the New York metropolitan area, one of the most populous urban agglomerations in the world.
-                  </p>
-                  <p>
-                    A global power city, New York City exerts a significant impact upon commerce, finance, media, art, fashion, research, technology, education, and entertainment, its fast pace defining the term New York minute. Home to the headquarters of the United Nations, New York is an important center for international diplomacy and has been described as the cultural and financial capital of the world.
-                  </p>
-                </ng-template>
-              </kendo-tabstrip-tab>
-              <kendo-tabstrip-tab [title]="'Tallinn'">
-                <ng-template kendoTabContent>
-                  <p>
-                    Tallinn is the capital and largest city of Estonia. It is situated on the northern coast of the country, on the shore of the Gulf of Finland, 80 km (50 mi) south of Helsinki, east of Stockholm and west of Saint Petersburg. From the 13th century until 1918 (and briefly during the Nazi occupation of Estonia from 1941 to 1944), the city was known as Reval. Tallinn occupies an area of 159.2 km2 (61.5 sq mi) and has a population of 443,894. Approximately 32% of Estonia's total population lives in Tallinn.
-                  </p>
-                  <p>
-                    Tallinn was founded in 1248, but the earliest human settlements are over 5,000 years old, making it one of the oldest capital cities of Northern Europe. Due to its strategic location, the city became a major trade hub, especially from the 14th to the 16th century, when it grew in importance as part of the Hanseatic League.
-                  </p>
-                </ng-template>
-              </kendo-tabstrip-tab>
-              <kendo-tabstrip-tab [title]="'Sydney'" [disabled]="true"></kendo-tabstrip-tab>
-            </kendo-tabstrip>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row p-2">
-      <div class="col-md-2">Dialog</div>        
-        <div class="col-md-10">
-            <div class="pb-2">
-                <div class="row">
-                    <div class="col">
-                        <button kendoButton (click)="open('dialog')">Open dialog</button>    
-                        <kendo-dialog title="Edit user" *ngIf="dialogOpened" (close)="close('dialog')" [minWidth]="250"
-                            [width]="450">
-                            <div *ngIf="dialogLoader" appLoader></div>
-                            <form #dialogForm="ngForm">
-                                <div class="form-group">
-                                    <label [for]="username">Username</label>
-                                    <input type="text" #username #usernameModel="ngModel" class="k-textbox form-control" name="form-textbox"
-                                        [(ngModel)]="dialogModel.username" required />
-                                    <form-error [model]="usernameModel" inputLabel="Username">
-                                    </form-error>
-                                </div>
-        
-                                <div class="form-group">
-                                    <label [for]="years">Years</label>
-                                    <kendo-numerictextbox #years #yearsModel="ngModel" class="form-control" [(ngModel)]="dialogModel.years"
-                                        [min]="0" [max]="100" name="form-numeric" required>
-                                    </kendo-numerictextbox>
-                                    <form-error [model]="yearsModel" inputLabel="Years">
-                                    </form-error>
-                                </div>
-                                <div *ngIf="dialogLoader" appLoader [opaque]="true"></div>
-                            </form>
-                            <kendo-dialog-actions layout="normal" class=:>
-                                <button kendoButton (click)="action('cancel')" look="outline">Cancel</button>
-                                <button kendoButton [primary]="true" (click)="action('save')" [disabled]="!dialogForm.valid">Save</button>
-                            </kendo-dialog-actions>
-                        </kendo-dialog>
-                    </div>
-                    <div class="col">
-                        <button kendoButton (click)="confirm()">Open confirm dialog</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row p-2">
-        <div class="col-md-2">Sortable</div>        
-        <div class="col-md-10">
-          <div class="container-fluid">
-              <kendo-sortable
-                  [kendoSortableBinding]="dragableData"
-                  [navigatable]="true"
-                  [animation] = "true"
-                  class="row" 
-                  itemClass="col-3 p-0">
-                <ng-template let-dataItem="item">
-                    <div class="draggable-item" >{{dataItem.name}}</div>
-                </ng-template>
-              </kendo-sortable>
-          </div> 
-        </div>
-    </div>
-
-    <div class="row p-2">
-        <div class="col-md-2">Loader</div>
-        <div class="col-md-10">
-            <div>
-                <button kendoButton (click)="showLoader()">Show loader</button>  
-                <button kendoButton (click)="showOpaqueLoader()" class="ml-5">Show opaque loader</button>
-            </div>
-            <div class="col-6">
-                <form #loaderForm="ngForm">
-                    <div class="form-group">
-                        <label [for]="username">Username</label>
-                        <input type="text" #username #usernameModel="ngModel" class="k-textbox form-control" name="form-textbox" minlength="10" maxlength="20"
-                            [(ngModel)]="formModel.username" required />
-                        <form-error [model]="usernameModel" inputLabel="Username">
-                        </form-error>
-                    </div>
-    
-                    <div class="form-group">
-                        <label [for]="names">Names</label>
-                        <input type="text" #names #namesModel="ngModel" class="k-textbox form-control" name="form-textbox"
-                            [(ngModel)]="formModel.names" required />
-                        <form-error [model]="namesModel" inputLabel="names">
-                        </form-error>
-                    </div>
-    
-                    <div class="text-right grouped-buttons-right-align">
-                        <button kendoButton look="outline">Cancel</button>
-                        <button kendoButton (click)="onFormSubmit()" primary="true"
-                            [disabled]="!loaderForm.valid">Save</button>
-                    </div>
-                    <div *ngIf="loader" appLoader></div>
-                    <div *ngIf="opaqueLoader" appLoader [opaque]="true"></div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="row p-2">
-        <div class="col-md-2">Grid</div>
-        <div class="col-md-10">
-            <p>
-                <kendo-grid [data]="gridView" [pageable]="pageSettings" [pageSize]="pageSize" [skip]="skip" [loading]="loader"
-                    (pageChange)="pageChange($event)" [sortable]="sortSettings" [sort]="sort"
-                    (sortChange)="sortChange($event)" scrollable="none">
-                    <kendo-grid-column field="ProductID" title="ID" width="40">
-                    </kendo-grid-column>
-                    <kendo-grid-column field="ProductName" title="Name" width="250">
-                    </kendo-grid-column>
-                    <kendo-grid-column field="Category.CategoryName" title="Category">
-                    </kendo-grid-column>
-                    <kendo-grid-column field="UnitPrice" title="Price" width="80">
-                    </kendo-grid-column>
-                    <kendo-grid-column field="UnitsInStock" title="In stock" width="80">
-                    </kendo-grid-column>
-                    <kendo-grid-column field="Discontinued" title="Discontinued" width="120">
-                        <ng-template kendoGridCellTemplate let-dataItem>
-                            <input type="checkbox" id="grid-cb" class="k-checkbox" [(ngModel)]="dataItem.Discontinued" disabled
-                                name="input-required" />
-                            <label class="k-checkbox-label" for="grid-cb"></label>
-                        </ng-template>
-                    </kendo-grid-column>
-                </kendo-grid>
-            </p>
-        </div>
-    </div>
-    <div class="row p-2">
-        <div class="col-md-2">Form</div>
-        <div class="col-md-10">
-            <kendo-tabstrip>
-                <kendo-tabstrip-tab title="Required fields" [selected]="true">
-                    <ng-template kendoTabContent>
-                        <form #myForm="ngForm">
-    
-                            <div class="form-group">
-                                <label [for]="textInput">Input*</label>
-                                <input type="text" #textInput #textInputModel="ngModel" class="k-textbox form-control" name="form-textbox" minlength="10" maxlength="20"
-                                    [(ngModel)]="formModel.textbox" required />
-                                <form-error [model]="textInputModel" inputLabel="Input">
-                                </form-error>
+                  </div>
+                  <div class="row p-2" id="Tooltip" *ngIf="selectedShocaseItem === 'Tooltip'">
+                      <div class="col-md-12">
+                          <div class="row">
+                              <div class="col">
+                                  <p>Default</p>
+                                  <div kendoTooltip>
+                                  <button class="k-button k-primary" title="Saves the current document">
+                                      Save
+                                  </button> &nbsp;
+                                  <button class="k-button" title="Discards all changes">
+                                      Cancel
+                                  </button> &nbsp;
+                                  </div>
+                              </div>
+                              <div class="col">
+                                  <p>Closable</p>
+                                  <div kendoTooltip position="right" closable="true" showOn="click">
+                                  <button class="k-button" title="Closable tooltip content">Show tooltip</button>
+                                  </div>
+                              </div>
+                          </div>               
+                      </div>
+                  </div>   
+                  <div class="row p-2" id="Dropdowns" *ngIf="selectedShocaseItem === 'Dropdowns'">
+                      <div class="col-md-12">
+                          <div class="row pb-2">
+                            <div class="col">
+                              Single
                             </div>
-    
-                            <div class="form-group">
-                                <label [for]="numericTextBox">NumericTextBox*</label>
-                                <kendo-numerictextbox #numericTextBox #numericTextBoxModel="ngModel" class="form-control" [(ngModel)]="formModel.numeric"
-                                    [min]="0" [max]="100" name="form-numeric" required>
-                                </kendo-numerictextbox>
-                                <form-error [model]="numericTextBoxModel" inputLabel="NumericTextBox">
-                                </form-error>
+                            <div class="col">
+                              <kendo-dropdownlist [data]="data" [filterable]="true" (filterChange)="filterChange($event)">
+                              </kendo-dropdownlist>
                             </div>
-    
-                            <div class="form-group">
-                                <label [for]="dropDownList">DropDownList*</label>
-                                <kendo-dropdownlist #dropDownList #dropDownListModel="ngModel" class="form-control" [data]="listItems" name="form-ddl"
-                                    [(ngModel)]="formModel.ddl" required>
-                                </kendo-dropdownlist>
-                                <form-error [model]="dropDownListModel" inputLabel="DropDownList">
-                                </form-error>
+                            <div class="col">
+                              Multiple
                             </div>
-    
-                            <div class="form-group">
-                                <label [for]="comboBox">ComboBox*</label>
-                                <kendo-combobox #comboBox #comboBoxModel="ngModel" class="form-control" [data]="listItems" name="form-combobox"
-                                    [(ngModel)]="formModel.combobox" required>
-                                </kendo-combobox>
-                                <form-error [model]="comboBoxModel" inputLabel="ComboBox">
-                                </form-error>
+                            <div class="col-6">
+                              <kendo-multiselect [data]="listItems" [(ngModel)]="valueMs"></kendo-multiselect>
                             </div>
-    
-                            <div class="form-group">
-                                <label [for]="multiSelect">MultiSelect*</label>
-                                <kendo-multiselect #multiSelect #multiSelectModel="ngModel" class="form-control" name="form-multiselect"
-                                    [data]="listItems" [(ngModel)]="formModel.multiselect" required>
-                                </kendo-multiselect>
-                                <form-error [model]="multiSelectModel" inputLabel="MultiSelect">
-                                </form-error>
+                          </div>
+                      </div>
+                  </div>   
+                  <div class="row p-2" id="Input" *ngIf="selectedShocaseItem === 'Input'">
+                      <div class="col-md-12">
+                          <div class="row pb-2">
+                              <div class="col-2">
+                              Textbox
+                              </div>
+                              <div class="col">
+                              <input kendoTextBox/>
+                              </div>
+                              <div class="col-2">
+                              Textbox with placeholder
+                              </div>
+                              <div class="col">
+                              <input kendoTextBox placeholder="Enter a value..."/>
+                              </div>
+                          </div>
+                          <div class="row pb-2">
+                              <div class="col-2">
+                              Masked Textbox
+                              </div>
+                              <div class="col">
+                              <kendo-maskedtextbox [mask]="mask" [value]="maskValue"></kendo-maskedtextbox>
+                              </div>
+                              <div class="col-2">
+                              Numeric Textbox
+                              </div>
+                              <div class="col">
+                              <kendo-numerictextbox [value]="numericValue" [min]="0" [max]="100" [autoCorrect]="true">
+                              </kendo-numerictextbox>
+                              </div>
+                          </div>
+                          <div class="row pb-2">
+                          <div class="col-2">
+                              Switch
+                          </div>
+                          <div class="col">
+                              <kendo-switch [(ngModel)]="switchChecked"></kendo-switch>
+                          </div>
+                              <div class="col-2">
+                              Slider
+                          </div>
+                          <div class="col">
+                              <kendo-slider tickPlacement="none" [min]="0" [max]="15" [smallStep]="1" [(ngModel)]="valueHorizontal">
+                              </kendo-slider>
+                          </div>
+                          </div>
+                      </div>
+                  </div>  
+                  <div class="row p-2" id="Dates" *ngIf="selectedShocaseItem === 'Dates'">
+                      <div class="col-md-12">
+                          <div class="row pb-2">
+                            <div class="col-2">Date input</div>
+                            <div class="col">
+                                <kendo-dateinput [(value)]="dateInputValue"></kendo-dateinput>
+                                  <p>(use ← and →  to navigate, ↑ to increment and ↓ to decrement the value)</p>
                             </div>
-    
-                            <div class="form-group">
-                                <label [for]="switch">Switch*</label>
-                                <div class="input-group">
-                                    <kendo-switch #switch #switchModel="ngModel" onLabel="Active" offLabel="Inactive" name="switch"
-                                        [(ngModel)]="formModel.switch" required>
-                                    </kendo-switch>
-                                </div>
-                                <form-error [model]="switchModel" inputLabel="Switch">
-                                </form-error>
+                            <!-- <div class="col">
+                                <kendo-dateinput  [disabled]="true" [(value)]="dateInputValue"></kendo-dateinput>
                             </div>
-    
-                            <div class="form-group">
-                                <label [for]="slider">Slider*</label>
-                                <div class="input-group">
-                                    <kendo-slider #slider #sliderModel="ngModel" name="slider" tickPlacement="none"  [min]="0" [max]="10" [smallStep]="1"
-                                        [(ngModel)]="inputForm.slider"required></kendo-slider>
-                                </div>
-                                <form-error [model]="sliderModel" inputLabel="Slider">
-                                </form-error>
+                            <div class="col">
+                                <kendo-dateinput  [readonly]="true" [(value)]="dateInputValue"></kendo-dateinput>
+                            </div> -->
+                          </div>
+                          <div class="row pb-2">
+                            <div class="col-2">Date picker</div>
+                            <div class="col">
+                              <kendo-datepicker [(value)]="datePickerValue"></kendo-datepicker>
+                                <p>(use Alt+↓ to open the calendar, ← and →  to navigate, ↑ to increment and ↓ to decrement the value)</p>
                             </div>
-    
-                            <div class="form-group">
-                                <label [for]="colorPicker">ColorPicker*</label>
-                                <div class="input-group">
-                                    <kendo-colorpicker #colorPicker #colorPickerModel="ngModel" view="combo" format="hex"
-                                        name="colorPicker" [(ngModel)]="formModel.color" required>
-                                    </kendo-colorpicker>
-                                </div>
-                                <form-error [model]="colorPickerModel" inputLabel="ColorPicker">
-                                </form-error>
+                            <!-- <div class="col">
+                              <kendo-datepicker [disabled]="true" [(value)]="datePickerValue"></kendo-datepicker>
                             </div>
-    
-                            <div class="text-right grouped-buttons-right-align">
-                                <button kendoButton look="outline">Cancel</button>
-                                <button kendoButton (click)="onFormSubmit()" primary="true"
-                                    [disabled]="!myForm.valid">Save</button>
+                              <div class="col">
+                              <kendo-datepicker [readonly]="true" [(value)]="datePickerValue"></kendo-datepicker>
+                            </div> -->
+                          </div>
+                          <div class="row pb-2">
+                            <div class="col-2">Date/time picker</div>
+                            <div class="col">
+                              <kendo-datetimepicker [format]="format" [(value)]="dateTimePickerValue">
+                              </kendo-datetimepicker>
+                              <p>(use Alt + ↓ to open the calendar, Alt + ← and Alt + →  to change the tabs)</p>
                             </div>
-    
-                        </form>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-                <kendo-tabstrip-tab title="Input">
-                    <ng-template kendoTabContent>
-                        <form #iForm="ngForm">
-    
-                            <div class="form-group">
-                                <label [for]="textInput">Input</label>
-                                <input type="text" #textInput class="k-textbox form-control" name="form-textbox"
-                                    [(ngModel)]="formModel.textbox" [required]="inputForm.required"
-                                    [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly" />
+                            <!-- <div class="col">
+                              <kendo-datetimepicker [disabled]="true" [format]="format" [(value)]="dateTimePickerValue">
+                              </kendo-datetimepicker>
                             </div>
-    
-                            <div class="display-flex">
-                                <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                    name="input-required" />
-                                <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                    name="input-disabled" />
-                                <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                    name="input-readonly" />
-                                <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
+                              <div class="col">
+                              <kendo-datetimepicker [readonly]="true" [format]="format" [(value)]="dateTimePickerValue">
+                              </kendo-datetimepicker>
+                            </div> -->
+                          </div>
+                          <div class="row pb-2">
+                            <div class="col-2">Date range</div>
+                            <div class="col">
+                                <kendo-daterange>
+                                  <label>
+                                      <span class="label">Start</span>
+                                      <kendo-dateinput kendoDateRangeStartInput [(value)]="range.start"></kendo-dateinput>
+                                  </label>
+                                  <label>
+                                      <span class="label">End</span>
+                                      <kendo-dateinput kendoDateRangeEndInput [(value)]="range.end"></kendo-dateinput>
+                                  </label>
+                                </kendo-daterange>
                             </div>
-    
-                            <div class="text-left grouped-buttons-left-align">
-                                <button kendoButton look="outline">Cancel</button>
-                                <button kendoButton (click)="onFormSubmit()" primary="true"
-                                    [disabled]="!iForm.valid">Save</button>
+                          </div>
+                          <div class="row pb-2">
+                            <div class="col-2">Time picker</div>
+                            <div class="col">
+                                <kendo-timepicker [(value)]="timePickerValue"></kendo-timepicker>
+                                <p>(use Alt+↓ to open the time list, Tab to move to the next time section in the popup, ↑ to increment and ↓ to decrement the val)</p>
                             </div>
-    
-                        </form>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-                <kendo-tabstrip-tab title="MaskedTextBox">
-                    <ng-template kendoTabContent>
-                        <form #mbForm="ngForm">
-                            <div class="form-group">
-                                <label [for]="maskedTextbox">MaskedTextBox</label>
-                                <kendo-maskedtextbox #maskedTextbox name="maskedTextbox" [mask]="mask" class="form-control"
-                                    [(ngModel)]="formModel.maskedTextbox" [required]="inputForm.required"
-                                    [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                </kendo-maskedtextbox>
+                            <!-- <div class="col">
+                                <kendo-timepicker [disabled]="true" [(value)]="timePickerValue"></kendo-timepicker>
                             </div>
-    
-                            <div class="display-flex">
-                                <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                    name="input-required" />
-                                <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                    name="input-disabled" />
-                                <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                    name="input-readonly" />
-                                <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                            </div>
-    
-                            <div class="text-left grouped-buttons-left-align">
-                                <button kendoButton look="outline">Cancel</button>
-                                <button kendoButton (click)="onFormSubmit()" primary="true"
-                                    [disabled]="!mbForm.valid">Save</button>
-                            </div>
-    
-                        </form>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-                <kendo-tabstrip-tab title="NumericTextBox">
-                    <ng-template kendoTabContent>
-                        <form #ntbForm="ngForm">
-    
-                            <div class="form-group">
-                                <label [for]="numericTextBox">NumericTextBox</label>
-                                <kendo-numerictextbox #numericTextBox class="form-control" [(ngModel)]="formModel.numeric"
-                                    [min]="0" [max]="100" name="form-numeric" [required]="inputForm.required"
-                                    [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                </kendo-numerictextbox>
-                            </div>
-    
-                            <div class="display-flex">
-                                <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                    name="input-required" />
-                                <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                    name="input-disabled" />
-                                <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                    name="input-readonly" />
-                                <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                            </div>
-    
-                            <div class="text-left grouped-buttons-left-align">
-                                <button kendoButton look="outline">Cancel</button>
-                                <button kendoButton (click)="onFormSubmit()" primary="true"
-                                    [disabled]="!ntbForm.valid">Save</button>
-                            </div>
-    
-                        </form>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-                <kendo-tabstrip-tab title="DropDownList">
-                    <ng-template kendoTabContent>
-                        <form #ddlForm="ngForm">
-    
-                            <div class="form-group">
-                                <label [for]="ddl">DropDownList</label>
-                                <kendo-dropdownlist #ddl class="form-control" [data]="listItems" name="form-ddl"
-                                    [(ngModel)]="formModel.ddl" [required]="inputForm.required"
-                                    [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                </kendo-dropdownlist>
-                            </div>
-    
-                            <div class="display-flex">
-                                <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                    name="input-required" />
-                                <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                    name="input-disabled" />
-                                <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                    name="input-readonly" />
-                                <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                            </div>
-    
-                            <div class="text-left grouped-buttons-left-align">
-                                <button kendoButton look="outline">Cancel</button>
-                                <button kendoButton (click)="onFormSubmit()" primary="true"
-                                    [disabled]="!ddlForm.valid">Save</button>
-                            </div>
-    
-                        </form>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-                <kendo-tabstrip-tab title="ComboBox">
-                    <ng-template kendoTabContent>
-                        <form #cbForm="ngForm">
-    
-                            <div class="form-group">
-                                <label [for]="comboBox">ComboBox</label>
-                                <kendo-combobox #comboBox class="form-control" [data]="listItems" name="form-combobox"
-                                    [(ngModel)]="formModel.combobox" [required]="inputForm.required"
-                                    [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                </kendo-combobox>
-                            </div>
-    
-                            <div class="display-flex">
-                                <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                    name="input-required" />
-                                <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                    name="input-disabled" />
-                                <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                    name="input-readonly" />
-                                <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                            </div>
-    
-                            <div class="text-left grouped-buttons-left-align">
-                                <button kendoButton look="outline">Cancel</button>
-                                <button kendoButton (click)="onFormSubmit()" primary="true"
-                                    [disabled]="!cbForm.valid">Save</button>
-                            </div>
-    
-                        </form>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-                <kendo-tabstrip-tab title="MultiSelect">
-                    <ng-template kendoTabContent>
-                        <form #msForm="ngForm">
-    
-                            <div class="form-group">
-                                <label [for]="multiSelect">MultiSelect</label>
-                                <kendo-multiselect #multiSelect class="form-control" name="form-multiselect"
-                                    [data]="listItems" [(ngModel)]="formModel.multiselect" [required]="inputForm.required"
-                                    [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                </kendo-multiselect>
-                            </div>
-    
-                            <div class="display-flex">
-                                <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                    name="input-required" />
-                                <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                    name="input-disabled" />
-                                <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                    name="input-readonly" />
-                                <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                            </div>
-    
-                            <div class="text-left grouped-buttons-left-align">
-                                <button kendoButton look="outline">Cancel</button>
-                                <button kendoButton (click)="onFormSubmit()" primary="true"
-                                    [disabled]="!msForm.valid">Save</button>
-                            </div>
-    
-                        </form>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-                <kendo-tabstrip-tab title="Switch">
-                    <ng-template kendoTabContent>
-                        <form #swForm="ngForm">
-                            <div class="form-group">
-                                <label [for]="switch">Switch</label>
-                                <kendo-switch #switch name="switch"
-                                    [(ngModel)]="formModel.switch" [required]="inputForm.required"
-                                    [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                </kendo-switch>
-                            </div>
-    
-                            <div class="display-flex">
-                                <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                    name="input-required" />
-                                <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                    name="input-disabled" />
-                                <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                    name="input-readonly" />
-                                <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                            </div>
-    
-                            <div class="text-left grouped-buttons-left-align">
-                                <button kendoButton look="outline">Cancel</button>
-                                <button kendoButton (click)="onFormSubmit()" primary="true"
-                                    [disabled]="!swForm.valid">Save</button>
-                            </div>
-    
-                        </form>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-                <kendo-tabstrip-tab title='Slider'>
-                    <ng-template kendoTabContent>
-                        <form #slForm="ngForm">
-                            <div class="form-group">
-                                <label [for]="slide">Slider</label>
-                                <kendo-slider #slide name="slider" tickPlacement="none"  [min]="0" [max]="10" [smallStep]="1"
-                                    [(ngModel)]="inputForm.slider" [required]="inputForm.required"
-                                    [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"></kendo-slider>
-                            </div>
-    
-                            <div class="display-flex">
-                                <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                    name="input-required" />
-                                <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                    name="input-disabled" />
-                                <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                    name="input-readonly" />
-                                <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                            </div>
-    
-                            <div class="text-left grouped-buttons-left-align">
-                                <button kendoButton look="outline">Cancel</button>
-                                <button kendoButton (click)="onFormSubmit()" primary="true"
-                                    [disabled]="!slForm.valid">Save</button>
-                            </div>
-    
-                        </form>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-                <kendo-tabstrip-tab title="ColorPicker">
-                    <ng-template kendoTabContent>
-                        <form #cpForm="ngForm" class="form">
-    
-                            <div class="form-group">
-                                <label [for]="colorPicker">ColorPicker</label>
-                                <kendo-colorpicker #colorPicker view="combo" format="hex"
-                                    name="colorPicker" [(ngModel)]="formModel.color" [required]="inputForm.required"
-                                    [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                </kendo-colorpicker>
-                            </div>
-    
-                            <div class="display-flex">
-                                <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                    name="input-required" [(ngModel)]="formModel.cb1" />
-                                <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                    name="input-disabled" [(ngModel)]="formModel.cb2" />
-                                <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                    name="input-readonly" [(ngModel)]="formModel.cb3" />
-                                <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                            </div>
-    
-                            <div class="text-left grouped-buttons-left-align">
-                                <button kendoButton look="outline">Cancel</button>
-                                <button kendoButton (click)="onFormSubmit()" primary="true"
-                                    [disabled]="!cpForm.valid">Save</button>
-                            </div>
-    
-                        </form>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-                <kendo-tabstrip-tab title="CheckBox">
-                    <ng-template kendoTabContent>
-                        <form #cbForm="ngForm" class="form">
-                            <div class="form-group">
-                                <input type="checkbox" id="cb" class="k-checkbox" [(ngModel)]="formModel.cb"
-                                    [disabled]="inputForm.disabled" name="checkbox" />
-                                <label class="k-checkbox-label" for="cb">Checkbox</label>
-                            </div>
-                            <div class="display-flex">
-                                <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                    name="input-disabled" [(ngModel)]="formModel.cb2" />
-                                <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                            </div>
-                            <div class="text-left grouped-buttons-left-align">
-                                <button kendoButton look="outline">Cancel</button>
-                                <button kendoButton (click)="onFormSubmit()" primary="true"
-                                    [disabled]="!cbForm.valid">Save</button>
-                            </div>
-        
-                        </form>
-                    </ng-template>
-                </kendo-tabstrip-tab>
-    
-                <kendo-tabstrip-tab title="RadioButton">
-                        <ng-template kendoTabContent>
-                            <form #rbForm="ngForm" class="form">
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="k-radio" id="female" name="gender" ngModel value="1" type="radio"
-                                        [disabled]="inputForm.disabled">
-                                        <label class="k-radio-label" for="female">Female</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input checked="checked" class="k-radio" id="male" name="gender" ngModel value="2" type="radio"
-                                        [disabled]="inputForm.disabled">
-                                        <label class="k-radio-label" for="male">Male</label>
-                                    </div>
-                                </div>
-                                <div class="display-flex">
-                                    <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                        name="input-disabled" [(ngModel)]="formModel.cb2" />
-                                    <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                </div>
-                                <div class="text-left grouped-buttons-left-align">
-                                    <button kendoButton look="outline">Cancel</button>
-                                    <button kendoButton (click)="onFormSubmit()" primary="true"
-                                        [disabled]="!rbForm.valid">Save</button>
-                                </div>
-            
-                            </form>
-                        </ng-template>
-                    </kendo-tabstrip-tab>
+                            <div class="col">
+                                <kendo-timepicker [readonly]="true" [(value)]="timePickerValue"></kendo-timepicker>
+                            </div> -->
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row p-2" id="Layout" *ngIf="selectedShocaseItem === 'Layout'">
+                      <div class="col-md-12">
+                        <div class="row pb-2">
+                          <div class="col-12 font-weight-bold pb-3">Drawer</div>
+                          <div class="col-12">
+                            <div class="custom-toolbar">
+                              <button
+                                  kendoButton
+                                  icon="menu"
+                                  look="flat"
+                                  (click)="drawer.toggle()"
+                              ></button>
+                              <span class="mail-box">Mail Box</span>
+                              </div>
+                              <kendo-drawer-container style="position: relative;">
+                                <kendo-drawer #drawer
+                                    [items]="drawerItems"
+                                    [mode]="'push'"
+                                    [mini]="true"
+                                    [expanded]="true"
+                                    (select)="drawerOnSelect($event)">
+                                </kendo-drawer>
                 
-            </kendo-tabstrip>
+                                  <kendo-drawer-content>
+                                    <div id="Inbox" *ngIf="drawerSelected === 'Inbox'">
+                                      <ul class="inboxList">
+                                          <li>
+                                              <h6>Monday meeting</h6>
+                                              <p>Hi Tom, Since Monday I'll be out of office, I'm rescheduling the meeting for Tuesday.</p>
+                                          </li>
+                                          <li>
+                                              <h6>I'm sorry, Tom</h6>
+                                              <p>Hi Tom, my aunt comes for a visit this Saturday, so I can't come back to St. Pete...</p>
+                                          </li>
+                                      </ul>
+                                    </div>
+                                    <div id="Notifications" *ngIf="drawerSelected === 'Notifications'">
+                                      <ul>
+                                          <li>Monday meeting</li>
+                                          <li>Regarding org chart changes</li>
+                                          <li>Meeting with Cliff</li>
+                                          <li>Global Marketing Meeting</li>
+                                          <li>Out tonight with collegues?</li>
+                                      </ul>
+                                    </div>
+                                    <div id="Calendar" *ngIf="drawerSelected === 'Calendar'">
+                                      <ul>
+                                          <li>
+                                              <h6>11/5 Monday</h6>
+                                              <p>Martha Birthday</p>
+                                          </li>
+                                          <li>
+                                              <h6>15/6 Sunday</h6>
+                                              <p>Job interview for internal position</p>
+                                          </li>
+                                      </ul>
+                                    </div>
+                                    <div id="Attachments" *ngIf="drawerSelected === 'Attachments'">
+                                      <ul>
+                                          <li>Build enterprise apps</li>
+                                          <li>Fw: Regarding Multiline textbox</li>
+                                          <li>Away next week</li>
+                                          <li>Fw: Your Costume is ready</li>
+                                          <li>Update completed</li>
+                                      </ul>
+                                    </div>
+                                    <div id="Favourites" *ngIf="drawerSelected === 'Favourites'">
+                                      <ul>
+                                          <li>70% Discount!</li>
+                                          <li>90% Discount!</li>
+                                          <li>One time offer!</li>
+                                      </ul>
+                                    </div>
+                                  </kendo-drawer-content>
+                              </kendo-drawer-container>
+                          </div>
+                        </div>
+                        <div class="row pb-2">
+                          <div class="col-12 font-weight-bold pb-3">Avatar</div>
+                          <div class="col-12">        
+                            <div class="list">
+                              <div class="contact-list">Contacts</div>
+                                <div class="contact" *ngFor="let contact of contactInitials">
+                                    <div class="k-hbox">
+                                        <kendo-avatar [shape]="'circle'" [initials]="contact.avatar"></kendo-avatar>
+                                        <div>
+                                            <h2>{{ contact.name }}</h2>
+                                            <p>{{ contact.position }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact" *ngFor="let contact of contactImages">
+                                    <div class="k-hbox">
+                                        <kendo-avatar [shape]="'circle'" [imageSrc]="contact.avatar"></kendo-avatar>
+                                        <div>
+                                            <h2>{{ contact.name }}</h2>
+                                            <p>{{ contact.position }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact">
+                                    <div class="k-hbox">
+                                        <kendo-avatar [shape]="'circle'" [icon]="'user'"> </kendo-avatar>
+                                        <div class="mate-info">
+                                            <h2>Unknown</h2>
+                                            <p>Not specified</p>
+                                        </div>
+                                    <div class="k-hbox"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row pb-2">
+                          <div class="col-12 font-weight-bold pb-3">Card</div>
+                          <div class="col-12">
+                            <div class="demo">
+                              <kendo-card>
+                                  <img kendoCardMedia src="https://www.telerik.com/kendo-angular-ui-develop/components/layout/card/assets/waffles.jpg" />
+                                  <kendo-card-body>
+                                      <h4>Pumpkin Waffles</h4>
+                                      <div *ngIf="cardExpanded">
+                                          <hr kendoCardSeparator />
+                                          <div class="recipe-wrap">
+                                              Mix together flour, baking powder, salt, cinnamon, nutmeg, ginger, and cloves in a large bowl.
+                                              In a second bowl, add egg yolks, sugar, pumpkin, milk, and oil;
+                                              Whip the egg until stiff peaks form.
+                                              Gently fold in the flour mixture followed by the whipped egg whites.
+                                              Cook according to your waffle iron directions. Serve with butter and maple syrup.
+                                          </div>
+                                      </div>
+                                  </kendo-card-body>
+                                  <hr kendoCardSeparator *ngIf="horizontalStretched" />
+                                  <kendo-card-actions [orientation]="cardActionsOrientation" [layout]="cardActionsLayout">
+                                      <button class="k-button k-flat" (click)="toggleLike()">
+                                          <span [ngClass]="heartIcon()"></span>
+                                          Like
+                                      </button>
+                                      <hr kendoCardSeparator [orientation]="'vertical'" *ngIf="horizontalStretched" />
+                                      <button class="k-button k-primary k-flat" (click)="toggleRecipe()">
+                                          <span class="k-icon k-i-more-vertical"></span>
+                                          {{ cardBtnText }}
+                                      </button>
+                                  </kendo-card-actions>
+                              </kendo-card>
+                
+                              <div class="example-config">
+                                  <div>Actions Orientation</div>
+                                  <label class="k-radio-label" for="horizontal">
+                                      <input class="k-radio" type="radio" id="horizontal" value="horizontal" name="actionsOrientation" [(ngModel)]="cardActionsOrientation" />
+                                      Horizontal
+                                  </label>
+                
+                                  <label class="k-radio-label" for="vertical">
+                                      <input class="k-radio" type="radio" id="vertical" value="vertical" name="actionsOrientation" [(ngModel)]="cardActionsOrientation" />
+                                      Vertical
+                                  </label>
+                                  <hr />
+                
+                                  <div>Actions Layout</div>
+                                  <label class="k-radio-label" for="start">
+                                      <input class="k-radio" type="radio" id="start" value="start" name="actionsLayout" [(ngModel)]="cardActionsLayout" />
+                                      Start
+                                  </label>
+                
+                                  <label class="k-radio-label" for="end">
+                                      <input class="k-radio" type="radio" id="end" value="end" name="actionsLayout" [(ngModel)]="cardActionsLayout" />
+                                      End
+                                  </label>
+                
+                                  <label class="k-radio-label" for="stretched">
+                                      <input class="k-radio" type="radio" id="stretched" value="stretched" name="actionsLayout" [(ngModel)]="cardActionsLayout" />
+                                      Stretched
+                                  </label>
+                
+                                  <label class="k-radio-label" for="center">
+                                      <input class="k-radio" type="radio" id="center" value="center" name="actionsLayout" [(ngModel)]="cardActionsLayout" />
+                                      Center
+                                  </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row pb-2">
+                          <div class="col-12 font-weight-bold pb-3">Panelbar</div>
+                          <div class="col-12">
+                              <kendo-panelbar [items]="panelBarItems">
+                                <ng-template kendoPanelBarItemTemplate let-dataItem>
+                                    <div class="custom-template">
+                                        <h4>Custom template: </h4>
+                                        <p>{{dataItem.content}}</p>
+                                    </div>
+                                </ng-template>
+                              </kendo-panelbar>
+                          </div>
+                        </div>
+                        <div class="row pb-2">
+                          <div class="col-12 font-weight-bold pb-3">Spliter</div>
+                          <div class="col-12">
+                            <kendo-splitter orientation="vertical" style="height: 340px;">
+                              <kendo-splitter-pane>
+                                <kendo-splitter>
+                
+                                  <kendo-splitter-pane [collapsible]="true" size="30%">
+                                    <div class="pane-content">
+                                      <h3>Inner splitter / left pane</h3>
+                                      <p>Resizable and collapsible.</p>
+                                    </div>
+                                  </kendo-splitter-pane>
+                
+                                  <kendo-splitter-pane>
+                                    <div class="pane-content">
+                                      <h3>Inner splitter / center pane</h3>
+                                      <p>Resizable only.</p>
+                                    </div>
+                                  </kendo-splitter-pane>
+                
+                                  <kendo-splitter-pane [collapsible]="true" size="30%">
+                                    <div class="pane-content">
+                                      <h3>Inner splitter / right pane</h3>
+                                      <p>Resizable and collapsible.</p>
+                                    </div>
+                                  </kendo-splitter-pane>
+                
+                                </kendo-splitter>
+                              </kendo-splitter-pane>
+                
+                              <kendo-splitter-pane size="100px">
+                                <div class="pane-content">
+                                  <h3>Outer splitter / Middle pane</h3>
+                                  <p>Resizable only.</p>
+                                </div>
+                              </kendo-splitter-pane>
+                
+                              <kendo-splitter-pane [resizable]="false" size="100px">
+                                <div class="pane-content">
+                                  <h3>Outer splitter / Bottom pane</h3>
+                                  <p>Non-resizable and non-collapsible.</p>
+                                </div>
+                              </kendo-splitter-pane>
+                            </kendo-splitter>
+                          </div>
+                        </div>
+                        <div class="row pb-2">
+                          <div class="col-12 font-weight-bold pb-3">TabStrip</div>
+                          <div class="col-12">
+                            <kendo-tabstrip (tabSelect)="onTabSelect($event)">
+                              <kendo-tabstrip-tab [title]="'Paris'" [selected]="true">
+                                <ng-template kendoTabContent>
+                                  <p>
+                                  Paris is the capital and most populous city of France. It has an area of 105 square kilometres (41 square miles) and a population in 2013 of 2,229,621 within its administrative limits. The city is both a commune and department, and forms the centre and headquarters of the Île-de-France, or Paris Region, which has an area of 12,012 square kilometres (4,638 square miles) and a population in 2014 of 12,005,077, comprising 18.2 percent of the population of France.
+                                  </p>
+                                </ng-template>
+                              </kendo-tabstrip-tab>
+                              <kendo-tabstrip-tab [title]="'New York City'">
+                                <ng-template kendoTabContent>
+                                  <p>
+                                    The City of New York, often called New York City or simply New York, is the most populous city in the United States. With an estimated 2015 population of 8,550,405 distributed over a land area of just 305 square miles (790 km2), New York City is also the most densely populated major city in the United States. Located at the southern tip of the state of New York, the city is the center of the New York metropolitan area, one of the most populous urban agglomerations in the world.
+                                  </p>
+                                  <p>
+                                    A global power city, New York City exerts a significant impact upon commerce, finance, media, art, fashion, research, technology, education, and entertainment, its fast pace defining the term New York minute. Home to the headquarters of the United Nations, New York is an important center for international diplomacy and has been described as the cultural and financial capital of the world.
+                                  </p>
+                                </ng-template>
+                              </kendo-tabstrip-tab>
+                              <kendo-tabstrip-tab [title]="'Tallinn'">
+                                <ng-template kendoTabContent>
+                                  <p>
+                                    Tallinn is the capital and largest city of Estonia. It is situated on the northern coast of the country, on the shore of the Gulf of Finland, 80 km (50 mi) south of Helsinki, east of Stockholm and west of Saint Petersburg. From the 13th century until 1918 (and briefly during the Nazi occupation of Estonia from 1941 to 1944), the city was known as Reval. Tallinn occupies an area of 159.2 km2 (61.5 sq mi) and has a population of 443,894. Approximately 32% of Estonia's total population lives in Tallinn.
+                                  </p>
+                                  <p>
+                                    Tallinn was founded in 1248, but the earliest human settlements are over 5,000 years old, making it one of the oldest capital cities of Northern Europe. Due to its strategic location, the city became a major trade hub, especially from the 14th to the 16th century, when it grew in importance as part of the Hanseatic League.
+                                  </p>
+                                </ng-template>
+                              </kendo-tabstrip-tab>
+                              <kendo-tabstrip-tab [title]="'Sydney'" [disabled]="true"></kendo-tabstrip-tab>
+                            </kendo-tabstrip>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row p-2" id="Dialog" *ngIf="selectedShocaseItem === 'Dialog'">
+                        <div class="col-md-12">
+                            <div class="pb-2">
+                                <div class="row">
+                                    <div class="col">
+                                        <button kendoButton (click)="open('dialog')">Open dialog</button>    
+                                        <kendo-dialog title="Edit user" *ngIf="dialogOpened" (close)="close('dialog')" [minWidth]="250"
+                                            [width]="450">
+                                            <div *ngIf="dialogLoader" appLoader></div>
+                                            <form #dialogForm="ngForm">
+                                                <div class="form-group">
+                                                    <label [for]="username">Username</label>
+                                                    <input type="text" #username #usernameModel="ngModel" class="k-textbox form-control" name="form-textbox"
+                                                        [(ngModel)]="dialogModel.username" required />
+                                                    <form-error [model]="usernameModel" inputLabel="Username">
+                                                    </form-error>
+                                                </div>
+                        
+                                                <div class="form-group">
+                                                    <label [for]="years">Years</label>
+                                                    <kendo-numerictextbox #years #yearsModel="ngModel" class="form-control" [(ngModel)]="dialogModel.years"
+                                                        [min]="0" [max]="100" name="form-numeric" required>
+                                                    </kendo-numerictextbox>
+                                                    <form-error [model]="yearsModel" inputLabel="Years">
+                                                    </form-error>
+                                                </div>
+                                                <div *ngIf="dialogLoader" appLoader [opaque]="true"></div>
+                                            </form>
+                                            <kendo-dialog-actions layout="normal" class="justify-content-start">
+                                                <button kendoButton (click)="action('cancel')" look="outline">Cancel</button>
+                                                <button kendoButton [primary]="true" (click)="action('save')" [disabled]="!dialogForm.valid">Save</button>
+                                            </kendo-dialog-actions>
+                                        </kendo-dialog>
+                                    </div>
+                                    <div class="col">
+                                        <button kendoButton (click)="confirm()">Open confirm dialog</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+                  <div class="row p-2" id="Grid" *ngIf="selectedShocaseItem === 'Grid'">
+                      <div class="col-md-12">
+                          <p>
+                              <kendo-grid [data]="gridView" [pageable]="pageSettings" [pageSize]="pageSize" [skip]="skip" [loading]="loader"
+                                  (pageChange)="pageChange($event)" [sortable]="sortSettings" [sort]="sort"
+                                  (sortChange)="sortChange($event)" scrollable="none">
+                                  <kendo-grid-column field="ProductID" title="ID" width="40">
+                                  </kendo-grid-column>
+                                  <kendo-grid-column field="ProductName" title="Name" width="250">
+                                  </kendo-grid-column>
+                                  <kendo-grid-column field="Category.CategoryName" title="Category">
+                                  </kendo-grid-column>
+                                  <kendo-grid-column field="UnitPrice" title="Price" width="80">
+                                  </kendo-grid-column>
+                                  <kendo-grid-column field="UnitsInStock" title="In stock" width="80">
+                                  </kendo-grid-column>
+                                  <kendo-grid-column field="Discontinued" title="Discontinued" width="120">
+                                      <ng-template kendoGridCellTemplate let-dataItem>
+                                          <input type="checkbox" id="grid-cb" class="k-checkbox" [(ngModel)]="dataItem.Discontinued" disabled
+                                              name="input-required" />
+                                          <label class="k-checkbox-label" for="grid-cb"></label>
+                                      </ng-template>
+                                  </kendo-grid-column>
+                              </kendo-grid>
+                          </p>
+                      </div>
+                  </div>
+                  <div class="row p-2" id="Grid" *ngIf="selectedShocaseItem === 'Sortable'">
+                      <div class="col">Row</div>
+                      <div class="col-12">
+                          <kendo-sortable class="row m-0"
+                              [kendoSortableBinding]="dragableData"
+                              [animation]="true"
+                              itemClass="col-3 p-0">
+                              <ng-template let-dataItem="item">
+                                  <div class="draggable-item" >{{dataItem.name}}</div>
+                              </ng-template>
+                          </kendo-sortable> 
+                      </div>
+                      <div class="col">Column</div>
+                      <div class="col-12">
+                          <kendo-sortable class="col-8 p-0"
+                              [kendoSortableBinding]="dragableData"
+                              [animation]="true"
+                              (dragEnd)="onDragEnd($event)">
+                              <ng-template let-dataItem="item">
+                                  <div class="draggable-item">{{dataItem.name}}</div>
+                              </ng-template>
+                          </kendo-sortable>
+                      </div> 
+                  </div>
+                  <div class="row p-2" id="Form" *ngIf="selectedShocaseItem === 'Form'">
+                
+                      <div class="col-md-12">
+                          <kendo-panelbar>
+                              <kendo-panelbar-item [title]="'Input'" [expanded]="true">
+                                  <ng-template kendoPanelBarContent>
+                                      <form #iForm="ngForm">
+                                          <div class="form-group">
+                                              <label [for]="textInput">Input</label>
+                                              <input type="text" #textInput class="k-textbox form-control" name="form-textbox"
+                                                  [(ngModel)]="formModel.textbox" [required]="inputForm.required"
+                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly" />
+                                          </div>
+                  
+                                          <div class="display-flex">
+                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
+                                                  name="input-required" />
+                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
+                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
+                                                  name="input-disabled" />
+                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
+                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
+                                                  name="input-readonly" />
+                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
+                                          </div>
+                  
+                                          <div class="text-right">
+                                              <button kendoButton>Cancel</button>
+                                              <button kendoButton (click)="onFormSubmit()" primary="true"
+                                                  [disabled]="!iForm.valid">Save</button>
+                                          </div>
+                                      </form>
+                                  </ng-template>
+                              </kendo-panelbar-item>
+                              <kendo-panelbar-item [title]="'MaskedTextBox'">
+                                  <ng-template kendoPanelBarContent>
+                                      <form #mbForm="ngForm">
+                                          <div class="form-group">
+                                              <label [for]="maskedTextbox">MaskedTextBox</label>
+                                              <kendo-maskedtextbox #maskedTextbox name="maskedTextbox" [mask]="mask" class="form-control"
+                                                  [(ngModel)]="formModel.maskedTextbox" [required]="inputForm.required"
+                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                              </kendo-maskedtextbox>
+                                          </div>
+                  
+                                          <div class="display-flex">
+                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
+                                                  name="input-required" />
+                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
+                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
+                                                  name="input-disabled" />
+                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
+                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
+                                                  name="input-readonly" />
+                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
+                                          </div>
+                  
+                                          <div class="text-right">
+                                              <button kendoButton>Cancel</button>
+                                              <button kendoButton (click)="onFormSubmit()" primary="true"
+                                                  [disabled]="!mbForm.valid">Save</button>
+                                          </div>
+                  
+                                      </form>
+                                  </ng-template>
+                              </kendo-panelbar-item>
+                              <kendo-panelbar-item [title]="'NumericTextBox'">
+                                  <ng-template kendoPanelBarContent>
+                                      <form #ntbForm="ngForm">
+                  
+                                          <div class="form-group">
+                                              <label [for]="numericTextBox">NumericTextBox</label>
+                                              <kendo-numerictextbox #numericTextBox class="form-control" [(ngModel)]="formModel.numeric"
+                                                  [min]="0" [max]="100" name="form-numeric" [required]="inputForm.required"
+                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                              </kendo-numerictextbox>
+                                          </div>
+                  
+                                          <div class="display-flex">
+                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
+                                                  name="input-required" />
+                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
+                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
+                                                  name="input-disabled" />
+                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
+                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
+                                                  name="input-readonly" />
+                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
+                                          </div>
+                  
+                                          <div class="text-right">
+                                              <button kendoButton>Cancel</button>
+                                              <button kendoButton (click)="onFormSubmit()" primary="true"
+                                                  [disabled]="!ntbForm.valid">Save</button>
+                                          </div>
+                  
+                                      </form>
+                                  </ng-template>
+                              </kendo-panelbar-item>
+                              <kendo-panelbar-item [title]="'DropDownList'">
+                                  <ng-template kendoPanelBarContent>
+                                      <form #ddlForm="ngForm">
+                  
+                                          <div class="form-group">
+                                              <label [for]="ddl">DropDownList</label>
+                                              <kendo-dropdownlist #ddl class="form-control" [data]="listItems" name="form-ddl"
+                                                  [(ngModel)]="formModel.ddl" [required]="inputForm.required"
+                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                              </kendo-dropdownlist>
+                                          </div>
+                  
+                                          <div class="display-flex">
+                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
+                                                  name="input-required" />
+                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
+                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
+                                                  name="input-disabled" />
+                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
+                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
+                                                  name="input-readonly" />
+                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
+                                          </div>
+                  
+                                          <div class="text-right">
+                                              <button kendoButton>Cancel</button>
+                                              <button kendoButton (click)="onFormSubmit()" primary="true"
+                                                  [disabled]="!ddlForm.valid">Save</button>
+                                          </div>
+                  
+                                      </form>
+                                  </ng-template>
+                              </kendo-panelbar-item>
+                              <kendo-panelbar-item [title]="'ComboBox'">
+                                  <ng-template kendoPanelBarContent>
+                                      <form #cbForm="ngForm">
+                  
+                                          <div class="form-group">
+                                              <label [for]="comboBox">ComboBox</label>
+                                              <kendo-combobox #comboBox class="form-control" [data]="listItems" name="form-combobox"
+                                                  [(ngModel)]="formModel.combobox" [required]="inputForm.required"
+                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                              </kendo-combobox>
+                                          </div>
+                  
+                                          <div class="display-flex">
+                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
+                                                  name="input-required" />
+                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
+                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
+                                                  name="input-disabled" />
+                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
+                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
+                                                  name="input-readonly" />
+                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
+                                          </div>
+                  
+                                          <div class="text-right">
+                                              <button kendoButton>Cancel</button>
+                                              <button kendoButton (click)="onFormSubmit()" primary="true"
+                                                  [disabled]="!cbForm.valid">Save</button>
+                                          </div>
+                  
+                                      </form>
+                                  </ng-template>
+                              </kendo-panelbar-item>
+                              <kendo-panelbar-item [title]="'MultiSelect'">
+                                  <ng-template kendoPanelBarContent>
+                                      <form #msForm="ngForm">
+                  
+                                          <div class="form-group">
+                                              <label [for]="multiSelect">MultiSelect</label>
+                                              <kendo-multiselect #multiSelect class="form-control" name="form-multiselect"
+                                                  [data]="listItems" [(ngModel)]="formModel.multiselect" [required]="inputForm.required"
+                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                              </kendo-multiselect>
+                                          </div>
+                  
+                                          <div class="display-flex">
+                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
+                                                  name="input-required" />
+                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
+                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
+                                                  name="input-disabled" />
+                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
+                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
+                                                  name="input-readonly" />
+                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
+                                          </div>
+                  
+                                          <div class="text-right">
+                                              <button kendoButton>Cancel</button>
+                                              <button kendoButton (click)="onFormSubmit()" primary="true"
+                                                  [disabled]="!msForm.valid">Save</button>
+                                          </div>
+                  
+                                      </form>
+      
+                                  </ng-template>
+                              </kendo-panelbar-item>
+                              <kendo-panelbar-item [title]="'Switch'">
+                                  <ng-template kendoPanelBarContent>
+                                      <form #swForm="ngForm">
+                                          <div class="form-group">
+                                              <label [for]="switch">Switch</label>
+                                              <kendo-switch #switch onLabel="Active" offLabel="Inactive" name="switch"
+                                                  [(ngModel)]="formModel.switch" [required]="inputForm.required"
+                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                              </kendo-switch>
+                                          </div>
+                  
+                                          <div class="display-flex">
+                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
+                                                  name="input-required" />
+                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
+                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
+                                                  name="input-disabled" />
+                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
+                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
+                                                  name="input-readonly" />
+                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
+                                          </div>
+                  
+                                          <div class="text-right">
+                                              <button kendoButton>Cancel</button>
+                                              <button kendoButton (click)="onFormSubmit()" primary="true"
+                                                  [disabled]="!swForm.valid">Save</button>
+                                          </div>
+                  
+                                      </form>
+                                  </ng-template>
+                              </kendo-panelbar-item>
+                              <kendo-panelbar-item [title]="'Slider'">
+                                  <ng-template kendoPanelBarContent>
+                                      <form #slForm="ngForm">
+                                          <div class="form-group">
+                                              <label [for]="slide">Slider</label>
+                                              <kendo-slider #slide name="slider" tickPlacement="none"  [min]="0" [max]="10" [smallStep]="1"
+                                                  [(ngModel)]="inputForm.slider" [required]="inputForm.required"
+                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"></kendo-slider>
+                                          </div>
+                  
+                                          <div class="display-flex">
+                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
+                                                  name="input-required" />
+                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
+                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
+                                                  name="input-disabled" />
+                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
+                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
+                                                  name="input-readonly" />
+                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
+                                          </div>
+                  
+                                          <div class="text-right">
+                                              <button kendoButton>Cancel</button>
+                                              <button kendoButton (click)="onFormSubmit()" primary="true"
+                                                  [disabled]="!slForm.valid">Save</button>
+                                          </div>
+                  
+                                      </form>
+                                  </ng-template>
+                              </kendo-panelbar-item>
+                              <kendo-panelbar-item [title]="'ColorPicker'">
+                                  <ng-template kendoPanelBarContent>
+                                      <form #cpForm="ngForm" class="form">
+                  
+                                          <div class="form-group">
+                                              <label [for]="colorPicker">ColorPicker</label>
+                                              <kendo-colorpicker #colorPicker view="combo" format="hex"
+                                                  name="colorPicker" [(ngModel)]="formModel.color" [required]="inputForm.required"
+                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                              </kendo-colorpicker>
+                                          </div>
+                  
+                                          <div class="display-flex">
+                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
+                                                  name="input-required" [(ngModel)]="formModel.cb1" />
+                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
+                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
+                                                  name="input-disabled" [(ngModel)]="formModel.cb2" />
+                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
+                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
+                                                  name="input-readonly" [(ngModel)]="formModel.cb3" />
+                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
+                                          </div>
+                  
+                                          <div class="text-lrighteft">
+                                              <button kendoButton>Cancel</button>
+                                              <button kendoButton (click)="onFormSubmit()" primary="true"
+                                                  [disabled]="!cpForm.valid">Save</button>
+                                          </div>
+                  
+                                      </form>
+                                  </ng-template>
+                              </kendo-panelbar-item>
+                              <kendo-panelbar-item [title]="'CheckBox'">
+                                  <ng-template kendoPanelBarContent>
+                                      <form #cbForm="ngForm" class="form">
+                                          <div class="row">
+                                              <div class="col-4">
+                                                  <div class="form-group">
+                                                      <input type="checkbox" id="cb" class="k-checkbox" [(ngModel)]="formModel.cb"
+                                                          [disabled]="inputForm.disabled" name="checkbox" />
+                                                      <label class="k-checkbox-label" for="cb">Checkbox</label>
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
+                                                          name="input-disabled" [(ngModel)]="formModel.cb2" />
+                                                      <label class="k-checkbox-label" for="inputFormD">Disabled</label>
+                                                  </div>
+                                              </div>
+                                              <div class="col-1">
+                                                  <div class="form-group">
+                                                      <!-- No need for (ngModel) variable in the toggle button. It is populated automatically by the state of the children-->
+                                                      <input type="checkbox" id="toggle-all" class="k-checkbox" name="toggle-all" (ngModel)="false"
+                                                          checkbox-toggle
+                                                          (ngModelChange)="cbt.first = $event; cbt.second = $event; cbt.third = $event;"
+                                                          [checkboxesToToggle]="[cbt.first, cbt.second, cbt.third]"/>
+                                                      <label class="k-checkbox-label" for="toggle-all">Toggle All</label>
+                                                  </div>
+                                              </div>
+                                              <div class="col-3">
+                                                  <div class="form-group m-0">
+                                                      <input type="checkbox" id="first-dependant" class="k-checkbox" [(ngModel)]="cbt.first" name="first-dependant" />
+                                                      <label class="k-checkbox-label" for="first-dependant">First Dependant</label>
+                                                  </div>
+                                                  <div class="form-group m-0">
+                                                      <input type="checkbox" id="second-dependant" class="k-checkbox" [(ngModel)]="cbt.second" name="second-dependant" />
+                                                      <label class="k-checkbox-label" for="second-dependant">Second Dependant</label>
+                                                  </div>
+                                                  <div class="form-group m-0">
+                                                      <input type="checkbox" id="third-dependant" class="k-checkbox" [(ngModel)]="cbt.third" name="third-dependant" />
+                                                      <label class="k-checkbox-label" for="third-dependant">Third Dependant</label>
+                                                  </div>
+                                              </div>
+                                              <div class="col-4">
+                                                  <div class="form-group m-0">
+                                                      <input type="checkbox" id="activate" class="k-checkbox" [(ngModel)]="cba.activate" name="activate"/>
+                                                      <label class="k-checkbox-label" for="activate">Activate Children</label>
+                                                  </div>
+                                                  <div class="form-group m-0 ml-3" >
+                                                      <input type="checkbox" id="first-child" class="k-checkbox" [(ngModel)]="cba.first" name="first-child" activated-checkbox [activator]="cba.activate" />
+                                                      <label class="k-checkbox-label" for="first-child">First Child</label>
+                                                  </div>
+                                                  <div class="form-group m-0 ml-3">
+                                                      <input type="checkbox" id="second-child" class="k-checkbox" [(ngModel)]="cba.second" name="second-child" activated-checkbox [activator]="cba.activate" />
+                                                      <label class="k-checkbox-label" for="second-child">Second Child</label>
+                                                  </div>
+                                                  <div class="form-group m-0 ml-3">
+                                                      <input type="checkbox" id="third-child" class="k-checkbox" [(ngModel)]="cba.third" name="third-child" activated-checkbox [activator]="cba.activate" />
+                                                      <label class="k-checkbox-label" for="third-child">Third Child</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="text-right">
+                                              <button kendoButton>Cancel</button>
+                                              <button kendoButton (click)="onFormSubmit()" primary="true"
+                                                  [disabled]="!cbForm.valid">Save</button>
+                                          </div>
+                                      </form>
+                                  </ng-template>
+                              </kendo-panelbar-item>
+                              <kendo-panelbar-item [title]="'RadioButton'">
+                                  <ng-template kendoPanelBarContent>
+                                      <form #rbForm="ngForm" class="form">
+                                          <div class="form-group">
+                                              <div class="form-check">
+                                                  <input class="k-radio" id="female" name="gender" ngModel value="1" type="radio"
+                                                  [disabled]="inputForm.disabled">
+                                                  <label class="k-radio-label" for="female">Female</label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input checked="checked" class="k-radio" id="male" name="gender" ngModel value="2" type="radio"
+                                                  [disabled]="inputForm.disabled">
+                                                  <label class="k-radio-label" for="male">Male</label>
+                                              </div>
+                                          </div>
+                                          <div class="display-flex">
+                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
+                                                  name="input-disabled" [(ngModel)]="formModel.cb2" />
+                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
+                                          </div>
+                                          <div class="text-right">
+                                              <button kendoButton>Cancel</button>
+                                              <button kendoButton (click)="onFormSubmit()" primary="true"
+                                                  [disabled]="!rbForm.valid">Save</button>
+                                          </div>
+                      
+                                      </form>
+                                  </ng-template>
+                              </kendo-panelbar-item>
+                          </kendo-panelbar>
+                        
+                      </div>
+                  </div>
+              </kendo-drawer-content>
+          </kendo-drawer-container>
+      
+        </ng-template>
+      </kendo-tabstrip-tab>
+      <kendo-tabstrip-tab [title]="'Custom components'">
+        <ng-template kendoTabContent>
+          <kendo-drawer-container>
+              <kendo-drawer
+                  [items]="showcaseCustomItems"
+                  [mode]="'push'"
+                  [mini]="true"
+                  [expanded]="true"
+                  [autoCollapse]="false"
+                  (select)="onCustomSelect($event)">
+              </kendo-drawer>
+              <kendo-drawer-content>
+                  <div class="row p-2" id="Dialog Service" *ngIf="selectedCustomShocaseItem === 'Dialog Service'">
+                      <div class="col-md-12">
+                          <div class="row pb-2">
+                              <div class="col-2">Types</div>
+                              <div class="col">
+                                  <button kendoButton (click)="openInfoDialog()">Info</button>
+                              </div>
+                              <div class="col">
+                                  <button kendoButton (click)="openWarningDialog()">Warning</button>
+                              </div>
+                              <div class="col">
+                                  <button kendoButton (click)="openConfirmDialog()">Confirm</button>
+                              </div>
+                          </div>
+                          <div class="row pb-2">
+                              <div class="col-2">Sizes</div>
+                              <div class="col">
+                                  <button kendoButton (click)="openStandardSizeInfoDialog(DialogSize.Small)">Small</button>            
+                              </div>
+                              <div class="col">
+                                  <button kendoButton (click)="openStandardSizeInfoDialog(DialogSize.Medium)">Medium</button>             
+                              </div>
+                              <div class="col">
+                                  <button kendoButton (click)="openStandardSizeInfoDialog(DialogSize.Large)">Large</button>             
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row p-2" id="Loader" *ngIf="selectedCustomShocaseItem === 'Loader'">
+                      <div class="col-md-12">
+                          <div>
+                              <button kendoButton (click)="showLoader()">Show loader</button>  
+                              <button kendoButton (click)="showOpaqueLoader()" class="ml-5">Show opaque loader</button>
+                          </div>
+                          <div class="col-6">
+                              <form #loaderForm="ngForm">
+                                  <div class="form-group">
+                                      <label [for]="username">Username</label>
+                                      <input type="text" #username #usernameModel="ngModel" class="k-textbox form-control" name="form-textbox" minlength="10" maxlength="20"
+                                          [(ngModel)]="formModel.username" required />
+                                      <form-error [model]="usernameModel" inputLabel="Username">
+                                      </form-error>
+                                  </div>
+                  
+                                  <div class="form-group">
+                                      <label [for]="names">Names</label>
+                                      <input type="text" #names #namesModel="ngModel" class="k-textbox form-control" name="form-textbox"
+                                          [(ngModel)]="formModel.names" required />
+                                      <form-error [model]="namesModel" inputLabel="names">
+                                      </form-error>
+                                  </div>
+                  
+                                  <div class="text-right">
+                                      <button kendoButton>Cancel</button>
+                                      <button kendoButton (click)="onFormSubmit()" primary="true"
+                                          [disabled]="!loaderForm.valid">Save</button>
+                                  </div>
+                                  <div *ngIf="loader" appLoader></div>
+                                  <div *ngIf="opaqueLoader" appLoader [opaque]="true"></div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row p-2" id="Button Filter" *ngIf="selectedCustomShocaseItem === 'Button Filter'">
+                      <div class="col-12">
+                          <card-button-filter 
+                              column="type.text"
+                              [cardButtons]="cardBtnModel" 
+                              (onFilterChange)="onButtonFilterChange($event)">
+                          </card-button-filter>
+                      </div>
+                      <div class="col-md-3 offset-md-9 pb-2">
+                          <kendo-custom-search 
+                              [searchableColumns]="['ProductName', 'UnitPrice']"
+                              (onFilterChange)="onCustomFilterChange($event)">
+                          </kendo-custom-search>
+                      </div>
+                      <div class="col-12">
+                          <kendo-grid [data]="gridView" [pageable]="pageSettings" [pageSize]="pageSize" [skip]="skip" [loading]="loader"
+                          (pageChange)="pageChange($event)" [sortable]="sortSettings" [sort]="sort"
+                          (sortChange)="sortChange($event)" scrollable="none">
+                          <kendo-grid-column field="Type" title="Type" width="120">
+                              <ng-template kendoGridCellTemplate let-dataItem>
+                                  <card-button [allowSelection]="false" [model]="dataItem.type"></card-button>
+                              </ng-template>
+                          </kendo-grid-column>
+                          <kendo-grid-column field="ProductID" title="ID" width="40">
+                          </kendo-grid-column>
+                          <kendo-grid-column field="ProductName" title="Name" width="250">
+                          </kendo-grid-column>
+                          <kendo-grid-column field="Category.CategoryName" title="Category">
+                          </kendo-grid-column>
+                          <kendo-grid-column field="UnitPrice" title="Price" width="80">
+                          </kendo-grid-column>
+                          <kendo-grid-column field="UnitsInStock" title="In stock" width="80">
+                          </kendo-grid-column>
+                          <kendo-grid-column field="Discontinued" title="Discontinued" width="120">
+                              <ng-template kendoGridCellTemplate let-dataItem>
+                                  <input type="checkbox" id="grid-cb" class="k-checkbox" [(ngModel)]="dataItem.Discontinued" disabled
+                                      name="input-required" />
+                                  <label class="k-checkbox-label" for="grid-cb"></label>
+                              </ng-template>
+                          </kendo-grid-column>
+                      </kendo-grid>
+                  </div>
+              
+                  </div>
+                  <div class="row p-2" id="Slide Accordion" *ngIf="selectedCustomShocaseItem === 'Slide Accordion'">
+                      <div class=col-md-12>
+                          <slide-accordion #slideAccordion
+                              [title]="slideAccordionItem.title"
+                              [expanded]="slideAccordionItem.expanded">
+                              <div class="custom-template">
+                                  Simple HTML
+                                  <div>
+                                      <textarea name="test" id="test" rows="5" 
+                                          style="width:100%">
+                                      </textarea>
+                                  </div>                    
+                              </div>
+                          </slide-accordion>
+                      </div>
+                  </div>
+                  <div class="row p-2" id="Orderable List" *ngIf="selectedCustomShocaseItem === 'Orderable List'">
+                      <div class="col-6">
+                          <orderable-list 
+                              [inputType]="inputType"
+                              [listItems]="orderableListItems"
+                              (onItemsChange)="onOrderableListChange($event)">
+                          </orderable-list>
+                      </div>
+                  </div>
+                  <div class="row p-2" id="Extended Multiselect" *ngIf="selectedCustomShocaseItem === 'Extended Multiselect'">
+                      <div class="col-8">
+                          <kendo-multiselect
+                              KMultiselectExtender
+                              placeholder="Select"
+                              [msListItems]="msListItems"
+                              [(ngModel)]="selectedItems"
+                              (selectedValuesChange)="onSelectedValuesChange($event)"
+                              textField="name"
+                              valueField="id"
+                              [valuePrimitive]="true"
+                              [autoClose]="false"
+                              required>
+                              <ng-template kendoMultiSelectItemTemplate let-dataItem>
+                                  <input *ngIf="dataItem.id > -1" type="checkbox" class="k-checkbox"
+                                    [checked]="isItemSelected(dataItem.id)">
+                                  <i *ngIf="dataItem.id === -1" class="k-icon k-i-check"></i>
+                                  <i *ngIf="dataItem.id === -2" class="k-icon k-i-close"></i>
+                                  <label class="k-checkbox-label">{{ dataItem.name }}</label>
+                              </ng-template>       
+                          </kendo-multiselect>
+                      </div>
+                  </div>
+                  <div class="row p-2" id="Hierarcy Selector" *ngIf="selectedCustomShocaseItem === 'Hierarcy Selector'">
+                      <div class="col-12">Vertical</div>
+                      <div class="col-12 pl-0 pr-0">
+                          <hierarchy-selector 
+                              [healthSystemHierarchy]="hsHierarchy"
+                              [selectedHealthSystemsIds]="selectedHS"
+                              [selectedFacilitiesIds]="selectedF"
+                              [selectedDepartmentsIds]="selectedD"
+                              [showChildOnSelect]="true">
+                          </hierarchy-selector>
+                      </div>
+                      <div class="col-12">Horizontal</div>
+                      <div class="col-12 pl-0 pr-0">
+                          <hierarchy-selector 
+                              [healthSystemHierarchy]="hsHierarchy" 
+                              [showAsRow]="true"
+                              [selectedHealthSystemsIds]="selectedHS"
+                              [selectedFacilitiesIds]="selectedF"
+                              [selectedDepartmentsIds]="selectedD"
+                              (onFilterChange)="hierarchySelectorFilterChange($event)">
+                          </hierarchy-selector>
+                      </div>
+                      <!-- <div class="col-12">
+                          <kendo-grid [data]="usersData" [pageable]="pageSettings" [pageSize]="pageSize" [skip]="skip" [loading]="loader"
+                              (pageChange)="pageChange($event)" [sortable]="sortSettings" [sort]="sort"
+                              (sortChange)="sortChange($event)" scrollable="none">
+                              <kendo-grid-column field="id" title="Id" width="40">
+                              </kendo-grid-column>
+                              <kendo-grid-column field="name" title="Name" width="250">
+                              </kendo-grid-column>
+                          </kendo-grid>
+                      </div> -->
+                  </div>
+              </kendo-drawer-content>
+          </kendo-drawer-container>
+        </ng-template>
+      </kendo-tabstrip-tab>
+    </kendo-tabstrip>
+
     
-        </div>
-    </div>
-    <h2>Custom components</h2>
-
-    <div class="row p-2">
-        <div class="col-md-2">Dialog Service</div>
-        <div class="col-md-10">
-            <div class="row pb-2">
-                <div class="col-2">Types</div>
-                <div class="col">
-                    <button kendoButton (click)="openInfoDialog()">Info</button>
-                </div>
-                <div class="col">
-                    <button kendoButton (click)="openWarningDialog()">Warning</button>
-                </div>
-                <div class="col">
-                    <button kendoButton (click)="openConfirmDialog()">Confirm</button>
-                </div>
-            </div>
-            <div class="row pb-2">
-                <div class="col-2">Sizes</div>
-                <div class="col">
-                    <button kendoButton (click)="openStandardSizeInfoDialog(DialogSize.Small)">Small</button>            
-                </div>
-                <div class="col">
-                    <button kendoButton (click)="openStandardSizeInfoDialog(DialogSize.Medium)">Medium</button>             
-                </div>
-                <div class="col">
-                    <button kendoButton (click)="openStandardSizeInfoDialog(DialogSize.Large)">Large</button>             
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row p-2">
-      <div class="col-2">Button Filter</div>
-      <div class="col-6 pb-2">
-           <card-button-filter 
-              column="type.text"
-              [cardButtons]="cardBtnModel" 
-              (onFilterChange)="onButtonFilterChange($event)">
-          </card-button-filter>
-      </div>
-      <div class="col-md-3 offset-md-9 pb-2">
-        <kendo-custom-search 
-            [searchableColumns]="['ProductName', 'UnitPrice']"
-            (onFilterChange)="onCustomFilterChange($event)">
-        </kendo-custom-search>
-      </div>
-      <div class="col-md-10 offset-md-2">
-       <kendo-grid [data]="gridView" [pageable]="pageSettings" [pageSize]="pageSize" [skip]="skip" [loading]="loader"
-            (pageChange)="pageChange($event)" [sortable]="sortSettings" [sort]="sort"
-            (sortChange)="sortChange($event)" scrollable="none">
-            <kendo-grid-column field="Type" title="Type" width="120">
-                <ng-template kendoGridCellTemplate let-dataItem>
-                    <card-button [allowSelection]="false" [model]="dataItem.type"></card-button>
-                </ng-template>
-            </kendo-grid-column>
-            <kendo-grid-column field="ProductID" title="ID" width="40">
-            </kendo-grid-column>
-            <kendo-grid-column field="ProductName" title="Name" width="250">
-            </kendo-grid-column>
-            <kendo-grid-column field="Category.CategoryName" title="Category">
-            </kendo-grid-column>
-            <kendo-grid-column field="UnitPrice" title="Price" width="80">
-            </kendo-grid-column>
-            <kendo-grid-column field="UnitsInStock" title="In stock" width="80">
-            </kendo-grid-column>
-            <kendo-grid-column field="Discontinued" title="Discontinued" width="120">
-                <ng-template kendoGridCellTemplate let-dataItem>
-                    <input type="checkbox" id="grid-cb" class="k-checkbox" [(ngModel)]="dataItem.Discontinued" disabled
-                        name="input-required" />
-                    <label class="k-checkbox-label" for="grid-cb"></label>
-                </ng-template>
-            </kendo-grid-column>
-        </kendo-grid>
-      </div>
-    </div>
-
-    <div class="row p-2">
-      <div class="col-md-2">Slide Accordion</div>
-      <div class=col-md-10>
-          <slide-accordion #slideAccordion
-              [title]="slideAccordionItem.title"
-              [expanded]="slideAccordionItem.expanded">
-              <div class="custom-template">
-                  Simple HTML
-                  <div>
-                      <textarea name="test" id="test" rows="5" 
-                          style="width:100%">
-                      </textarea>
-                  </div>                    
-              </div>
-          </slide-accordion>
-      </div>
-    </div>
-
-    <div class="row p-2">
-        <div class="col-2">Orderable List</div>
-        <div class="col-6">
-            <orderable-list 
-                [inputType]="inputType"
-                [listItems]="orderableListItems"
-                (onItemsChange)="onOrderableListChange($event)">
-            </orderable-list>
-        </div>
-    </div>
-
-    <div class="row p-2">
-        <div class="col-2">Extended Multiselect</div>
-        <div class="col-8">
-            <kendo-multiselect
-                KMultiselectExtender
-                placeholder="Select"
-                [msListItems]="msListItems"
-                [(ngModel)]="selectedItems"
-                (selectedValuesChange)="onSelectedValuesChange($event)"
-                textField="name"
-                valueField="id"
-                [valuePrimitive]="true"
-                [autoClose]="false"
-                required>
-                <ng-template kendoMultiSelectItemTemplate let-dataItem>
-                    <input *ngIf="dataItem.id > -1" type="checkbox" class="k-checkbox"
-                      [checked]="isItemSelected(dataItem.id)">
-                    <i *ngIf="dataItem.id === -1" class="k-icon k-i-check"></i>
-                    <i *ngIf="dataItem.id === -2" class="k-icon k-i-close"></i>
-                    <label class="k-checkbox-label">{{ dataItem.name }}</label>
-                </ng-template>       
-            </kendo-multiselect>
-        </div>
-    </div>
-
-    <div class="row p-2">
-        <div class="col-2">Hierarcy Selector Vertical</div>
-        <div class="col-6 pl-0">
-            <hierarchy-selector 
-                [healthSystemHierarchy]="hsHierarchy"
-                [selectedHealthSystemsIds]="selectedHS"
-                [selectedFacilitiesIds]="selectedF"
-                [selectedDepartmentsIds]="selectedD"
-                [showChildOnSelect]="true">
-            </hierarchy-selector>
-        </div>
-    </div>
-
-    <div class="row p-2">
-        <div class="col-2">Hierarcy Selector Horisontal</div>
-        <div class="col-10 pl-0">
-            <hierarchy-selector 
-                [healthSystemHierarchy]="hsHierarchy" 
-                [showAsRow]="true"
-                [selectedHealthSystemsIds]="selectedHS"
-                [selectedFacilitiesIds]="selectedF"
-                [selectedDepartmentsIds]="selectedD"
-                (onFilterChange)="hierarchySelectorFilterChange($event)">
-            </hierarchy-selector>
-        </div>
-    </div>
 </div>
