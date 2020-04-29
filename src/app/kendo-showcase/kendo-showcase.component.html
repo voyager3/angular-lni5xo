@@ -70,26 +70,38 @@
               <kendo-drawer-content>
                   <div class="row p-2" id="Buttons" *ngIf="selectedShocaseItem === 'Buttons'">
                       <div class="col-md-12">
+                          <h5>Kendo</h5>
                           <div class="pb-2">
                               <button kendoButton [primary]="true">Primary</button> &nbsp;
                               <button kendoButton [primary]="true" icon="folder">Primary with icon</button> &nbsp;
-                              <button kendoButton [disabled]="true" [primary]="true">Primary disabled</button>
+                              <button kendoButton [disabled]="true" [primary]="true">Primary disabled</button> &nbsp;
+                              <button kendoButton [primary]="true" class="k-button-small ">Primary small</button>
+                          </div>
+                          <div class="pb-2">
+                              <button kendoButton class="k-button-secondary">Secondary</button> &nbsp;
+                              <button kendoButton class="k-button-secondary" icon="folder">Secondary with icon</button> &nbsp;
+                              <button kendoButton [disabled]="true" class="k-button-secondary">Secondary disabled</button> &nbsp;
+                              <button kendoButton class="k-button-secondary k-button-small">Secondary small</button>
                           </div>
                           <div class="pb-2">
                               <button kendoButton look="outline">Cancel</button> &nbsp;
                               <button kendoButton look="outline" icon="cancel">Cancel with icon</button> &nbsp;
-                              <button kendoButton look="outline" [disabled]="true">Cancel disabled</button>
+                              <button kendoButton look="outline" [disabled]="true">Cancel disabled</button> &nbsp;
+                              <button kendoButton look="outline" class="k-button-small">Cancel small</button>
+                          </div>
+                          <div class="pb-2">
+                              <button kendoButton [look]="'flat'">Flat</button> &nbsp;
+                              <button kendoButton [look]="'flat'" icon="folder">Flat with icon</button> &nbsp;
+                              <button kendoButton [disabled]="true" [look]="'flat'">Flat disabled</button> &nbsp;
+                              <button kendoButton [look]="'flat'" class="k-button-small">Flat small</button>
                           </div>
                           <div class="pb-2">
                               <button kendoButton class="k-button-delete">Delete</button> &nbsp;
                               <button kendoButton class="k-button-delete" icon="delete">Delete with icon</button> &nbsp;
-                              <button kendoButton class="k-button-delete" [disabled]="true">Delete disabled</button>
+                              <button kendoButton class="k-button-delete" [disabled]="true">Delete disabled</button> &nbsp;
+                              <button kendoButton class="k-button-delete k-button-small">Delete</button>
                           </div>
-                          <div class="pb-2">
-                              <button kendoButton class="k-button-apply">Apply</button> &nbsp;
-                              <button kendoButton class="k-button-apply" icon="save">Apply with icon</button> &nbsp;
-                              <button kendoButton class="k-button-apply" [disabled]="true">Apply</button>
-                          </div>
+
                       <div class="pb-2">
                               <div class="row">
                               <div class="col-2">Button group</div>
@@ -119,15 +131,15 @@
                                   Basic Usage
                                   <div class="row">
                                       <div class="col">
-                                      <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="'paste'">
-                                          Paste
-                                      </kendo-splitbutton> &nbsp;
-                                      <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="'paste'" [look]="'flat'">
-                                          Paste
-                                      </kendo-splitbutton> &nbsp;
-                                      <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="'paste'" [look]="'outline'">
-                                          Paste
-                                      </kendo-splitbutton> &nbsp;
+                                       <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste">
+                                            Paste
+                                        </kendo-splitbutton> &nbsp;
+                                        <!-- <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste" [look]="'flat'">
+                                            Paste
+                                        </kendo-splitbutton> &nbsp;
+                                        <kendo-splitbutton (buttonClick)="onPaste()" [data]="splitButtonDefaultData" [icon]="paste" [look]="'outline'">
+                                            Paste
+                                        </kendo-splitbutton> &nbsp;-->
                                       </div>
                                   </div>
                               </div>
