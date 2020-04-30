@@ -5,6 +5,7 @@ import { KendoCustomSearchComponent } from './kendo-custom-search/kendo-custom-s
 import { HierarchySelectorComponent } from './hierarchy-selector/hierarchy-selector.component'
 import { OrderableListComponent } from './orderable-list/orderable-list.component'
 import { SlideAccordionComponent } from './slide-accordion/slide-accordion.component'
+import { MetaInfoComponent } from './meta-info/meta-info.component'
 
 export const components = [
     FormErrorComponent,
@@ -13,5 +14,6 @@ export const components = [
     KendoCustomSearchComponent,
     HierarchySelectorComponent,
     OrderableListComponent,
-    SlideAccordionComponent
+    SlideAccordionComponent,
+    MetaInfoComponent
 ]

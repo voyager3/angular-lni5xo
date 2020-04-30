@@ -1311,7 +1311,7 @@
                               (onFilterChange)="hierarchySelectorFilterChange($event)">
                           </hierarchy-selector>
                       </div>
-                      <!-- <div class="col-12">
+                      <div class="col-12">
                           <kendo-grid [data]="usersData" [pageable]="pageSettings" [pageSize]="pageSize" [skip]="skip" [loading]="loader"
                               (pageChange)="pageChange($event)" [sortable]="sortSettings" [sort]="sort"
                               (sortChange)="sortChange($event)" scrollable="none">
@@ -1319,8 +1319,39 @@
                               </kendo-grid-column>
                               <kendo-grid-column field="name" title="Name" width="250">
                               </kendo-grid-column>
+                              <kendo-grid-column field="healthSystemId" title="Health System ID" width="200">
+                              </kendo-grid-column>
+                               <kendo-grid-column field="facilityId" title="Facility ID" width="200">
+                              </kendo-grid-column>
+                               <kendo-grid-column field="departmentId" title="Department ID" width="200">
+                              </kendo-grid-column>
                           </kendo-grid>
-                      </div> -->
+                      </div>
+                  </div>
+                   <div class="row p-2 bg-primary" id="Meta info" *ngIf="selectedCustomShocaseItem === 'Meta info'">
+                      <div class="col-12">
+                          <p class="text-white">Default Meta Info</p>
+                          <div>
+                              <meta-info [url]="url1"></meta-info>
+                          </div>
+                      </div>
+                      <div class="col-12">
+                          <p class="text-white">Meta Info With Custom Fields</p>
+                          <div>
+                              <meta-info [url]="url2" gridColumns="col-4">
+                                  <div class="col-4">
+                                      <div class="row">
+                                          <span class="col-6">Activation Date: </span>
+                                          <span class="col-6">{{activationDate && (activationDate | date:'MM/dd/yyyy') || '---'}}</span>
+                                      </div>
+                                      <div class="row">
+                                          <span class="col-6">Some Other Field: </span>
+                                          <span class="col-6">{{ someOtherField || '---'}}</span>
+                                      </div>
+                                  </div>
+                              </meta-info>
+                          </div>
+                      </div>
                   </div>
               </kendo-drawer-content>
           </kendo-drawer-container>
