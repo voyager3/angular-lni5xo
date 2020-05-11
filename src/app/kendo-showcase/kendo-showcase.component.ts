@@ -321,7 +321,7 @@ export class KendoShowcaseComponent implements OnInit {
   /* SORTABLE */
 
   dragableData: any[] = [
-    {id: 1, name: 'Element 1', order: 1, color: '#e04747'},
+    {id: 1, name: 'Element 1 Testing a long entry to see how the text will break. Testing a long entry to see how the text will break.', order: 1, color: '#e04747'},
     {id: 2, name: 'Element 2', order: 2, color: '#329943'},
     {id: 3, name: 'Element 3', order: 3, color: '#5B87DA'},
     {id: 4, name: 'Element 4', order: 4, color: '#4A4A4A'},

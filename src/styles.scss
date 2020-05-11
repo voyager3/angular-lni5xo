@@ -2,6 +2,8 @@
 
 @import './kendo-theme.scss';
 
+@import './kendo-icon-override.scss';
+
 $menu-open-width: 15.9375rem;
 $menu-closed-width: 2.8125rem;
 $menu-item-separator-color: #787878;
@@ -193,12 +195,12 @@ a {
 
 /* GROUPED BUTTONS */
 
-.grouped-buttons-left-align .k-button {
+.text-left .k-button {
   margin-top: 1.5rem;
   margin-right: .5rem;
 }
 
-.grouped-buttons-right-align .k-button {
+.text-right .k-button {
   margin-top: 1.5rem;
   margin-left: .5rem;
 }

@@ -78,16 +78,16 @@
                               <button kendoButton [primary]="true" class="k-button-small ">Primary small</button>
                           </div>
                           <div class="pb-2">
-                              <button kendoButton class="k-button-secondary">Secondary</button> &nbsp;
-                              <button kendoButton class="k-button-secondary" icon="folder">Secondary with icon</button> &nbsp;
-                              <button kendoButton [disabled]="true" class="k-button-secondary">Secondary disabled</button> &nbsp;
-                              <button kendoButton class="k-button-secondary k-button-small">Secondary small</button>
+                              <button kendoButton look="outline">Secondary</button> &nbsp;
+                              <button kendoButton look="outline" icon="folder">Secondary with icon</button> &nbsp;
+                              <button kendoButton [disabled]="true" look="outline">Secondary disabled</button> &nbsp;
+                              <button kendoButton look="outline" class="k-button-small">Secondary small</button>
                           </div>
                           <div class="pb-2">
-                              <button kendoButton look="outline">Cancel</button> &nbsp;
-                              <button kendoButton look="outline" icon="cancel">Cancel with icon</button> &nbsp;
-                              <button kendoButton look="outline" [disabled]="true">Cancel disabled</button> &nbsp;
-                              <button kendoButton look="outline" class="k-button-small">Cancel small</button>
+                              <button kendoButton>Cancel</button> &nbsp;
+                              <button kendoButton icon="cancel">Cancel with icon</button> &nbsp;
+                              <button kendoButton [disabled]="true">Cancel disabled</button> &nbsp;
+                              <button kendoButton class="k-button-small">Cancel small</button>
                           </div>
                           <div class="pb-2">
                               <button kendoButton [look]="'flat'">Flat</button> &nbsp;
@@ -706,7 +706,13 @@
                               [animation]="true"
                               itemClass="col-3 p-0">
                               <ng-template let-dataItem="item">
-                                  <div class="draggable-item" >{{dataItem.name}}</div>
+                                  <div class="draggable-item" >
+                                    <div class="drag-indicator k-i-drag">
+                                    </div>
+                                    <div class="drag-text">
+                                    {{dataItem.name}}
+                                    </div>
+                                  </div>
                               </ng-template>
                           </kendo-sortable> 
                       </div>
@@ -717,7 +723,13 @@
                               [animation]="true"
                               (dragEnd)="onDragEnd($event)">
                               <ng-template let-dataItem="item">
-                                  <div class="draggable-item">{{dataItem.name}}</div>
+                                  <div class="draggable-item" >
+                                    <div class="drag-indicator k-i-drag">
+                                    </div>
+                                    <div class="drag-text">
+                                    {{dataItem.name}}
+                                    </div>
+                                  </div>
                               </ng-template>
                           </kendo-sortable>
                       </div> 
@@ -989,7 +1001,7 @@
                                       <form #cpForm="ngForm" class="form">
                   
                                           <div class="form-group">
-                                              <label [for]="colorPicker">ColorPicker</label>
+                                              <label [for]="colorPicker">ColorPicker</label><br>
                                               <kendo-colorpicker #colorPicker view="combo" format="hex"
                                                   name="colorPicker" [(ngModel)]="formModel.color" [required]="inputForm.required"
                                                   [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
@@ -1008,7 +1020,7 @@
                                               <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
                                           </div>
                   
-                                          <div class="text-lrighteft">
+                                          <div class="text-left">
                                               <button kendoButton>Cancel</button>
                                               <button kendoButton (click)="onFormSubmit()" primary="true"
                                                   [disabled]="!cpForm.valid">Save</button>
@@ -1021,7 +1033,7 @@
                                   <ng-template kendoPanelBarContent>
                                       <form #cbForm="ngForm" class="form">
                                           <div class="row">
-                                              <div class="col-4">
+                                              <div class="col-3">
                                                   <div class="form-group">
                                                       <input type="checkbox" id="cb" class="k-checkbox" [(ngModel)]="formModel.cb"
                                                           [disabled]="inputForm.disabled" name="checkbox" />
@@ -1033,7 +1045,7 @@
                                                       <label class="k-checkbox-label" for="inputFormD">Disabled</label>
                                                   </div>
                                               </div>
-                                              <div class="col-1">
+                                              <div class="col-2">
                                                   <div class="form-group">
                                                       <!-- No need for (ngModel) variable in the toggle button. It is populated automatically by the state of the children-->
                                                       <input type="checkbox" id="toggle-all" class="k-checkbox" name="toggle-all" (ngModel)="false"

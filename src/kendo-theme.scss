@@ -36,8 +36,8 @@ body {
 }
 
 .k-outline {
-  border-color: $brand-grey !important;
-  color: $dark-grey !important;
+  border-color: $primary-blue !important;
+  color: $primary-blue !important;
   border-width: 2px;
 }
 
@@ -180,7 +180,7 @@ body {
 }
 
 .k-primary:hover, 
-.k-button-secondary:hover,
+.k-outline:hover,
 .k-datepicker .k-select:hover,
 .k-datetimepicker .k-select:hover {
   background-color: $bright-blue !important;
@@ -209,63 +209,7 @@ body {
   color: white;
 }
 
-// ICONS ICONS ICONS
 
-.k-icon.k-i-arrow-w::before {
-  font-family: icomoon;
-  // font-size: 1rem;
-  content: "\e600";
-  font-weight: 700;
-}
-.k-icon.k-i-arrow-e::before {
-  font-family: icomoon;
-  // font-size: 1rem;
-  content: "\e601";
-  font-weight: 700;
-}
-
-.k-pager-nav.k-link .k-icon.k-i-arrow-w::before {
-  font-family: "WebComponentsIcons";
-  content: "\e007";
-}
-.k-pager-nav.k-link .k-icon.k-i-arrow-e::before {
-  font-family: "WebComponentsIcons";
-  content: "\e005";
-}
-
-.k-i-arrow-s::before {
-  font-family: icomoon;
-  content: "\e63c";
-  // font-size: .9rem;
-  font-weight: 700;
-}
-.k-i-arrow-n::before {
-  font-family: icomoon;
-  content: "\e64c";
-  // font-size: .9rem;
-  font-weight: 700;
-}
-
-.k-icon.k-i-cog {
-  font-size: 1.3rem;
-}
-.k-icon.k-i-cog::before {
-  font-family: icomoon;
-  content: "\e612";
-}
-
-.k-icon.k-i-close-circle::before {
-  font-family: icomoon;
-  content: "\e605";
-  font-weight: 700;
-}
-
-// .k-multiselect .k-multiselect-wrap .k-i-close::before {  
-//   content: "\e605"; 
-//   font-family: icomoon;
-//   font-weight: 700;
-//   font-size: 1rem;
-// }
 
 // START PAGINATION STYLES
 
@@ -698,4 +642,35 @@ kendo-dialog-titlebar.close-none {
 .k-grid-header .k-header[aria-sort="descending"] {
   border-bottom-color: $primary-blue;
   border-bottom-width: 0.125rem;
+}
+
+// SORTABLE
+
+.draggable-item {
+  text-align: left !important;
+  vertical-align: middle;
+  line-height: 1.4 !important;
+  padding: 1.25rem;
+  height: inherit !important;
+  display:flex !important;
+  align-items: stretch;
+  margin: 2px;
+  border:none !important;
+}
+
+.drag-indicator {
+  width: 2rem;
+  text-align: center;
+  vertical-align: middle;
+  float: left;
+}
+
+.drag-text {
+}
+
+
+// FORM
+
+form {
+  padding: $standard-padding;
 }
