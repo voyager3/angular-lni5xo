@@ -383,6 +383,8 @@ body {
 //   text-align: center;
 // }
 
+// CHECKBOXES AND RADIO BUTTONS
+
 .k-checkbox,
 .k-radio {
   border-color:  $dark-grey;
@@ -413,6 +415,10 @@ body {
 .k-checkbox:checked::before,
 .k-radio:checked::before {
   color: white;
+}
+
+.k-radio-label {
+  margin-right: 1rem;
 }
 
 form .k-button  .k-button {
@@ -673,4 +679,96 @@ kendo-dialog-titlebar.close-none {
 
 form {
   padding: $standard-padding;
+}
+
+
+// CARDS
+
+.k-card-actions-stretched {
+
+  .k-button {
+    border-radius: 0 !important;
+  }
+
+}
+
+.k-card-actions-end, 
+.k-card-actions-start,
+.k-card-actions-center {
+  margin-bottom: .5rem;
+}
+
+.k-card-separator {
+  margin-bottom: .5rem;
+}
+
+// PANELBAR
+
+kendo-panelbar-item {
+  
+  .k-content {
+    padding: 1rem 1.25rem;
+  }
+
+  [ng-reflect-title="Child item"] > .k-link {
+    padding: .5rem 2rem !important;
+  }
+
+}
+
+.pane-content {
+  padding: 1.25rem;
+}
+
+// .slide-accordion .k-widget {
+//   border: none;
+// }
+
+// .slide-accordion .k-panelbar .k-i-arrow-s::before,
+// .slide-accordion .k-panelbar .k-i-arrow-n::before {
+//   content: none;
+// }
+
+// .slide-accordion .k-panelbar > .k-item > .k-link.k-state-selected {
+//   background-color: #f8f9fa;
+//   color: #212529
+// }
+
+// .slide-accordion .k-panelbar > .k-item > .k-link.k-state-selected.k-state-focused {
+//   box-shadow: none;
+// }
+
+// .slide-accordion .k-item > .k-link {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   font-weight: bold;
+// }
+
+
+// TABSTRIP
+
+.k-tabstrip>.k-content {
+  padding: 1.5rem;
+  border-radius: 0;
+  border-bottom-color: transparent;
+}
+.k-tabstrip-items li {
+    color: $burgundy !important;
+  }
+  .k-tabstrip-items .k-state-active {
+    color: $dark-grey !important;
+}
+
+.k-floatwrap {
+  border-bottom-color: $burgundy !important;
+  border-radius: $border-radius $border-radius 0 0 !important;
+}
+
+.k-tabstrip>.k-content.k-state-active {
+  @include one-side-shadow(0, -5px);
+}
+
+.k-tabstrip-top>.k-tabstrip-items .k-item.k-state-active {
+  @include double-sided-shadow(-5px, 0, 5px, 0);
 }

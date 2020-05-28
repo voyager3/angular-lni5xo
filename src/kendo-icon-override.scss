@@ -76,3 +76,18 @@
   content: "\e95d";
   margin-right: 1rem;
 }
+
+.k-i-folder::before {
+  font-family: icomoon;
+  content: "\e64e";
+}
+
+.k-i-cancel::before {
+  font-family: icomoon;
+  content: "\e957";
+}
+
+.k-i-delete::before {
+  font-family: icomoon;
+  content: "\e62c";
+}

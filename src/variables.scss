@@ -48,8 +48,25 @@ $font-family: 'Open Sans', Helvetica, sans-serif;
 // LAYOUT VARIABLES
 
 $border-radius: 0.3rem;
+$standard-padding: 1.25rem;
 
+
+
+// BOX SHADOWS
 $close-shadow: 0px 0px 5px rgba(0,0,0,0.3);
 $far-shadow: 0px 10px 15px rgba(0,0,0,0.3);
 
-$standard-padding: 1.25rem;
+$blur5: 5px;
+$spread-5: -5px;
+
+@mixin one-side-shadow($h-offset, $v-offset) {
+  -webkit-box-shadow: $h-offset $v-offset $blur5 $spread-5 rgba(0,0,0,0.3);
+	   -moz-box-shadow: $h-offset $v-offset $blur5 $spread-5 rgba(0,0,0,0.3);
+	        box-shadow: $h-offset $v-offset $blur5 $spread-5 rgba(0,0,0,0.3);
+}
+
+@mixin double-sided-shadow($h-offset1, $v-offset1, $h-offset2, $v-offset2) {
+  -webkit-box-shadow: $h-offset1 $v-offset1 $blur5 $spread-5 rgba(0,0,0,0.3), $h-offset2 $v-offset2 $blur5 $spread-5 rgba(0,0,0,0.3);
+	   -moz-box-shadow: $h-offset1 $v-offset1 $blur5 $spread-5 rgba(0,0,0,0.3), $h-offset2 $v-offset2 $blur5 $spread-5 rgba(0,0,0,0.3);
+	        box-shadow: $h-offset1 $v-offset1 $blur5 $spread-5 rgba(0,0,0,0.3), $h-offset2 $v-offset2 $blur5 $spread-5 rgba(0,0,0,0.3);
+}

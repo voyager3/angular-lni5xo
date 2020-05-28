@@ -195,7 +195,7 @@
                       <div class="col-md-12">
                           <div class="row">
                               <div class="col">
-                                  <p>Default</p>
+                                  <h5>Default Tooltip</h5>
                                   <div kendoTooltip>
                                   <button class="k-button k-primary" title="Saves the current document">
                                       Save
@@ -205,12 +205,12 @@
                                   </button> &nbsp;
                                   </div>
                               </div>
-                              <div class="col">
+                              <!-- <div class="col">
                                   <p>Closable</p>
                                   <div kendoTooltip position="right" closable="true" showOn="click">
                                   <button class="k-button" title="Closable tooltip content">Show tooltip</button>
                                   </div>
-                              </div>
+                              </div> -->
                           </div>               
                       </div>
                   </div>   
@@ -358,7 +358,7 @@
                   <div class="row p-2" id="Layout" *ngIf="selectedShocaseItem === 'Layout'">
                       <div class="col-md-12">
                         <div class="row pb-2">
-                          <div class="col-12 font-weight-bold pb-3">Drawer</div>
+                          <div class="col-12 pb-2"><h5>Drawer</h5></div>
                           <div class="col-12">
                             <div class="custom-toolbar">
                               <button
@@ -433,7 +433,7 @@
                           </div>
                         </div>
                         <div class="row pb-2">
-                          <div class="col-12 font-weight-bold pb-3">Avatar</div>
+                          <div class="col-12 pt-4 pb-2"><h5>Avatar</h5></div>
                           <div class="col-12">        
                             <div class="list">
                               <div class="contact-list">Contacts</div>
@@ -469,7 +469,7 @@
                           </div>
                         </div>
                         <div class="row pb-2">
-                          <div class="col-12 font-weight-bold pb-3">Card</div>
+                          <div class="col-12 pt-4 pb-2"><h5>Card</h5></div>
                           <div class="col-12">
                             <div class="demo">
                               <kendo-card>
@@ -494,7 +494,7 @@
                                           Like
                                       </button>
                                       <hr kendoCardSeparator [orientation]="'vertical'" *ngIf="horizontalStretched" />
-                                      <button class="k-button k-primary k-flat" (click)="toggleRecipe()">
+                                      <button class="k-button k-primary" (click)="toggleRecipe()">
                                           <span class="k-icon k-i-more-vertical"></span>
                                           {{ cardBtnText }}
                                       </button>
@@ -539,7 +539,7 @@
                           </div>
                         </div>
                         <div class="row pb-2">
-                          <div class="col-12 font-weight-bold pb-3">Panelbar</div>
+                          <div class="col-12 pt-5 pb-2"><h5> Panelbar</h5></div>
                           <div class="col-12">
                               <kendo-panelbar [items]="panelBarItems">
                                 <ng-template kendoPanelBarItemTemplate let-dataItem>
@@ -552,7 +552,7 @@
                           </div>
                         </div>
                         <div class="row pb-2">
-                          <div class="col-12 font-weight-bold pb-3">Spliter</div>
+                          <div class="col-12 pt-5 pb-2"><h5>Splitter</h5></div>
                           <div class="col-12">
                             <kendo-splitter orientation="vertical" style="height: 340px;">
                               <kendo-splitter-pane>
@@ -560,21 +560,21 @@
                 
                                   <kendo-splitter-pane [collapsible]="true" size="30%">
                                     <div class="pane-content">
-                                      <h3>Inner splitter / left pane</h3>
+                                      <h5>Inner splitter / left pane</h5>
                                       <p>Resizable and collapsible.</p>
                                     </div>
                                   </kendo-splitter-pane>
                 
                                   <kendo-splitter-pane>
                                     <div class="pane-content">
-                                      <h3>Inner splitter / center pane</h3>
+                                      <h5>Inner splitter / center pane</h5>
                                       <p>Resizable only.</p>
                                     </div>
                                   </kendo-splitter-pane>
                 
                                   <kendo-splitter-pane [collapsible]="true" size="30%">
                                     <div class="pane-content">
-                                      <h3>Inner splitter / right pane</h3>
+                                      <h5>Inner splitter / right pane</h5>
                                       <p>Resizable and collapsible.</p>
                                     </div>
                                   </kendo-splitter-pane>
@@ -584,14 +584,14 @@
                 
                               <kendo-splitter-pane size="100px">
                                 <div class="pane-content">
-                                  <h3>Outer splitter / Middle pane</h3>
+                                  <h5>Outer splitter / Middle pane</h5>
                                   <p>Resizable only.</p>
                                 </div>
                               </kendo-splitter-pane>
                 
                               <kendo-splitter-pane [resizable]="false" size="100px">
                                 <div class="pane-content">
-                                  <h3>Outer splitter / Bottom pane</h3>
+                                  <h5>Outer splitter / Bottom pane</h5>
                                   <p>Non-resizable and non-collapsible.</p>
                                 </div>
                               </kendo-splitter-pane>
@@ -599,7 +599,7 @@
                           </div>
                         </div>
                         <div class="row pb-2">
-                          <div class="col-12 font-weight-bold pb-3">TabStrip</div>
+                          <div class="col-12 pt-5 pb-2"><h5>TabStrip</h5></div>
                           <div class="col-12">
                             <kendo-tabstrip (tabSelect)="onTabSelect($event)">
                               <kendo-tabstrip-tab [title]="'Paris'" [selected]="true">
