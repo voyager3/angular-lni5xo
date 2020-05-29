@@ -772,3 +772,40 @@ kendo-panelbar-item {
 .k-tabstrip-top>.k-tabstrip-items .k-item.k-state-active {
   @include double-sided-shadow(-5px, 0, 5px, 0);
 }
+
+
+// DIALOG
+
+.k-modal-title {
+  font-size: 1.75rem;
+  font-weight: 200;
+  display: block;
+}
+
+.k-modal-toplabel {
+  font-size: .8rem;
+  font-weight: 700;
+  display:block;
+}
+
+.k-widget.k-window.k-dialog .k-window-titlebar {
+  padding: 1rem 1.5rem 0 1.5rem;
+}
+
+.k-dialog-modaltop {
+  padding:0rem 2rem .5rem 2rem;
+  display: block;
+}
+
+// .k-dialog-content p {
+//   padding: 0.25rem 1.25rem;
+// }
+
+.k-window-content, .k-prompt-container {
+  overflow: initial;
+  padding: 0 2rem;
+
+  form, p {
+    padding: .25rem 0;
+  }
+}

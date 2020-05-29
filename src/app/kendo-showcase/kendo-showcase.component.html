@@ -359,6 +359,7 @@
                       <div class="col-md-12">
                         <div class="row pb-2">
                           <div class="col-12 pb-2"><h5>Drawer</h5></div>
+                          <!-- Amy - I'm not really sure where we're going to use this yet, so I'm going to wait to style it -->
                           <div class="col-12">
                             <div class="custom-toolbar">
                               <button
@@ -646,7 +647,7 @@
                                             <div *ngIf="dialogLoader" appLoader></div>
                                             <form #dialogForm="ngForm">
                                                 <div class="form-group">
-                                                    <label [for]="username">Username</label>
+                                                    <label [for]="username">Username*</label>
                                                     <input type="text" #username #usernameModel="ngModel" class="k-textbox form-control" name="form-textbox"
                                                         [(ngModel)]="dialogModel.username" required />
                                                     <form-error [model]="usernameModel" inputLabel="Username">
@@ -654,7 +655,7 @@
                                                 </div>
                         
                                                 <div class="form-group">
-                                                    <label [for]="years">Years</label>
+                                                    <label [for]="years">Years*</label>
                                                     <kendo-numerictextbox #years #yearsModel="ngModel" class="form-control" [(ngModel)]="dialogModel.years"
                                                         [min]="0" [max]="100" name="form-numeric" required>
                                                     </kendo-numerictextbox>
@@ -673,6 +674,53 @@
                                         <button kendoButton (click)="confirm()">Open confirm dialog</button>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="pt-4 pb-2">
+                              <!-- Amy - I'm not able to edit the layout of the dialogs to show this following example, so I'm just putting it here for now. I'm going to do this with other dialog styles as well. -->
+                              <div class="k-widget k-window k-dialog" style="width: 450px; min-width: 250px; position: relative; z-index:100;">
+                                <div class="k-window-titlebar k-dialog-titlebar">
+                                  <div class="k-window-title">
+                                    
+                                  </div>
+                                  <div class="k-window-actions k-dialog-actions">
+                                    <a class="k-button k-bare k-button-icon k-window-action k-dialog-action k-dialog-close" href="#" role="button">
+                                    <span class="k-icon k-i-x"></span></a>
+                                  </div>
+                                </div>
+                                <div class="k-dialog-modaltop">
+                                  <span class="k-modal-toplabel">Optional Label</span>
+                                    <span class="k-modal-title">Testing a long dialog title to see what wrapping looks like</span>
+                                </div>
+                                <div class="k-content k-window-content k-dialog-content">
+                                  <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare, felis a dapibus cursus, nibh turpis convallis est, in tempus tortor felis quis justo. Mauris commodo massa vel mauris imperdiet porta. Suspendisse at egestas sapien, tristique ullamcorper augue. Ut nec lacus id nunc scelerisque accumsan sit amet in nisl.
+                                  <form _ngcontent-duc-c177="" novalidate="" >
+                                    <div _ngcontent-duc-c177="" class="form-group">
+                                      <label _ngcontent-duc-c177="" ng-reflect-for="[object HTMLInputElement]" class="k-label">Username*</label>
+                                      <input _ngcontent-duc-c177="" class="k-textbox form-control ng-untouched ng-pristine ng-invalid" name="form-textbox" required="" type="text" ng-reflect-required="" ng-reflect-name="form-textbox" ng-reflect-model="">
+                                      <form-error _ngcontent-duc-c177="" inputlabel="Username" ng-reflect-input-label="Username" ng-reflect-model="[object Object]">
+                                      </form-error>
+                                    </div>
+                                    <div _ngcontent-duc-c177="" class="form-group">
+                                      <label _ngcontent-duc-c177="" ng-reflect-for="[object Object]" for="k-76aff029-905c-4c8b-9af9-8c2bea7665e4" class="k-label" id="k-caa8f9ea-1261-408d-90a7-fb7c55f53995">Years*</label>
+                                      <kendo-numerictextbox _ngcontent-duc-c177="" class="form-control k-widget k-numerictextbox ng-untouched ng-pristine ng-invalid" name="form-numeric" required="" ng-reflect-max="100" ng-reflect-min="0" ng-reflect-required="" ng-reflect-name="form-numeric" dir="ltr">
+                                      <span class="k-numeric-wrap" ng-reflect-events="[object Object]">
+                                      <input autocomplete="off" autocorrect="off" class="k-input k-formatted-value" role="spinbutton" ng-reflect-events="[object Object]" id="k-76aff029-905c-4c8b-9af9-8c2bea7665e4" aria-valuemin="0" aria-valuemax="100" title="" tabindex="0" aria-labelledby="k-caa8f9ea-1261-408d-90a7-fb7c55f53995">
+                                      <span class="k-select ng-star-inserted" ng-reflect-events="[object Object]">
+                                        <span class="k-link k-link-increase" ng-reflect-events="[object Object]" aria-label="Increase value" title="Increase value"><span class="k-icon k-i-arrow-n"></span>
+                                      </span>
+                                      <span class="k-link k-link-decrease" ng-reflect-events="[object Object]" aria-label="Decrease value" title="Decrease value">
+                                        <span class="k-icon k-i-arrow-s"></span></span>
+                                      </span></span>
+                                      </kendo-numerictextbox><form-error _ngcontent-duc-c177="" inputlabel="Years" ng-reflect-input-label="Years" ng-reflect-model="[object Object]"></form-error>
+                                    </div>
+                                  </form>
+                                </div>
+                                <kendo-dialog-actions _ngcontent-duc-c177="" class="justify-content-end k-dialog-buttongroup ng-star-inserted" layout="normal" ng-reflect-layout="normal" style="">
+                                  <button _ngcontent-duc-c177="" kendobutton="" look="outline" role="button" ng-reflect-look="outline" class="k-button k-outline ng-star-inserted" aria-disabled="false" aria-pressed="false" dir="ltr">Cancel</button><button _ngcontent-duc-c177="" kendobutton="" role="button" ng-reflect-primary="true" ng-reflect-disabled="true" class="k-button k-primary ng-star-inserted k-state-disabled" aria-disabled="true" aria-pressed="false" dir="ltr" disabled="">Save</button>
+                                </kendo-dialog-actions>
+                              </div>
+
                             </div>
                         </div>
                   </div>
