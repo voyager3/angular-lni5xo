@@ -789,17 +789,22 @@ kendo-panelbar-item {
 }
 
 .k-widget.k-window.k-dialog .k-window-titlebar {
-  padding: 1rem 1.5rem 0 1.5rem;
+  /padding: 1rem 1.5rem 0 1.5rem;
+  align-items: start;
 }
 
-.k-dialog-modaltop {
-  padding:0rem 2rem .5rem 2rem;
-  display: block;
-}
+//.k-dialog-modaltop {
+  //padding:0rem 2rem .5rem 2rem;
+  //display: block;
+//}
 
 // .k-dialog-content p {
 //   padding: 0.25rem 1.25rem;
 // }
+
+.k-widget.k-window.k-dialog .k-window-titlebar .k-window-actions {
+  margin-top: 0rem;
+}
 
 .k-window-content, .k-prompt-container {
   overflow: initial;
