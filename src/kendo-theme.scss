@@ -518,7 +518,13 @@ kendo-grid[hide-filter-buttons=true] kendo-grid-filter-cell-operators {
   content: "\e63c";
 }
 
-// LOADER
+.k-grid-header .k-header[aria-sort="ascending"],
+.k-grid-header .k-header[aria-sort="descending"] {
+  border-bottom-color: $primary-blue;
+  border-bottom-width: 0.125rem;
+}
+
+/* LOADER */
 
 .k-i-loading {
   position: absolute;
@@ -547,51 +553,8 @@ kendo-grid[hide-filter-buttons=true] kendo-grid-filter-cell-operators {
   z-index: 99999;
 }
 
-kendo-dialog-titlebar.close-none .k-window-actions.k-dialog-actions {
-  display: none;
-}
-
-kendo-dialog-titlebar.close-none {
-  padding: 0rem;
-}
-
-.dialog-title-center .text-container {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.k-widget.k-window.k-dialog {
-  border: none;
-}
-
-.dialog-title-center {
-  width: 100%;  
-  text-align: center;  
-}
-
-.bar-danger, .bar-info {  
-  height: 1rem;
-}
-
-.bar-danger {
-  background-color: $danger;
-}
-
-.bar-info {
-  background-color: $primary-blue;
-}
-
-.label {
-  font-size: .9em;
-  font-weight: 600;
-  margin: .5rem;
-}
-
 /* DIALOG */
 
-.k-overlay {
-  background-color: $brand-grey;
-}
 
 .k-widget.k-window.k-dialog {
   border-radius: $border-radius;
@@ -604,50 +567,102 @@ kendo-dialog-titlebar.close-none {
 
   .k-content {
     margin-bottom: 1.5rem;
+    padding: 0 1.75rem;
   }
 }
 
-.bar-info {
-  height: 5px;
+.k-window-content, .k-prompt-container {
+  form, p, div {
+    padding: .25rem 0;
+  }
+}
+
+
+.k-widget.k-window.k-dialog .k-window-titlebar.k-dialog-titlebar {
+  text-align: left;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  align-items: start;
+  white-space: unset;
+}
+
+kendo-dialog-titlebar.close-none .k-window-actions.k-dialog-actions {
+  display: none;
+}
+
+.k-widget.k-window.k-dialog  kendo-dialog-titlebar.close-none.k-window-titlebar.k-dialog-titlebar {
+  padding: 0rem;
+}
+
+.dialog-title-left {
+  width: 100%; 
+  font-size: 1.75rem;
+  font-weight: 200;
+
+  .text-container {
+    padding: 2rem 1.75rem 0 1.75rem;
+  }
+}
+
+.k-widget.k-window.k-dialog {
+  border: none;
+}
+
+.bar-danger, .bar-info {  
+  height: 0.313rem;
   border-radius: $border-radius $border-radius 0 0;
 }
 
-.dialog-title-center {
-  // will delete this after discussing intent
-  font-size: 1.75rem;
-  font-weight: 200;
-  text-align: left;
-
-  .text-container {
-    margin: 2rem 1.75rem 0 1.75rem;
-  }
+.bar-danger {
+  background-color: $danger;
 }
 
-.text-center {
-  //will delete this after discussing intent
-  text-align: left !important;
+.bar-info {
+  background-color: $primary-blue;
 }
 
-.justify-content-center {
-  //will delete this after discussing intent
-  justify-content: flex-end !important;
+.k-content.k-window-content.k-dialog-content kendo-info-dialog div.container,
+.k-content.k-window-content.k-dialog-content kendo-warning-dialog div.container,
+.k-content.k-window-content.k-dialog-content kendo-confirm-dialog div.container {
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
 
-.k-dialog-buttongroup {
-  text-align: right !important;
+.label {
+  font-size: .9em;
+  font-weight: 600;
+  margin: .5rem;
+}
+
+.k-overlay {
+  background-color: $brand-grey;
+}
+
+.k-widget.k-window.k-dialog  kendo-dialog-actions.k-dialog-buttongroup{
   background-color: $bg-grey;
+  justify-content: flex-start;
   border: 0;
   padding: 1.75rem;
 
   .k-button {
-    min-width: 125px !important;
+    min-width: 125px;
   }
 }
 
-.k-grid-header .k-header[aria-sort="ascending"],
-.k-grid-header .k-header[aria-sort="descending"] {
-  border-bottom-color: $primary-blue;
-  border-bottom-width: 0.125rem;
+.k-widget.k-window.k-dialog .k-window-titlebar .k-window-actions {
+  margin-top: 0rem;
+}
+
+.k-modal-title {
+  font-size: 1.75rem;
+  font-weight: 200;
+  display: block;
+}
+
+.k-modal-toplabel {
+  font-size: .8rem;
+  font-weight: 700;
+  display:block;
 }
 
 // SORTABLE
@@ -771,46 +786,4 @@ kendo-panelbar-item {
 
 .k-tabstrip-top>.k-tabstrip-items .k-item.k-state-active {
   @include double-sided-shadow(-5px, 0, 5px, 0);
-}
-
-
-// DIALOG
-
-.k-modal-title {
-  font-size: 1.75rem;
-  font-weight: 200;
-  display: block;
-}
-
-.k-modal-toplabel {
-  font-size: .8rem;
-  font-weight: 700;
-  display:block;
-}
-
-.k-widget.k-window.k-dialog .k-window-titlebar {
-  padding: 1rem 1.5rem 0 1.5rem;
-  align-items: start;
-}
-
-//.k-dialog-modaltop {
-  //padding:0rem 2rem .5rem 2rem;
-  //display: block;
-//}
-
-// .k-dialog-content p {
-//   padding: 0.25rem 1.25rem;
-// }
-
-.k-widget.k-window.k-dialog .k-window-titlebar .k-window-actions {
-  margin-top: 0rem;
-}
-
-.k-window-content, .k-prompt-container {
-  overflow: initial;
-  padding: 0 2rem;
-
-  form, p {
-    padding: .25rem 0;
-  }
 }

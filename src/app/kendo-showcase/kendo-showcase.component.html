@@ -664,7 +664,7 @@
                                                 </div>
                                                 <div *ngIf="dialogLoader" appLoader [opaque]="true"></div>
                                             </form>
-                                            <kendo-dialog-actions layout="normal" class="justify-content-start">
+                                            <kendo-dialog-actions layout="normal">
                                                 <button kendoButton (click)="action('cancel')" look="outline">Cancel</button>
                                                 <button kendoButton [primary]="true" (click)="action('save')" [disabled]="!dialogForm.valid">Save</button>
                                             </kendo-dialog-actions>
@@ -716,7 +716,7 @@
                                     </div>
                                   </form>
                                 </div>
-                                <kendo-dialog-actions _ngcontent-duc-c177="" class="justify-content-end k-dialog-buttongroup ng-star-inserted" layout="normal" ng-reflect-layout="normal" style="">
+                                <kendo-dialog-actions _ngcontent-duc-c177="" class="k-dialog-buttongroup ng-star-inserted" layout="normal" ng-reflect-layout="normal" style="">
                                   <button _ngcontent-duc-c177="" kendobutton="" look="outline" role="button" ng-reflect-look="outline" class="k-button k-outline ng-star-inserted" aria-disabled="false" aria-pressed="false" dir="ltr">Cancel</button><button _ngcontent-duc-c177="" kendobutton="" role="button" ng-reflect-primary="true" ng-reflect-disabled="true" class="k-button k-primary ng-star-inserted k-state-disabled" aria-disabled="true" aria-pressed="false" dir="ltr" disabled="">Save</button>
                                 </kendo-dialog-actions>
                               </div>
