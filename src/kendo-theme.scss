@@ -8,7 +8,7 @@ body {
   font-family: $font-family;
 }
 
-// INPUTS
+// BUTTONS
 
 .k-button {
   padding: .5rem 1rem;
@@ -30,9 +30,9 @@ body {
 
 .k-button-small {
   border-radius: 2rem;
-  font-size: 80%;
+  // font-size: 80%;
   font-weight: 400;
-  //padding: .35rem 1rem;
+  padding: .35rem 1rem;
 }
 
 .k-outline {
@@ -70,18 +70,47 @@ body {
   margin-right: .5rem;
 }
 
-.k-chip-filled {
-  border-color: $light-grey;
-  background-color: $bg-grey;
+.k-chip-filled,
+.k-chip-filled:focus {
+  border-color: $primary-blue;
+  background-color: $pale-blue;
 
   .k-remove-icon {
-    color: $alt-grey;
+    color: $brand-grey;
   }
 }
 
 .k-chip-filled:hover {
-  //border-color: $primary-blue;
-  background-color: $light-grey;
+  border-color: $bright-blue;
+  background-color: try-darken( $pale-blue, 5% );
+  .k-remove-icon {
+    color: $primary-blue;
+  }
+}
+
+
+
+// FORM
+
+form {
+  padding: $standard-padding;
+}
+
+.form-control {
+  box-shadow:none;
+  outline:0;
+}
+
+.form-control:disabled {
+  color: $alt-grey;
+  border-bottom: 1px solid $brand-grey !important;
+}
+
+.form-control:focus, 
+.k-textbox:focus,
+.k-multiselect .k-multiselect-wrap:focus, 
+.k-dropdowntree .k-multiselect-wrap:focus {
+  border-bottom: 2px solid $bright-blue !important;
 }
 
 .k-dateinput,
@@ -524,7 +553,7 @@ kendo-grid[hide-filter-buttons=true] kendo-grid-filter-cell-operators {
   border-bottom-width: 0.125rem;
 }
 
-/* LOADER */
+// LOADER
 
 .k-i-loading {
   position: absolute;
@@ -553,7 +582,7 @@ kendo-grid[hide-filter-buttons=true] kendo-grid-filter-cell-operators {
   z-index: 99999;
 }
 
-/* DIALOG */
+// DIALOG
 
 
 .k-widget.k-window.k-dialog {
@@ -690,11 +719,7 @@ kendo-dialog-titlebar.close-none .k-window-actions.k-dialog-actions {
 }
 
 
-// FORM
 
-form {
-  padding: $standard-padding;
-}
 
 
 // CARDS
@@ -775,10 +800,10 @@ kendo-panelbar-item {
     color: $dark-grey !important;
 }
 
-.k-floatwrap {
-  border-bottom-color: $burgundy !important;
-  border-radius: $border-radius $border-radius 0 0 !important;
-}
+// .k-floatwrap {
+//   border-bottom-color: $burgundy !important;
+//   border-radius: $border-radius $border-radius 0 0 !important;
+// }
 
 .k-tabstrip>.k-content.k-state-active {
   @include one-side-shadow(0, -5px);
