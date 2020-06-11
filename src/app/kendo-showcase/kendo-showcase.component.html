@@ -246,6 +246,14 @@
                               <kendo-multiselect [data]="listItems" [(ngModel)]="valueMs"></kendo-multiselect>
                             </div>
                           </div>
+                          <div class="row pb-2">
+                            <div class="col">
+                              Non-closing
+                            </div>
+                            <div class="col-10">
+                              <kendo-multiselect [data]="listItems" [(ngModel)]="valueMs" (close)="onMultiSelectClose($event)">></kendo-multiselect>
+                            </div>
+                          </div>
                       </div>
                   </div>   
                   <div class="row p-2" id="Input" *ngIf="selectedShocaseItem === 'Input'">

@@ -162,8 +162,13 @@ export class KendoShowcaseComponent implements OnInit {
 
   valueMs: any = ['Baseball'];
 
+
   onSelectedValuesChange(event: any){
     console.log(this.selectedItems)
+  }
+
+  onMultiSelectClose(event: any) {
+      event.preventDefault();
   }
 
   /* LAYOUT -> AVATAR */
