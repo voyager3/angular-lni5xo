@@ -235,12 +235,11 @@ form {
   color: $white;
 }
 
-.k-dropdown-wrap,
+
 .k-dropdowntree,
 .k-floatwrap,
 .k-dateinput-wrap,
 .k-dropdown,
-.k-multiselect-wrap,
 .k-numerictextbox {
   border: none !important;
   border-color: $bg-grey;
@@ -253,8 +252,10 @@ form {
   }
 }
 
+.k-dropdown-wrap,
 .k-textbox,
-.k-numeric-wrap {
+.k-numeric-wrap,
+.k-multiselect {
   border-radius: 0 !important;
   border: none !important;
   border-color: $bg-grey;
@@ -265,18 +266,18 @@ form {
 .k-widget.k-state-invalid > .k-dateinput-wrap,
 .k-widget.k-state-invalid > .k-dropdown-wrap, 
 .k-widget.k-state-invalid > .k-picker-wrap, 
-.k-widget.k-state-invalid > .k-multiselect-wrap, 
+//.k-widget.k-state-invalid > .k-multiselect-wrap, 
 .k-widget.k-state-invalid > .k-numeric-wrap, 
 .ng-invalid.ng-touched > .k-dateinput-wrap, 
 .ng-invalid.ng-touched > .k-dropdown-wrap, 
 .ng-invalid.ng-touched > .k-picker-wrap, 
-.ng-invalid.ng-touched > .k-multiselect-wrap, 
+//.ng-invalid.ng-touched > .k-multiselect-wrap, 
 .ng-invalid.ng-touched > .k-numeric-wrap, 
 .ng-invalid.ng-touched.k-maskedtextbox > .k-textbox,
 .ng-invalid.ng-dirty > .k-dateinput-wrap, 
 .ng-invalid.ng-dirty > .k-dropdown-wrap, 
 .ng-invalid.ng-dirty > .k-picker-wrap, 
-.ng-invalid.ng-dirty > .k-multiselect-wrap, 
+//.ng-invalid.ng-dirty > .k-multiselect-wrap, 
 .ng-invalid.ng-dirty > .k-numeric-wrap,
 .k-textbox.k-invalid, 
 .k-textbox.k-state-invalid, 
@@ -289,7 +290,10 @@ form {
 .k-input.k-textbox.k-invalid, 
 .k-input.k-textbox.k-state-invalid, 
 .k-input.k-textbox.ng-invalid.ng-touched, 
-.k-input.k-textbox.ng-invalid.ng-dirty {
+.k-input.k-textbox.ng-invalid.ng-dirty,
+.k-multiselect.k-state-invalid,
+.k-multiselect.ng-invalid.ng-touched,
+.k-multiselect.ng-invalid.ng-dirty {
   border-bottom: 1px solid $bright-red !important;
   border-top-color: initial;
   border-top-color: rgba(0, 0, 0, 0.08);
@@ -298,6 +302,7 @@ form {
   border-right-color: initial;
   border-right-color: rgba(0, 0, 0, 0.08);
   color: $main-text-color;
+
 }
 
 .ng-invalid.ng-touched.k-maskedtextbox > .k-textbox {
@@ -309,14 +314,6 @@ form {
   border-right-color: rgba(0, 0, 0, 0.08);
 }
 
-// .form-control:disabled,
-// .form-control.ng-reflect-is-disabled {
-//   color: $alt-grey;
-//   border-bottom: 1px solid $brand-grey !important;
-// }
-
-// .form-control:disabled,
-// .form-control.ng-reflect-is-disabled,
 .k-textbox:disabled, 
 .k-textbox[disabled], 
 .k-textbox.k-state-disabled, 
@@ -324,7 +321,7 @@ form {
 .k-textarea[disabled], 
 .k-textarea.k-state-disabled,
 .k-dateinput.k-state-disabled,
-/.k-picker-wrap.k-state-disabled,
+//.k-picker-wrap.k-state-disabled,
 .k-dateinput-wrap.k-state-disabled,
 .k-datepicker.k-state-disabled,
 .k-datetimepicker.k-state-disabled,
@@ -343,6 +340,14 @@ form {
   filter: grayscale(0.1);
   box-shadow: none;
 }
+
+.k-textbox[readonly],
+.k-input[readonly],
+.k-multiselect[ng-reflect-readonly="true"]>.k-multiselect-wrap,
+.k-dropdown[ng-reflect-readonly="true"]>.k-dropdown-wrap{
+  background-color: $light-grey !important;
+}
+
 
 // .ng-invalid.ng-dirty > .k-picker-wrap  > .k-select,
 // .ng-invalid.ng-touched > .k-picker-wrap > .k-select,
