@@ -251,7 +251,9 @@
                               Non-closing
                             </div>
                             <div class="col-10">
-                              <kendo-multiselect [data]="listItems" [(ngModel)]="valueMs" (close)="onMultiSelectClose($event)">></kendo-multiselect>
+                              <kendo-multiselect [data]="listItems" [(ngModel)]="valueMs" (close)="onMultiSelectClose($event)"></kendo-multiselect>
+                              <kendo-dropdownlist [data]="data" [filterable]="true" (filterChange)="filterChange($event)" (close)="onMultiSelectClose($event)">
+                              </kendo-dropdownlist>
                             </div>
                           </div>
                       </div>
@@ -811,7 +813,6 @@
                       </div> 
                   </div>
                   <div class="row p-2" id="Form" *ngIf="selectedShocaseItem === 'Form'">
-                
                       <div class="col-md-12">
                           <kendo-panelbar>
                               <kendo-panelbar-item [title]="'Input'" [expanded]="true">

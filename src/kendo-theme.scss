@@ -101,11 +101,6 @@ form {
   outline:0;
 }
 
-.form-control:disabled {
-  color: $alt-grey;
-  border-bottom: 1px solid $brand-grey !important;
-}
-
 .form-control:focus, 
 .k-textbox:focus,
 .k-multiselect .k-multiselect-wrap:focus, 
@@ -152,25 +147,6 @@ form {
   .k-select{
     background-color: $bright-blue;
     color: white;
-  }
-}
-
-.k-dropdown-wrap,
-.k-dropdowntree,
-.k-multiselect-wrap,
-.k-floatwrap,
-.k-textbox,
-.k-numeric-wrap,
-.k-dateinput-wrap {
-  border: 0px !important;
-  border-color: $bg-grey;
-  background-color: $bg-grey !important;
-  border-radius: 0 !important;
-  border-bottom: 1px solid $primary-blue !important;
-
-  .k-select {
-    background-color: transparent !important;
-    border-color: transparent !important;
   }
 }
 
@@ -237,6 +213,160 @@ form {
   border-color: $primary-blue;
   color: white;
 }
+
+.k-calendar .k-footer .k-nav-today, 
+.k-calendar .k-calendar-header .k-today {
+  color: $primary-blue;
+}
+
+.k-datepicker .k-picker-wrap .k-select .k-icon.k-i-calendar::before,
+.k-datetimepicker .k-picker-wrap .k-select .k-icon.k-i-calendar::before {
+  font-family: icomoon;
+  // font-weight: 700;
+  font-size: 1.5rem;
+  content: "\e611";
+}
+
+.k-colorpicker .k-picker-wrap .k-select .k-icon {
+  font-size: 1rem;
+}
+
+.k-action-buttons .k-primary {
+  color: $white;
+}
+
+.k-dropdown-wrap,
+.k-dropdowntree,
+.k-floatwrap,
+.k-dateinput-wrap,
+.k-dropdown,
+.k-multiselect-wrap,
+.k-numerictextbox {
+  border: none !important;
+  border-color: $bg-grey;
+  background-color: $bg-grey !important;
+  border-radius: 0 !important;
+
+  .k-select {
+    background-color: transparent !important;
+    border-color: transparent !important;
+  }
+}
+
+.k-textbox,
+.k-numeric-wrap {
+  border-radius: 0 !important;
+  border: none !important;
+  border-color: $bg-grey;
+  background-color: $bg-grey !important;
+  border-bottom: 1px solid $primary-blue !important;
+}
+
+.k-widget.k-state-invalid > .k-dateinput-wrap,
+.k-widget.k-state-invalid > .k-dropdown-wrap, 
+.k-widget.k-state-invalid > .k-picker-wrap, 
+.k-widget.k-state-invalid > .k-multiselect-wrap, 
+.k-widget.k-state-invalid > .k-numeric-wrap, 
+.ng-invalid.ng-touched > .k-dateinput-wrap, 
+.ng-invalid.ng-touched > .k-dropdown-wrap, 
+.ng-invalid.ng-touched > .k-picker-wrap, 
+.ng-invalid.ng-touched > .k-multiselect-wrap, 
+.ng-invalid.ng-touched > .k-numeric-wrap, 
+.ng-invalid.ng-touched.k-maskedtextbox > .k-textbox,
+.ng-invalid.ng-dirty > .k-dateinput-wrap, 
+.ng-invalid.ng-dirty > .k-dropdown-wrap, 
+.ng-invalid.ng-dirty > .k-picker-wrap, 
+.ng-invalid.ng-dirty > .k-multiselect-wrap, 
+.ng-invalid.ng-dirty > .k-numeric-wrap,
+.k-textbox.k-invalid, 
+.k-textbox.k-state-invalid, 
+.k-textbox.ng-invalid.ng-touched, 
+.k-textbox.ng-invalid.ng-dirty, 
+.k-textarea.k-invalid, 
+.k-textarea.k-state-invalid, 
+.k-textarea.ng-invalid.ng-touched, 
+.k-textarea.ng-invalid.ng-dirty, 
+.k-input.k-textbox.k-invalid, 
+.k-input.k-textbox.k-state-invalid, 
+.k-input.k-textbox.ng-invalid.ng-touched, 
+.k-input.k-textbox.ng-invalid.ng-dirty {
+  border-bottom: 1px solid $bright-red !important;
+  border-top-color: initial;
+  border-top-color: rgba(0, 0, 0, 0.08);
+  border-bottom-color: initial;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  border-right-color: initial;
+  border-right-color: rgba(0, 0, 0, 0.08);
+  color: $main-text-color;
+}
+
+.ng-invalid.ng-touched.k-maskedtextbox > .k-textbox {
+  border-top-color: initial;
+  border-top-color: rgba(0, 0, 0, 0.08);
+  border-bottom-color: initial;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  border-right-color: initial;
+  border-right-color: rgba(0, 0, 0, 0.08);
+}
+
+// .form-control:disabled,
+// .form-control.ng-reflect-is-disabled {
+//   color: $alt-grey;
+//   border-bottom: 1px solid $brand-grey !important;
+// }
+
+// .form-control:disabled,
+// .form-control.ng-reflect-is-disabled,
+.k-textbox:disabled, 
+.k-textbox[disabled], 
+.k-textbox.k-state-disabled, 
+.k-textarea:disabled, 
+.k-textarea[disabled], 
+.k-textarea.k-state-disabled,
+.k-dateinput.k-state-disabled,
+/.k-picker-wrap.k-state-disabled,
+.k-dateinput-wrap.k-state-disabled,
+.k-datepicker.k-state-disabled,
+.k-datetimepicker.k-state-disabled,
+.k-multiselect.k-state-disabled,
+.k-numerictextbox.k-state-disabled,
+.k-maskedtextbox.k-state-disabled,
+.k-timepicker.k-state-disabled,
+.k-combobox.k-state-disabled,
+.k-numeric-wrap.k-state-disabled,
+.k-dropdown-wrap.k-state-disabled {
+  color: $alt-grey;
+  border-bottom: 1px solid $brand-grey !important;
+  outline: none;
+  cursor: defalt;
+  opacity: .65;
+  filter: grayscale(0.1);
+  box-shadow: none;
+}
+
+// .ng-invalid.ng-dirty > .k-picker-wrap  > .k-select,
+// .ng-invalid.ng-touched > .k-picker-wrap > .k-select,
+// .ng-invalid.ng-untouched > .k-picker-wrap > .k-select {
+//   border-left: none;
+// }
+
+.k-textbox.ng-valid:focus {
+    border-color: try-lighten( $accent, 25 );
+}
+
+// .k-switch-label-on, 
+// .k-switch-label-off {
+//   display: block;
+// }
+
+// .k-switch {
+//   width: 10em;
+// }
+
+// .k-switch-label-on {
+//   text-align: center;
+// }
+
 
 
 
@@ -312,105 +442,6 @@ form {
   color: $primary-blue;
 }
 
-.k-calendar .k-footer .k-nav-today, 
-.k-calendar .k-calendar-header .k-today {
-  color: $primary-blue;
-}
-
-.k-datepicker .k-picker-wrap .k-select .k-icon.k-i-calendar::before,
-.k-datetimepicker .k-picker-wrap .k-select .k-icon.k-i-calendar::before {
-  font-family: icomoon;
-  // font-weight: 700;
-  font-size: 1.5rem;
-  content: "\e611";
-}
-
-.k-colorpicker .k-picker-wrap .k-select .k-icon {
-  font-size: 1rem;
-}
-
-.k-action-buttons .k-primary {
-  color: $white;
-}
-
-.k-widget.k-state-invalid > .k-dateinput-wrap,
-.k-widget.k-state-invalid > .k-dropdown-wrap, 
-.k-widget.k-state-invalid > .k-picker-wrap, 
-.k-widget.k-state-invalid > .k-multiselect-wrap, 
-.k-widget.k-state-invalid > .k-numeric-wrap, 
-.ng-invalid.ng-touched > .k-dateinput-wrap, 
-.ng-invalid.ng-touched > .k-dropdown-wrap, 
-.ng-invalid.ng-touched > .k-picker-wrap, 
-.ng-invalid.ng-touched > .k-multiselect-wrap, 
-.ng-invalid.ng-touched > .k-numeric-wrap, 
-.ng-invalid.ng-touched.k-maskedtextbox > .k-textbox,
-.ng-invalid.ng-untouched > .k-dateinput-wrap, 
-.ng-invalid.ng-untouched > .k-dropdown-wrap, 
-.ng-invalid.ng-untouched > .k-picker-wrap, 
-.ng-invalid.ng-untouched > .k-multiselect-wrap, 
-.ng-invalid.ng-untouched > .k-numeric-wrap, 
-.ng-invalid.ng-untouched.k-maskedtextbox > .k-textbox,
-.ng-invalid.ng-dirty > .k-dateinput-wrap, 
-.ng-invalid.ng-dirty > .k-dropdown-wrap, 
-.ng-invalid.ng-dirty > .k-picker-wrap, 
-.ng-invalid.ng-dirty > .k-multiselect-wrap, 
-.ng-invalid.ng-dirty > .k-numeric-wrap,
-.k-textbox.k-invalid, 
-.k-textbox.k-state-invalid, 
-.k-textbox.ng-invalid.ng-touched, 
-.k-textbox.ng-invalid.ng-untouched, 
-.k-textbox.ng-invalid.ng-dirty, 
-.k-textarea.k-invalid, 
-.k-textarea.k-state-invalid, 
-.k-textarea.ng-invalid.ng-touched, 
-.k-textarea.ng-invalid.ng-untouched, 
-.k-textarea.ng-invalid.ng-dirty, 
-.k-input.k-textbox.k-invalid, 
-.k-input.k-textbox.k-state-invalid, 
-.k-input.k-textbox.ng-invalid.ng-touched, 
-.k-input.k-textbox.ng-invalid.ng-untouched, 
-.k-input.k-textbox.ng-invalid.ng-dirty {
-  border-left: 0.3125rem solid $versant-color;
-  border-top-color: initial;
-  border-top-color: rgba(0, 0, 0, 0.08);
-  border-bottom-color: initial;
-  border-bottom-color: rgba(0, 0, 0, 0.08);
-  border-right-color: initial;
-  border-right-color: rgba(0, 0, 0, 0.08);
-  color: $main-text-color;
-}
-
-.ng-invalid.ng-touched.k-maskedtextbox > .k-textbox {
-  border-top-color: initial;
-  border-top-color: rgba(0, 0, 0, 0.08);
-  border-bottom-color: initial;
-  border-bottom-color: rgba(0, 0, 0, 0.08);
-  border-right-color: initial;
-  border-right-color: rgba(0, 0, 0, 0.08);
-}
-
-.ng-invalid.ng-dirty > .k-picker-wrap  > .k-select,
-.ng-invalid.ng-touched > .k-picker-wrap > .k-select,
-.ng-invalid.ng-untouched > .k-picker-wrap > .k-select {
-  border-left: none;
-}
-
-.k-textbox.ng-valid:focus {
-    border-color: try-lighten( $accent, 25 );
-}
-
-// .k-switch-label-on, 
-// .k-switch-label-off {
-//   display: block;
-// }
-
-// .k-switch {
-//   width: 10em;
-// }
-
-// .k-switch-label-on {
-//   text-align: center;
-// }
 
 // CHECKBOXES AND RADIO BUTTONS
 
