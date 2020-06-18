@@ -162,6 +162,14 @@ export class KendoShowcaseComponent implements OnInit {
 
   valueMs: any = ['Baseball'];
 
+  onSelectedValuesChange(event: any){
+    console.log(this.selectedItems)
+  }
+
+  onMultiSelectClose(event: any) {
+      event.preventDefault();
+  }
+
   /* DROPDOWNS -> AUTOCOMPLETE */
 
   valueAutocomplete: any = 'Cricket';
@@ -170,15 +178,6 @@ export class KendoShowcaseComponent implements OnInit {
 
   allowCustom: boolean = true;
   valueCombobox: any = 'Baseball';
-
-
-  onSelectedValuesChange(event: any){
-    console.log(this.selectedItems)
-  }
-
-  onMultiSelectClose(event: any) {
-      event.preventDefault();
-  }
 
   /* LAYOUT -> AVATAR */
 
@@ -318,7 +317,7 @@ export class KendoShowcaseComponent implements OnInit {
         actionsLayout: 'normal',
         autoFocusedElement: 'No',
         width: 450,
-        mineight: 200,
+        minHeight: 250,
         minWidth: 250
     });
 
