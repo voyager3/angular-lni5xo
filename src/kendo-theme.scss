@@ -374,6 +374,14 @@ form {
 
 
 
+// DROPDOWNS ONLY
+
+.k-animation-container-shown {
+  box-shadow: $close-shadow !important;
+  margin-top: .25rem;
+  border-radius: $border-radius;
+}
+
 
 // START PAGINATION STYLES
 
@@ -824,10 +832,11 @@ kendo-panelbar-item {
 
 // TABSTRIP
 
+.k-tabstrip.k-floatwrap {
+  border-radius: $border-radius, $border-radius, 0, 0;
+}
 .k-tabstrip>.k-content {
   padding: 1.5rem;
-  border-radius: 0;
-  border-bottom-color: transparent;
 }
 .k-tabstrip-items li {
     color: $burgundy !important;

@@ -309,7 +309,7 @@ export class KendoShowcaseComponent implements OnInit {
         actionsLayout: 'normal',
         autoFocusedElement: 'No',
         width: 450,
-        height: 200,
+        mineight: 200,
         minWidth: 250
     });
 
