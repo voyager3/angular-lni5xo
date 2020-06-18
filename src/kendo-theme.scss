@@ -343,7 +343,9 @@ form {
 .k-textbox[readonly],
 .k-input[readonly],
 .k-multiselect[ng-reflect-readonly="true"]>.k-multiselect-wrap,
-.k-dropdown[ng-reflect-readonly="true"]>.k-dropdown-wrap{
+.k-dropdown[ng-reflect-readonly="true"] .k-dropdown-wrap,
+.k-numerictextbox[ng-reflect-readonly="true"] .k-numeric-wrap,
+.k-combobox[ng-reflect-readonly="true"] .k-dropdown-wrap {
   background-color: $light-grey !important;
 }
 
