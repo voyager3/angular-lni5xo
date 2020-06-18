@@ -232,18 +232,30 @@
                   <div class="row p-2" id="Dropdowns" *ngIf="selectedShocaseItem === 'Dropdowns'">
                       <div class="col-md-12">
                           <div class="row pb-2">
-                            <div class="col">
+                            <div class="col-2">
                               Single
                             </div>
                             <div class="col">
                               <kendo-dropdownlist [data]="data" [filterable]="true" (filterChange)="filterChange($event)">
                               </kendo-dropdownlist>
                             </div>
-                            <div class="col">
+                          </div>
+                          <div class="row pb-2">
+                            <div class="col-2">
                               Multiple
                             </div>
                             <div class="col-6">
                               <kendo-multiselect [data]="listItems" [(ngModel)]="valueMs"></kendo-multiselect>
+                            </div>
+                          </div>
+                          <div class="row pb-2">
+                            <div class="col-2">Autocomplete</div>
+                            <div class="col-6">
+                               <kendo-autocomplete
+                                    [data]="listItems"
+                                    [placeholder]="'e.g. Basketball'"
+                                    [(ngModel)]="valueAutocomplete">
+                                </kendo-autocomplete>
                             </div>
                           </div>
                           <div class="row pb-2">

@@ -162,6 +162,10 @@ export class KendoShowcaseComponent implements OnInit {
 
   valueMs: any = ['Baseball'];
 
+  /* DROPDOWNS -> AUTOCOMPLETE */
+
+  valueAutocomplete: any = 'Cricket';
+
 
   onSelectedValuesChange(event: any){
     console.log(this.selectedItems)
