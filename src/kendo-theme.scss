@@ -21,7 +21,8 @@ body {
   border-color: try-darken( $brand-grey, 10% );
 }
 
-.k-button:focus:enabled, .k-outline:focus:enabled {
+.k-button:focus:enabled, 
+.k-outline:focus:enabled {
   outline-color: $bright-blue;
   outline-width: 1px;
   outline-offset: 3px;
@@ -87,8 +88,6 @@ body {
     color: $primary-blue;
   }
 }
-
-
 
 // FORM
 
@@ -159,9 +158,9 @@ form {
   border-color: $primary-blue !important;
 }
 
-.k-content[_ngcontent-pfu-c0] {
-  box-shadow: $close-shadow;
-}
+// .k-content[_ngcontent-pfu-c0] {
+//   box-shadow: $close-shadow;
+// }
 
 .k-list .k-item {
   padding:.5rem 1rem;

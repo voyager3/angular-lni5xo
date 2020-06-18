@@ -166,6 +166,11 @@ export class KendoShowcaseComponent implements OnInit {
 
   valueAutocomplete: any = 'Cricket';
 
+  /* DROPDOWNDS -> COMBOBOX */
+
+  allowCustom: boolean = true;
+  valueCombobox: any = 'Baseball';
+
 
   onSelectedValuesChange(event: any){
     console.log(this.selectedItems)
