@@ -56,7 +56,8 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Orderable List'},
     { text: 'Extended Multiselect'},
     { text: 'Hierarcy Selector'},
-    { text: 'Meta info'}
+    { text: 'Meta info'},
+    { text: 'Checkbox tree'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
 

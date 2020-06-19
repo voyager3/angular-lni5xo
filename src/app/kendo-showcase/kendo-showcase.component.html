@@ -834,398 +834,150 @@
                       </div> 
                   </div>
                   <div class="row p-2" id="Form" *ngIf="selectedShocaseItem === 'Form'">
-                      <div class="col-md-12">
-                          <kendo-panelbar>
-                              <kendo-panelbar-item [title]="'Input'" [expanded]="true">
-                                  <ng-template kendoPanelBarContent>
-                                      <form #iForm="ngForm">
-                                          <div class="form-group">
-                                              <label [for]="textInput">Input</label>
-                                              <input type="text" #textInput class="k-textbox form-control" name="form-textbox"
-                                                  [(ngModel)]="formModel.textbox" [required]="inputForm.required"
-                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly" />
-                                          </div>
-                  
-                                          <div class="display-flex">
-                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                                  name="input-required" />
-                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                                  name="input-disabled" />
-                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                                  name="input-readonly" />
-                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                                          </div>
-                  
-                                          <div class="text-right">
-                                              <button kendoButton>Cancel</button>
-                                              <button kendoButton (click)="onFormSubmit()" primary="true"
-                                                  [disabled]="!iForm.valid">Save</button>
-                                          </div>
-                                      </form>
-                                  </ng-template>
-                              </kendo-panelbar-item>
-                              <kendo-panelbar-item [title]="'MaskedTextBox'">
-                                  <ng-template kendoPanelBarContent>
-                                      <form #mbForm="ngForm">
-                                          <div class="form-group">
-                                              <label [for]="maskedTextbox">MaskedTextBox</label>
-                                              <kendo-maskedtextbox #maskedTextbox name="maskedTextbox" [mask]="mask" class="form-control"
-                                                  [(ngModel)]="formModel.maskedTextbox" [required]="inputForm.required"
-                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                              </kendo-maskedtextbox>
-                                          </div>
-                  
-                                          <div class="display-flex">
-                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                                  name="input-required" />
-                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                                  name="input-disabled" />
-                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                                  name="input-readonly" />
-                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                                          </div>
-                  
-                                          <div class="text-right">
-                                              <button kendoButton>Cancel</button>
-                                              <button kendoButton (click)="onFormSubmit()" primary="true"
-                                                  [disabled]="!mbForm.valid">Save</button>
-                                          </div>
-                  
-                                      </form>
-                                  </ng-template>
-                              </kendo-panelbar-item>
-                              <kendo-panelbar-item [title]="'NumericTextBox'">
-                                  <ng-template kendoPanelBarContent>
-                                      <form #ntbForm="ngForm">
-                  
-                                          <div class="form-group">
-                                              <label [for]="numericTextBox">NumericTextBox</label>
-                                              <kendo-numerictextbox #numericTextBox class="form-control" [(ngModel)]="formModel.numeric"
-                                                  [min]="0" [max]="100" name="form-numeric" [required]="inputForm.required"
-                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                              </kendo-numerictextbox>
-                                          </div>
-                  
-                                          <div class="display-flex">
-                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                                  name="input-required" />
-                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                                  name="input-disabled" />
-                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                                  name="input-readonly" />
-                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                                          </div>
-                  
-                                          <div class="text-right">
-                                              <button kendoButton>Cancel</button>
-                                              <button kendoButton (click)="onFormSubmit()" primary="true"
-                                                  [disabled]="!ntbForm.valid">Save</button>
-                                          </div>
-                  
-                                      </form>
-                                  </ng-template>
-                              </kendo-panelbar-item>
-                              <kendo-panelbar-item [title]="'DropDownList'">
-                                  <ng-template kendoPanelBarContent>
-                                      <form #ddlForm="ngForm">
-                  
-                                          <div class="form-group">
-                                              <label [for]="ddl">DropDownList</label>
-                                              <kendo-dropdownlist #ddl class="form-control" [data]="listItems" name="form-ddl"
-                                                  [(ngModel)]="formModel.ddl" [required]="inputForm.required"
-                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                              </kendo-dropdownlist>
-                                          </div>
-                  
-                                          <div class="display-flex">
-                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                                  name="input-required" />
-                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                                  name="input-disabled" />
-                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                                  name="input-readonly" />
-                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                                          </div>
-                  
-                                          <div class="text-right">
-                                              <button kendoButton>Cancel</button>
-                                              <button kendoButton (click)="onFormSubmit()" primary="true"
-                                                  [disabled]="!ddlForm.valid">Save</button>
-                                          </div>
-                  
-                                      </form>
-                                  </ng-template>
-                              </kendo-panelbar-item>
-                              <kendo-panelbar-item [title]="'ComboBox'">
-                                  <ng-template kendoPanelBarContent>
-                                      <form #cbForm="ngForm">
-                  
-                                          <div class="form-group">
-                                              <label [for]="comboBox">ComboBox</label>
-                                              <kendo-combobox #comboBox class="form-control" [data]="listItems" name="form-combobox"
-                                                  [(ngModel)]="formModel.combobox" [required]="inputForm.required"
-                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                              </kendo-combobox>
-                                          </div>
-                  
-                                          <div class="display-flex">
-                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                                  name="input-required" />
-                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                                  name="input-disabled" />
-                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                                  name="input-readonly" />
-                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                                          </div>
-                  
-                                          <div class="text-right">
-                                              <button kendoButton>Cancel</button>
-                                              <button kendoButton (click)="onFormSubmit()" primary="true"
-                                                  [disabled]="!cbForm.valid">Save</button>
-                                          </div>
-                  
-                                      </form>
-                                  </ng-template>
-                              </kendo-panelbar-item>
-                              <kendo-panelbar-item [title]="'MultiSelect'">
-                                  <ng-template kendoPanelBarContent>
-                                      <form #msForm="ngForm">
-                  
-                                          <div class="form-group">
-                                              <label [for]="multiSelect">MultiSelect</label>
-                                              <kendo-multiselect #multiSelect class="form-control" name="form-multiselect"
-                                                  [data]="listItems" [(ngModel)]="formModel.multiselect" [required]="inputForm.required"
-                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                              </kendo-multiselect>
-                                          </div>
-                  
-                                          <div class="display-flex">
-                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                                  name="input-required" />
-                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                                  name="input-disabled" />
-                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                                  name="input-readonly" />
-                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                                          </div>
-                  
-                                          <div class="text-right">
-                                              <button kendoButton>Cancel</button>
-                                              <button kendoButton (click)="onFormSubmit()" primary="true"
-                                                  [disabled]="!msForm.valid">Save</button>
-                                          </div>
-                  
-                                      </form>
-      
-                                  </ng-template>
-                              </kendo-panelbar-item>
-                              <kendo-panelbar-item [title]="'Switch'">
-                                  <ng-template kendoPanelBarContent>
-                                      <form #swForm="ngForm">
-                                          <div class="form-group">
-                                              <label [for]="switch">Switch</label>
-                                              <kendo-switch #switch onLabel="Active" offLabel="Inactive" name="switch"
-                                                  [(ngModel)]="formModel.switch" [required]="inputForm.required"
-                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                              </kendo-switch>
-                                          </div>
-                  
-                                          <div class="display-flex">
-                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                                  name="input-required" />
-                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                                  name="input-disabled" />
-                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                                  name="input-readonly" />
-                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                                          </div>
-                  
-                                          <div class="text-right">
-                                              <button kendoButton>Cancel</button>
-                                              <button kendoButton (click)="onFormSubmit()" primary="true"
-                                                  [disabled]="!swForm.valid">Save</button>
-                                          </div>
-                  
-                                      </form>
-                                  </ng-template>
-                              </kendo-panelbar-item>
-                              <kendo-panelbar-item [title]="'Slider'">
-                                  <ng-template kendoPanelBarContent>
-                                      <form #slForm="ngForm">
-                                          <div class="form-group">
-                                              <label [for]="slide">Slider</label>
-                                              <kendo-slider #slide name="slider" tickPlacement="none"  [min]="0" [max]="10" [smallStep]="1"
-                                                  [(ngModel)]="inputForm.slider" [required]="inputForm.required"
-                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"></kendo-slider>
-                                          </div>
-                  
-                                          <div class="display-flex">
-                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                                  name="input-required" />
-                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                                  name="input-disabled" />
-                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                                  name="input-readonly" />
-                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                                          </div>
-                  
-                                          <div class="text-right">
-                                              <button kendoButton>Cancel</button>
-                                              <button kendoButton (click)="onFormSubmit()" primary="true"
-                                                  [disabled]="!slForm.valid">Save</button>
-                                          </div>
-                  
-                                      </form>
-                                  </ng-template>
-                              </kendo-panelbar-item>
-                              <kendo-panelbar-item [title]="'ColorPicker'">
-                                  <ng-template kendoPanelBarContent>
-                                      <form #cpForm="ngForm" class="form">
-                  
-                                          <div class="form-group">
-                                              <label [for]="colorPicker">ColorPicker</label><br>
-                                              <kendo-colorpicker #colorPicker view="combo" format="hex"
-                                                  name="colorPicker" [(ngModel)]="formModel.color" [required]="inputForm.required"
-                                                  [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
-                                              </kendo-colorpicker>
-                                          </div>
-                  
-                                          <div class="display-flex">
-                                              <input type="checkbox" id="inputFormR" class="k-checkbox" [(ngModel)]="inputForm.required"
-                                                  name="input-required" [(ngModel)]="formModel.cb1" />
-                                              <label class="k-checkbox-label" for="inputFormR">Required</label>
-                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                                  name="input-disabled" [(ngModel)]="formModel.cb2" />
-                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                              <input type="checkbox" id="inputFormRO" class="k-checkbox" [(ngModel)]="inputForm.readOnly"
-                                                  name="input-readonly" [(ngModel)]="formModel.cb3" />
-                                              <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
-                                          </div>
-                  
-                                          <div class="text-left">
-                                              <button kendoButton>Cancel</button>
-                                              <button kendoButton (click)="onFormSubmit()" primary="true"
-                                                  [disabled]="!cpForm.valid">Save</button>
-                                          </div>
-                  
-                                      </form>
-                                  </ng-template>
-                              </kendo-panelbar-item>
-                              <kendo-panelbar-item [title]="'CheckBox'">
-                                  <ng-template kendoPanelBarContent>
-                                      <form #cbForm="ngForm" class="form">
-                                          <div class="row">
-                                              <div class="col-3">
-                                                  <div class="form-group">
-                                                      <input type="checkbox" id="cb" class="k-checkbox" [(ngModel)]="formModel.cb"
-                                                          [disabled]="inputForm.disabled" name="checkbox" />
-                                                      <label class="k-checkbox-label" for="cb">Checkbox</label>
-                                                  </div>
-                                                  <div class="form-group">
-                                                      <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                                          name="input-disabled" [(ngModel)]="formModel.cb2" />
-                                                      <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                                  </div>
-                                              </div>
-                                              <div class="col-2">
-                                                  <div class="form-group">
-                                                      <!-- No need for (ngModel) variable in the toggle button. It is populated automatically by the state of the children-->
-                                                      <input type="checkbox" id="toggle-all" class="k-checkbox" name="toggle-all" (ngModel)="false"
-                                                          checkbox-toggle
-                                                          (ngModelChange)="cbt.first = $event; cbt.second = $event; cbt.third = $event;"
-                                                          [checkboxesToToggle]="[cbt.first, cbt.second, cbt.third]"/>
-                                                      <label class="k-checkbox-label" for="toggle-all">Toggle All</label>
-                                                  </div>
-                                              </div>
-                                              <div class="col-3">
-                                                  <div class="form-group m-0">
-                                                      <input type="checkbox" id="first-dependant" class="k-checkbox" [(ngModel)]="cbt.first" name="first-dependant" />
-                                                      <label class="k-checkbox-label" for="first-dependant">First Dependant</label>
-                                                  </div>
-                                                  <div class="form-group m-0">
-                                                      <input type="checkbox" id="second-dependant" class="k-checkbox" [(ngModel)]="cbt.second" name="second-dependant" />
-                                                      <label class="k-checkbox-label" for="second-dependant">Second Dependant</label>
-                                                  </div>
-                                                  <div class="form-group m-0">
-                                                      <input type="checkbox" id="third-dependant" class="k-checkbox" [(ngModel)]="cbt.third" name="third-dependant" />
-                                                      <label class="k-checkbox-label" for="third-dependant">Third Dependant</label>
-                                                  </div>
-                                              </div>
-                                              <div class="col-4">
-                                                  <div class="form-group m-0">
-                                                      <input type="checkbox" id="activate" class="k-checkbox" [(ngModel)]="cba.activate" name="activate"/>
-                                                      <label class="k-checkbox-label" for="activate">Activate Children</label>
-                                                  </div>
-                                                  <div class="form-group m-0 ml-3" >
-                                                      <input type="checkbox" id="first-child" class="k-checkbox" [(ngModel)]="cba.first" name="first-child" activated-checkbox [activator]="cba.activate" />
-                                                      <label class="k-checkbox-label" for="first-child">First Child</label>
-                                                  </div>
-                                                  <div class="form-group m-0 ml-3">
-                                                      <input type="checkbox" id="second-child" class="k-checkbox" [(ngModel)]="cba.second" name="second-child" activated-checkbox [activator]="cba.activate" />
-                                                      <label class="k-checkbox-label" for="second-child">Second Child</label>
-                                                  </div>
-                                                  <div class="form-group m-0 ml-3">
-                                                      <input type="checkbox" id="third-child" class="k-checkbox" [(ngModel)]="cba.third" name="third-child" activated-checkbox [activator]="cba.activate" />
-                                                      <label class="k-checkbox-label" for="third-child">Third Child</label>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <div class="text-right">
-                                              <button kendoButton>Cancel</button>
-                                              <button kendoButton (click)="onFormSubmit()" primary="true"
-                                                  [disabled]="!cbForm.valid">Save</button>
-                                          </div>
-                                      </form>
-                                  </ng-template>
-                              </kendo-panelbar-item>
-                              <kendo-panelbar-item [title]="'RadioButton'">
-                                  <ng-template kendoPanelBarContent>
-                                      <form #rbForm="ngForm" class="form">
-                                          <div class="form-group">
-                                              <div class="form-check">
-                                                  <input class="k-radio" id="female" name="gender" ngModel value="1" type="radio"
-                                                  [disabled]="inputForm.disabled">
-                                                  <label class="k-radio-label" for="female">Female</label>
-                                              </div>
-                                              <div class="form-check">
-                                                  <input checked="checked" class="k-radio" id="male" name="gender" ngModel value="2" type="radio"
-                                                  [disabled]="inputForm.disabled">
-                                                  <label class="k-radio-label" for="male">Male</label>
-                                              </div>
-                                          </div>
-                                          <div class="display-flex">
-                                              <input type="checkbox" id="inputFormD" class="k-checkbox" [(ngModel)]="inputForm.disabled"
-                                                  name="input-disabled" [(ngModel)]="formModel.cb2" />
-                                              <label class="k-checkbox-label" for="inputFormD">Disabled</label>
-                                          </div>
-                                          <div class="text-right">
-                                              <button kendoButton>Cancel</button>
-                                              <button kendoButton (click)="onFormSubmit()" primary="true"
-                                                  [disabled]="!rbForm.valid">Save</button>
-                                          </div>
-                      
-                                      </form>
-                                  </ng-template>
-                              </kendo-panelbar-item>
-                          </kendo-panelbar>
-                        
-                      </div>
+                    <div class="col-12">
+                        <div class="display-flex">
+                            <input type="checkbox" id="inputFormR" class="k-checkbox"
+                                [(ngModel)]="inputForm.required" name="input-required" />
+                            <label class="k-checkbox-label" for="inputFormR">Required</label>
+                            <input type="checkbox" id="inputFormD" class="k-checkbox"
+                                [(ngModel)]="inputForm.disabled" name="input-disabled" />
+                            <label class="k-checkbox-label" for="inputFormD">Disabled</label>
+                            <input type="checkbox" id="inputFormRO" class="k-checkbox"
+                                [(ngModel)]="inputForm.readOnly" name="input-readonly" />
+                            <label class="k-checkbox-label" for="inputFormRO">Read-only</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <form #testForm="ngForm">
+                            <div class="form-group">
+                                <label [for]="textInput">Input</label>
+                                <input type="text" #textInput class="k-textbox form-control"
+                                    name="form-textbox" [(ngModel)]="formModel.textbox"
+                                    [required]="inputForm.required" [disabled]="inputForm.disabled"
+                                    [readonly]="inputForm.readOnly" />
+                            </div>
+                            <div class="form-group">
+                                <label [for]="textArea">Text area</label>
+                                <textarea #textArea [(ngModel)]="formModel.textarea" kendoTextArea class="form-control"  [required]="inputForm.required" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"name="form-textarea"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label [for]="maskedTextbox">MaskedTextBox</label>
+                                <kendo-maskedtextbox #maskedTextbox name="maskedTextbox"
+                                    [mask]="mask" class="form-control"
+                                    [(ngModel)]="formModel.maskedTextbox"
+                                    [required]="inputForm.required" [disabled]="inputForm.disabled"
+                                    [readonly]="inputForm.readOnly">
+                                </kendo-maskedtextbox>
+                            </div>
+                            <div class="form-group">
+                                <label [for]="numericTextBox">NumericTextBox</label>
+                                <kendo-numerictextbox #numericTextBox class="form-control"
+                                    [(ngModel)]="formModel.numeric" [min]="0" [max]="100"
+                                    name="form-numeric" [required]="inputForm.required"
+                                    [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                </kendo-numerictextbox>
+                            </div>
+                            <div class="form-group">
+                                <label [for]="ddl">DropDownList</label>
+                                <kendo-dropdownlist #ddl class="form-control" [data]="listItems"
+                                    name="form-ddl" [(ngModel)]="formModel.ddl"
+                                    [required]="inputForm.required" [disabled]="inputForm.disabled"
+                                    [readonly]="inputForm.readOnly">
+                                </kendo-dropdownlist>
+                            </div>
+                            <div class="form-group">
+                                <label [for]="comboBox">ComboBox</label>
+                                <kendo-combobox #comboBox class="form-control" [data]="listItems"
+                                    name="form-combobox" [(ngModel)]="formModel.combobox"
+                                    [required]="inputForm.required" [disabled]="inputForm.disabled"
+                                    [readonly]="inputForm.readOnly">
+                                </kendo-combobox>
+                            </div>
+                            <div class="form-group">
+                                <label [for]="multiSelect">MultiSelect</label>
+                                <kendo-multiselect #multiSelect class="form-control"
+                                    name="form-multiselect" [data]="listItems"
+                                    [(ngModel)]="formModel.multiselect"
+                                    [required]="inputForm.required" [disabled]="inputForm.disabled"
+                                    [readonly]="inputForm.readOnly">
+                                </kendo-multiselect>
+                            </div>
+                            <div class="form-group">
+                                <label [for]="switch">Switch</label>
+                                <kendo-switch #switch onLabel="Active" offLabel="Inactive"
+                                    name="switch" [(ngModel)]="formModel.switch"
+                                    [required]="inputForm.required" [disabled]="inputForm.disabled"
+                                    [readonly]="inputForm.readOnly">
+                                </kendo-switch>
+                            </div>
+                            <div class="form-group">
+                                <label [for]="slide">Slider</label>
+                                <kendo-slider #slide name="slider" tickPlacement="none" [min]="0"
+                                    [max]="10" [smallStep]="1" [(ngModel)]="inputForm.slider"
+                                    [required]="inputForm.required" [disabled]="inputForm.disabled"
+                                    [readonly]="inputForm.readOnly"></kendo-slider>
+                            </div>
+                            <div class="form-group">
+                                <label [for]="colorPicker">ColorPicker</label>
+                                <kendo-colorpicker #colorPicker view="combo" format="hex"
+                                    name="colorPicker" [(ngModel)]="formModel.color"
+                                    [required]="inputForm.required" [disabled]="inputForm.disabled"
+                                    [readonly]="inputForm.readOnly">
+                                </kendo-colorpicker>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="cb" class="k-checkbox"
+                                    [(ngModel)]="formModel.cb"
+                                    [disabled]="inputForm.disabled" name="checkbox" />
+                                <label class="k-checkbox-label" for="cb">Checkbox</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="k-radio" id="female" name="gender" ngModel
+                                        value="1" type="radio" [disabled]="inputForm.disabled">
+                                    <label class="k-radio-label" for="female">Female</label>
+                                </div>
+                                <div class="form-check">
+                                    <input checked="checked" class="k-radio" id="male" name="gender"
+                                        ngModel value="2" type="radio"
+                                        [disabled]="inputForm.disabled">
+                                    <label class="k-radio-label" for="male">Male</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label [for]="dateInput">Date input</label>
+                                <kendo-dateinput #dateInput format="MM/dd/yyyy" [(ngModel)]="dateInputValue" [ngModelOptions]="{standalone: true}" class="form-control" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                </kendo-dateinput>
+                            </div>
+                            <div class="form-group">
+                                <label [for]="datePicker">Date picker</label>
+                                <kendo-datepicker #datePicker format="MM/dd/yyyy"  class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="datePickerValue" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"></kendo-datepicker>
+                            </div>
+                            <div class="form-group">
+                                <label [for]="dateTimePicker">Datetime picker</label>
+                                <kendo-datetimepicker #dateTimePicker format="MM/dd/yyyy, HH:mm"  [ngModelOptions]="{standalone: true}" [(ngModel)]="dateTimePickerValue" class="form-control" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                </kendo-datetimepicker>
+                            </div>
+                            <div class="form-group">
+                                <label [for]="timePicker">Time picker</label>
+                                <kendo-timepicker #timePicker format="HH:mm"  [ngModelOptions]="{standalone: true}" [(ngModel)]="timePickerValue" class="form-control" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                </kendo-timepicker>
+                            </div>
+                            <div class="form-group">
+                                <kendo-daterange>
+                                    <label for="startDate">Start:</label>&nbsp;
+                                    <kendo-dateinput kendoDateRangeStartInput format="MM/dd/yyyy" [ngModelOptions]="{standalone: true}"  [(ngModel)]="range.start" id="startDate" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"></kendo-dateinput>&nbsp;
+                                    <label for="endDate">End:</label>&nbsp;
+                                    <kendo-dateinput kendoDateRangeEndInput format="MM/dd/yyyy"  [ngModelOptions]="{standalone: true}" [(ngModel)]="range.end" id="endDate" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"></kendo-dateinput>
+                                </kendo-daterange>
+                            </div>
+                            <div class="text-right">
+                                <button kendoButton>Cancel</button>
+                                <button kendoButton (click)="onFormSubmit()" primary="true"
+                                    [disabled]="!testForm.valid">Save</button>
+                            </div>
+                        </form>
+                    </div>
                   </div>
               </kendo-drawer-content>
           </kendo-drawer-container>
@@ -1438,7 +1190,7 @@
                           </kendo-grid>
                       </div>
                   </div>
-                   <div class="row p-2 bg-primary" id="Meta info" *ngIf="selectedCustomShocaseItem === 'Meta info'">
+                  <div class="row p-2 bg-primary" id="Meta info" *ngIf="selectedCustomShocaseItem === 'Meta info'">
                       <div class="col-12">
                           <p class="text-white">Default Meta Info</p>
                           <div>
@@ -1463,6 +1215,71 @@
                           </div>
                       </div>
                   </div>
+                  <div class="row p-2" *ngIf="selectedCustomShocaseItem === 'Checkbox tree'">
+                    <div class="col-2">
+                        <div class="form-group">
+                            <!-- No need for (ngModel) variable in the toggle button. It is populated automatically by the state of the children-->
+                            <input type="checkbox" id="toggle-all" class="k-checkbox"
+                                name="toggle-all" (ngModel)="false" checkbox-toggle
+                                (ngModelChange)="cbt.first = $event; cbt.second = $event; cbt.third = $event;"
+                                [checkboxesToToggle]="[cbt.first, cbt.second, cbt.third]" />
+                            <label class="k-checkbox-label" for="toggle-all">Toggle
+                                All</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group m-0">
+                            <input type="checkbox" id="first-dependant"
+                                class="k-checkbox" [(ngModel)]="cbt.first"
+                                name="first-dependant" />
+                            <label class="k-checkbox-label" for="first-dependant">First
+                                Dependant</label>
+                        </div>
+                        <div class="form-group m-0">
+                            <input type="checkbox" id="second-dependant"
+                                class="k-checkbox" [(ngModel)]="cbt.second"
+                                name="second-dependant" />
+                            <label class="k-checkbox-label"
+                                for="second-dependant">Second Dependant</label>
+                        </div>
+                        <div class="form-group m-0">
+                            <input type="checkbox" id="third-dependant"
+                                class="k-checkbox" [(ngModel)]="cbt.third"
+                                name="third-dependant" />
+                            <label class="k-checkbox-label" for="third-dependant">Third
+                                Dependant</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group m-0">
+                            <input type="checkbox" id="activate" class="k-checkbox"
+                                [(ngModel)]="cba.activate" name="activate" />
+                            <label class="k-checkbox-label" for="activate">Activate
+                                Children</label>
+                        </div>
+                        <div class="form-group m-0 ml-3">
+                            <input type="checkbox" id="first-child" class="k-checkbox"
+                                [(ngModel)]="cba.first" name="first-child"
+                                activated-checkbox [activator]="cba.activate" />
+                            <label class="k-checkbox-label" for="first-child">First
+                                Child</label>
+                        </div>
+                        <div class="form-group m-0 ml-3">
+                            <input type="checkbox" id="second-child" class="k-checkbox"
+                                [(ngModel)]="cba.second" name="second-child"
+                                activated-checkbox [activator]="cba.activate" />
+                            <label class="k-checkbox-label" for="second-child">Second
+                                Child</label>
+                        </div>
+                        <div class="form-group m-0 ml-3">
+                            <input type="checkbox" id="third-child" class="k-checkbox"
+                                [(ngModel)]="cba.third" name="third-child"
+                                activated-checkbox [activator]="cba.activate" />
+                            <label class="k-checkbox-label" for="third-child">Third
+                                Child</label>
+                        </div>
+                    </div>
+                </div>
               </kendo-drawer-content>
           </kendo-drawer-container>
         </ng-template>

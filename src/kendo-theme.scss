@@ -253,6 +253,7 @@ form {
 
 .k-dropdown-wrap,
 .k-textbox,
+.k-textarea,
 .k-numeric-wrap,
 .k-multiselect {
   border-radius: 0 !important;
@@ -319,16 +320,15 @@ form {
 .k-textarea:disabled, 
 .k-textarea[disabled], 
 .k-textarea.k-state-disabled,
-.k-dateinput.k-state-disabled,
+//.k-dateinput.k-state-disabled,
 //.k-picker-wrap.k-state-disabled,
-.k-dateinput-wrap.k-state-disabled,
-.k-datepicker.k-state-disabled,
-.k-datetimepicker.k-state-disabled,
-.k-multiselect.k-state-disabled,
-.k-numerictextbox.k-state-disabled,
+//.k-dateinput-wrap.k-state-disabled,
+//.k-datepicker.k-state-disabled,
+//.k-datetimepicker.k-state-disabled,
+.k-state-disabled .k-multiselect-wrap,
 .k-maskedtextbox.k-state-disabled,
-.k-timepicker.k-state-disabled,
-.k-combobox.k-state-disabled,
+//.k-timepicker.k-state-disabled,
+//.k-combobox.k-state-disabled,
 .k-numeric-wrap.k-state-disabled,
 .k-dropdown-wrap.k-state-disabled {
   color: $alt-grey;
@@ -342,6 +342,7 @@ form {
 
 .k-textbox[readonly],
 .k-input[readonly],
+.k-textarea[readonly],
 .k-multiselect[ng-reflect-readonly="true"]>.k-multiselect-wrap,
 .k-dropdown[ng-reflect-readonly="true"] .k-dropdown-wrap,
 .k-numerictextbox[ng-reflect-readonly="true"] .k-numeric-wrap,
