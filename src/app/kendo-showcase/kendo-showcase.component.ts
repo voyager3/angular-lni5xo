@@ -38,7 +38,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Dialog'},
     { text: 'Grid'},
     { text: 'Sortable'},
-    { text: 'Form'}
+    { text: 'Form'},
   ];
   selectedShocaseItem = 'Buttons';
 
