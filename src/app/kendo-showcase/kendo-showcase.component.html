@@ -903,7 +903,7 @@
                                 </kendo-multiselect>
                             </div>
                             <div class="form-group">
-                                <label [for]="switch">Switch</label>
+                                <label [for]="switch" class="mr-2">Switch</label>
                                 <kendo-switch #switch onLabel="Active" offLabel="Inactive"
                                     name="switch" [(ngModel)]="formModel.switch"
                                     [required]="inputForm.required" [disabled]="inputForm.disabled"
@@ -911,14 +911,14 @@
                                 </kendo-switch>
                             </div>
                             <div class="form-group">
-                                <label [for]="slide">Slider</label>
+                                <label [for]="slide" class="mr-2">Slider</label>
                                 <kendo-slider #slide name="slider" tickPlacement="none" [min]="0"
                                     [max]="10" [smallStep]="1" [(ngModel)]="inputForm.slider"
                                     [required]="inputForm.required" [disabled]="inputForm.disabled"
                                     [readonly]="inputForm.readOnly"></kendo-slider>
                             </div>
                             <div class="form-group">
-                                <label [for]="colorPicker">ColorPicker</label>
+                                <label [for]="colorPicker" class="mr-2">ColorPicker</label>
                                 <kendo-colorpicker #colorPicker view="combo" format="hex"
                                     name="colorPicker" [(ngModel)]="formModel.color"
                                     [required]="inputForm.required" [disabled]="inputForm.disabled"
@@ -1111,8 +1111,7 @@
                               <div class="custom-template">
                                   Simple HTML
                                   <div>
-                                      <textarea name="test" id="test" rows="5" 
-                                          style="width:100%">
+                                      <textarea name="test" id="test" class="k-textarea" rows="5" style="width:100%;">
                                       </textarea>
                                   </div>                    
                               </div>
@@ -1120,7 +1119,7 @@
                       </div>
                   </div>
                   <div class="row p-2" id="Orderable List" *ngIf="selectedCustomShocaseItem === 'Orderable List'">
-                      <div class="col-6">
+                      <div class="col-9">
                           <orderable-list 
                               [inputType]="inputType"
                               [listItems]="orderableListItems"

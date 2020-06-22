@@ -106,7 +106,7 @@ form {
 .k-combobox.k-combobox-clearable .k-input,
 .k-multiselect .k-multiselect-wrap, 
 .k-dropdowntree .k-multiselect-wrap {
-  min-height: 37px;
+  min-height: 2.3125rem;
 }
 
 .k-multiselect .k-multiselect-wrap .k-button, 
@@ -119,7 +119,7 @@ form {
 .k-textbox:focus,
 .k-multiselect .k-multiselect-wrap:focus, 
 .k-dropdowntree .k-multiselect-wrap:focus {
-  border-bottom: 2px solid $bright-blue !important;
+  border-bottom: 0.125rem solid $bright-blue !important;
 }
 
 .k-dateinput,
@@ -366,28 +366,11 @@ form {
 }
 
 
-// .ng-invalid.ng-dirty > .k-picker-wrap  > .k-select,
-// .ng-invalid.ng-touched > .k-picker-wrap > .k-select,
-// .ng-invalid.ng-untouched > .k-picker-wrap > .k-select {
-//   border-left: none;
-// }
-
 .k-textbox.ng-valid:focus {
     border-color: try-lighten( $accent, 25 );
 }
 
-// .k-switch-label-on, 
-// .k-switch-label-off {
-//   display: block;
-// }
 
-// .k-switch {
-//   width: 10em;
-// }
-
-// .k-switch-label-on {
-//   text-align: center;
-// }
 
 
 
@@ -845,6 +828,21 @@ kendo-panelbar-item {
 //   align-items: center;
 //   font-weight: bold;
 // }
+
+.k-panelbar>.k-item>.k-link.k-state-selected {
+  background-color: $bg-grey;
+  color: $dark-grey;
+  border-color: $bg-grey;
+}
+.k-panelbar>.k-item>.k-link.k-state-focused.k-state-selected {
+  outline: $pale-blue;
+  box-shadow: none;
+}
+
+.k-header > .k-switch {
+  margin-left: 1rem;
+}
+
 
 
 // TABSTRIP

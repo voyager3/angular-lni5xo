@@ -387,8 +387,8 @@ export class KendoShowcaseComponent implements OnInit {
 
   cardBtnModel: CardButtonModel[] = [
     {id:1, text: 'TYPE 1', color: 'rgb(91, 135, 218)', selected: false }, 
-    {id:2, text: 'TYPE 2', color: 'green',selected: false },
-    {id:3, text: 'TYPE3',  color: 'yellow', selected: false }]
+    {id:2, text: 'TYPE 2', color: '#7A56A1',selected: false },
+    {id:3, text: 'TYPE3',  color: '#48BBCB', selected: false }]
 
 
   /* CHECKBOX TOGGLE ALL */
