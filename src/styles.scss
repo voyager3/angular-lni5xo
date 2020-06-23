@@ -15,6 +15,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: $font-family;
+  background-color: $bg-grey;
 }
 
 .wrapper {
@@ -175,8 +176,13 @@ side-menu-item.open {
 
 .white-container {
   background-color: $white;
-  padding: 0.625rem;
-  margin: 0.625rem 0rem;
+  margin: 1rem;
+  border-radius: $container-radius;
+  box-shadow: $close-shadow;
+}
+
+.page-content {
+  padding: 1.75rem;
 }
 
 .validation-alert {
@@ -225,11 +231,10 @@ a {
 
 /* META INFO */
 .meta-info-container {
-    background-color: $white;
+    background-color: $bg-grey;
     margin: 1rem 0 1rem 0;
     padding: 1rem;
     font-size: 0.8rem;
-    color: $brand-grey;
 }
 
 /* TYPOGRAPHY */
@@ -261,3 +266,8 @@ h6 {
 }
 
 
+/* ADDITIVE */
+
+.light-border {
+  border-color: $light-grey !important;
+}
