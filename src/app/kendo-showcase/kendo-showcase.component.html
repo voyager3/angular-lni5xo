@@ -947,29 +947,29 @@
                             </div>
                             <div class="form-group">
                                 <label [for]="dateInput">Date input</label>
-                                <kendo-dateinput #dateInput format="MM/dd/yyyy" [(ngModel)]="dateInputValue" [ngModelOptions]="{standalone: true}" class="form-control" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                <kendo-dateinput #dateInput format="MM/dd/yyyy" [(ngModel)]="dateInputValue" [ngModelOptions]="{standalone: true}" class="form-control" [required]="inputForm.required" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
                                 </kendo-dateinput>
                             </div>
                             <div class="form-group">
                                 <label [for]="datePicker">Date picker</label>
-                                <kendo-datepicker #datePicker format="MM/dd/yyyy"  class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="datePickerValue" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"></kendo-datepicker>
+                                <kendo-datepicker #datePicker format="MM/dd/yyyy"  class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="datePickerValue" [required]="inputForm.required" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"></kendo-datepicker>
                             </div>
                             <div class="form-group">
                                 <label [for]="dateTimePicker">Datetime picker</label>
-                                <kendo-datetimepicker #dateTimePicker format="MM/dd/yyyy, HH:mm"  [ngModelOptions]="{standalone: true}" [(ngModel)]="dateTimePickerValue" class="form-control" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                <kendo-datetimepicker #dateTimePicker format="MM/dd/yyyy, HH:mm"  [ngModelOptions]="{standalone: true}" [(ngModel)]="dateTimePickerValue" class="form-control" [required]="inputForm.required" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
                                 </kendo-datetimepicker>
                             </div>
                             <div class="form-group">
                                 <label [for]="timePicker">Time picker</label>
-                                <kendo-timepicker #timePicker format="HH:mm"  [ngModelOptions]="{standalone: true}" [(ngModel)]="timePickerValue" class="form-control" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
+                                <kendo-timepicker #timePicker format="HH:mm"  [ngModelOptions]="{standalone: true}" [(ngModel)]="timePickerValue" class="form-control" [required]="inputForm.required" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly">
                                 </kendo-timepicker>
                             </div>
                             <div class="form-group">
                                 <kendo-daterange>
                                     <label for="startDate">Start:</label>&nbsp;
-                                    <kendo-dateinput kendoDateRangeStartInput format="MM/dd/yyyy" [ngModelOptions]="{standalone: true}"  [(ngModel)]="range.start" id="startDate" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"></kendo-dateinput>&nbsp;
+                                    <kendo-dateinput kendoDateRangeStartInput format="MM/dd/yyyy" [ngModelOptions]="{standalone: true}"  [(ngModel)]="range.start" id="startDate" [required]="inputForm.required" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"></kendo-dateinput>&nbsp;
                                     <label for="endDate">End:</label>&nbsp;
-                                    <kendo-dateinput kendoDateRangeEndInput format="MM/dd/yyyy"  [ngModelOptions]="{standalone: true}" [(ngModel)]="range.end" id="endDate" [disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"></kendo-dateinput>
+                                    <kendo-dateinput kendoDateRangeEndInput format="MM/dd/yyyy"  [ngModelOptions]="{standalone: true}" [(ngModel)]="range.end" id="endDate" [required]="inputForm.required"[disabled]="inputForm.disabled" [readonly]="inputForm.readOnly"></kendo-dateinput>
                                 </kendo-daterange>
                             </div>
                             <div class="text-right">
