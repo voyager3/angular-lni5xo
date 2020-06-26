@@ -100,19 +100,53 @@ form {
   outline:0;
 }
 
-.k-numerictextbox .k-numeric-wrap .k-input,
-.k-dropdown .k-dropdown-wrap .k-input, 
-.k-dropdowntree .k-dropdown-wrap .k-input,
-.k-combobox.k-combobox-clearable .k-input,
-.k-multiselect .k-multiselect-wrap, 
-.k-dropdowntree .k-multiselect-wrap {
-  min-height: 2.3125rem;
+// .k-numerictextbox .k-numeric-wrap .k-input,
+// .k-dropdown .k-dropdown-wrap .k-input, 
+// .k-dropdowntree .k-dropdown-wrap .k-input,
+// .k-combobox.k-combobox-clearable .k-input,
+// .k-multiselect .k-multiselect-wrap, 
+// .k-dropdowntree .k-multiselect-wrap {
+//   min-height: 2.3125rem;
+// }
+
+// .k-multiselect .k-multiselect-wrap .k-button, 
+// .k-dropdowntree .k-multiselect-wrap .k-button {
+//   padding: 0rem 0.75rem !important;
+//   font-size: 0.89rem;
+// }
+
+.k-multiselect .k-multiselect-wrap::before, 
+.k-dropdowntree .k-multiselect-wrap::before {
+  height: calc( 1.5em + 0.75rem + 1px);
 }
 
 .k-multiselect .k-multiselect-wrap .k-button, 
 .k-dropdowntree .k-multiselect-wrap .k-button {
-  padding: 0rem 0.75rem !important;
-  font-size: 0.89rem;
+  min-height: calc(1.5em + 0.25rem + 2px);
+  padding: .125rem .725rem;
+  margin: calc(0.25rem - 1px) 0 0 calc(0.25rem - 1px);
+}
+
+.k-multiselect .k-multiselect-wrap .k-button:last-child, 
+.k-dropdowntree .k-multiselect-wrap .k-button:last-child {
+  margin-bottom: calc(0.25rem - 1px);
+}
+
+.k-multiselect .k-multiselect-wrap .k-button {
+  background-color: $primary-blue;
+  border-color: $primary-blue;
+  border-radius: 1rem;
+  color: white;
+}
+
+.k-multiselect .k-multiselect-wrap .k-button:hover {
+  background-color: try-darken($primary-blue, 10% );
+  border-color: try-darken( $primary-blue, 10% );
+}
+
+.k-multiselect .k-multiselect-wrap li .k-icon, 
+.k-dropdowntree .k-multiselect-wrap li .k-icon {
+  opacity: 1;
 }
 
 .form-control:focus, 
@@ -550,17 +584,17 @@ form .k-button  .k-button {
   top: 3%;
 }
 
-.k-multiselect .k-multiselect-wrap li.k-button {
-  background-color: $primary-blue;
-  border: none;
-  border-radius: 1rem;
-  padding: 0 .75rem;
-  color: white;
-}
+// .k-multiselect .k-multiselect-wrap li.k-button {
+//   background-color: $primary-blue;
+//   border: none;
+//   border-radius: 1rem;
+//   padding: 0 .75rem;
+//   color: white;
+// }
 
-.k-multiselect .k-multiselect-wrap .k-button .k-select {
-  margin-left: .6rem;
-}
+// .k-multiselect .k-multiselect-wrap .k-button .k-select {
+//   margin-left: .6rem;
+// }
 
 
 // GRID
