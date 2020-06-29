@@ -1,0 +1,32 @@
+    <div *ngIf="mode === TrainSelectorMode.Arrow" class="d-flex m-0">
+        <div class="d-flex flex-column arrow-margin" [ngClass]="disabled || button.disabled ? 'disabled':''"
+            *ngFor="let button of buttons">
+            <div class="d-flex with-pointer" (click)="selectedChange($event, button)">
+                <div class="d-flex train-element-container" [ngClass]="button.selected ? 'selected' : ''">
+                    <div class="arrow-right-transparent"></div>
+                    <div class="p-2 align-self-center text-center rectangle">{{button.abbreviation}}</div>
+                    <div class="flex-nowrap arrow-right"></div>
+                </div>
+            </div>
+            <div *ngIf="showLabel" class="full-text-width no-pointer">
+                {{button.name}}
+            </div>
+        </div>
+    </div>
+    <div *ngIf="mode === TrainSelectorMode.Rectangle" class="d-flex">
+        <div  *ngFor="let button of buttons">
+            <div *ngIf="mode === TrainSelectorMode.Rectangle">
+                    <button 
+                        [disabled]="disabled || button.disabled" 
+                        (click)="selectedChange($event, button)" 
+                        [ngClass]="button.selected ? 'selected-rectangle' : ''" 
+                        class="k-button-rectangle rounded-0 mr-1" 
+                        kendoButton>
+                            {{button.abbreviation}}
+                    </button>
+             </div>
+             <div *ngIf="showLabel" class="mr-1 text-wrap text-center rectangle-label-small">
+                {{button.name}}
+            </div>
+    </div>
+  </div>

@@ -6,6 +6,7 @@ import { HierarchySelectorComponent } from './hierarchy-selector/hierarchy-selec
 import { OrderableListComponent } from './orderable-list/orderable-list.component'
 import { SlideAccordionComponent } from './slide-accordion/slide-accordion.component'
 import { MetaInfoComponent } from './meta-info/meta-info.component'
+import { TrainSelectorComponent } from './train-selector/train-selector.component'
 
 export const components = [
     FormErrorComponent,
@@ -15,5 +16,6 @@ export const components = [
     HierarchySelectorComponent,
     OrderableListComponent,
     SlideAccordionComponent,
-    MetaInfoComponent
+    MetaInfoComponent,
+    TrainSelectorComponent
 ]

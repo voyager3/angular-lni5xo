@@ -1289,6 +1289,32 @@
                                 Child</label>
                         </div>
                     </div>
+                  </div>
+                  <div class="row p-2" *ngIf="selectedCustomShocaseItem === 'Train Selector'">
+                    <div class="col-12 p-2">
+                        <train-selector class="small-train-selector" [(buttons)]="trainSelectorItems"
+                            [mode]="trainSelectorMode" [showLabel]=false
+                            (buttonsChange)="onTrainSelectorChange($event)">
+                        </train-selector>
+                    </div>
+                    <div class="col-12 p-2">
+                        <train-selector [(buttons)]="trainSelectorItems" [mode]="trainSelectorMode"
+                            [disabled]="disabledTrainSelector"
+                            (buttonsChange)="onTrainSelectorChange($event)">
+                        </train-selector>
+                    </div>
+                    <div class="col-12 p-2">
+                        <train-selector class="small-button-group" [(buttons)]="trainSelectorItems"
+                            [mode]="rectangleSelectorMode" [showLabel]=false
+                            (buttonsChange)="onTrainSelectorChange($event)">
+                        </train-selector>
+                    </div>
+                    <div class="col-12 p-2">
+                        <train-selector [(buttons)]="trainSelectorItems" [mode]="rectangleSelectorMode"
+                            [disabled]="disabledTrainSelector"
+                            (buttonsChange)="onTrainSelectorChange($event)">
+                        </train-selector>
+                    </div>
                 </div>
               </kendo-drawer-content>
           </kendo-drawer-container>

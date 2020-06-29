@@ -271,3 +271,166 @@ h6 {
 .light-border {
   border-color: $light-grey !important;
 }
+
+/* TRAIN SELECTOR */
+
+train-selector.small-button-group button {
+  min-width: 1.5rem;
+  font-size: 70%;
+  font-weight: 400;
+  padding: 0.35rem 1rem;
+  border-radius: 0 !important;
+  margin-right: 0.1rem !important;
+  height: 1.25rem;
+}
+
+train-selector.small-button-group button.k-button-rectangle{
+  width: 2rem;
+}
+
+train-selector .k-button-rectangle {
+  background-color: $alt-grey;
+  width: 8rem;
+  color: $white;
+}
+
+train-selector .k-button-rectangle:hover {
+  background-color: try-darken($alt-grey, 10%);
+  color: $white;
+}
+
+train-selector .rectangle-label-small{
+  width: 8rem; 
+  font-size: 80%;
+}
+
+train-selector .arrow-margin {
+  margin-left: -1.5rem;
+}
+
+train-selector.small-train-selector .arrow-margin {
+  margin-left: -0.5rem;
+}
+
+train-selector .arrow-margin:first-child {
+  margin-left: 0;
+}
+
+train-selector.full-text-width {
+  width: 5rem;
+  font-size: 80%;
+}
+
+train-selector .with-pointer {
+  cursor: pointer;
+}
+
+train-selector div.white-container .disabled.arrow-margin {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.65;
+}
+
+train-selector .train-element-container .arrow-right-transparent {
+  width: 0; 
+  height: 0; 
+  border-top: 1.625rem solid $alt-grey;
+  border-bottom: 1.625rem solid $alt-grey;
+  border-left: 1.625rem solid transparent;
+}
+
+train-selector.small-train-selector .train-element-container .arrow-right-transparent {
+  border-top: 0.625rem solid $alt-grey;
+  border-bottom: 0.625rem solid $alt-grey;
+  border-left: 0.625rem solid transparent;
+}
+
+train-selector .train-element-container .arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 1.625rem solid transparent;
+  border-bottom: 1.625rem solid transparent;
+  border-left: 1.625rem solid $alt-grey;
+}
+
+train-selector.small-train-selector .train-element-container .arrow-right {
+  border-top: 0.625rem solid transparent;
+  border-bottom: 0.625rem solid transparent;
+  border-left: 0.625rem solid $alt-grey;
+}
+
+train-selector .train-element-container .rectangle {
+  border-top: 0.375rem solid $alt-grey;
+  border-bottom: 0.375rem solid $alt-grey;
+  background-color: $alt-grey;
+  width: 4rem;
+  z-index: 2;
+  color: $white;
+}
+
+train-selector .train-element-container .rectangle:hover {
+  background-color: try-darken($alt-grey, 10%);
+}
+
+train-selector .k-button-rectangle.selected-rectangle {
+  background-color: $versant-color !important;
+  color: $white;
+}
+
+train-selector .k-button-rectangle.selected-rectangle:hover {
+  background-color: try-darken($versant-color, 10%) !important;
+  color: $white;
+}
+
+train-selector.small-train-selector .train-element-container .rectangle {
+  border-top: 0 solid $alt-grey;
+  border-bottom: 0 solid $alt-grey;
+  width: 1rem;
+  font-size: 70%;
+  padding: 0.1rem !important;
+}
+
+train-selector .train-element-container:hover div.arrow-right-transparent {
+  border-top-color: try-darken( $alt-grey, 10% );
+  border-bottom-color: try-darken( $alt-grey, 10% );
+}
+
+train-selector .train-element-container:hover div.arrow-right {
+  border-left-color: try-darken( $alt-grey, 10% );
+}
+
+train-selector .train-element-container:hover div.rectangle {
+  border-top-color: try-darken( $alt-grey, 10% );
+  border-bottom-color: try-darken( $alt-grey, 10% );
+  background-color: try-darken($alt-grey, 10%);
+}
+
+train-selector .train-element-container.selected .arrow-right-transparent {
+  border-top-color: $bg-blue;
+  border-bottom-color: $bg-blue;
+}
+
+train-selector .train-element-container.selected .arrow-right {
+  border-left-color: $bg-blue;
+}
+
+train-selector .train-element-container.selected .rectangle {
+    border-top-color: $bg-blue;
+    border-bottom-color: $bg-blue;
+    background-color: $bg-blue;
+}
+
+train-selector .train-element-container.selected:hover div.arrow-right-transparent {
+  border-top-color: try-darken( $bg-blue, 10% );
+  border-bottom-color: try-darken( $bg-blue, 10% );
+}
+
+train-selector .train-element-container.selected:hover div.arrow-right {
+  border-left-color: try-darken( $bg-blue, 10% );
+}
+
+train-selector .train-element-container.selected:hover div.rectangle {
+  border-top-color: try-darken( $bg-blue, 10% );
+  border-bottom-color: try-darken( $bg-blue, 10% );
+  background-color: try-darken( $bg-blue, 10%);
+}

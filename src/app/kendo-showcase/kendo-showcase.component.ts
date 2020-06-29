@@ -6,7 +6,7 @@ import {
   DialogCloseResult,
   DialogResult} from '@progress/kendo-angular-dialog';
 import { DragEndEvent } from '@progress/kendo-angular-sortable';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Orientation, ActionsLayout, DrawerItem, DrawerSelectEvent, PanelBarItemModel, PanelBarComponent, PanelBarItemComponent } from '@progress/kendo-angular-layout';
 import { FileInfo } from '@progress/kendo-angular-upload';
 import { ChipRemoveEvent } from '@progress/kendo-angular-buttons';
@@ -16,6 +16,8 @@ import { DialogService } from '../shared/services/abstracts/dialog.service';
 import { DialogResultModel } from '../shared/models/dialog/dialog-result-model';
 import { CardButtonModel } from '../shared/models/card-button.model';
 import { HealthSystemHierarchyModel } from '../shared/models/hierarchies.model';
+import { TrainSelectorModel } from '../shared/models/train-selector.model'
+import { TrainSelectorMode } from '../shared/enums/train-selector-mode.enum'
 import { cloneDeep } from 'lodash';
 import { of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
@@ -60,7 +62,8 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Extended Multiselect'},
     { text: 'Hierarcy Selector'},
     { text: 'Meta info'},
-    { text: 'Checkbox tree'}
+    { text: 'Checkbox tree'},
+    { text: 'Train Selector'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
 
@@ -470,6 +473,72 @@ export class KendoShowcaseComponent implements OnInit {
   slideAccordionItem: any = {
     title: 'Title',
     expanded: true
+  }
+
+  /*TRAIN SELECTOR */
+  trainSelectorMode:TrainSelectorMode = TrainSelectorMode.Arrow;
+
+  rectangleSelectorMode:TrainSelectorMode = TrainSelectorMode.Rectangle;
+
+  disabledTrainSelector:boolean = true;
+  trainSelectorItems: TrainSelectorModel[] = [{
+    id: 0,
+    abbreviation: 'CP',
+    name: 'Competency Profile',
+    selected: false,
+    disabled: true
+  }, {
+    id: 0,
+    abbreviation: 'A',
+    name: 'Gap Assessment',
+    selected: false,
+    disabled: false
+  }, {
+    id: 0,
+    abbreviation: 'L',
+    name: 'Learning Plan',
+    selected: false,
+    disabled: false
+  }, {
+    id: 0,
+    abbreviation: 'R',
+    name: 'Remediation',
+    selected: true,
+    disabled: false
+  }, {
+    id: 0,
+    abbreviation: 'V',
+    name: 'Validation',
+    selected: false,
+    disabled: true
+  }, {
+    id: 0,
+    abbreviation: 'PA',
+    name: 'Post Assessment',
+    selected: false,
+    disabled: false
+  }, {
+    id: 0,
+    abbreviation: 'SC',
+    name: 'Supportive Components',
+    selected: false,
+    disabled: false
+  }, {
+    id: 0,
+    abbreviation: 'CE',
+    name: 'Continuing Education',
+    selected: true,
+    disabled: true
+  }, {
+    id: 0,
+    abbreviation: 'O',
+    name: 'Outcomes',
+    selected: false,
+    disabled: false
+  }];
+
+  onTrainSelectorChange(buttons: TrainSelectorModel[]){
+    console.log(buttons);
   }
   
   constructor(
