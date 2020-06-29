@@ -18,6 +18,7 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
 import { TooltipModule } from '@progress/kendo-angular-tooltip';
 import { SortableModule } from '@progress/kendo-angular-sortable';
 import { FormsModule } from '@angular/forms';
+import { UploadsModule } from '@progress/kendo-angular-upload';
 
 export const kendoUIModules = [
   ButtonsModule,
@@ -30,7 +31,8 @@ export const kendoUIModules = [
   LabelModule,
   LayoutModule,
   TooltipModule,
-  SortableModule
+  SortableModule,
+  UploadsModule
 ]
 
 @NgModule({

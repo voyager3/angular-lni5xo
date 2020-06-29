@@ -980,6 +980,16 @@
                         </form>
                     </div>
                   </div>
+                  <div class="row p-2" id="Dialog" *ngIf="selectedShocaseItem === 'Upload'">
+                    <div class="col-md-4">
+
+                        <kendo-fileselect [(ngModel)]="myFiles" [multiple]="false">
+                        </kendo-fileselect>
+
+                          <button kendoButton (click)="saveFile()" primary="true">Save</button>
+                      </div>
+
+                  </div>
               </kendo-drawer-content>
           </kendo-drawer-container>
       

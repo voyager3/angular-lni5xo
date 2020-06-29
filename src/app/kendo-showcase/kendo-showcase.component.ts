@@ -6,7 +6,9 @@ import {
   DialogCloseResult,
   DialogResult} from '@progress/kendo-angular-dialog';
 import { DragEndEvent } from '@progress/kendo-angular-sortable';
+
 import { Orientation, ActionsLayout, DrawerItem, DrawerSelectEvent, PanelBarItemModel, PanelBarComponent, PanelBarItemComponent } from '@progress/kendo-angular-layout';
+import { FileInfo } from '@progress/kendo-angular-upload';
 import { ChipRemoveEvent } from '@progress/kendo-angular-buttons';
 import * as KendoAngularDialog from '@progress/kendo-angular-dialog';
 import { DialogSize } from '../shared/enums/dialog-size';
@@ -39,6 +41,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Grid'},
     { text: 'Sortable'},
     { text: 'Form'},
+    { text: 'Upload'}
   ];
   selectedShocaseItem = 'Buttons';
 
@@ -374,6 +377,14 @@ export class KendoShowcaseComponent implements OnInit {
   onFormSubmit() {
   }
 
+  /* UPLOAD */
+
+  myFile: FileInfo;
+  public myFiles: Array<File>;
+
+  saveFile(){
+  }
+
   /* ----- CUSTOM COMPONENTS -----*/
 
   /* TIMEZONE */
@@ -463,6 +474,7 @@ export class KendoShowcaseComponent implements OnInit {
   
   constructor(
       private dialogService: KendoAngularDialog.DialogService,
+      private http: HttpClient,
       private kendoDialogService: DialogService//,
       //private api: ApiService
     ) {
