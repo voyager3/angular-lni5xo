@@ -773,7 +773,7 @@ kendo-dialog-titlebar.close-none .k-window-actions.k-dialog-actions {
   display:block;
 }
 
-// SORTABLE
+// SORTABLE & ORDERABLE
 
 .draggable-item {
   text-align: left !important;
@@ -788,10 +788,13 @@ kendo-dialog-titlebar.close-none .k-window-actions.k-dialog-actions {
 }
 
 .drag-indicator {
-  width: 2rem;
-  text-align: center;
-  vertical-align: middle;
   float: left;
+}
+
+.drag-indicator-orderable::before {
+  vertical-align: -webkit-baseline-middle;
+  color: $alt-grey;
+  font-size: 1.25rem;
 }
 
 .drag-text {
@@ -908,6 +911,7 @@ kendo-panelbar-item {
 .k-tabstrip-top>.k-tabstrip-items .k-item.k-state-active {
   @include double-sided-shadow(-5px, 0, 5px, 0);
 }
+
 
 // UPLOAD
 
