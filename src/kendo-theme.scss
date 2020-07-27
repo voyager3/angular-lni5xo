@@ -175,6 +175,7 @@ form {
 }
 .k-picker-wrap {
   border: 0px !important;
+  border-radius: 0 !important;
 
   .k-select {
     border-width: 0px !important;
@@ -906,4 +907,10 @@ kendo-panelbar-item {
 
 .k-tabstrip-top>.k-tabstrip-items .k-item.k-state-active {
   @include double-sided-shadow(-5px, 0, 5px, 0);
+}
+
+// UPLOAD
+
+.k-upload-button {
+  font-size: 80%;
 }

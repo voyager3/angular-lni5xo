@@ -981,12 +981,12 @@
                     </div>
                   </div>
                   <div class="row p-2" id="Dialog" *ngIf="selectedShocaseItem === 'Upload'">
-                    <div class="col-md-4">
+                    <div class="col-md-8">
 
                         <kendo-fileselect [(ngModel)]="myFiles" [multiple]="false">
                         </kendo-fileselect>
 
-                          <button kendoButton (click)="saveFile()" primary="true">Save</button>
+                          <button kendoButton (click)="saveFile()" primary="true" class="mt-2">Save</button>
                       </div>
 
                   </div>
