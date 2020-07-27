@@ -418,7 +418,7 @@ form {
 }
 
 
-// START PAGINATION STYLES
+// START GRID PAGINATION STYLES
 
 .k-grid,
 .k-grid-aria-root {
@@ -477,9 +477,12 @@ form {
 }
 
 .k-pager-sizes>select {
-  text-align:right;
-  border-color: $light-grey;
-  padding: 1rem;
+  //border-color: $light-grey;
+  border: none;
+  padding: 1rem .35rem 1rem 1rem;
+  background-color: $bg-grey;
+  width: 4.5rem;
+  text-align: right;
 }
 
 .k-pager-numbers li a.k-link {
@@ -489,6 +492,7 @@ form {
 .k-pager-nav.k-link .k-icon {
   color: $primary-blue;
 }
+
 
 
 // CHECKBOXES AND RADIO BUTTONS
