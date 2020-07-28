@@ -890,12 +890,16 @@ kendo-panelbar-item {
 // TABSTRIP
 
 .k-tabstrip.k-floatwrap {
-  border-radius: $container-radius, $container-radius, 0, 0;
+  // border-radius: $container-radius, $container-radius, 0, 0;
 }
 .k-tabstrip>.k-content {
   padding: 1.5rem;
   // border-color: transparent;
   border-radius: $container-radius, $container-radius, 0, 0;
+}
+
+.k-tabstrip-top>.k-content {
+  border-radius: 0;
 }
 .k-tabstrip-items li {
     color: $burgundy !important;
@@ -914,6 +918,10 @@ kendo-panelbar-item {
 
 .k-tabstrip-top>.k-tabstrip-items .k-item.k-state-active {
   @include double-sided-shadow(-5px, 0, 5px, 0);
+}
+
+.fullpage-tab {
+  border-radius: $container-radius !important;
 }
 
 

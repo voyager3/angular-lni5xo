@@ -649,7 +649,7 @@
                         <div class="row pb-2">
                           <div class="col-12 pt-5 pb-2"><h5>TabStrip</h5></div>
                           <div class="col-12">
-                            <kendo-tabstrip (tabSelect)="onTabSelect($event)">
+                            <kendo-tabstrip (tabSelect)="onTabSelect($event)" >
                               <kendo-tabstrip-tab [title]="'Paris'" [selected]="true">
                                 <ng-template kendoTabContent>
                                   <p>
@@ -1308,7 +1308,7 @@
                             [mode]="rectangleSelectorMode" [showLabel]=false
                             (buttonsChange)="onTrainSelectorChange($event)">
                         </train-selector>
-                        
+
                     </div>
                     <div class="col-12 p-2">
                         <train-selector [(buttons)]="trainSelectorItems" [mode]="rectangleSelectorMode"
@@ -1322,6 +1322,9 @@
         </ng-template>
       </kendo-tabstrip-tab>
     </kendo-tabstrip>
+    <div class="page-content align-right">
+      <button kendoButton [primary]="true">Add or Edit Button</button>
+    </div>
 
     
 </div>
