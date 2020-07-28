@@ -15,7 +15,8 @@ body {
   height: 100%;
   margin: 0;
   font-family: $font-family;
-  background-color: $bg-grey;
+  background-color: $alt-grey;
+  background-image: url("https://v3release.versantvoyager.org/Voyager3/Versant_pattern_grey_v04.acf37a236227a80f7b40.png");
 }
 
 .wrapper {
@@ -40,7 +41,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  box-shadow:$close-shadow;
+  box-shadow:$footer-shadow;
 }
 
 header {
