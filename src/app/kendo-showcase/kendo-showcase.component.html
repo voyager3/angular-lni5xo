@@ -1,6 +1,11 @@
 <div class="white-container">
+    <div class="page-content pt-4">
+    <h2>Voyager 3 Showcase</h2>
+    </div>
+    <div>
+        <meta-info [url]="url1"></meta-info>
+    </div>
     <div class="page-content">
-    <h1>Voyager 3 Showcase</h1>
     <p>To use specific Kendo UI For Angular component you should:</p>
       <ol>
           <li>Add the package in npm: <code>ng add @progress/kendo-angular-inputs</code></li>
@@ -11,7 +16,7 @@
           <li>Override the component styles in kendo-theme.scss if needed.</li>
       </ol>
     </div>
-    <kendo-tabstrip [animate]="false">
+    <kendo-tabstrip [animate]="false" class="mt-4">
         <kendo-tabstrip-tab [title]="'Typography'">
         <ng-template kendoTabContent>
           <div class="row p-2">
