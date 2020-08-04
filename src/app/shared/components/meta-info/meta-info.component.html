@@ -1,21 +1,21 @@
 <div class="meta-info-container row form-group">    
     <div class="{{gridColumns}}">
         <div class="row">
-            <span class="col-6">Created Date: </span>
+            <span class="col-3">Created Date: </span>
             <span class="col-6">{{auditInfo.createdDate && (auditInfo.createdDate | date:'MM/dd/yyyy') || '---'}}</span>
         </div>
         <div class="row">
-            <span class="col-6">Created By: </span>
+            <span class="col-3">Created By: </span>
             <span class="col-6"> {{auditInfo.createdByName || '---'}}</span>
         </div>
     </div>
     <div class="{{gridColumns}}">
         <div class="row">
-            <span class="col-6">Last Modified Date: </span>
+            <span class="col-4">Last Modified Date: </span>
             <span class="col-6">{{auditInfo.modifiedDate && (auditInfo.modifiedDate | date:'MM/dd/yyyy') || '---'}}</span>
         </div>
         <div class="row">
-            <span class="col-6">Last Modified By: </span>
+            <span class="col-4">Last Modified By: </span>
             <span class="col-6">{{ auditInfo.modifiedByName || '---'}}</span>
         </div>
     </div>

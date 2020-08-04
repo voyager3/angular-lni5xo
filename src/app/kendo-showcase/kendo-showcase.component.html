@@ -273,16 +273,7 @@
                                   </kendo-combobox>
                               </div>
                           </div>
-                          <div class="row pb-2">
-                            <div class="col">
-                              Non-closing
-                            </div>
-                            <div class="col-10">
-                              <kendo-multiselect [data]="listItems" [(ngModel)]="valueMs" (close)="onMultiSelectClose($event)"></kendo-multiselect>
-                              <kendo-dropdownlist [data]="data" [filterable]="true" (filterChange)="filterChange($event)" (close)="onMultiSelectClose($event)">
-                              </kendo-dropdownlist>
-                            </div>
-                          </div>
+                          
                       </div>
                   </div>   
                   <div class="row p-2" id="Input" *ngIf="selectedShocaseItem === 'Input'">
@@ -1327,7 +1318,7 @@
         </ng-template>
       </kendo-tabstrip-tab>
     </kendo-tabstrip>
-    <div class="page-content align-right">
+    <div class="page-content text-right pb-4">
       <button kendoButton [primary]="true">Add or Edit Button</button>
     </div>
 
