@@ -151,6 +151,7 @@ form {
 
 .form-control:focus, 
 .k-textbox:focus,
+.k-textbox:focus-within,
 .k-multiselect .k-multiselect-wrap:focus, 
 .k-dropdowntree .k-multiselect-wrap:focus {
   border-bottom: 0.125rem solid $bright-blue !important;
@@ -593,6 +594,10 @@ form .k-button  .k-button {
 
 .k-tooltip .k-callout {
   color: $dark-grey;
+}
+
+.k-tooltip-wrapper >.k-popup {
+  padding:0;
 }
 
 .k-tooltip-button {
