@@ -193,16 +193,6 @@ form {
   }
 }
 
-.k-autocomplete.k-header {
-  border-color: $bg-grey;
-}
-.k-autocomplete {
-  border-radius: 0;
-  border-color: $bg-grey;
-  background-color: $bg-grey !important;
-  border-bottom: 1px solid $primary-blue !important;
-}
-
 .k-picker-wrap:hover {
   .k-select{
     background-color: $bright-blue;
@@ -316,7 +306,8 @@ form {
 .k-textbox,
 .k-textarea,
 .k-numeric-wrap,
-.k-multiselect {
+.k-multiselect,
+.k-autocomplete {
   border-radius: 0 !important;
   border: none !important;
   border-color: $bg-grey;
