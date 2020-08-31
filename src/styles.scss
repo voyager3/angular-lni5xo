@@ -190,7 +190,15 @@ side-menu-item.open {
 }
 
 .page-content {
-  padding: 0 $page-padding;
+  padding: 0rem $page-padding;
+}
+
+.page-content.top {
+  padding-top: $page-padding;
+}
+
+.page-content.bottom {
+  padding-bottom: $page-padding;
 }
 
 .validation-alert {

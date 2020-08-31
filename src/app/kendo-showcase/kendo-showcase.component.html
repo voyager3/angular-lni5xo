@@ -1,12 +1,9 @@
 <div class="white-container">
-    <div class="page-content pt-4">
-    <h2>Voyager 3 Showcase</h2>
-    </div>
-    <div>
-        <meta-info [url]="url1"></meta-info>
+    <div class="page-content top">
+      <h2>Voyager 3 Showcase</h2>
     </div>
     <div class="page-content">
-    <p>To use specific Kendo UI For Angular component you should:</p>
+      <p>To use specific Kendo UI For Angular component you should:</p>
       <ol>
           <li>Add the package in npm: <code>ng add @progress/kendo-angular-inputs</code></li>
           <li>Move the added dependencies (<code>InputsModule</code>) from app.module to shared.module in the array
@@ -1355,4 +1352,17 @@
     </div> -->
 
     
+</div>
+<div class="white-container" kendoTooltip title="Use white-container.">
+    <div class="page-content top" title="Top section with top padding.">
+        <h2 title="Page titles must be h2 and uppercase.">VOYAGER 3 PAGE TITLE</h2>
+    </div>
+    <meta-info title="Meta info must be outside of page-content." [url]="url1"></meta-info>
+    <div class="page-content" title="Middle section without padding top and bottom.">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <hr title="Use hr to separate sections. Must be outside of page-content.">
+    <div class="page-content bottom" title="Bottom section with bottom padding.">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
 </div>
