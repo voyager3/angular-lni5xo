@@ -19,6 +19,7 @@ import { TooltipModule } from '@progress/kendo-angular-tooltip';
 import { SortableModule } from '@progress/kendo-angular-sortable';
 import { FormsModule } from '@angular/forms';
 import { UploadsModule } from '@progress/kendo-angular-upload';
+import { ProgressBarModule } from '@progress/kendo-angular-progressbar';
 
 export const kendoUIModules = [
   ButtonsModule,
@@ -32,7 +33,8 @@ export const kendoUIModules = [
   LayoutModule,
   TooltipModule,
   SortableModule,
-  UploadsModule
+  UploadsModule,
+  ProgressBarModule
 ]
 
 @NgModule({

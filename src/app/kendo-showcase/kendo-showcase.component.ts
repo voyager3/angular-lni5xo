@@ -37,6 +37,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Tooltip'},
     { text: 'Dropdowns'},
     { text: 'Input'},
+    { text: 'Progress bars'},
     { text: 'Dates'},
     { text: 'Layout'},
     { text: 'Dialog'},
@@ -85,6 +86,12 @@ export class KendoShowcaseComponent implements OnInit {
   valueHorizontal: number = 5;
   inputValue: string;
   inputValueDisabled: string;
+
+  /* PROGRESS BARS */
+
+  progressBarValue: number = 15;
+  progressBarChunks: number = 26;
+  progressBarIndeterminate: boolean = true;
 
   /* DATE INPUTS */
 
