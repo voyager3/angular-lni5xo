@@ -1,24 +1,33 @@
 @import '../../variables.scss';
 
 .draggable-item {
-    background-color: $primary-blue;
-    border: 1px solid #fff;
-    height: 70px;
-    line-height: 68px;
-    font-size: 16px;
-    text-align: center;
-    outline: none;
-    cursor: move;
-    color: white;
+  background-color: $primary-blue;
+  border: 1px solid #fff;
+  height: 70px;
+  line-height: 68px;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+  cursor: move;
+  color: white;
 }
 
 .draggable-item:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .draggable-item.active {
-    background-color: #27aceb;
-    color: #fff;
-    border-color: #27aceb;
-    z-index: 10;
+  background-color: #27aceb;
+  color: #fff;
+  border-color: #27aceb;
+  z-index: 10;
+}
+
+.grey-sort .draggable-item {
+  background-color: $bg-grey !important;
+  color: $dark-grey;
+}
+
+.grey-sort .draggable-item:hover .drag-indicator {
+  color: $primary-blue;
 }

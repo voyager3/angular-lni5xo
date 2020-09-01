@@ -858,6 +858,23 @@
                               </ng-template>
                           </kendo-sortable>
                       </div> 
+                      <div class="col">Grey Sortable</div>
+                      <div class="col-12 grey-sort">
+                          <kendo-sortable class="col-8 p-0"
+                              [kendoSortableBinding]="dragableData"
+                              [animation]="true"
+                              (dragEnd)="onDragEnd($event)">
+                              <ng-template let-dataItem="item">
+                                  <div class="draggable-item" >
+                                    <div class="drag-indicator k-i-drag">
+                                    </div>
+                                    <div class="drag-text">
+                                    {{dataItem.name}}
+                                    </div>
+                                  </div>
+                              </ng-template>
+                          </kendo-sortable>
+                      </div> 
                   </div>
                   <div class="row p-2" id="Form" *ngIf="selectedShocaseItem === 'Form'">
                     <div class="col-12">
