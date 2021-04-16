@@ -7,7 +7,7 @@ import { OrderableListComponent } from './orderable-list/orderable-list.componen
 import { SlideAccordionComponent } from './slide-accordion/slide-accordion.component';
 import { MetaInfoComponent } from './meta-info/meta-info.component';
 import { TrainSelectorComponent } from './train-selector/train-selector.component';
-import { SelfAssessmentLevelsComponent } from './self-assessment/self-assessment.component';
+import { SelfAssessmentLevelsComponent } from './self-assessment-levels/self-assessment-levels.component';
 
 export const components = [
     FormErrorComponent,

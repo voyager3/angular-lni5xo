@@ -14,5 +14,5 @@ export class SelfAssessmentLevelsComponent {
   onChange = (levelId: number): void => {
     this.onOptionCheck.emit(levelId);
   }
-
+  
 }
