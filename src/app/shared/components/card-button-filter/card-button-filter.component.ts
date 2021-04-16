@@ -4,8 +4,7 @@ import { CardButtonModel } from '../../models/card-button.model';
 
 @Component({
   selector: 'card-button-filter',
-  templateUrl: './card-button-filter.component.html',
-  styleUrls: ['./card-button-filter.component.css']
+  templateUrl: './card-button-filter.component.html'
 })
 export class CardButtonFilterComponent {
 

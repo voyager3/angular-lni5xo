@@ -2,7 +2,7 @@
 
 @import './kendo-theme.scss';
 
-@import './kendo-icon-override.scss';
+//@import './kendo-icon-override.scss';
 
 $menu-open-width: 15.9375rem;
 $menu-closed-width: 2.8125rem;
@@ -228,6 +228,25 @@ a {
 }
 
 /* CARD BUTTON */
+
+.card-button {
+    border: none;
+    width: 6.5625rem;
+    font-weight: bold;
+    font-size: 0.875rem;
+    color:$white;
+    padding: 0.1875rem;
+    margin: 0.1875rem;
+}
+
+.card-button.card-selected{
+    background-color: #480000 !important;
+}
+
+.cursor-default{
+    cursor: default;
+}
+
 // .card-button {
 //     border: none;
 //     min-width: 6.5625rem;

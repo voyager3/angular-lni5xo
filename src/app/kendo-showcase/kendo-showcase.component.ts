@@ -22,6 +22,7 @@ import { cloneDeep } from 'lodash';
 import { of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { hsHierarchy, users } from './showcase-test-data';
+import { BasicModel } from '../core/models/basic-model';
 
 @Component({
   selector: 'kendo-showcase',
@@ -64,7 +65,8 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Hierarcy Selector'},
     { text: 'Meta info'},
     { text: 'Checkbox tree'},
-    { text: 'Train Selector'}
+    { text: 'Train Selector'},
+    { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
 
@@ -701,5 +703,15 @@ export class KendoShowcaseComponent implements OnInit {
     })
     .subscribe((x: DialogResultModel) => {console.log(x);});
   }
+
+    /*Self Assessment Levels*/
+
+    selfAssessmentLevels: BasicModel[] = [
+    {id:1, name: 'NOVICE'},
+    {id:2, name: 'ADV. BEGINNER'},
+    {id:3, name: 'COMPETENT'},
+    {id:4, name: 'PROFICIENT'},
+    {id:5, name: 'EXPERT'}
+  ];  
 
 }

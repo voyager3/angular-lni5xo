@@ -3,8 +3,7 @@ import { CardButtonModel } from '../../models/card-button.model';
 
 @Component({
   selector: 'card-button',
-  templateUrl: './card-button.component.html',
-  styleUrls: ['./card-button.component.scss']
+  templateUrl: './card-button.component.html'
 })
 export class CardButtonComponent {
 

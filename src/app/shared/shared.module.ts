@@ -20,6 +20,8 @@ import { SortableModule } from '@progress/kendo-angular-sortable';
 import { FormsModule } from '@angular/forms';
 import { UploadsModule } from '@progress/kendo-angular-upload';
 import { ProgressBarModule } from '@progress/kendo-angular-progressbar';
+import { CompetencySelfAssessmentComponent } from './components/competency-self-assessment/competency-self-assessment.component';
+import { SelfAssessmentLevelsComponent } from './components/self-assessment-levels/self-assessment-levels.component';
 
 export const kendoUIModules = [
   ButtonsModule,
@@ -43,7 +45,7 @@ export const kendoUIModules = [
     FormsModule,
     kendoUIModules
   ],
-  declarations: [  ...components, ...directives,  ...dialogComponents  ],
+  declarations: [  ...components, ...directives,  ...dialogComponents, CompetencySelfAssessmentComponent, SelfAssessmentLevelsComponent  ],
   exports: [ ...components, ...directives, ...kendoUIModules],
   providers: [    
     { provide: DialogService, useClass: KendoDialogService }

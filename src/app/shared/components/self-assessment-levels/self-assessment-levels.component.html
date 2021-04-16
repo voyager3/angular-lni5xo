@@ -1,0 +1,22 @@
+<!-- <p>
+self-assessment-levels works!
+</p> -->
+<div class="d-flex justify-content-center">
+    <div *ngFor="let selfAssessmentLevel of selfAssessmentLevels; let i = index">
+        <div class="py-4" [ngClass]="{'mx-1 px-1': i === 1, 'mx-4 px-4': i !== 1}">
+            <b>{{selfAssessmentLevel.name}}</b>
+            <br/>
+            <div class="text-center">
+                <form>            
+                    <input kendoRadioButton        
+                    class="k-radio" 
+                    [value]="selfAssessmentLevel.id" 
+                    type="radio"
+                    [(ngModel)]="selectedLevelId"
+                    (ngModelChange)="onChange($event)"
+                    [ngModelOptions]="{standalone: true}">
+                </form>
+            </div>
+        </div>          
+    </div>
+</div>
