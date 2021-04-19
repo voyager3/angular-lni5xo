@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { GrouppedButtonModel } from '../../models';
+import { GrouppedButtonModel } from '../.models';
 import { ButtonGroupMode } from '../../enums';
 
 @Component({
