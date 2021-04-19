@@ -6,3 +6,5 @@ export * from './groupped-button.model';
 export * from './hierarchies.model';
 export * from './hierarchy-selector-filter.model';
 export * from './train-selector.model';
+export * from './file-upload-info';
+export * from './image-data';

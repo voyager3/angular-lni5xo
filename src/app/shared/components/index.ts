@@ -11,6 +11,7 @@ import { TrainSelectorComponent } from './train-selector/train-selector.componen
 import { SelfAssessmentLevelsComponent } from './self-assessment-levels/self-assessment-levels.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { AutoCompleteOptionComponent } from './auto-complete/auto-complete-option/auto-complete-option.component';
+import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 
 export const components = [
     FormErrorComponent,
@@ -26,6 +27,7 @@ export const components = [
     SelfAssessmentLevelsComponent, 
     AutoCompleteComponent,
     AutoCompleteOptionComponent,
-    ButtonGroupComponent
+    ButtonGroupComponent,
+    ImageUploaderComponent
 
 ]

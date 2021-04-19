@@ -1387,6 +1387,35 @@
                         </div>
                     </div>
                   </div>
+                  <div class="row p-2" id="image-uploader" *ngIf="selectedCustomShocaseItem === 'Image Upload'">
+                      <div class="col-2">
+                          <image-uploader
+                              [imageUrl]="imageUrl"
+                              [defaultImageUrl]="defaultImageUrl"
+                              [useCropping]="true"
+                              [dimensions]="dimensions"
+                              (onFileUpload)="onUploaded($event)">
+                          </image-uploader>
+                      </div>
+                      <div class="col-2">
+                          <image-uploader
+                              [imageUrl]="imageUrlSecond"
+                              [defaultImageUrl]="defaultImageUrl"
+                              [useCropping]="true"
+                              [dimensions]="dimensionsForSecond"
+                              (onFileUpload)="onUploadedSecond($event)">
+                          </image-uploader>
+                      </div>
+                      <div class="col-2">
+                          <image-uploader
+                              [imageUrl]="imageUrlNotCropped"
+                              [defaultImageUrl]="defaultImageUrl"
+                              [useCropping]="false"
+                              [dimensions]="dimensionsNotCropped"
+                              (onFileUpload)="onUploadedNotCropped($event)">
+                          </image-uploader>
+                      </div>
+                  </div>
                   <div class="row p-2" id="self-assessment-levels" *ngIf="selectedCustomShocaseItem === 'Self Assessment Levels'">
                     <div class="col-12">
                       <div class="white-container page-content top bottom">

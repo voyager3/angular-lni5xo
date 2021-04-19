@@ -1,0 +1,27 @@
+<div>
+    <div class="border border secondary img-uploader-container {{cssClass}}">
+        <img *ngIf="imageUrl; else noResizedImage" class="w-100 img-uploader" [src]="imageUrl" />
+        <ng-template #noResizedImage>
+            <img *ngIf="myFiles[0]" class="w-100 img-uploader" [src]="myFiles[0].src" />
+            <img *ngIf="!myFiles[0]" class="w-100 img-uploader" [src]="defaultImageUrl" />
+        </ng-template>
+        <div class="file-selector" (click)="openFileDialog()">{{selectBtnName}}</div>
+    </div>
+    <kendo-fileselect (select)="onSelect($event)" (remove)="onRemove($event)" [ngModel]="myFiles" [multiple]="false" accept="image/*">
+        <kendo-upload-messages [select]="selectBtnName"></kendo-upload-messages>
+        <ng-template kendoFileSelectFileTemplate let-files></ng-template>
+    </kendo-fileselect>
+</div>
+
+<kendo-dialog title="Crop image" [hidden]="!cropperDialogOpened" (close)="onCancelCropping()" [minWidth]="770" [width]="970">
+    <div class="row p-2 justify-content-center" id="image-cropper">
+        <div class="col-8">
+            <app-image-cropper 
+                [imageFile]="uploadedFile"
+                [dimensions]="dimensions"
+                (onCancel)="onCancelCropping()"
+                (emitImage)="onEmitedCroppedImage($event)">
+            </app-image-cropper>
+        </div>
+    </div>
+</kendo-dialog>

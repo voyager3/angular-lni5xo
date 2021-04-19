@@ -69,6 +69,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Button Group'},
     { text: 'Auto Complete'},
     { text: 'Checkbox tree'},
+    { text: 'Image Upload'},
     { text: 'Train Selector'},
     { text: 'Self Assessment Levels'}
   ];
@@ -748,6 +749,49 @@ export class KendoShowcaseComponent implements OnInit {
 
   onItemChange(item: BasicModel) {
     console.log(item)
+  }
+
+  /* IMAGE UPLOAD */
+
+  defaultImageUrl: string = "https://legionstories.com/wp-content/themes/fox/images/placeholder.jpg";
+
+  // First Image Uploader - Cropping and resized to 72x72
+  imageUrl: string = this.defaultImageUrl;
+  dimensions: ImageResolution = ImageDimensions[Image.ProfilePictureHeader];
+  onUploaded(imageFile: FileUploadInfo): void {
+    if (!imageFile) {
+      this.imageUrl = this.defaultImageUrl;
+      return;
+    }
+    this.imageUrl = imageFile.src;
+    console.log('Emitted image out of uploader1 with cropping: ');
+    console.log(imageFile);
+  }
+
+  // Second Image Uploader - Cropping and resized to 640x360
+  imageUrlSecond: string = this.defaultImageUrl;
+  dimensionsForSecond: ImageResolution = { width: 640, height: 360 };
+  onUploadedSecond(imageFile: FileUploadInfo): void {
+    if (!imageFile) {
+      this.imageUrlSecond = this.defaultImageUrl;
+      return;
+    }
+    this.imageUrlSecond = imageFile.src;
+    console.log('Emitted image out of uploader2 with cropping: ');
+    console.log(imageFile);
+  }
+
+  // Third Image Uploader - NO Cropping - only resized to 150x150
+  imageUrlNotCropped: string = this.defaultImageUrl;
+  dimensionsNotCropped: ImageResolution = ImageDimensions[Image.ProfilePicture];
+  onUploadedNotCropped(imageFile: FileUploadInfo): void {
+    if (!imageFile) {
+      this.imageUrlNotCropped = this.defaultImageUrl;
+      return;
+    }
+    this.imageUrlNotCropped = imageFile.src;
+    console.log('Emitted image out of uploader with no cropping: ');
+    console.log(imageFile);
   }
 
 }

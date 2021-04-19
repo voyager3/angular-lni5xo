@@ -1,0 +1,1 @@
+export * from './is-file-an-image.function';
