@@ -23,7 +23,9 @@ import { of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { hsHierarchy, users } from './showcase-test-data';
 import { BasicModel } from '../core/models/basic-model';
-import { GrouppedButtonModel } from '../shared/models';
+import { FileUploadInfo, GrouppedButtonModel } from '../shared/models';
+import { ImageResolution } from '../shared/interfaces/image-resolution';
+import { ImageDimensions, Image } from '../shared/enums';
 
 @Component({
   selector: 'kendo-showcase',
