@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, OnChanges} from '@angular/core';
-import { BasicAbbreviationModel }
-//import { BasicAbbreviationModel } from 'src/app/core/models';
-//import { TrainSelectorModel } from 'src/app/shared/models';
+import { BasicAbbreviationModel } from '../../../core/models';
+import { TrainSelectorModel } from '../../models';
 
 
 @Component({

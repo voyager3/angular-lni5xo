@@ -1,4 +1,4 @@
-//import { IsDeletable } from '../interfaces/is-deletable';
+import { IsDeletable } from '../interfaces/is-deletable';
 import { BasicModel } from './basic-model';
 
 
