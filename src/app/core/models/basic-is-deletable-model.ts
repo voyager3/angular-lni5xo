@@ -1,5 +1,7 @@
-import { IsDeletable } from '../interfaces/is-deletable';
+//import { IsDeletable } from '../interfaces/is-deletable';
 import { BasicModel } from './basic-model';
+
+
 
 export class BasicIsDeletableModel extends BasicModel implements IsDeletable {
     isDeletable: boolean;
