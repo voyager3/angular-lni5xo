@@ -1,1 +1,1 @@
-export * from 'app/core/models/basic-model'
+export * from './basic-model'

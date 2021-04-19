@@ -1,4 +1,4 @@
-import { BasicActiveModel, BasicModel } from 'app/core/models';
+import { BasicActiveModel, BasicModel } from '../../core/models';
 import { ShiftModel } from '../shift-model';
 
 export class HealthSystemHierarchyModel extends BasicActiveModel{

@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { UploadsModule } from '@progress/kendo-angular-upload';
 import { ProgressBarModule } from '@progress/kendo-angular-progressbar';
 import { SelfAssessmentLevelsComponent } from './components/self-assessment-levels/self-assessment-levels.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 export const kendoUIModules = [
   ButtonsModule,
@@ -42,6 +43,7 @@ export const kendoUIModules = [
   imports: [
     CommonModule,
     FormsModule,
+    ImageCropperModule,
     kendoUIModules
   ],
   declarations: [  ...components, ...directives,  ...dialogComponents, SelfAssessmentLevelsComponent  ],
