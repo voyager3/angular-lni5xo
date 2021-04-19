@@ -1,0 +1,46 @@
+<div class="container-fluid">       
+    <div class="row w-80 mx-auto">
+        <div class="custom-file">
+            <input type="file" (change)="fileChangeEvent($event)" class="custom-file-input" id="customFile" accept="image/*">
+            <label class="custom-file-label" for="customFile">Change image</label>
+        </div>
+    </div>
+    <div class="alert alert-danger d-flex justify-content-center w-80 mx-auto mt-2" *ngIf="errorMessage">
+        <span class="text-center" (click)="hideErrorMessage()">{{ errorMessage }}</span>
+    </div>
+    <hr class="bg-primary" *ngIf="showButtons" />
+    <div class="d-flex mt-2 justify-content-around" *ngIf="showButtons">
+        <button kendoButton look="outline" icon="rotate-left" (click)="rotateLeft()">Rotate Left</button>
+        <button kendoButton look="outline" [disabled]="canvasRotation === 0" (click)="resetImage()">Reset</button>
+        <button kendoButton look="outline" icon="rotate-right" (click)="rotateRight()">Rotate Right</button>
+    </div>
+    <div class="d-flex mt-2 justify-content-around">
+        <div class="cropper-block row w-50 justify-content-center">
+            <image-cropper class="d-flex justify-content-center mx-auto" 
+                [imageFile]="imageFile" 
+                [imageURL]="imgUrl"
+                [imageChangedEvent]="imageChangedEvent" 
+                [cropperMinWidth]="dimensions.width" 
+                [cropperMinHeight]="dimensions.height" 
+                [aspectRatio]="aspectRatio" 
+                [resizeToWidth]="dimensions.width"
+                [resizeToHeight]="dimensions.height" 
+                [imageQuality]="imageQuality"
+                [format]="imgFormat" 
+                [canvasRotation]="canvasRotation" 
+                [transform]="transform"
+                (imageCropped)="imageCropped($event)" 
+                (imageLoaded)="imageLoaded()">
+            </image-cropper>
+        </div>
+        <div class="row w-50 justify-content-center mx-auto my-auto">
+            <img [src]="croppedImage" [ngClass]="{'cropped-block': croppedImage}" />
+        </div>
+    </div>
+    <hr class="bg-primary" *ngIf="showButtons" />
+    
+    <div *ngIf="showButtons" class="d-flex mt-2 justify-content-around">
+        <button kendoButton (click)="cancelCropping()">Cancel</button>
+        <button kendoButton [primary]="true" (click)="applyCropping()">Apply</button>
+    </div>
+</div>

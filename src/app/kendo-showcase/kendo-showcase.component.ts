@@ -794,4 +794,10 @@ export class KendoShowcaseComponent implements OnInit {
     console.log(imageFile);
   }
 
+  /* Image Cropper */
+  
+  onEmitedCroppedImage(image: ImageData): void {
+    console.log(image);
+  }
+
 }

@@ -12,6 +12,7 @@ import { SelfAssessmentLevelsComponent } from './self-assessment-levels/self-ass
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { AutoCompleteOptionComponent } from './auto-complete/auto-complete-option/auto-complete-option.component';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
+import { ImageCropperComponent } from './image-cropper/image-cropper.component';
 
 export const components = [
     FormErrorComponent,
@@ -28,6 +29,7 @@ export const components = [
     AutoCompleteComponent,
     AutoCompleteOptionComponent,
     ButtonGroupComponent,
-    ImageUploaderComponent
+    ImageUploaderComponent,
+    ImageCropperComponent
 
 ]
