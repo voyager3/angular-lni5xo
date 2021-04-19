@@ -31,3 +31,23 @@
 .grey-sort .draggable-item:hover .drag-indicator {
   color: $primary-blue;
 }
+
+.infinite-scroller {
+    height: 31.25rem;
+    width: 43.75rem;
+    border: 0.0625rem solid $bg-blue;
+    overflow: scroll;
+    padding: 0rem;
+    list-style: none;
+  
+    li {
+      padding : 0.625rem 0.3125rem;
+      line-height: 5rem;
+      &:nth-child(odd) {
+        background : $white;
+      }
+      &:nth-child(even) {
+        background : $bg-blue;
+      }
+    }
+  }
