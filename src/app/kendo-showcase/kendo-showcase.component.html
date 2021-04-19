@@ -1315,6 +1315,13 @@
                             </div>
                       </div>
                   </div>
+                  <div class="row p-2" id="Auto Complete" *ngIf="selectedCustomShocaseItem === 'Auto Complete'">
+                      <div class="col-md-5 ml-4">
+                            <auto-complete placeholder="Enter Criteria" [selectedItemId]="selectedItemId"
+                                (selectedItemChange)="onItemChange($event)" [optionsSource]="options">
+                            </auto-complete>
+                      </div>
+                  </div>                  
                   <div class="row p-2" *ngIf="selectedCustomShocaseItem === 'Checkbox tree'">
                     <div class="col-2">
                         <div class="form-group">

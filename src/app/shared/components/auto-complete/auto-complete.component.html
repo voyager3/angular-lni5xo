@@ -1,0 +1,18 @@
+<textarea kendoTextArea
+    [placeholder]="placeholder"
+    (keyup)="onKeydown($event)" 
+    [(ngModel)]="model"
+    (ngModelChange)="selectedOptionChange($event)"
+    (click)="openDropDown()"
+    (blur)="closeDropDown()" 
+    class="w-100"  
+    [rows]="rows">
+</textarea>
+
+<div *ngIf="showDropDown" class='search-drop-down'>
+  <auto-complete-option *ngFor="let option of options | slice:0:15; trackBy: trackByFunc" 
+    [option]="option" 
+    class="search-results"
+    (click)="selectValue(option)">{{option.name}}
+  </auto-complete-option>
+</div>

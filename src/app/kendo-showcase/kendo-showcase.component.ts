@@ -67,6 +67,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Hierarcy Selector'},
     { text: 'Meta info'},
     { text: 'Button Group'},
+    { text: 'Auto Complete'},
     { text: 'Checkbox tree'},
     { text: 'Train Selector'},
     { text: 'Self Assessment Levels'}
@@ -719,17 +720,34 @@ export class KendoShowcaseComponent implements OnInit {
 
     /* BUTTON GROUP */
 
-  buttonsSingle: GrouppedButtonModel[] = [
-    new GrouppedButtonModel(true, 1, 'align-left'),
-    new GrouppedButtonModel(false, 2, 'align-center'),
-    new GrouppedButtonModel(false, 3, 'align-right'),
-    new GrouppedButtonModel(false, 4, 'align-justify'),
+  // buttonsSingle: GrouppedButtonModel[] = [
+  //   new GrouppedButtonModel(true, 1, 'align-left'),
+  //   new GrouppedButtonModel(false, 2, 'align-center'),
+  //   new GrouppedButtonModel(false, 3, 'align-right'),
+  //   new GrouppedButtonModel(false, 4, 'align-justify'),
+  // ];
+
+  // buttonsMultiple: GrouppedButtonModel[] = [
+  //   new GrouppedButtonModel(false, 1, 'bold'),
+  //   new GrouppedButtonModel(false, 2, 'italic'),
+  //   new GrouppedButtonModel(false, 3, 'underline')
+  // ];
+
+    /* AUTO COMPLETE */
+  selectedItemId: number;
+  options: BasicModel[] = [
+    { id: 1, name: 'Administers all medications as ordered and evaluates patient’s response (desired and unexpected effects)' },
+    { id: 2, name: 'Provides for patient privacy and confidentiality (e.g. HIPAA compliance and security of electronic health record [EHR])' },
+    { id: 3, name: 'Initiates Basic Life Support (BLS), Adult Cardiac Life Support (ACLS), Pediatric Advanced Life Support (PALS), Neonatal Resuscitation Program (NRP) as appropriate' },
+    { id: 4, name: 'Identifies emergency considerations for patient’s age and condition' },
+    { id: 5, name: 'Incorporates cultural, religious, developmental assessments and educational considerations of patient and care partners in the language that is best understood when providing instructions, education and plan of care' },
+    { id: 6, name: 'Discusses evidence-based interventions utilized at the point of care to improve patient outcomes (e.g. therapeutic hypothermia)' },
+    { id: 7, name: 'Reassesses patient condition post-test' },
+    { id: 8, name: 'Implements quality initiatives and measures within the organization (e.g. core measures, NDNQI, HCAHPS) to achieve patient-centered desired outcomes' }
   ];
 
-  buttonsMultiple: GrouppedButtonModel[] = [
-    new GrouppedButtonModel(false, 1, 'bold'),
-    new GrouppedButtonModel(false, 2, 'italic'),
-    new GrouppedButtonModel(false, 3, 'underline')
-  ];
+  onItemChange(item: BasicModel) {
+    console.log(item)
+  }
 
 }

@@ -9,6 +9,8 @@ import { SlideAccordionComponent } from './slide-accordion/slide-accordion.compo
 import { MetaInfoComponent } from './meta-info/meta-info.component';
 import { TrainSelectorComponent } from './train-selector/train-selector.component';
 import { SelfAssessmentLevelsComponent } from './self-assessment-levels/self-assessment-levels.component';
+import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
+import { AutoCompleteOptionComponent } from './auto-complete/auto-complete-option/auto-complete-option.component';
 
 export const components = [
     FormErrorComponent,
@@ -21,5 +23,9 @@ export const components = [
     SlideAccordionComponent,
     MetaInfoComponent,
     TrainSelectorComponent,
-    SelfAssessmentLevelsComponent
+    SelfAssessmentLevelsComponent, 
+    AutoCompleteComponent,
+    AutoCompleteOptionComponent,
+    ButtonGroupComponent
+
 ]
