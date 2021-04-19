@@ -1,0 +1,11 @@
+<kendo-buttongroup [selection]="mode" [disabled]="disabled">
+    <button *ngFor="let button of buttons" kendoButton                 
+        [(selected)] = "button.selected"
+        [icon]="button.icon"
+        [disabled]="button.disabled"
+        [toggleable]="button.toggleable"        
+        (selectedChange)="selectedChange($event, button)"
+        class="k-button-small-square {{cssClass}}">
+        {{ button.text }}
+    </button>
+</kendo-buttongroup>

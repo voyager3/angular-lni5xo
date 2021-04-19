@@ -1283,6 +1283,38 @@
                           </div>
                       </div>
                   </div>
+                  <div class="row p-2" id="Button Group" *ngIf="selectedCustomShocaseItem === 'Button Group'">
+                      <div class="col-6">
+                          <div>
+                              <p>Single Button Group</p>
+                              <button-group [(buttons)]="buttonsSingle" [mode]="'single'">
+                              </button-group>
+                          </div>
+                          <div class="mt-2 button-group-selection">
+                              <em>Toggled items: </em> <br>
+                                <span *ngFor="let button of buttonsSingle">
+                                    <span *ngIf="button.selected">
+                                        {{ button.icon }} <br>
+                                    </span>
+                                </span>
+                            </div>
+                          </div>
+                          <div class="col-6">
+                              <div>
+                                  <p>Multiple Button Group</p>
+                                  <button-group [(buttons)]="buttonsMultiple" [mode]="'multiple'">
+                                  </button-group>
+                              </div>
+                              <div class="mt-2 button-group-selection">
+                                  <em>Toggled items: </em> <br>
+                                  <span *ngFor="let button of buttonsMultiple">
+                                      <span *ngIf="button.selected">
+                                          {{ button.icon }} <br>
+                                      </span>
+                                  </span>
+                            </div>
+                      </div>
+                  </div>
                   <div class="row p-2" *ngIf="selectedCustomShocaseItem === 'Checkbox tree'">
                     <div class="col-2">
                         <div class="form-group">

@@ -65,6 +65,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Arrow Multiselect'},
     { text: 'Hierarcy Selector'},
     { text: 'Meta info'},
+    { text: 'Button Group'},
     { text: 'Checkbox tree'},
     { text: 'Train Selector'},
     { text: 'Self Assessment Levels'}
