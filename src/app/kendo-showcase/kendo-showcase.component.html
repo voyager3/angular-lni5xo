@@ -1430,6 +1430,15 @@
                       </div>
                     </div>
                   </div>
+                  <div class="row p-2" id="infinite-scrolling" *ngIf="selectedCustomShocaseItem === 'Infinite Scroll'">
+                      <div class="col-6">
+                          <ul class="infinite-scroller list-group"
+                              infinite-scrolling
+                              [scrollCallback]="scrollCallback">
+                              <li class="list-group-item" *ngFor="let item of scrollerItems">{{ item }}</li>
+                          </ul>
+                      </div>
+                  </div>
                   <div class="row p-2" *ngIf="selectedCustomShocaseItem === 'Product Train'">                            
                       <div class="col-12 p-2">
                           <v3-product-train
@@ -1458,7 +1467,6 @@
                             [mode]="rectangleSelectorMode" [showLabel]=false
                             (buttonsChange)="onTrainSelectorChange($event)">
                         </train-selector>
-
                     </div>
                     <div class="col-12 p-2">
                         <train-selector [(buttons)]="trainSelectorItems" [mode]="rectangleSelectorMode"

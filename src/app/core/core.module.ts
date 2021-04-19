@@ -15,7 +15,6 @@ import { HttpClientModule }    from '@angular/common/http';
   providers: [
   ],
   exports: [
-    ...components
   ]
 })
 export class CoreModule { }

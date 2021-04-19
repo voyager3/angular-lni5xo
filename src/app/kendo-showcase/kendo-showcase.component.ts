@@ -76,6 +76,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Checkbox tree'},
     { text: 'Image Upload'},
     { text: 'Image Cropper'},
+    { text: 'Infinite Scroll'},
     { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
@@ -906,5 +907,9 @@ export class KendoShowcaseComponent implements OnInit {
   ]
 
   activeContentBins: number[] = [1];
+
+  /* Infinite Scrolling */
+  scrollCallback: any;
+  scrollerItems: string[] = ['Text 1', 'Text 2', 'Text 3', 'Text 4', 'Text 5'];
 
 }
