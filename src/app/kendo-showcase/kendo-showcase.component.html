@@ -1203,6 +1203,22 @@
                           </kendo-multiselect>
                       </div>
                   </div>
+                  <div class="row p-2" id="Arrow Multiselect" *ngIf="selectedCustomShocaseItem === 'Arrow Multiselect'">
+                    <div class="col-8">
+                      <kendo-multiselect
+                        v3KFilterableDropDown
+                        kmultiselectArrowExtender
+                        placeholder="Select"
+                        (selectedValuesChange)="onSelectedValuesChange($event)"
+                        [data]="msListItems"
+                        textField="name"
+                        valueField="id"
+                        [valuePrimitive]="true"
+                        [autoClose]="false"
+                        required>
+                      </kendo-multiselect>
+                    </div>
+                  </div>
                   <div class="row p-2" id="Hierarcy Selector" *ngIf="selectedCustomShocaseItem === 'Hierarcy Selector'">
                       <div class="col-12">Vertical</div>
                       <div class="col-12 pl-0 pr-0">

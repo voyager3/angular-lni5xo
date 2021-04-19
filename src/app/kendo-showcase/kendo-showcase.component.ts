@@ -62,6 +62,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Slide Accordion'},
     { text: 'Orderable List'},
     { text: 'Extended Multiselect'},
+    { text: 'Arrow Multiselect'},
     { text: 'Hierarcy Selector'},
     { text: 'Meta info'},
     { text: 'Checkbox tree'},
