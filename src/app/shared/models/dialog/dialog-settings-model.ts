@@ -1,4 +1,4 @@
-import { DialogSize } from './dialog-size';
+import { DialogSize } from '../../enums';
 
 export class DialogSettingsModel {    
     title: string;   
