@@ -1,4 +1,4 @@
-//import { BasicIsDeletableModel } from './basic-is-deletable-model';
+import { BasicIsDeletableModel } from './basic-is-deletable-model';
 
 export class BasicAbbreviationModel extends BasicIsDeletableModel {
     abbreviation: string;
