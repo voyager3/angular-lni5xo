@@ -590,9 +590,18 @@ export class KendoShowcaseComponent implements OnInit {
     // });
     
     this.loadLocationHierarchyAsync();
+
+    /* Infinite Scrolling */
+    this.scrollCallback = this.getScrollerData.bind(this);
   }
 
   ngOnDestroy = () => this.subscriptions.forEach(s => s.unsubscribe())
+
+  /* Infinite Scroll */
+ getScrollerData(): string[] {
+    return this.scrollerItems = this.scrollerItems.concat(...this.scrollerItems);
+  }
+
 
   /* HIERARCHY SELECTOR */
 
