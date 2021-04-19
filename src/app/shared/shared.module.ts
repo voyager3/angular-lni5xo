@@ -45,7 +45,7 @@ export const kendoUIModules = [
     ImageCropperModule,
     kendoUIModules
   ],
-  declarations: [  ...components, ...directives,  ...dialogComponents, SelfAssessmentLevelsComponent  ],
+  declarations: [  ...components, ...directives,  ...dialogComponents ],
   exports: [ ...components, ...directives, ...kendoUIModules],
   providers: [    
     { provide: DialogService, useClass: KendoDialogService }
