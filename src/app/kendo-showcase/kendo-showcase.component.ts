@@ -26,6 +26,7 @@ import { BasicModel } from '../core/models/basic-model';
 import { FileUploadInfo, GrouppedButtonModel } from '../shared/models';
 import { ImageResolution } from '../shared/interfaces/image-resolution';
 import { ImageDimensions, Image } from '../shared/enums';
+import { BasicAbbreviationModel } from '../core/models';
 
 @Component({
   selector: 'kendo-showcase',
