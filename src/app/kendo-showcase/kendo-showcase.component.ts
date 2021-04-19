@@ -70,9 +70,11 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Meta info'},
     { text: 'Button Group'},
     { text: 'Auto Complete'},
+    { text: 'Train Selector'},
+    { text: 'Product Train'},
     { text: 'Checkbox tree'},
     { text: 'Image Upload'},
-    { text: 'Train Selector'},
+    { text: 'Image Cropper'},
     { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
@@ -801,5 +803,107 @@ export class KendoShowcaseComponent implements OnInit {
   onEmitedCroppedImage(image: ImageData): void {
     console.log(image);
   }
+
+    /*  PRODUCT TRAIN */
+
+  chevrons: BasicAbbreviationModel[] = [
+    {
+      id: 1,
+      abbreviation: 'CP',
+      name: 'Competency Profile',
+      isDeletable: false
+    },
+    {
+      id: 2,
+      abbreviation: 'A',
+      name: 'Gap Assessment',
+      isDeletable: false
+    },
+    {
+      id: 3,
+      abbreviation: 'L',
+      name: 'Learning Plan',
+      isDeletable: false
+    },
+    {
+      id: 4,
+      abbreviation: 'R',
+      name: 'Remediation',
+      isDeletable: false
+    },
+    {
+      id: 5,
+      abbreviation: 'V',
+      name: 'Validation',
+      isDeletable: false
+    },
+    {
+      id: 7,
+      abbreviation: 'SC',
+      name: 'Supportive Components',
+      isDeletable: false
+    },
+    {
+      id: 9,
+      abbreviation: 'O',
+      name: 'Outcomes',
+      isDeletable: false
+    },
+    {
+      id: 10,
+      abbreviation: 'C',
+      name: 'Currency',
+      isDeletable: false
+    }
+  ]
+
+  activeChevrons: number[] = [1, 3, 2]
+
+  contentBins: BasicAbbreviationModel[] = [
+    {
+      id: 1,
+      abbreviation: 'C',
+      name: 'Competencies',
+      isDeletable: false
+    },
+    {
+      id: 2,
+      abbreviation: 'PGA',
+      name: 'Performance Gap Assessment',
+      isDeletable: false
+    },
+    {
+      id: 3,
+      abbreviation: 'PST',
+      name: 'Performance Support Tools',
+      isDeletable: false
+    },
+    {
+      id: 7,
+      abbreviation: 'EM',
+      name: 'Education Modules',
+      isDeletable: false
+    },
+    {
+      id: 5,
+      abbreviation: 'SC',
+      name: 'Supportive Components',
+      isDeletable: false
+    },
+    {
+      id: 6,
+      abbreviation: 'I',
+      name: 'Instrument',
+      isDeletable: false
+    },
+    {
+      id: 8,
+      abbreviation: 'R',
+      name: 'References',
+      isDeletable: false
+    }
+  ]
+
+  activeContentBins: number[] = [1];
 
 }

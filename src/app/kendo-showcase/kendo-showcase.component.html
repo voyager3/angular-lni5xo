@@ -1430,6 +1430,16 @@
                       </div>
                     </div>
                   </div>
+                  <div class="row p-2" *ngIf="selectedCustomShocaseItem === 'Product Train'">                            
+                      <div class="col-12 p-2">
+                          <v3-product-train
+                              [activeChevrons] = "activeChevrons"
+                              [activeContentBins] ="activeContentBins"
+                              [chevrons] = "chevrons"
+                              [contentBins] = "contentBins">   
+                           </v3-product-train>   
+                      </div>
+                  </div>
                   <div class="row p-2" *ngIf="selectedCustomShocaseItem === 'Train Selector'">
                     <div class="col-12 p-2">
                         <train-selector class="small-train-selector" [(buttons)]="trainSelectorItems"
