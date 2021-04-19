@@ -1439,6 +1439,13 @@
                           </ul>
                       </div>
                   </div>
+                  <div class="row p-2" id="video-player" *ngIf="selectedCustomShocaseItem === 'Video Player'">
+                      <div class="col-4">
+                          <video width="305" controls>
+                              <source *ngIf="videoUrl" [attr.src]="videoUrl" type="video/mp4" />
+                          </video>
+                      </div>
+                  </div>
                   <div class="row p-2" *ngIf="selectedCustomShocaseItem === 'Product Train'">                            
                       <div class="col-12 p-2">
                           <v3-product-train

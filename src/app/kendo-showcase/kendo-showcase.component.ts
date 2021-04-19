@@ -27,6 +27,7 @@ import { FileUploadInfo, GrouppedButtonModel } from '../shared/models';
 import { ImageResolution } from '../shared/interfaces/image-resolution';
 import { ImageDimensions, Image } from '../shared/enums';
 import { BasicAbbreviationModel } from '../core/models';
+import { ApiService } from '../core/services/abstract/api.service';
 
 @Component({
   selector: 'kendo-showcase',
@@ -77,6 +78,8 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Image Upload'},
     { text: 'Image Cropper'},
     { text: 'Infinite Scroll'},
+    //{ text: 'Back Button' },
+    { text: 'Video Player'},
     { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
@@ -563,9 +566,9 @@ export class KendoShowcaseComponent implements OnInit {
   
   constructor(
       private dialogService: KendoAngularDialog.DialogService,
+      private api: ApiService,
       private http: HttpClient,
       private kendoDialogService: DialogService//,
-      //private api: ApiService
     ) {
     this.products = Array(100).fill({}).map((x, idx) => ({
       'type': this.cardBtnModel[idx % 3],
@@ -582,7 +585,6 @@ export class KendoShowcaseComponent implements OnInit {
     this.loadProducts();
     this.loadUsers();
   }
-
   
   ngOnInit() {
     // this.api.get(ShowcaseController.Dates).subscribe(dates => {
@@ -598,7 +600,7 @@ export class KendoShowcaseComponent implements OnInit {
   ngOnDestroy = () => this.subscriptions.forEach(s => s.unsubscribe())
 
   /* Infinite Scroll */
- getScrollerData(): string[] {
+  getScrollerData(): string[] {
     return this.scrollerItems = this.scrollerItems.concat(...this.scrollerItems);
   }
 
@@ -920,5 +922,15 @@ export class KendoShowcaseComponent implements OnInit {
   /* Infinite Scrolling */
   scrollCallback: any;
   scrollerItems: string[] = ['Text 1', 'Text 2', 'Text 3', 'Text 4', 'Text 5'];
+
+
+  /* Video Player */
+  videoUrl: string;
+
+  loadVideo() {
+    this.api.get('/s3-file/url/1568').subscribe(data => {
+      this.videoUrl = data.url;
+    })
+  }
 
 }
