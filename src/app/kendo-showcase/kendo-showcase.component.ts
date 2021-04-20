@@ -91,6 +91,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Lifecycle Transition'},
     { text: 'Grid Popup Actions'},
     { text: 'Custom Stepper'},
+    { text: 'Dropdown With Meta Info'},
     { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
@@ -98,43 +99,6 @@ export class KendoShowcaseComponent implements OnInit {
   onCustomSelect(ev: DrawerSelectEvent): void {
     this.selectedCustomShocaseItem = ev.item.text;
   }
-
-  /* Custom Stepper */
-
-  currentStep: number = 0;
-  pictureFile: FileUploadInfo;
-  userProfileModel: UserProfileStepModel = new UserProfileStepModel("Chuck Norris");
-
-  onFileUploaded(data: FileUploadInfo) {
-    this.pictureFile = data;
-  }
-
-  onStepStatusChanged(isValid: boolean, step: number) {
-    this.steps[step].isValid = isValid;
-    this.steps = cloneDeep(this.steps);
-  }
-
-  onFinish() {
-    console.log('Finished!')
-  }
-
-  steps: CustomStepperStep[] = [
-    { label: 'Upload Picture', isValid: true, validate: false },
-    { label: 'User Info', isValid: true }
-  ];
-
-  secondStepperSteps: CustomStepperStep[] = [
-    { label: 'First Step',  text: '1', validate: false },
-    { label: 'Second Step', text: '2', validate: false },
-    { label: 'Third Step',  text: '3', isValid: true, optional: true }
-  ];
-
-  thirdStepperSteps: CustomStepperStep[] = [
-    { label: 'First Step',  icon: 'find', validate: false },
-    { label: 'Second Step', icon: 'copy', validate: false },
-    { label: 'Third Step',  icon: 'cut', validate: false }
-  ];
-
 
   /* DROPDOWNS */
 
@@ -1028,5 +992,95 @@ export class KendoShowcaseComponent implements OnInit {
   lifecycleTransitionItem3: LifecycleTransitionEnum = LifecycleTransitionEnum.ActiveToRetiredOrDraft;
   lifecycleTransitionItem4: LifecycleTransitionEnum = LifecycleTransitionEnum.ActiveToRetired;
   lifecycleTransitionItem5: LifecycleTransitionEnum = LifecycleTransitionEnum.RetiredToActive;
+
+
+  /* DROPDOW WITH META INFO */
+
+  focusedElement: any = {};
+
+  listItemsWithMetaInfo: any[] = [
+    {
+      id: 1, 
+      name: 'Product 1', 
+      competencyProfileName: "Competency Profile 1", 
+      departmentName: "Department 1", 
+      facilityName: "Facility 1", 
+      startDate: new Date(2021,1,5), 
+      programStatusName: "Immersion", 
+      assignedCompetenciesCount: 22
+    },
+    {
+      id: 2, 
+      name: 'Product 2', 
+      competencyProfileName: "Competency Profile 2", 
+      departmentName: "Department 2", 
+      facilityName: "Facility 2", 
+      startDate: new Date(2020,7,5), 
+      programStatusName: "Immersion", 
+      assignedCompetenciesCount: 0
+    },
+    {
+      id: 3, 
+      name: 'Product 3', 
+      competencyProfileName: "Competency Profile 3", 
+      departmentName: "Department 3", 
+      facilityName: "Facility 3", 
+      startDate: new Date(2020,11,12), 
+      programStatusName: "Immersion", 
+      assignedCompetenciesCount: 15
+    },
+    {
+      id: 4, 
+      name: 'Product 4', 
+      competencyProfileName: "Competency Profile 4", 
+      departmentName: "Department 4", 
+      facilityName: "Facility 4", 
+      startDate: new Date(2020,3,10), 
+      programStatusName: "Immersion", 
+      assignedCompetenciesCount: 4
+    }
+  ]
+
+  onHover(dataItem: any): void {
+    this.focusedElement = dataItem
+    console.log(dataItem)
+  }
+ 
+
+  /* Custom Stepper */
+
+  currentStep: number = 0;
+  pictureFile: FileUploadInfo;
+  userProfileModel: UserProfileStepModel = new UserProfileStepModel("Chuck Norris");
+
+  onFileUploaded(data: FileUploadInfo) {
+    this.pictureFile = data;
+  }
+
+  onStepStatusChanged(isValid: boolean, step: number) {
+    this.steps[step].isValid = isValid;
+    this.steps = cloneDeep(this.steps);
+  }
+
+  onFinish() {
+    console.log('Finished!')
+  }
+
+  steps: CustomStepperStep[] = [
+    { label: 'Upload Picture', isValid: true, validate: false },
+    { label: 'User Info', isValid: true }
+  ];
+
+  secondStepperSteps: CustomStepperStep[] = [
+    { label: 'First Step',  text: '1', validate: false },
+    { label: 'Second Step', text: '2', validate: false },
+    { label: 'Third Step',  text: '3', isValid: true, optional: true }
+  ];
+
+  thirdStepperSteps: CustomStepperStep[] = [
+    { label: 'First Step',  icon: 'find', validate: false },
+    { label: 'Second Step', icon: 'copy', validate: false },
+    { label: 'Third Step',  icon: 'cut', validate: false }
+  ];
 
 }

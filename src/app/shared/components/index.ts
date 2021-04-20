@@ -20,6 +20,8 @@ import { GridPopupActionsComponent } from './grid-popup-actions/grid-popup-actio
 import { GridSelectorComponent } from './grid-selector/grid-selector.component';
 import { CustomStepperComponent } from './custom-stepper/custom-stepper.component';
 import { ProfileDetailsStepComponent } from './profile-details-step/profile-details-step.component';
+import { ProductMetaInfoComponent } from './product-meta-info/product-meta-info.component';
+
 
 export const components = [
     FormErrorComponent,
@@ -44,5 +46,6 @@ export const components = [
     GridSelectorComponent,
     CustomStepperComponent,
     ProfileDetailsStepComponent,
+    ProductMetaInfoComponent,
     ProductTrainComponent
 ]

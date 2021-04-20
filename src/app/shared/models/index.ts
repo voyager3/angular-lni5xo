@@ -9,3 +9,4 @@ export * from './train-selector.model';
 export * from './file-upload-info';
 export * from './image-data';
 export * from './grid-menu-action.model';
+export * from './learning-plan-product.model';
