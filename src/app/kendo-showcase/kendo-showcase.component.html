@@ -717,7 +717,27 @@
                                         <kendo-dialog title="Edit user" *ngIf="dialogOpened" (close)="close('dialog')" [minWidth]="250"
                                             [width]="450">
                                             <div *ngIf="dialogLoader" appLoader></div>
-                                            
+                                            <form #dialogForm="ngForm">
+                                                    <div class="form-group">
+                                                        <label [for]="username">Username</label>
+                                                        <input type="text" #username #usernameModel="ngModel"
+                                                            class="k-textbox form-control" name="form-textbox"
+                                                            [(ngModel)]="dialogModel.username" required />
+                                                        <form-error [model]="usernameModel" inputLabel="Username">
+                                                        </form-error>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label [for]="years">Years</label>
+                                                        <kendo-numerictextbox #years #yearsModel="ngModel"
+                                                            class="form-control" [(ngModel)]="dialogModel.years"
+                                                            [min]="0" [max]="100" name="form-numeric" required>
+                                                        </kendo-numerictextbox>
+                                                        <form-error [model]="yearsModel" inputLabel="Years">
+                                                        </form-error>
+                                                    </div>
+                                                    <div *ngIf="dialogLoader" appLoader [opaque]="true"></div>
+                                                </form>
                                             <!-- <form #dialogForm="ngForm">
                                                 <div class="form-group">
                                                     <label [for]="username">Username*</label>
@@ -1157,6 +1177,129 @@
                   </div>
               
                   </div>
+
+                  <!-- <div class="row p-2" id="Date and Time" *ngIf="selectedCustomShocaseItem === 'Date and Time'">
+                            <div class="col-12">
+                                <div class="row p-2">
+                                    <h6 class="col-12 font-weight-bold">Date and Time Visualziation</h6>
+                                    <h6 class="col-3 font-weight-bold">Source</h6>
+                                    <h6 class="col-3 font-weight-bold">Server Time (ISO 8601)</h6>
+                                    <h6 class="col-2 font-weight-bold">Client Time (JavaScript Date Format)</h6>
+                                    <h6 class="col-2 font-weight-bold">User Timezone Full Format</h6>
+                                    <h6 class="col-1 font-weight-bold">Date Format</h6>
+                                    <h6 class="col-1 font-weight-bold">Time Format</h6>
+                                </div>
+
+                                <div class="row p-2" *ngIf="dates">
+                                    <div class="col-3">UTC Now <button kendoButton (click)="saveDate(dates.utcNow)"
+                                            class="pull-right">Submit</button></div>
+                                    <div class="col-3">{{ dates.utcNow }} (UTC)</div>
+                                    <div class="col-2">{{ dates.localNow }}</div>
+                                    <div class="col-2">
+                                        <span>{{ dates.utcNow | clientTimeZone | date: "MM/dd/yyyy, HH:mm:ss" }}</span>
+                                        <br>
+                                        <span>{{ dates.utcNow | clientTimeZone | date: "MM/dd/yy, HH:mm" }}</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>{{ dates.utcNow | clientTimeZone | date: "MM/dd/yyyy" }}</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>{{ dates.utcNow | clientTimeZone | date: "HH:mm:ss" }}</span>
+                                        <br>
+                                        <span>{{ dates.utcNow | clientTimeZone | date: "HH:mm" }}</span>
+                                    </div>
+                                </div>
+
+                                <div class="row p-2" *ngIf="dates">
+                                    <div class="col-3">UTC Noon Today <button kendoButton
+                                            (click)="saveDate(dates.utcNoon)" class="pull-right">Submit</button></div>
+                                    <div class="col-3">{{ dates.utcNoon }} (UTC)</div>
+                                    <div class="col-2">{{ dates.localNoon }}</div>
+                                    <div class="col-2">
+                                        <span>{{ dates.utcNoon | clientTimeZone | date: "MM/dd/yyyy, HH:mm:ss" }}</span>
+                                        <br>
+                                        <span>{{ dates.utcNoon | clientTimeZone | date: "MM/dd/yy, HH:mm" }}</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>{{ dates.utcNoon | clientTimeZone | date: "MM/dd/yyyy" }}</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>{{ dates.utcNoon | clientTimeZone | date: "HH:mm:ss" }}</span>
+                                        <br>
+                                        <span>{{ dates.utcNoon | clientTimeZone | date: "HH:mm" }}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="row p-2">
+                                    <h6 class="col-12 font-weight-bold">Date and Time Pickers</h6>
+                                    <h6 class="col-3 font-weight-bold">Source</h6>
+                                    <h6 class="col-3 font-weight-bold">Server Time (ISO 8601)</h6>
+                                    <h6 class="col-2 font-weight-bold">Client Time (JavaScript Date Format)</h6>
+                                    <h6 class="col-2 font-weight-bold">User Timezone Full Format</h6>
+                                    <h6 class="col-1 font-weight-bold">Date Format</h6>
+                                    <h6 class="col-1 font-weight-bold">Time Format</h6>
+                                </div>
+
+                                <div class="row p-2" *ngIf="dates">
+                                    <div class="col-3">
+                                        <kendo-datepicker format="MM/dd/yyyy"
+                                            [ngModel]="tzDatePickerValue | clientTimeZone"
+                                            (ngModelChange)="tzDatePickerValue = dateConverter.clientToUTC($event, DateTimeFormat.Date)">
+                                        </kendo-datepicker>
+                                        <button kendoButton (click)="saveDate(tzDatePickerValue)"
+                                            class="pull-right">Submit</button><br>
+                                        <small><strong>Date Picker</strong> will always save the date in <strong>12:00
+                                                UTC</strong></small>
+                                    </div>
+                                    <div class="col-3">
+                                        {{ tzDatePickerValue ? (tzDatePickerValue.toISOString() + ' (UTC)') : '' }}
+                                    </div>
+                                    <div class="col-2">{{ tzDatePickerValue }}</div>
+                                    <div class="col-2">
+                                        <del>
+                                            <span>{{ tzDatePickerValue | clientTimeZone | date: "MM/dd/yyyy, HH:mm:ss" }}</span>
+                                        </del>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>{{ tzDatePickerValue | clientTimeZone | date: "MM/dd/yyyy" }}</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <del>
+                                            <span>{{ tzDatePickerValue | clientTimeZone | date: "HH:mm:ss" }}</span>
+                                        </del>
+                                    </div>
+                                </div>
+
+                                <div class="row p-2" *ngIf="dates">
+                                    <div class="col-3">
+                                        <kendo-datetimepicker format="MM/dd/yyyy, HH:mm"
+                                            [ngModel]="tzDateTimePickerValue | clientTimeZone"
+                                            (ngModelChange)="tzDateTimePickerValue = dateConverter.clientToUTC($event, DateTimeFormat.DateAndTime)">
+                                        </kendo-datetimepicker>
+                                        <button kendoButton (click)="saveDate(tzDateTimePickerValue)"
+                                            class="pull-right">Submit</button><br>
+                                        <small><strong>Date Time Picker</strong> will always save the date in
+                                            <strong>UTC</strong>, without <strong>Daylight Saving</strong></small>
+                                    </div>
+                                    <div class="col-3">
+                                        {{ tzDateTimePickerValue ? (tzDateTimePickerValue.toISOString() + ' (UTC)') : '' }}
+                                    </div>
+                                    <div class="col-2">{{ tzDateTimePickerValue }}</div>
+                                    <div class="col-2">
+                                        <span>{{ tzDateTimePickerValue | clientTimeZone | date: "MM/dd/yyyy, HH:mm:ss" }}</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>{{ tzDateTimePickerValue | clientTimeZone | date: "MM/dd/yyyy" }}</span>
+                                    </div>
+                                    <div class="col-1">
+                                        <span>{{ tzDateTimePickerValue | clientTimeZone | date: "HH:mm:ss" }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
                   <div class="row p-2" id="Slide Accordion" *ngIf="selectedCustomShocaseItem === 'Slide Accordion'">
                       <div class=col-md-12>
                           <slide-accordion #slideAccordion
