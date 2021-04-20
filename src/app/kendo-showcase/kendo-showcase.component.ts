@@ -92,7 +92,8 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Grid Popup Actions'},
     { text: 'Custom Stepper'},
     { text: 'Dropdown With Meta Info'},
-    { text: 'Custom buttons and labels'},
+    { text: 'Custom buttons and labels'},    
+    { text: 'Tree Multiselect'},
     { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
@@ -1082,6 +1083,34 @@ export class KendoShowcaseComponent implements OnInit {
     { label: 'First Step',  icon: 'find', validate: false },
     { label: 'Second Step', icon: 'copy', validate: false },
     { label: 'Third Step',  icon: 'cut', validate: false }
+  ];
+
+  /* Tree Multiselect Dropdown */
+
+  treeMultiselectData: any[] = [
+    {
+        text: 'Furniture',
+        items: [
+            { text: 'Tables & Chairs', id: 1, isChecked: true },
+            {
+                text: 'Sofas',
+                items: [
+                    { text: 'Bean Bag', id: 2, isChecked: true },
+                    { text: 'Armchair', id: 3 },
+                    { text: 'Modular', id: 4, isChecked: true },
+                ],
+            },
+            { text: 'Occasional', id: 5 },
+        ],
+    },
+    {
+        text: 'Decor',
+        items: [
+            { text: 'Bed Linen', id: 6  },
+            { text: 'Curtains & Blinds', id: 7 },
+            { text: 'Carpets', id: 8 },
+        ],
+    },
   ];
 
 }

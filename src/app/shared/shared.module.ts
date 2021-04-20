@@ -19,6 +19,8 @@ import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { TooltipModule } from '@progress/kendo-angular-tooltip';
+import { TreeViewModule } from '@progress/kendo-angular-treeview';
+import { PopupModule } from '@progress/kendo-angular-popup';
 import { SortableModule } from '@progress/kendo-angular-sortable';
 import { FormsModule } from '@angular/forms';
 import { UploadsModule } from '@progress/kendo-angular-upload';
@@ -38,6 +40,8 @@ export const kendoUIModules = [
   TooltipModule,
   SortableModule,
   UploadsModule,
+  TreeViewModule,
+  PopupModule,
   ProgressBarModule
 ]
 

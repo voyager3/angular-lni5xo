@@ -1629,6 +1629,18 @@
                               </kendo-grid-column>
                           </kendo-grid>
                       </div>
+                  </div>
+                  <div class="row p-2" id="tree-multiselect" *ngIf="selectedCustomShocaseItem === 'Tree Multiselect'">
+                      <div class="col-3">
+                        <v3-tree-multiselect
+                            KTreeMultiselectExtender
+                            KTreeFilterableDropdown
+                            [textField]="'text'"
+                            [data]="treeMultiselectData"
+                            [isSelectedField]="'isChecked'"
+                            (selectedValuesChange)="selectedValuesChange($event)">
+                        </v3-tree-multiselect>
+                      </div>
                   </div>                  
                   <div class="row p-2" *ngIf="selectedCustomShocaseItem === 'Train Selector'">
                     <div class="col-12 p-2">

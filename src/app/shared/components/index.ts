@@ -22,6 +22,7 @@ import { CustomStepperComponent } from './custom-stepper/custom-stepper.componen
 import { ProfileDetailsStepComponent } from './profile-details-step/profile-details-step.component';
 import { ProductMetaInfoComponent } from './product-meta-info/product-meta-info.component';
 import { CompetencyValidationLabelComponent } from './competency-validation-label/competency-validation-label.component';
+import { TreeMultiselectComponent } from './tree-multiselect/tree-multiselect.component';
 
 
 export const components = [
@@ -49,5 +50,6 @@ export const components = [
     ProfileDetailsStepComponent,
     ProductMetaInfoComponent,
     CompetencyValidationLabelComponent,
+    TreeMultiselectComponent,
     ProductTrainComponent
 ]

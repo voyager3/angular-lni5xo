@@ -1,0 +1,57 @@
+<div #searchSpan class="tree-multiselect k-space-right pt-0 pb-0 pl-0 w-100">
+    <div *ngIf="chips.length > 0" class="w-100">
+        <ul class="k-reset">
+            <li *ngFor="let chip of chips; let i=index" class="k-button selected-item" >
+                <span>{{ getChipName(chip) }}</span>
+                <span class="k-select" (click)="onRemove(chip, i)">
+                  <span class="k-icon k-i-close"></span>
+                </span>
+            </li>
+        </ul>
+    </div>    
+    <div class="d-flex pt-0 pb-0 pl-0 w-100">
+        <input
+            #searchInput
+            type="text"
+            (click)="open()"
+            class="form-control k-textbox"
+            autocomplete="off"
+            [placeholder]="placeholder"
+            [(ngModel)]="searchText" 
+            (ngModelChange)="onSearchChange()"/>
+        <span 
+            (click)="open()" 
+            class="k-select pull-right mt-1"
+            [ngClass]="getArrowClass()">
+            <span class="k-icon k-i-arrow-s cursor-pointer"></span>
+        </span>
+        <span (click)="clear()"
+            *ngIf="isClearVisible()"
+            class="k-icon k-clear-value k-i-close ng-star-inserted ml-0" 
+            title="clear">
+        </span>
+    </div>    
+    <kendo-popup 
+            #popup 
+            [anchor]="searchSpan" 
+            [style.width.px]="getPopupWidth()" 
+            (anchorViewportLeave)="isOpen = false" 
+            *ngIf="isOpen">
+        <kendo-treeview
+            #treeview
+            class="tree-view"
+            [nodes]="parsedData"
+            [textField]="textField"
+            [children]="children"
+            [hasChildren]="hasChildren">
+            <ng-template kendoTreeViewNodeTemplate let-dataItem let-i="index" >
+                <span (click)="onSelectedValuesChange(i)" [ngClass]="getStyleClass(dataItem)" class="w-100 cursor-pointer tree-item pt-1 pb-1">
+                    <input *ngIf="isVisibleCheckBox(dataItem)" type="checkbox" class="k-checkbox" [checked]="isItemSelected(dataItem)" >
+                    <i *ngIf="dataItem.id === -1" class="k-icon k-i-check"></i>
+                    <i *ngIf="dataItem.id === -2" class="k-icon k-i-close"></i>
+                    <label class="k-checkbox-label">{{ getName(dataItem)}}</label>
+                </span>
+            </ng-template>
+        </kendo-treeview>        
+    </kendo-popup>    
+</div>
