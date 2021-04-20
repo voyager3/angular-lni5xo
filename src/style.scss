@@ -1,0 +1,436 @@
+@font-face {
+	font-family: 'icomoon';
+  src:  url('https://amy-icomoon.s3.amazonaws.com/fonts/icomoon.eot?3eodgc');
+  src:  url('https://amy-icomoon.s3.amazonaws.com/fonts/icomoon.eot?3eodgc#iefix') format('embedded-opentype'),
+    url('https://amy-icomoon.s3.amazonaws.com/fonts/icomoon.woff2?3eodgc') format('woff2'),
+    url('https://amy-icomoon.s3.amazonaws.com/fonts/icomoon.ttf?3eodgc') format('truetype'),
+    url('https://amy-icomoon.s3.amazonaws.com/fonts/icomoon.woff?3eodgc') format('woff'),
+    url('https://amy-icomoon.s3.amazonaws.com/fonts/icomoon.svg?3eodgc#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+  
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+
+  .icon-empty:before {
+     content: "\e600";
+     visibility: hidden;
+   }
+   
+  
+  .icon-vignette-collection:before {
+	content: "\e903";
+  }
+  .icon-assets:before {
+	content: "\e627";
+  }
+  .icon-scenarios:before {
+	content: "\e625";
+  }
+  .icon-vignette:before {
+	content: "\626";
+  }
+  .icon-edit:before {
+	content: "\e60f";
+  }
+  .icon-upload:before {
+	content: "\e900";
+  }
+  .icon-tag:before {
+	content: "\e901";
+  }
+  .icon-unlocked:before {
+	content: "\e902";
+  }
+  .icon-user-alt:before {
+	content: "\e60d";
+  }
+  .icon-user-help:before {
+	content: "\e904";
+  }
+  .icon-user-settings:before {
+	content: "\e638";
+  }
+  .icon-user:before {
+	content: "\e63b";
+  }
+  .icon-validated:before {
+	content: "\e634";
+  }
+  .icon-video:before {
+	content: "\e619";
+  }
+  .icon-view:before {
+	content: "\e909";
+  }
+  .icon-warning:before {
+	content: "\e90a";
+  }
+  .icon-writing-activity:before {
+	content: "\e645";
+  }
+  .icon-writing-answers:before {
+	content: "\e640";
+  }
+  .icon-save:before {
+	content: "\e90d";
+  }
+  .icon-scatter-chart:before {
+	content: "\e90e";
+  }
+  .icon-search:before {
+	content: "\e90f";
+  }
+  .icon-select-user:before {
+	content: "\e637";
+  }
+  .icon-settings:before {
+	content: "\e612";
+  }
+  .icon-share:before {
+	content: "\e912";
+  }
+  .icon-skills-lab:before {
+	content: "\e61b";
+  }
+  .icon-skip:before {
+	content: "\e914";
+  }
+  .icon-spider-chart:before {
+	content: "\e915";
+  }
+  .icon-stop:before {
+	content: "\e916";
+  }
+  .icon-subtract-alt:before {
+	content: "\e917";
+  }
+  .icon-subtract:before {
+	content: "\e918";
+  }
+  .icon-ready:before {
+	content: "\e60e";
+  }
+  .icon-reference:before {
+	content: "\e608";
+  }
+  .icon-refresh:before {
+	content: "\e91b";
+  }
+  .icon-remediate:before {
+	content: "\e91c";
+  }
+  .icon-remove-user:before {
+	content: "\e639";
+  }
+  .icon-reset:before {
+	content: "\e62e";
+  }
+  .icon-revert:before {
+	content: "\e635";
+  }
+  .icon-notification:before {
+	content: "\e920";
+  }
+  .icon-organization:before {
+	content: "\e636";
+  }
+  .icon-outcomes-management:before {
+	content: "\e631";
+  }
+  .icon-outcomes-metrics:before {
+	content: "\e632";
+  }
+  .icon-pages:before {
+	content: "\e924";
+  }
+  .icon-pause:before {
+	content: "\e925";
+  }
+  .icon-performance-portfolio:before {
+	content: "\e62a";
+  }
+  .icon-permissions:before {
+	content: "\e633";
+  }
+  .icon-pga-management:before {
+	content: "\e624";
+  }
+  .icon-phone:before {
+	content: "\e650";
+  }
+  .icon-play:before {
+	content: "\e92a";
+  }
+  .icon-powerpoint:before {
+	content: "\e61a";
+  }
+  .icon-preceptor-remediation:before {
+	content: "\e618";
+  }
+  .icon-print:before {
+	content: "\e92d";
+  }
+  .icon-progress-notes:before {
+	content: "\e616";
+  }
+  .icon-pst:before {
+	content: "\e621";
+  }
+  .icon-mail-open:before {
+	content: "\e930";
+  }
+  .icon-mail:before {
+	content: "\e613";
+  }
+  .icon-management:before {
+	content: "\e629";
+  }
+  .icon-match-activity:before {
+	content: "\e646";
+  }
+  .icon-match-answers:before {
+	content: "\e641";
+  }
+  .icon-mentoring:before {
+	content: "\e61c";
+  }
+  .icon-menu:before {
+	content: "\e63e";
+  }
+  .icon-metrics-management:before {
+	content: "\e630";
+  }
+  .icon-minscreen:before {
+	content: "\e938";
+  }
+  .icon-mobile:before {
+	content: "\e64f";
+  }
+  .icon-multi-activity:before {
+	content: "\e93a";
+  }
+  .icon-multi-answers:before {
+	content: "\e643";
+  }
+  .icon-mute:before {
+	content: "\e93c";
+  }
+  .icon-job-aid:before {
+	content: "\e61d";
+  }
+  .icon-learner-guide:before {
+	content: "\e648";
+  }
+  .icon-learning-plan:before {
+	content: "\e60c";
+  }
+  .icon-line-graph:before {
+	content: "\e940";
+  }
+  .icon-link:before {
+	content: "\e649";
+  }
+  .icon-list:before {
+	content: "\e942";
+  }
+  .icon-locked:before {
+	content: "\e943";
+  }
+  .icon-log-in-out:before {
+	content: "\e62f";
+  }
+  .icon-looping:before {
+	content: "\e615";
+  }
+  .icon-help:before {
+	content: "\e606";
+  }
+  .icon-iem:before {
+	content: "\e623";
+  }
+  .icon-image-grid:before {
+	content: "\e948";
+  }
+  .icon-image:before {
+	content: "\e949";
+  }
+  .icon-images:before {
+	content: "\e94a";
+  }
+  .icon-info:before {
+	content: "\e604";
+  }
+  .icon-general-activity:before {
+	content: "\e644";
+  }
+  .icon-general-answers:before {
+	content: "\e642";
+  }
+  .icon-grid:before {
+	content: "\e607";
+  }
+  .icon-fforward:before {
+	content: "\e94f";
+  }
+  .icon-filter:before {
+	content: "\e950";
+  }
+  .icon-flag:before {
+	content: "\e951";
+  }
+  .icon-folder:before {
+	content: "\e64e";
+  }
+  .icon-folders:before {
+	content: "\e62d";
+  }
+  .icon-fullscreen:before {
+	content: "\e954";
+  }
+  .icon-debriefing:before {
+	content: "\e61e";
+  }
+  .icon-delete:before {
+	content: "\e62c";
+  }
+  .icon-disabled:before {
+	content: "\e957";
+  }
+  .icon-doc-blank:before {
+	content: "\e647";
+  }
+  .icon-doc-history:before {
+	content: "\e959";
+  }
+  .icon-doc-text:before {
+	content: "\e61f";
+  }
+  .icon-donut-chart:before {
+	content: "\e95b";
+  }
+  .icon-download:before {
+	content: "\e95c";
+  }
+  .icon-drag:before {
+	content: "\e95d";
+  }
+  .icon-calendar-blank:before {
+	content: "\e610";
+  }
+  .icon-calendar:before {
+	content: "\e611";
+  }
+  .icon-cart-empty:before {
+	content: "\e960";
+  }
+  .icon-cart-full:before {
+	content: "\e961";
+  }
+  .icon-case-study:before {
+	content: "\e64d";
+  }
+  .icon-check-alt:before {
+	content: "\e963";
+  }
+  .icon-check:before {
+	content: "\e60a";
+  }
+  .icon-checklist:before {
+	content: "\e609";
+  }
+  .icon-class-activity:before {
+	content: "\e64b";
+  }
+  .icon-class:before {
+	content: "\e622";
+  }
+  .icon-close-alt:before {
+	content: "\e968";
+  }
+  .icon-close:before {
+	content: "\e605";
+  }
+  .icon-comment:before {
+	content: "\e60b";
+  }
+  .icon-competency-validation:before {
+	content: "\e620";
+  }
+  .icon-competency:before {
+	content: "\e62b";
+  }
+  .icon-curved-line-graph:before {
+	content: "\e96d";
+  }
+  .icon-back-top:before {
+	content: "\e602";
+  }
+  .icon-bar-chart:before {
+	content: "\e617";
+  }
+  .icon-bulletin:before {
+	content: "\e614";
+  }
+  .icon-audio:before {
+	content: "\e971";
+  }
+  .icon-audit:before {
+	content: "\e628";
+  }
+  .icon-archive:before {
+	content: "\e64a";
+  }
+  .icon-area-chart:before {
+	content: "\e974";
+  }
+  .icon-arrow-down-alt:before {
+	content: "\e975";
+  }
+  .icon-arrow-down:before {
+	content: "\e63c";
+  }
+  .icon-arrow-left-alt:before {
+	content: "\e977";
+  }
+  .icon-arrow-left:before {
+	content: "\e600";
+  }
+  .icon-arrow-right-alt:before {
+	content: "\e979";
+  }
+  .icon-arrow-right:before {
+	content: "\e601";
+  }
+  .icon-arrow-up-alt:before {
+	content: "\e97b";
+  }
+  .icon-arrow-up:before {
+	content: "\e64c";
+  }
+  .icon-add:before {
+	content: "\e603";
+  }
+  .icon-add-user:before {
+	content: "\e63a";
+  }
+  .icon-add-alt:before {
+	content: "\e97f";
+  }
+  .icon-2point-graph:before {
+	content: "\e980";
+  }
