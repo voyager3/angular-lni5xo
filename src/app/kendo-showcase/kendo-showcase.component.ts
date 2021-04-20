@@ -590,6 +590,8 @@ export class KendoShowcaseComponent implements OnInit {
     // this.api.get(ShowcaseController.Dates).subscribe(dates => {
     //   this.dates = new DatesShowcaseModel(dates.utcNoon, dates.utcNow);
     // });
+
+    this.loadVideo();
     
     this.loadLocationHierarchyAsync();
 

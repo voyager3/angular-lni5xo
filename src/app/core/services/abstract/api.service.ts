@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { ApiSettingsModel } from 'src/app/core/models';
+import { ApiSettingsModel } from '../../models';
 
 export abstract class ApiService {
   abstract get(url: string, settings?: ApiSettingsModel) : Observable<any>;
