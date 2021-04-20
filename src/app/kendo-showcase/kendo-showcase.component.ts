@@ -87,6 +87,8 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Video Player'},
     { text: 'Lifecycle Filter'},
     { text: 'Lifecycle Transition'},
+    { text: 'Grid Popup Actions'},
+    { text: 'Custom Stepper'},
     { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
@@ -976,8 +978,7 @@ export class KendoShowcaseComponent implements OnInit {
     return LifecycleStatusEnum[id];
   }
 
-  /* Lifecycle transition */
-  
+  /* Lifecycle transition */  
   onStatusChange(items: GrouppedButtonModel[], item: LifecycleTransitionEnum): void {
     let selected: GrouppedButtonModel = items.find(i => i.selected);
     console.log(selected.valueId);

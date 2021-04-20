@@ -1519,6 +1519,63 @@
                            </lifecycle-transition>
                       </div>
                   </div>
+                  <div class="row p-2" id="lifecycle-transition" *ngIf="selectedCustomShocaseItem === 'Custom Stepper'">
+                      <div class="col-12">
+                          <custom-stepper [(steps)]="steps" [(currentStep)]="currentStep" (onFinish)="onFinish()">
+                          </custom-stepper>
+                          <div>
+                              <image-uploader *ngIf="currentStep === 0" [(file)]="pictureFile" (onFileUpload)="onFileUploaded($event)">
+                              </image-uploader>
+                              <profile-details-step *ngIf="currentStep === 1" [userProfileModel]="userProfileModel" [(pictureFile)]="pictureFile"
+                                  (onFormChanged)="onStepStatusChanged($event, currentStep)">
+                              </profile-details-step>
+                          </div>
+                      </div>
+                      <div class="col-12">
+                          <custom-stepper [steps]="secondStepperSteps" [showIndicatorIcons]="true" [width]="400">
+                          </custom-stepper>
+                      </div>
+                      <div class="col-12">
+                          <custom-stepper [steps]="thirdStepperSteps" [showIndicatorIcons]="true" [width]="570">
+                          </custom-stepper>
+                      </div>
+                  </div>
+                  <div class="row p-2" id="grid-side-menu" *ngIf="selectedCustomShocaseItem === 'Grid Popup Actions'">
+                      <div class="col-12">
+                        <grid-popup-actions class="pull-right">
+                            <ng-template>
+                                <lifecycle-transition
+                                    [allowTransitions]="lifecycleTransitionItem1"
+                                    (onTransitionChange)="onStatusChange($event, lifecycleTransitionItem1)"
+                                    [enableDialog]="true"
+                                    [disabled]="true">
+                                </lifecycle-transition>
+                            </ng-template>
+                        </grid-popup-actions>
+                      </div>
+                      <div class="col-12">
+                          <kendo-grid [data]="gridView" [pageable]="pageSettings" [pageSize]="gridState.take"
+                              [skip]="gridState.skip" [loading]="loader" (pageChange)="pageChange($event)"
+                              [sortable]="sortSettings" [sort]="gridState.sort"
+                              (sortChange)="sortChange($event)" scrollable="none">
+                              <kendo-grid-column field="ProductID" title="ID" width="40">
+                              </kendo-grid-column>
+                              <kendo-grid-column field="ProductName" title="Name" width="250">
+                              </kendo-grid-column>
+                              <kendo-grid-column field="Category.CategoryName" title="Category">
+                              </kendo-grid-column>
+                              <kendo-grid-column field="UnitPrice" title="Price" width="80">
+                              </kendo-grid-column>
+                              <kendo-grid-column field="UnitsInStock" title="In stock" width="80">
+                              </kendo-grid-column>
+                              <kendo-grid-column width="30">
+                                  <ng-template kendoGridCellTemplate let-dataItem>
+                                      <grid-popup-actions [selectedId]="dataItem.ProductID" [actions]="actions"></grid-popup-actions>
+                                  </ng-template>
+                              </kendo-grid-column>
+                          </kendo-grid>
+                      </div>
+                  </div>                  
                   <div class="row p-2" *ngIf="selectedCustomShocaseItem === 'Train Selector'">
                     <div class="col-12 p-2">
                         <train-selector class="small-train-selector" [(buttons)]="trainSelectorItems"

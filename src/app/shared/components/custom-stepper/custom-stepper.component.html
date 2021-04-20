@@ -1,0 +1,33 @@
+<div class="mx-auto mt-2 {{containerClass}}">
+  <div class="row justify-content-between mt-2">
+    <div class="col-md stepper-navigation-container">
+      <button kendoButton *ngIf="showPreviousButton" (click)="back()">
+        {{previousBtnText }}
+      </button>
+      <button kendoButton *ngIf="showNextButton()" [primary]="true" [disabled]="!isStepValid()" (click)="continue()"
+        class="float-right">
+        {{ nextBtnText }}
+      </button>
+      <button kendoButton *ngIf="showFinishButton && useFinishButtonInternally"
+        [primary]="true"
+        [disabled]="!isStepValid()"
+        (click)="finish()"
+        class="float-right">
+        {{ finishBtnText }}
+      </button>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-2">
+    <kendo-stepper class="mt-2" #stepper [steps]="steps" stepType="full" [currentStep]="currentStep"
+      (currentStepChange)="onStepChange($event)" (activate)="onStepActivate($event)" [style.width.px]="width">
+      <ng-template kendoStepperIndicatorTemplate let-step>
+        <span *ngIf="!showIndicatorIcons" [class]="getIndicatorClass(step)">{{ step.text }}</span>
+        <span *ngIf="showIndicatorIcons && step.text">{{ step.text }}</span>
+        <span *ngIf="showIndicatorIcons && step.icon" class="k-icon k-i-{{ step.icon }}">{{ step.text }}</span>
+      </ng-template>
+    </kendo-stepper>
+  </div>
+  <div class="row justify-content-center mt-2">
+    <ng-template></ng-template>
+  </div>
+</div>

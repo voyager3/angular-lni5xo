@@ -16,6 +16,10 @@ import { ImageCropperComponent } from './image-cropper/image-cropper.component';
 import { ProductTrainComponent } from './product-train/product-train.component';
 import { LifecycleFilterComponent } from './lifecycle-filter/lifecycle-filter.component';
 import { LifecycleTransitionComponent } from './lifecycle-transition/lifecycle-transition.component';
+import { GridPopupActionsComponent } from './grid-popup-actions/grid-popup-actions.component';
+import { GridSelectorComponent } from './grid-selector/grid-selector.component';
+import { CustomStepperComponent } from './custom-stepper/custom-stepper.component';
+
 
 export const components = [
     FormErrorComponent,
@@ -36,6 +40,8 @@ export const components = [
     ImageCropperComponent,
     LifecycleFilterComponent,
     LifecycleTransitionComponent,
+    GridPopupActionsComponent,
+    GridSelectorComponent,
+    CustomStepperComponent,
     ProductTrainComponent
-
 ]

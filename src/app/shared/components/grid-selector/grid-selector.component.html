@@ -1,0 +1,43 @@
+<div class="mb-3">
+    <label>{{label}}</label>
+    <kendo-custom-search 
+        [searchableColumns]="['name', 'searchableColumnData']" 
+        (onFilterChange)="onTextFilterChange($event)">
+    </kendo-custom-search>
+</div>
+<div>
+    <kendo-grid 
+        [data]="gridView" 
+        [pageable]="pageSettings" 
+        [pageSize]="gridState.take"
+        [skip]="gridState.skip" 
+        [sort]="gridState.sort" 
+        [sortable]="sortSettings" 
+        (pageChange)="pageChange($event)"
+        (sortChange)="sortChange($event)" 
+        scrollable="none">
+        <kendo-grid-column [title]="data?.nameColumnHeader" width="120">
+            <ng-template kendoGridCellTemplate let-dataItem>
+                <div class="row">
+                    <div class="col-1 m-auto">
+                        <input type="radio" kendoRadioButton required [disabled]="disabled"
+                            [checked]="selected === dataItem.id" [name]="name"
+                            [ngModelOptions]="{standalone: true}" [(ngModel)]="selected" [value]="dataItem.id" 
+                            (ngModelChange)="selectedChange.emit(selected)" />
+                    </div>
+                    <div class="col-11">
+                        <div>{{dataItem.name}}</div>
+                        <div class="version-container">
+                            {{getActiveVersions(dataItem.id)}}
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column *ngFor="let column of data?.columnHeaders; let i = index" [title]="column" width="30">
+            <ng-template kendoGridCellTemplate let-dataItem>
+                <div *ngFor="let data of dataItem.columnData[i]"> {{data.name}} </div>
+            </ng-template>
+        </kendo-grid-column>
+    </kendo-grid>
+</div>
