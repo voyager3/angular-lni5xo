@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { PagerSettings, PageChangeEvent, GridDataResult, SortSettings } from '@progress/kendo-angular-grid';
-import { SortDescriptor, orderBy, filterBy, CompositeFilterDescriptor } from '@progress/kendo-data-query';
+import { SortDescriptor, orderBy, filterBy, CompositeFilterDescriptor, State } from '@progress/kendo-data-query';
 import {
   DialogRef,
   DialogCloseResult,
@@ -12,7 +12,7 @@ import { FileInfo } from '@progress/kendo-angular-upload';
 import { ChipRemoveEvent } from '@progress/kendo-angular-buttons';
 import * as KendoAngularDialog from '@progress/kendo-angular-dialog';
 import { DialogSize } from '../shared/enums/dialog-size';
-import { DialogService } from '../shared/services/abstracts/dialog.service';
+import { DialogService, GridService } from '../shared/services';
 import { DialogResultModel } from '../shared/models/dialog/dialog-result-model';
 import { CardButtonModel } from '../shared/models/card-button.model';
 import { HealthSystemHierarchyModel } from '../shared/models/hierarchies.model';
@@ -25,7 +25,7 @@ import { hsHierarchy, users } from './showcase-test-data';
 import { BasicModel } from '../core/models/basic-model';
 import { FileUploadInfo, GrouppedButtonModel } from '../shared/models';
 import { ImageResolution } from '../shared/interfaces/image-resolution';
-import { ImageDimensions, Image } from '../shared/enums';
+import { ImageDimensions, Image, LifecycleStatusEnum } from '../shared/enums';
 import { BasicAbbreviationModel } from '../core/models';
 import { ApiService } from '../core/services/abstract/api.service';
 
@@ -80,6 +80,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Infinite Scroll'},
     //{ text: 'Back Button' },
     { text: 'Video Player'},
+    { text: 'Lifecycle Filter'},
     { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
@@ -568,6 +569,7 @@ export class KendoShowcaseComponent implements OnInit {
       private dialogService: KendoAngularDialog.DialogService,
       private api: ApiService,
       private http: HttpClient,
+      public gridService: GridService,
       private kendoDialogService: DialogService//,
     ) {
     this.products = Array(100).fill({}).map((x, idx) => ({
@@ -591,7 +593,7 @@ export class KendoShowcaseComponent implements OnInit {
     //   this.dates = new DatesShowcaseModel(dates.utcNoon, dates.utcNow);
     // });
 
-    this.loadVideo();
+    //this.loadVideo();
     
     this.loadLocationHierarchyAsync();
 
@@ -933,6 +935,39 @@ export class KendoShowcaseComponent implements OnInit {
     this.api.get('/s3-file/url/1568').subscribe(data => {
       this.videoUrl = data.url;
     })
+  }
+
+  /* Lifecycle data */
+  lifecycleStatusItemsSource: any = [
+    { name: 'Item 1', statusId: 1 },
+    { name: 'Item 2', statusId: 2 },
+    { name: 'Item 3', statusId: 1 },
+    { name: 'Item 4', statusId: 3 },
+    { name: 'Item 5', statusId: 2 },
+    { name: 'Item 6', statusId: 2 }
+  ];
+
+  /* Lifecycle Filter */
+  onLifecycleFilterChange(filter: CompositeFilterDescriptor): void {
+    let gridState: State = {
+      take: 5,
+      skip: 0,
+      filter: {
+        logic: 'and',
+        filters: []
+      },
+      sort: [{
+        field: 'name',
+        dir: 'asc'
+      }]
+    };
+
+    let lifecycleStatusItems = filterBy(this.lifecycleStatusItemsSource, filter);
+    this.gridView = this.gridService.orderGridData(lifecycleStatusItems, gridState);
+  }
+
+  getLifecycleStatusText(id: number): string {
+    return LifecycleStatusEnum[id];
   }
 
 }

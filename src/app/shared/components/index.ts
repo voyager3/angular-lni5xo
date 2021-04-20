@@ -14,6 +14,7 @@ import { AutoCompleteOptionComponent } from './auto-complete/auto-complete-optio
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 import { ImageCropperComponent } from './image-cropper/image-cropper.component';
 import { ProductTrainComponent } from './product-train/product-train.component';
+import { LifecycleFilterComponent } from './lifecycle-filter/lifecycle-filter.component';
 
 export const components = [
     FormErrorComponent,
@@ -32,6 +33,7 @@ export const components = [
     ButtonGroupComponent,
     ImageUploaderComponent,
     ImageCropperComponent,
+    LifecycleFilterComponent,
     ProductTrainComponent
 
 ]

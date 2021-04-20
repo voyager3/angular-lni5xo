@@ -1455,6 +1455,27 @@
                               [contentBins] = "contentBins">   
                            </v3-product-train>   
                       </div>
+                  </div>                  
+                  <div class="row p-2" id="lifecycle-filter" *ngIf="selectedCustomShocaseItem === 'Lifecycle Filter'">
+                      <div class="col-6 ml-4">
+                          <div class="mb-4">
+                              <lifecycle-filter
+                                  column="statusId"
+                                  (onFilterChange)="onLifecycleFilterChange($event)" >
+                              </lifecycle-filter>
+                      </div>
+                      <div>
+                          <kendo-grid
+                              [data]="gridView" >
+                              <kendo-grid-column field="name" title="Item" ></kendo-grid-column>
+                              <kendo-grid-column field="statusId" title="Status" width="100">
+                                  <ng-template kendoGridCellTemplate let-dataItem>
+                                      <span>{{getLifecycleStatusText(dataItem.statusId)}}</span>
+                                  </ng-template>
+                              </kendo-grid-column>
+                          </kendo-grid>
+                      </div>
+                  </div>
                   </div>
                   <div class="row p-2" *ngIf="selectedCustomShocaseItem === 'Train Selector'">
                     <div class="col-12 p-2">

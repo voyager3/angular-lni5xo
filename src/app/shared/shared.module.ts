@@ -3,8 +3,11 @@ import { CommonModule } from '@angular/common';
 import { components } from './components';
 import { directives } from './directives';
 import { dialogComponents } from "./services/kendo-dialog/components";
-import { KendoDialogService } from './services/kendo-dialog/kendo-dialog.service';
-import { DialogService } from './services/abstracts/dialog.service';
+import { GridService,
+        KendoGridService,
+        DialogService,
+        KendoDialogService 
+       } from './services';
 
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,7 +51,8 @@ export const kendoUIModules = [
   declarations: [  ...components, ...directives,  ...dialogComponents ],
   exports: [ ...components, ...directives, ...kendoUIModules],
   providers: [    
-    { provide: DialogService, useClass: KendoDialogService }
+    { provide: DialogService, useClass: KendoDialogService },
+    { provide: GridService, useClass: KendoGridService }
   ],
   entryComponents: [
     ...dialogComponents
