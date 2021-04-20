@@ -19,7 +19,7 @@ import { LifecycleTransitionComponent } from './lifecycle-transition/lifecycle-t
 import { GridPopupActionsComponent } from './grid-popup-actions/grid-popup-actions.component';
 import { GridSelectorComponent } from './grid-selector/grid-selector.component';
 import { CustomStepperComponent } from './custom-stepper/custom-stepper.component';
-
+import { ProfileDetailsStepComponent } from './profile-details-step/profile-details-step.component';
 
 export const components = [
     FormErrorComponent,
@@ -43,5 +43,6 @@ export const components = [
     GridPopupActionsComponent,
     GridSelectorComponent,
     CustomStepperComponent,
+    ProfileDetailsStepComponent,
     ProductTrainComponent
 ]

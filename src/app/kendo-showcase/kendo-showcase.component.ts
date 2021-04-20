@@ -33,6 +33,8 @@ import {
         } from '../shared/enums';
 import { BasicAbbreviationModel } from '../core/models';
 import { ApiService } from '../core/services/abstract/api.service';
+import { UserProfileStepModel } from '../shared/components/profile-details-step/profile-details-step.component';
+import { CustomStepperStep } from '../shared/interfaces/custom-stepper-step';
 
 @Component({
   selector: 'kendo-showcase',
@@ -96,6 +98,42 @@ export class KendoShowcaseComponent implements OnInit {
   onCustomSelect(ev: DrawerSelectEvent): void {
     this.selectedCustomShocaseItem = ev.item.text;
   }
+
+  /* Custom Stepper */
+
+  currentStep: number = 0;
+  pictureFile: FileUploadInfo;
+  userProfileModel: UserProfileStepModel = new UserProfileStepModel("Chuck Norris");
+
+  onFileUploaded(data: FileUploadInfo) {
+    this.pictureFile = data;
+  }
+
+  onStepStatusChanged(isValid: boolean, step: number) {
+    this.steps[step].isValid = isValid;
+    this.steps = cloneDeep(this.steps);
+  }
+
+  onFinish() {
+    console.log('Finished!')
+  }
+
+  steps: CustomStepperStep[] = [
+    { label: 'Upload Picture', isValid: true, validate: false },
+    { label: 'User Info', isValid: true }
+  ];
+
+  secondStepperSteps: CustomStepperStep[] = [
+    { label: 'First Step',  text: '1', validate: false },
+    { label: 'Second Step', text: '2', validate: false },
+    { label: 'Third Step',  text: '3', isValid: true, optional: true }
+  ];
+
+  thirdStepperSteps: CustomStepperStep[] = [
+    { label: 'First Step',  icon: 'find', validate: false },
+    { label: 'Second Step', icon: 'copy', validate: false },
+    { label: 'Third Step',  icon: 'cut', validate: false }
+  ];
 
 
   /* DROPDOWNS */

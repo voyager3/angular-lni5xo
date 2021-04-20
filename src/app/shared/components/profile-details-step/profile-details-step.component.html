@@ -1,0 +1,31 @@
+<div class="container">
+
+    <div class="col-6 justify-content-around" *ngIf="pictureFile; else noPicUploaded">
+        <div class="row alert alert-success">
+            <span><i>Uploaded photo: </i>{{ pictureFile.name }}</span>
+        </div>
+        <div class="row">
+            <img [src]="pictureFile.src">
+        </div>
+        
+    </div>
+
+    <ng-template #noPicUploaded>
+        <div class="col-6 justify-content-around alert alert-warning">
+            <span><i>No photo uploaded!</i></span>
+        </div>
+    </ng-template>
+
+    <form #userProfileForm="ngForm">
+        <div class="row">
+            <div class="form-group">
+                <label [for]="name">Name</label>
+                <input kendoTextBox required minlength="4" name="name" #name="ngModel"
+                    [(ngModel)]="userProfileModel.name" placeholder="Enter Name" class="k-textbox form-control" />
+                <form-error [model]="name" inputLabel="Name">
+                </form-error>
+            </div>
+        </div>
+    </form>
+
+</div>
