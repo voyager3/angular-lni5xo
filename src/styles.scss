@@ -567,3 +567,17 @@ span.icon-comment, span.k-icon.k-i-cancel-outline, span.k-icon.k-i-success {
   font-size: 1.25rem;
 }
 
+/* ORDERABLE LIST */
+
+orderable-list button {
+  border-color: rgba(33, 37, 41, 0.15) !important;
+}
+
+orderable-list button:hover {
+  background-color: #eee !important;
+}
+
+orderable-list span.k-icon {
+  color: #444 !important;
+  font-weight: bold !important;
+}
