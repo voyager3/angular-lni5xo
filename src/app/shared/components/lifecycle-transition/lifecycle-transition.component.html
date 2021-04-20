@@ -1,0 +1,10 @@
+<div class="k-button-group">
+    <button *ngFor="let button of lifecycleBtnModel" kendoButton
+        [primary]="button.selected ? true : false"                 
+        [icon]="button.icon"
+        [disabled]="disabled || button.disabled"
+        (click)="onClick(button)"      
+        class="k-button-small-square k-button">
+        {{ button.text }}
+    </button>
+</div>

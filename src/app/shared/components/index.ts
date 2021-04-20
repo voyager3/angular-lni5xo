@@ -15,6 +15,7 @@ import { ImageUploaderComponent } from './image-uploader/image-uploader.componen
 import { ImageCropperComponent } from './image-cropper/image-cropper.component';
 import { ProductTrainComponent } from './product-train/product-train.component';
 import { LifecycleFilterComponent } from './lifecycle-filter/lifecycle-filter.component';
+import { LifecycleTransitionComponent } from './lifecycle-transition/lifecycle-transition.component';
 
 export const components = [
     FormErrorComponent,
@@ -34,6 +35,7 @@ export const components = [
     ImageUploaderComponent,
     ImageCropperComponent,
     LifecycleFilterComponent,
+    LifecycleTransitionComponent,
     ProductTrainComponent
 
 ]

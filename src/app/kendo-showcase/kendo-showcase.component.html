@@ -1477,6 +1477,48 @@
                       </div>
                   </div>
                   </div>
+                  <div class="row p-2" id="lifecycle-transition" *ngIf="selectedCustomShocaseItem === 'Lifecycle Transition'">
+                      <div class="col-2 ml-4">
+                          <lifecycle-transition
+                              [allowTransitions]="lifecycleTransitionItem1"
+                              (onTransitionChange)="onStatusChange($event, lifecycleTransitionItem1)"
+                              [enableDialog]="true"
+                              [disabled]="true">
+                          </lifecycle-transition>
+                      </div>
+                      <div class="col-2 ml-4">
+                          <lifecycle-transition
+                              [allowTransitions]="lifecycleTransitionItem2"
+                              (onTransitionChange)="onStatusChange($event, lifecycleTransitionItem1)"
+                              [enableDialog]="true"
+                              [disabled]="false">
+                          </lifecycle-transition>
+                      </div>
+                      <div class="col-2 ml-4">
+                          <lifecycle-transition
+                              [allowTransitions]="lifecycleTransitionItem3"
+                              (onTransitionChange)="onStatusChange($event, lifecycleTransitionItem1)"
+                              [enableDialog]="true"
+                              [disabled]="false">
+                          </lifecycle-transition>
+                      </div>
+                      <div class="col-2 ml-4">
+                            <lifecycle-transition
+                                [allowTransitions]="lifecycleTransitionItem4"
+                                (onTransitionChange)="onStatusChange($event, lifecycleTransitionItem1)"
+                                [enableDialog]="true"
+                                [disabled]="false">
+                            </lifecycle-transition>
+                      </div>
+                      <div class="col-2 ml-4">
+                          <lifecycle-transition
+                              [allowTransitions]="lifecycleTransitionItem5"
+                              (onTransitionChange)="onStatusChange($event, lifecycleTransitionItem1)"
+                              [enableDialog]="true"
+                              [disabled]="false">
+                           </lifecycle-transition>
+                      </div>
+                  </div>
                   <div class="row p-2" *ngIf="selectedCustomShocaseItem === 'Train Selector'">
                     <div class="col-12 p-2">
                         <train-selector class="small-train-selector" [(buttons)]="trainSelectorItems"

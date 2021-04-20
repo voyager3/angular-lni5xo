@@ -25,7 +25,12 @@ import { hsHierarchy, users } from './showcase-test-data';
 import { BasicModel } from '../core/models/basic-model';
 import { FileUploadInfo, GrouppedButtonModel } from '../shared/models';
 import { ImageResolution } from '../shared/interfaces/image-resolution';
-import { ImageDimensions, Image, LifecycleStatusEnum } from '../shared/enums';
+import { 
+        ImageDimensions, 
+        Image, 
+        LifecycleStatusEnum,
+        LifecycleTransitionEnum 
+        } from '../shared/enums';
 import { BasicAbbreviationModel } from '../core/models';
 import { ApiService } from '../core/services/abstract/api.service';
 
@@ -81,6 +86,7 @@ export class KendoShowcaseComponent implements OnInit {
     //{ text: 'Back Button' },
     { text: 'Video Player'},
     { text: 'Lifecycle Filter'},
+    { text: 'Lifecycle Transition'},
     { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
@@ -969,5 +975,19 @@ export class KendoShowcaseComponent implements OnInit {
   getLifecycleStatusText(id: number): string {
     return LifecycleStatusEnum[id];
   }
+
+  /* Lifecycle transition */
+  
+  onStatusChange(items: GrouppedButtonModel[], item: LifecycleTransitionEnum): void {
+    let selected: GrouppedButtonModel = items.find(i => i.selected);
+    console.log(selected.valueId);
+    console.log(item);
+  }
+
+  lifecycleTransitionItem1: LifecycleTransitionEnum = LifecycleTransitionEnum.DraftToActive;
+  lifecycleTransitionItem2: LifecycleTransitionEnum = LifecycleTransitionEnum.ActiveToDraft;
+  lifecycleTransitionItem3: LifecycleTransitionEnum = LifecycleTransitionEnum.ActiveToRetiredOrDraft;
+  lifecycleTransitionItem4: LifecycleTransitionEnum = LifecycleTransitionEnum.ActiveToRetired;
+  lifecycleTransitionItem5: LifecycleTransitionEnum = LifecycleTransitionEnum.RetiredToActive;
 
 }
