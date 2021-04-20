@@ -469,3 +469,100 @@ train-selector .train-element-container.selected:hover div.rectangle {
   border-bottom-color: try-darken( $bg-blue, 10% );
   background-color: try-darken( $bg-blue, 10%);
 }
+
+.btn-arrow-left {
+  position: relative;
+  padding: 0.375rem 0.75rem 0.4375rem 0.75rem;
+  white-space: normal;
+  min-width: 9.0625rem;
+  max-width: 9.0625rem;
+  font-size: 0.6875rem;
+  height: 3.125rem;
+}
+
+.btn-arrow-left.only-label {
+  pointer-events: none;
+}
+
+.btn-arrow-left:before { 
+  content:"";
+  position: absolute;
+  top: 0.375rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: inherit;
+  border: inherit;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 0rem 0.25rem 0rem 6.25rem;
+  -webkit-border-radius: 0rem 0.25rem 0rem 6.25rem;
+  -moz-border-radius: 0rem 0.25rem 0rem 6.25rem;
+}
+
+.btn-arrow-left:before {
+  transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+}
+
+.btn-arrow-left:before {
+  left: -1rem;
+}
+
+button.btn-arrow-left:hover:enabled {
+  color: $primary;
+  background-color: $white;
+  border-color: $primary;
+}
+
+button.btn-arrow-left.reversed-colors:enabled {
+  color: $primary;
+  background-color: $white;
+  border-color: $primary;
+}
+
+button[icon=reset].custom-btn, button[icon=plus].custom-btn {
+  border-radius: 50%;
+  height: 1.5625rem;
+  width: 1.5625rem;
+  padding: 0.5rem;
+}
+
+button[icon=reset].custom-btn span.k-i-reset{
+  color: $burgundy;
+}
+
+button[icon=plus].custom-btn span.k-i-plus {
+  font-size: 1.375rem;
+}
+
+button[icon=reset].custom-btn:hover {
+  background-color: $burgundy !important;
+}
+
+button[icon=reset].custom-btn:hover span.k-i-reset{
+  color: $white;
+}
+
+.custom-btn.position-absolute {
+  bottom: 0;
+  right: 0;
+}
+
+span.custom-checkmark.k-i-success {
+  color: $green;
+}
+
+span.icon-comment {
+  color: $burgundy;
+}
+
+span.custom-checkmark.k-i-cancel-outline {
+  color: $bright-red;
+}
+
+span.icon-comment, span.k-icon.k-i-cancel-outline, span.k-icon.k-i-success {
+  font-size: 1.25rem;
+}

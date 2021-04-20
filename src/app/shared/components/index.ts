@@ -21,6 +21,7 @@ import { GridSelectorComponent } from './grid-selector/grid-selector.component';
 import { CustomStepperComponent } from './custom-stepper/custom-stepper.component';
 import { ProfileDetailsStepComponent } from './profile-details-step/profile-details-step.component';
 import { ProductMetaInfoComponent } from './product-meta-info/product-meta-info.component';
+import { CompetencyValidationLabelComponent } from './competency-validation-label/competency-validation-label.component';
 
 
 export const components = [
@@ -47,5 +48,6 @@ export const components = [
     CustomStepperComponent,
     ProfileDetailsStepComponent,
     ProductMetaInfoComponent,
+    CompetencyValidationLabelComponent,
     ProductTrainComponent
 ]

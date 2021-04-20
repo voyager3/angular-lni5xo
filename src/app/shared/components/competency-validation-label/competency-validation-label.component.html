@@ -1,0 +1,10 @@
+<div class="{{containerClass}}">
+    <div class="d-inline-block">
+        <span class="competency-validation-icon {{model.iconSmall?' small ':''}} {{iconClass}}" [style.color]="model.globalColor"></span>
+    </div>
+    <div *ngIf="model.showText" 
+        class="ml-2 d-inline-block"
+        [ngClass]="{ 'competency-validation-text-small' : model.iconSmall, 'ml-3': model.numberOfCompetencies < 10 }" 
+        [style.color]="model.globalColor">{{text}}
+    </div>
+</div>

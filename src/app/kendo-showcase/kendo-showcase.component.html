@@ -1564,12 +1564,35 @@
                                       </ng-template>
                                   </kendo-dropdownlist>
                               </div>
-                          </div>
-                            
+                          </div>                            
                           <ng-template #programTemplate>
                               <v3-product-meta-info [product]="focusedElement"></v3-product-meta-info>
                           </ng-template>
                    </div>
+                  </div>
+                  <div class="row p-2" id="lifecycle-transition" *ngIf="selectedCustomShocaseItem === 'Custom buttons and labels'">
+                      <div class="col-12 d-flex justify-content-around mb-5">
+                          <button class="btn btn-primary btn-arrow-left" (onClick)="onClick('Clicked')">Review Criteria for Validation</button>
+                          <button class="btn btn-primary btn-arrow-left"(onClick)="onClick('Clicked')">Review Performance Criteria</button>
+                          <button class="btn btn-primary btn-arrow-left" [disabled]="true">Disabled</button>
+                      </div>
+                      <br><br>
+                           
+                      <div class="col d-flex justify-content-around mb-5">
+                          <v3-competency-validation-label *ngFor="let model of validationModels" [model]="model"></v3-competency-validation-label>
+                      </div>
+
+                      <div class="col-8 d-flex justify-content-around mb-5">
+                          <button class="custom-btn" kendoButton look="flat" icon="reset" (click)="onClick('Reset')"></button>
+                          <button class="custom-btn" kendoButton look="flat" icon="plus" (click)="onClick('Plus clicked')"></button>
+                          <span class="k-icon custom-checkmark" [ngClass]="someBooleanVariable ? 'k-i-success' : 'k-i-cancel-outline'"></span>
+                          <span class="k-icon custom-checkmark" [ngClass]="anotherBooleanVariable ? 'k-i-success' : 'k-i-cancel-outline'"></span>
+                          <span class="icon-comment"></span>
+                          <div class="text-primary">
+                              <span class="k-icon k-i-success"></span><span class="ml-2">Reviewed</span>
+                          </div>
+                      </div>
+        
                   </div>
                   <div class="row p-2" id="grid-side-menu" *ngIf="selectedCustomShocaseItem === 'Grid Popup Actions'">
                       <div class="col-12">

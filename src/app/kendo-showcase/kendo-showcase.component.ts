@@ -92,6 +92,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Grid Popup Actions'},
     { text: 'Custom Stepper'},
     { text: 'Dropdown With Meta Info'},
+    { text: 'Custom buttons and labels'},
     { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
