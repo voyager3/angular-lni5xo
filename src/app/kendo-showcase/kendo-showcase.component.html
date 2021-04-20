@@ -717,7 +717,8 @@
                                         <kendo-dialog title="Edit user" *ngIf="dialogOpened" (close)="close('dialog')" [minWidth]="250"
                                             [width]="450">
                                             <div *ngIf="dialogLoader" appLoader></div>
-                                            <form #dialogForm="ngForm">
+                                            
+                                            <!-- <form #dialogForm="ngForm">
                                                 <div class="form-group">
                                                     <label [for]="username">Username*</label>
                                                     <input type="text" #username #usernameModel="ngModel" class="k-textbox form-control" name="form-textbox"
@@ -735,7 +736,7 @@
                                                     </form-error>
                                                 </div>
                                                 <div *ngIf="dialogLoader" appLoader [opaque]="true"></div>
-                                            </form>
+                                            </form> -->
                                             <kendo-dialog-actions layout="normal">
                                                 <button kendoButton (click)="action('cancel')" look="outline">Cancel</button>
                                                 <button kendoButton [primary]="true" (click)="action('save')" [disabled]="!dialogForm.valid">Save</button>
