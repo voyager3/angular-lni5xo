@@ -470,6 +470,12 @@ train-selector .train-element-container.selected:hover div.rectangle {
   background-color: try-darken( $bg-blue, 10%);
 }
 
+train-selector .disabled.arrow-margin {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.65;
+}
+
 .btn-arrow-left {
   position: relative;
   padding: 0.375rem 0.75rem 0.4375rem 0.75rem;
