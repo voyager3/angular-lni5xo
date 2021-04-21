@@ -552,22 +552,10 @@ export class KendoShowcaseComponent implements OnInit {
     disabled: true
   }, {
     id: 0,
-    abbreviation: 'PA',
-    name: 'Post Assessment',
-    selected: false,
-    disabled: false
-  }, {
-    id: 0,
     abbreviation: 'SC',
     name: 'Supportive Components',
     selected: false,
     disabled: false
-  }, {
-    id: 0,
-    abbreviation: 'CE',
-    name: 'Continuing Education',
-    selected: true,
-    disabled: true
   }, {
     id: 0,
     abbreviation: 'O',
@@ -575,6 +563,7 @@ export class KendoShowcaseComponent implements OnInit {
     selected: false,
     disabled: false
   }];
+  
 
   onTrainSelectorChange(buttons: TrainSelectorModel[]){
     console.log(buttons);
