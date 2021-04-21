@@ -1561,6 +1561,18 @@
                           </image-uploader>
                       </div>
                   </div>
+                  <div class="row p-2" id="likert-scale-question" *ngIf="selectedCustomShocaseItem === 'Likert Scale Question'">
+                      <div class="page-content top bottom">
+                          <div *ngFor="let model of models;let i=index;" class="mb-4">
+                              <v3-likert-scale-item 
+                                  [model]="model"
+                                  [headerTitle]="i === 0 ? 'I am header title' : ''"
+                                  [items]="displayDefinitions"
+                                  (onOptionCheck)="onCheck($event)">
+                              </v3-likert-scale-item>
+                          </div>
+                      </div>         
+                  </div>                        
                   <div class="row p-2" id="image-cropper" *ngIf="selectedCustomShocaseItem === 'Image Cropper'">
                       <div class="col-6">
                           <v3-image-cropper (emitImage)="onEmitedCroppedImage($event)"></v3-image-cropper>

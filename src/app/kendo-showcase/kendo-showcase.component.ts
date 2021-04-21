@@ -94,6 +94,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Dropdown With Meta Info'},
     { text: 'Custom buttons and labels'},    
     { text: 'Tree Multiselect'},
+    { text: 'Likert Scale Question'},
     { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
@@ -1113,4 +1114,33 @@ export class KendoShowcaseComponent implements OnInit {
     },
   ];
 
+  /* Likert scale question*/
+
+  models: any[] = [
+    {
+      id: 1,
+      name: 'I am model 1',
+      showHeader: true,
+      selectedOptionId: null
+    },
+    {
+      id: 2,
+      name: 'I am model 2',
+      showHeader: false,
+      selectedOptionId: null
+    }
+  ]
+
+  displayDefinitions: BasicModel[] = [
+    {id: 1, name: 'Unable to perform'},
+    {id: 2, name: 'Performs with cues'},
+    {id: 3, name: 'Performs independently in that moment in time'},
+    {id: 4, name: 'Performs independently with understanding of the whole situation on a consistent basis'},
+    {id: 5, name: 'Perform intuitively and zeroes in on accurate region of the problem on a consistent basis'}
+  ]
+
+
+  onCheck = (model: any):void => {
+   console.log(model);
+  }
 }

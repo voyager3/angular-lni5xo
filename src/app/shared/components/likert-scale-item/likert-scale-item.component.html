@@ -1,0 +1,30 @@
+<div>
+    <div *ngIf="model.showHeader" 
+        class="ls-item-header row m-0 border-top border-left border-secondary">
+        <div class="col-md-5 pr-0 my-auto">{{headerTitle}}</div>
+        <div class="col p-0 row m-0" >
+            <div *ngFor="let item of items; first as isFirst" 
+                class="d-flex flex-column border-right border-secondary col p-3 text-center"
+                [ngClass]="{ 'border-left': isFirst }">
+                <div class="my-auto ls-item">{{item.name}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="border-left border-bottom border-secondary border-top row m-0">
+        <div class="col-md-5 pr-0 my-auto">{{model.name}}</div>
+        <div class="col p-0 row m-0">
+            <div *ngFor="let item of items; first as isFirst" class="border-right border-secondary col p-3 text-center"
+            [ngClass]="{ 'border-left': isFirst }">
+                <input kendoRadioButton 
+                    class="k-radio" 
+                    id="required" 
+                    [name]="'likert-scale-item' + model.id" 
+                    [value]="item.id" 
+                    type="radio" 
+                    [(ngModel)]="model.selectedOptionId"
+                    (ngModelChange)="onChange()"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+        </div>
+    </div>
+</div>
