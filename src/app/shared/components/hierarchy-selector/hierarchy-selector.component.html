@@ -2,6 +2,7 @@
     <div class="form-group" [ngClass]="showAsRow ? 'col-4' : 'col-12'">
         <label>Health Systems</label>
         <kendo-multiselect KMultiselectExtender
+            kmultiselectArrowExtender
             #healthSystemsModel="ngModel"  
             class="form-control"
             name="hs-multiselect"
@@ -29,6 +30,7 @@
     <div *ngIf="!showChildOnSelect || (showChildOnSelect && facilities.length > 0)" class="form-group" [ngClass]="showAsRow ? 'col-4' : 'col-12'">
         <label>Facilities</label>
         <kendo-multiselect KMultiselectExtender
+            kmultiselectArrowExtender
             #facilitiesModel="ngModel"  
             class="form-control"
             name="f-multiselect"
@@ -54,6 +56,7 @@
     <div *ngIf="!showChildOnSelect || (showChildOnSelect && departments.length > 0)" class="form-group" [ngClass]="showAsRow ? 'col-4' : 'col-12'">
         <label>Departments</label>
         <kendo-multiselect KMultiselectExtender
+        
             #departmentsModel="ngModel"  
             class="form-control"
             name="d-multiselect"
