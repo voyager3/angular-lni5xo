@@ -1697,6 +1697,15 @@
                           </custom-stepper>
                       </div>
                   </div>
+                  <div class="row p-2" id="competency-validations" *ngIf="selectedCustomShocaseItem === 'Competency Validations'">
+                      <div class="col-12">
+                          <div>
+                              <v3-competency-criterias-view [categories]="categories">
+
+                              </v3-competency-criterias-view>
+                          </div>
+                      </div>
+                  </div>
                   <div class="row p-2" id="dropdown-meta-info" *ngIf="selectedCustomShocaseItem === 'Dropdown With Meta Info'">
                       <div class="col-12">
                           <div class="col-md-6 offset-md-3 mb-5">

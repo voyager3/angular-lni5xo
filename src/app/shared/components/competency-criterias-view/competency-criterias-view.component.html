@@ -1,0 +1,46 @@
+<div *ngFor="let category of categories; let i=index">
+    <div class="pt-4 pb-4 ls-item-header row m-0 border-top border-left border-right border-secondary">
+        <div class="col-md-8 pr-0 my-auto font-weight-bold">{{i + 1}}. {{category.name}}</div>
+        <div *ngIf="isValidationAttempt"  class="pull-right col-md-3">
+            <button kendoButton look="flat" (click)="showLegend()">LEGEND</button>            
+            <span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.Novice] }}"></span>
+            <span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.AdvancedBeginner] }}"></span>
+            <span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.Competent] }}"></span>
+            <span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.Proficient] }}"></span>
+            <span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.Expert] }}"></span>
+        </div>
+        <div *ngIf="isValidationAttempt"  class="pull-right col-md-1 text-wrap text-center font-weight-bold">
+            Performance Level
+        </div>
+    </div>
+    <div *ngFor="let criteria of category.criteriaCategories; let sequence=index"
+        class="border-right border-left border-bottom border-secondary row m-0 custom-row">
+        <div class="col-md-11 my-auto pt-3 pb-3 pr-2">
+            <strong>{{ buildCriteriaPrefix(i + 1, sequence + 1) }}</strong>
+            {{ criteria.competencyQuestionBankName }}
+        </div>
+        <div class="d-flex justify-content-center col-md-1" *ngIf="isValidationAttempt">
+            <span kendoTooltip title="{{criteria.nameADO}}" *ngIf="criteria.nameADO" class="circle">ADO</span>
+
+            <span *ngIf="!criteria.responseValue" class="k-icon k-i-minus-sm  mt-4" >
+            </span>
+            
+            <span *ngIf="criteria.responseValue" 
+                class="mt-2 criteria-validation-icon k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[criteria.responseValue] }}">
+            </span>
+        </div>
+    </div>
+</div>
+
+<kendo-dialog *ngIf="isVisibleLegend" 
+    title="Performance Level Legend" 
+    (close)="cancel()"
+    [minWidth]="400" 
+    [width]="700">
+    <div><span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.Novice] }}"></span><span>Unable to perform</span></div>
+    <div><span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.AdvancedBeginner] }}"></span><span>Performs with cues</span></div>
+    <div><span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.Competent] }}"></span><span>Performs independently at that moment in time</span></div>
+    <div><span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.Proficient] }}"></span><span>Performs independently with an understanding of the whole situation on a consistent basis</span></div>
+    <div><span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.Expert] }}"></span><span>Performs intuitively and zeroes in on accurate region of the problem on a consistent basis</span></div>
+    <div><span class="circle"><span class="ng-star-inserted">ADO</span></span><span>Performance criteria assessed using an Alternative to Direct Observation</span></div>
+</kendo-dialog>

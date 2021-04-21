@@ -23,7 +23,7 @@ import { of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { hsHierarchy, users } from './showcase-test-data';
 import { BasicModel } from '../core/models/basic-model';
-import { FileUploadInfo, GrouppedButtonModel } from '../shared/models';
+import { CriteriaCategoryViewModel, CriteriaViewModel, FileUploadInfo, GrouppedButtonModel } from '../shared/models';
 import { ImageResolution } from '../shared/interfaces/image-resolution';
 import { 
         ImageDimensions, 
@@ -95,6 +95,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Custom buttons and labels'},    
     { text: 'Tree Multiselect'},
     { text: 'Likert Scale Question'},
+    { text: 'Competency Validations'},
     { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
@@ -1143,4 +1144,9 @@ export class KendoShowcaseComponent implements OnInit {
   onCheck = (model: any):void => {
    console.log(model);
   }
+
+  categories: CriteriaCategoryViewModel[] = [
+    new CriteriaCategoryViewModel(1, "Test", [new CriteriaViewModel("Q1"), new CriteriaViewModel("Q2")]),
+    new CriteriaCategoryViewModel(1, "Test1", [new CriteriaViewModel("Q1"), new CriteriaViewModel("Q2")])
+  ]
 }

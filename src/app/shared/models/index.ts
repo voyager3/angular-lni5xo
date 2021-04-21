@@ -11,3 +11,4 @@ export * from './image-data';
 export * from './grid-menu-action.model';
 export * from './learning-plan-product.model';
 export * from './competency-validation-label.model';
+export * from './criteria-category-view.model';
