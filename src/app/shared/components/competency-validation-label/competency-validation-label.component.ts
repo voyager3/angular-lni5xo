@@ -11,6 +11,7 @@ export class CompetencyValidationLabelComponent implements OnChanges {
   @Input() model: CompetencyValidationLabelModel = new CompetencyValidationLabelModel();
   @Input() containerClass: string = 'd-inline-block pl-3 pr-3 pt-3 pb-2';
 
+  
   iconClass: string;
   text: string;
 

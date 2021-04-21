@@ -621,3 +621,57 @@ v3-competency-details-view .square-large{
   background-color: rgba(0,0,0,.05);
 }
 
+/* Competency validation */
+
+.competency-validation-icon:not(.small) {
+  font-size: 1.7rem;
+  position: relative;
+  top: 0.5rem;
+}
+
+td .competency-validation-icon:not(.small) {
+  top: 0.1875rem;
+}
+
+.competency-validation-icon.small {
+  font-size: 1.3rem !important;
+  position: relative;
+  top: 0.3125rem;
+}
+
+.competency-validation-icon.k-i-shape-circle:not(.small) {
+  color: $brand-grey;
+  font-size: 4.4rem !important;
+  top: -0.3125rem;
+}
+
+td .competency-validation-icon.k-i-shape-circle:not(.small) {
+  top: 0;
+}
+
+.competency-validation-icon.small.k-i-shape-circle {
+  font-size: 1.7rem !important;
+  top: 0;
+}
+
+.competency-validation-icon.fa.fa-circle-o {
+  color: $brand-grey;
+}
+
+.competency-validation-icon.icon-disabled {
+  color: $brand-grey;
+}
+
+
+.competency-validation-icon.icon-validated {
+  color: $green;
+}
+
+.competency-validation-icon.icon-ready {
+  color: $yellow;
+}
+
+.competency-validation-text-small{
+  font-size: 0.8rem;
+}
+
