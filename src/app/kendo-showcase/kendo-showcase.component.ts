@@ -759,22 +759,22 @@ export class KendoShowcaseComponent implements OnInit {
     {id:5, name: 'EXPERT'}
   ];  
 
-    /* BUTTON GROUP */
+  /* BUTTON GROUP */
 
-  // buttonsSingle: GrouppedButtonModel[] = [
-  //   new GrouppedButtonModel(true, 1, 'align-left'),
-  //   new GrouppedButtonModel(false, 2, 'align-center'),
-  //   new GrouppedButtonModel(false, 3, 'align-right'),
-  //   new GrouppedButtonModel(false, 4, 'align-justify'),
-  // ];
+  buttonsSingle: GrouppedButtonModel[] = [
+    new GrouppedButtonModel(true, 1, 'align-left'),
+    new GrouppedButtonModel(false, 2, 'align-center'),
+    new GrouppedButtonModel(false, 3, 'align-right'),
+    new GrouppedButtonModel(false, 4, 'align-justify'),
+  ];
 
-  // buttonsMultiple: GrouppedButtonModel[] = [
-  //   new GrouppedButtonModel(false, 1, 'bold'),
-  //   new GrouppedButtonModel(false, 2, 'italic'),
-  //   new GrouppedButtonModel(false, 3, 'underline')
-  // ];
+  buttonsMultiple: GrouppedButtonModel[] = [
+    new GrouppedButtonModel(false, 1, 'bold'),
+    new GrouppedButtonModel(false, 2, 'italic'),
+    new GrouppedButtonModel(false, 3, 'underline')
+  ];
 
-    /* AUTO COMPLETE */
+   /* AUTO COMPLETE */
   selectedItemId: number;
   options: BasicModel[] = [
     { id: 1, name: 'Administers all medications as ordered and evaluates patient’s response (desired and unexpected effects)' },
