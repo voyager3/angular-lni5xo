@@ -23,9 +23,9 @@ import { of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { hsHierarchy, users } from './showcase-test-data';
 import { BasicModel } from '../core/models/basic-model';
-import { CompetencyDetailsModel, CriteriaCategoryViewModel, CriteriaViewModel, FileUploadInfo, GrouppedButtonModel } from '../shared/models';
+import { CompetencyDetailsModel, CompetencyValidationLabelModel, CriteriaCategoryViewModel, CriteriaViewModel, FileUploadInfo, GrouppedButtonModel } from '../shared/models';
 import { ImageResolution } from '../shared/interfaces/image-resolution';
-import { ImageDimensions, Image, LifecycleStatusEnum, LifecycleTransitionEnum } from '../shared/enums';
+import { ImageDimensions, Image, LifecycleStatusEnum, LifecycleTransitionEnum, CompetencyValidationStatus } from '../shared/enums';
 import { BasicAbbreviationModel } from '../core/models';
 import { ApiService } from '../core/services/abstract/api.service';
 import { UserProfileStepModel } from '../shared/components/profile-details-step/profile-details-step.component';
@@ -582,6 +582,23 @@ export class KendoShowcaseComponent implements OnInit {
 
   onTrainSelectorChange(buttons: TrainSelectorModel[]){
     console.log(buttons);
+  }
+
+    /* COMPETENCY VALIDATION LABEL */
+
+  validationModels: CompetencyValidationLabelModel[] = [
+    new CompetencyValidationLabelModel(CompetencyValidationStatus.NotReady, 4),
+    new CompetencyValidationLabelModel(CompetencyValidationStatus.Ready),
+    new CompetencyValidationLabelModel(CompetencyValidationStatus.Completed, 8),
+    new CompetencyValidationLabelModel(CompetencyValidationStatus.Ready, 10, true, false,'red'),
+    new CompetencyValidationLabelModel(CompetencyValidationStatus.Completed, 0, false)
+  ];
+
+  someBooleanVariable: boolean = true;
+  anotherBooleanVariable: boolean = false;
+
+  onClick(data: string): void {
+    console.log(data)
   }
   
   constructor(
