@@ -27,7 +27,6 @@ import { CompetencyDetailsModel, CompetencyValidationLabelModel, CriteriaCategor
 import { ImageResolution } from '../shared/interfaces/image-resolution';
 import { ImageDimensions, Image, LifecycleStatusEnum, LifecycleTransitionEnum, CompetencyValidationStatus } from '../shared/enums';
 import { BasicAbbreviationModel } from '../core/models';
-import { ApiService } from '../core/services/abstract/api.service';
 import { UserProfileStepModel } from '../shared/components/profile-details-step/profile-details-step.component';
 import { CustomStepperStep } from '../shared/interfaces/custom-stepper-step';
 
@@ -603,7 +602,6 @@ export class KendoShowcaseComponent implements OnInit {
   
   constructor(
       private dialogService: KendoAngularDialog.DialogService,
-      private api: ApiService,
       private http: HttpClient,
       public gridService: GridService,
       private kendoDialogService: DialogService//,
@@ -968,9 +966,9 @@ export class KendoShowcaseComponent implements OnInit {
   videoUrl: string;
 
   loadVideo() {
-    this.api.get('/s3-file/url/1568').subscribe(data => {
-      this.videoUrl = data.url;
-    })
+    // this.api.get('/s3-file/url/1568').subscribe(data => {
+    //   this.videoUrl = data.url;
+    // })
   }
 
   /* Lifecycle data */
