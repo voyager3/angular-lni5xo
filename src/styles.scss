@@ -582,3 +582,23 @@ orderable-list span.k-icon {
   font-weight: bold !important;
 }
 
+.square-large{
+  font-size: 1.1rem !important;
+  font-weight: normal !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  padding: 0.625rem;
+  margin: 0.625rem;
+  text-decoration: none;
+  white-space: nowrap;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+}
+
+v3-competency-details-view .square-large{
+  color: $white;
+}
