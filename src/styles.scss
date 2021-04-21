@@ -762,3 +762,13 @@ image-uploader kendo-fileselect {
   border: none !important;
 }
 
+/* Custom Tooltip */ 
+
+
+.custom-tooltip kendo-tooltip.k-tooltip {
+  background-color: $bg-grey;
+  color: unset !important;
+}
+
+
+
