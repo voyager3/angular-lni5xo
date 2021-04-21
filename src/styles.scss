@@ -711,3 +711,54 @@ td .competency-validation-icon.k-i-shape-circle:not(.small) {
   background-color: $bg-blue;
 }
 
+/* Image Uploader  css*/
+
+assessment-layout-choices .drag-btn {
+  position: relative;
+  left: 0.9375rem;
+  padding: 0.375rem 0rem 0rem 0rem;
+}
+
+.assessment-layout-container {
+  min-height: 31.25rem;
+}
+
+image-uploader div.file-selector {
+  height: 1.875rem;
+  padding-top: 0.1875rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: $light-grey;
+}
+
+.img-uploader-container {
+  min-width: 5rem;
+}
+
+.img-uploader-container.hero-image {
+  min-width: 10rem;
+}
+
+.img-uploader {
+  height: 5rem;
+}
+
+.img-uploader-container.hero-image .img-uploader,
+img.hero-image {
+  height: 10rem;
+}
+
+kendo-grid.disable-vignette td.vc-checkbox {
+  pointer-events: none !important;
+  cursor: default;
+  opacity: 0.65;
+}
+
+image-uploader ul[kendo-upload-file-list], image-uploader kendo-fileselect div[kendofileselectinternaldropzone]{
+  display: none !important;
+}
+
+image-uploader kendo-fileselect {
+  border: none !important;
+}
+

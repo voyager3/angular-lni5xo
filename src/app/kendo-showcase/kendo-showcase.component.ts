@@ -25,12 +25,7 @@ import { hsHierarchy, users } from './showcase-test-data';
 import { BasicModel } from '../core/models/basic-model';
 import { CompetencyDetailsModel, CriteriaCategoryViewModel, CriteriaViewModel, FileUploadInfo, GrouppedButtonModel } from '../shared/models';
 import { ImageResolution } from '../shared/interfaces/image-resolution';
-import { 
-        ImageDimensions, 
-        Image, 
-        LifecycleStatusEnum,
-        LifecycleTransitionEnum 
-        } from '../shared/enums';
+import { ImageDimensions, Image, LifecycleStatusEnum, LifecycleTransitionEnum } from '../shared/enums';
 import { BasicAbbreviationModel } from '../core/models';
 import { ApiService } from '../core/services/abstract/api.service';
 import { UserProfileStepModel } from '../shared/components/profile-details-step/profile-details-step.component';
@@ -563,7 +558,7 @@ export class KendoShowcaseComponent implements OnInit {
     selected: false,
     disabled: false
   }];
-  
+
 
   onTrainSelectorChange(buttons: TrainSelectorModel[]){
     console.log(buttons);
