@@ -1137,6 +1137,12 @@ export class KendoShowcaseComponent implements OnInit {
     },
   ];
 
+  selectedTreeItems: any[] = [];
+
+  selectedValuesChange(selectedItems: any[]) {
+    this.selectedTreeItems = selectedItems;
+  }
+
   /* Likert scale question*/
 
   models: any[] = [
