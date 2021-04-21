@@ -26,6 +26,7 @@ import { FormsModule } from '@angular/forms';
 import { UploadsModule } from '@progress/kendo-angular-upload';
 import { ProgressBarModule } from '@progress/kendo-angular-progressbar';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { EditorModule } from '@progress/kendo-angular-editor';
 
 export const kendoUIModules = [
   ButtonsModule,
@@ -42,6 +43,7 @@ export const kendoUIModules = [
   UploadsModule,
   TreeViewModule,
   PopupModule,
+  EditorModule,
   ProgressBarModule
 ]
 
