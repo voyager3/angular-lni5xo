@@ -501,12 +501,12 @@ export class KendoShowcaseComponent implements OnInit {
   /* EXTENDED MULTISELECT*/
 
   msListItems: any = [
-    {id:1, name: 'HealthSystem 1'}, 
-    {id:2, name: 'HealthSystem 2'}, 
-    {id:3, name: 'HealthSystem 3'},
-    {id:4, name: 'HealthSystem 4'}, 
-    {id:5, name: 'HealthSystem 5'}, 
-    {id:6, name: 'HealthSystem 6'}
+    {id:1, name: 'HealthcareOrganization 1'}, 
+    {id:2, name: 'HealthcareOrganization 2'}, 
+    {id:3, name: 'HealthcareOrganization 3'},
+    {id:4, name: 'HealthcareOrganization 4'}, 
+    {id:5, name: 'HealthcareOrganization 5'}, 
+    {id:6, name: 'HealthcareOrganization 6'}
   ];
   selectedItems:number[] = [6];
   selectedHS: number[] = [];
