@@ -25,7 +25,7 @@ import { CompetencyValidationLabelComponent } from './competency-validation-labe
 import { TreeMultiselectComponent } from './tree-multiselect/tree-multiselect.component';
 import { LikertScaleItemComponent } from './likert-scale-item/likert-scale-item.component';
 import { CompetencyCriteriasViewComponent } from './competency-criterias-view/competency-criterias-view.component';
-
+import { CompetencyDetailsViewComponent } from './competency-details-view/competency-details-view.component';
 
 
 export const components = [
@@ -56,5 +56,6 @@ export const components = [
     TreeMultiselectComponent,
     LikertScaleItemComponent,
     CompetencyCriteriasViewComponent,
+    CompetencyDetailsViewComponent,
     ProductTrainComponent
 ]

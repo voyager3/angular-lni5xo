@@ -23,7 +23,7 @@ import { of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { hsHierarchy, users } from './showcase-test-data';
 import { BasicModel } from '../core/models/basic-model';
-import { CriteriaCategoryViewModel, CriteriaViewModel, FileUploadInfo, GrouppedButtonModel } from '../shared/models';
+import { CompetencyDetailsModel, CriteriaCategoryViewModel, CriteriaViewModel, FileUploadInfo, GrouppedButtonModel } from '../shared/models';
 import { ImageResolution } from '../shared/interfaces/image-resolution';
 import { 
         ImageDimensions, 
@@ -96,6 +96,7 @@ export class KendoShowcaseComponent implements OnInit {
     { text: 'Tree Multiselect'},
     { text: 'Likert Scale Question'},
     { text: 'Competency Validations'},
+    { text: 'Competency Details'},
     { text: 'Self Assessment Levels'}
   ];
   selectedCustomShocaseItem = 'Dialog Service';
@@ -1144,6 +1145,21 @@ export class KendoShowcaseComponent implements OnInit {
   onCheck = (model: any):void => {
    console.log(model);
   }
+
+  /* Competency Details */
+  
+  competencyDetails: CompetencyDetailsModel = new CompetencyDetailsModel(
+    "Self Assessment", 
+    "Coordinating Patient Care: Diagnostic Tests", 
+    "The Nurse will coordinate the care of the patient undergoing diagnostic tests to provide safe patient care.", 
+    "#5B87DA", 
+    "F", 
+    "Foundational",
+    "8.0",
+    "1.1"
+  );
+
+  /* Competency Validations */
 
   categories: CriteriaCategoryViewModel[] = [
     new CriteriaCategoryViewModel(1, "Test", [new CriteriaViewModel("Q1"), new CriteriaViewModel("Q2")]),

@@ -1,0 +1,19 @@
+<div>
+    <H5>{{competencyDetails?.title}}</H5>
+    <div class="d-flex justify-content-start">
+        <div class="square-large ml-0" [ngStyle]="setAbbreviationStyle()">
+            {{competencyDetails.abbreviation}}
+        </div>
+        <div>
+            <div class="category-label">
+                {{competencyDetails.categoryName}} {{competencyDetails.competencyNumber}}   (version {{competencyDetails.competencyVersion}})
+            </div>
+            <h4 class="font-weight-normal">
+                {{competencyDetails.competencyName}}
+            </h4>
+            <div>
+                {{competencyDetails.outcomeStatement}}
+            </div>
+        </div>
+    </div>
+</div>

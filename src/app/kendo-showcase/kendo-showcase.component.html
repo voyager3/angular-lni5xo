@@ -1796,6 +1796,15 @@
                           </kendo-grid>
                       </div>
                   </div>
+                  <div class="row p-2" id="competency-details" *ngIf="selectedCustomShocaseItem === 'Competency Details'">   
+                      <div class="col-12">
+                          <div class="white-container page-content top bottom">      
+                              <v3-competency-details-view [competencyDetails]="competencyDetails">
+                                    
+                              </v3-competency-details-view>         
+                          </div>
+                      </div>
+                  </div>
                   <div class="row p-2" id="tree-multiselect" *ngIf="selectedCustomShocaseItem === 'Tree Multiselect'">
                       <div class="col-3">
                         <v3-tree-multiselect
