@@ -602,3 +602,22 @@ orderable-list span.k-icon {
 v3-competency-details-view .square-large{
   color: $white;
 }
+
+/* Likert scale item */
+
+.ls-item-header {
+  background-color:#C4C4C4;
+}
+
+.ls-item-header.border-bold {
+  border-bottom: 0.1875rem solid black !important;
+}
+
+.ls-item {
+  font-size: 0.6875rem;
+}
+
+.custom-row:nth-child(odd):not(.ado-selected) {
+  background-color: rgba(0,0,0,.05);
+}
+
