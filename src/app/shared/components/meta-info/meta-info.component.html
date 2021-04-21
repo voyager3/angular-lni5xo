@@ -1,28 +1,8 @@
-<div class="meta-info-container row form-group">    
-      <div class="row">
-        <span class="ml-4">Created Date: {{auditInfo.createdDate && (auditInfo.createdDate | date:'MM/dd/yyyy') || '---'}}</span>
-        <span class="ml-4">Created By: {{auditInfo.createdByName || '---'}}</span>
-        <span class="ml-4">Last Modified Date: {{auditInfo.modifiedDate && (auditInfo.modifiedDate | date:'MM/dd/yyyy') || '---'}}</span>
-        <span class="ml-4">Last Modified By: {{ auditInfo.modifiedByName || '---'}}</span>
-      </div>
-        <!-- <div class="row">
-            <span class="col-3">Created Date: </span>
-            <span class="col-6">{{auditInfo.createdDate && (auditInfo.createdDate | date:'MM/dd/yyyy') || '---'}}</span>
-        </div>
-        <div class="row">
-            <span class="col-3">Created By: </span>
-            <span class="col-6"> {{auditInfo.createdByName || '---'}}</span>
-        </div> -->
-    <!-- <div class="{{gridColumns}}">
-        <div class="row">
-            <span class="col-4">Last Modified Date: </span>
-            <span class="col-6">{{auditInfo.modifiedDate && (auditInfo.modifiedDate | date:'MM/dd/yyyy') || '---'}}</span>
-        </div>
-        <div class="row">
-            <span class="col-4">Last Modified By: </span>
-            <span class="col-6">{{ auditInfo.modifiedByName || '---'}}</span>
-        </div>
-    </div> -->
+<div class="meta-info-container d-md-flex">    
+    <div class="pr-4">Created Date: {{auditInfo.createdDate && (auditInfo.createdDate | date:'MM/dd/yyyy') || '---'}}</div>
+    <div class="pr-4">Created By: {{auditInfo.createdByName || '---'}}</div>
+    <div class="pr-4">Last Modified Date: {{auditInfo.modifiedDate && (auditInfo.modifiedDate | date:'MM/dd/yyyy') || '---'}}</div>
+    <div>Last Modified By: {{ auditInfo.modifiedByName || '---'}}</div>
 
     <ng-content></ng-content>
     

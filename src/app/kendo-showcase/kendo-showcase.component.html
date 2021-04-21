@@ -1404,7 +1404,31 @@
                       </div>
                   </div>
                   <div class="row p-2 bg-primary" id="Meta info" *ngIf="selectedCustomShocaseItem === 'Meta info'">
-                      <div class="col-12">
+                    <div class="col-12">
+                                <p class="text-white">Default Meta Info</p>
+                                <div>
+                                    <meta-info [url]="url1"></meta-info>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <p class="text-white">Meta Info With Custom Fields</p>
+                                <div>
+                                    <meta-info [url]="url2" gridColumns="col-4">
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <span class="col-6">Activation Date: </span>
+                                                <span class="col-6" *ngIf="activationDate">{{ activationDate |  date: "MM/dd/yyyy" }}</span>
+                                                <span *ngIf="!activationDate" class="col-6">---</span>
+                                            </div>
+                                            <div class="row">
+                                                <span class="col-6">Some Other Field:</span>
+                                                <span class="col-6">{{ someOtherField || '---'}}</span>
+                                            </div>
+                                        </div>
+                                    </meta-info>
+                                </div>
+                            </div>
+                      <!-- <div class="col-12">
                           <p class="text-white">Default Meta Info</p>
                           <div>
                               <meta-info [url]="url1"></meta-info>
@@ -1426,7 +1450,7 @@
                                   </div>
                               </meta-info>
                           </div>
-                      </div>
+                      </div> -->
                   </div>
                   <div class="row p-2" id="Button Group" *ngIf="selectedCustomShocaseItem === 'Button Group'">
                       <div class="col-6">

@@ -56,7 +56,7 @@
     <div *ngIf="!showChildOnSelect || (showChildOnSelect && departments.length > 0)" class="form-group" [ngClass]="showAsRow ? 'col-4' : 'col-12'">
         <label>Departments</label>
         <kendo-multiselect KMultiselectExtender
-        
+            kmultiselectArrowExtender
             #departmentsModel="ngModel"  
             class="form-control"
             name="d-multiselect"
