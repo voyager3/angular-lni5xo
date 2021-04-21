@@ -1,7 +1,7 @@
 <div *ngFor="let category of categories; let i=index">
     <div class="pt-4 pb-4 ls-item-header row m-0 border-top border-left border-right border-secondary">
         <div class="col-md-8 pr-0 my-auto font-weight-bold">{{i + 1}}. {{category.name}}</div>
-        <div *ngIf="isValidationAttempt"  class="pull-right col-md-3">
+        <div *ngIf="isValidationAttempt"  class="float-right col-md-3">
             <button kendoButton look="flat" (click)="showLegend()">LEGEND</button>            
             <span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.Novice] }}"></span>
             <span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.AdvancedBeginner] }}"></span>
@@ -9,7 +9,7 @@
             <span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.Proficient] }}"></span>
             <span class="criteria-validation-icon ml-1 k-icon k-i-kpi-status-open {{ CompetencyValidationLevelClass[CompetencyValidationLevel.Expert] }}"></span>
         </div>
-        <div *ngIf="isValidationAttempt"  class="pull-right col-md-1 text-wrap text-center font-weight-bold">
+        <div *ngIf="isValidationAttempt"  class="floa-right col-md-1 text-wrap text-center font-weight-bold">
             Performance Level
         </div>
     </div>

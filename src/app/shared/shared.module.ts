@@ -27,6 +27,7 @@ import { UploadsModule } from '@progress/kendo-angular-upload';
 import { ProgressBarModule } from '@progress/kendo-angular-progressbar';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { EditorModule } from '@progress/kendo-angular-editor';
+import { MenusModule } from '@progress/kendo-angular-menu';
 
 export const kendoUIModules = [
   ButtonsModule,
@@ -44,7 +45,8 @@ export const kendoUIModules = [
   TreeViewModule,
   PopupModule,
   EditorModule,
-  ProgressBarModule
+  ProgressBarModule,
+  MenusModule
 ]
 
 @NgModule({

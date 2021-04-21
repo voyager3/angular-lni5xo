@@ -23,7 +23,7 @@ import { of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { hsHierarchy, users } from './showcase-test-data';
 import { BasicModel } from '../core/models/basic-model';
-import { CompetencyDetailsModel, CompetencyValidationLabelModel, CriteriaCategoryViewModel, CriteriaViewModel, FileUploadInfo, GrouppedButtonModel } from '../shared/models';
+import { CompetencyDetailsModel, CompetencyValidationLabelModel, CriteriaCategoryViewModel, CriteriaViewModel, FileUploadInfo, GridMenuActionModel, GrouppedButtonModel } from '../shared/models';
 import { ImageResolution } from '../shared/interfaces/image-resolution';
 import { ImageDimensions, Image, LifecycleStatusEnum, LifecycleTransitionEnum, CompetencyValidationStatus } from '../shared/enums';
 import { BasicAbbreviationModel } from '../core/models';
@@ -318,6 +318,20 @@ export class KendoShowcaseComponent implements OnInit {
     dir: 'asc'
   }];
 
+
+  gridState: State = {
+    skip: 0,
+    take: 5,
+    filter: {
+      logic: 'and',
+      filters: []
+    },
+    sort: [{
+      field: 'ProductName',
+      dir: 'asc'
+    }]
+  };
+
   /* DIALOG */
 
   dialogOpened = false;
@@ -521,6 +535,27 @@ export class KendoShowcaseComponent implements OnInit {
     return this.selectedItems.some(item => item === itemId)
   }
 
+  testGridAction(id: number) {
+    console.log(id);
+  }
+
+  actions: GridMenuActionModel[] = [
+    new GridMenuActionModel([
+      new GridMenuActionModel(this.testGridAction, 'Change Username'),
+      new GridMenuActionModel(this.testGridAction, 'Change Address'),
+      new GridMenuActionModel(this.testGridAction, 'Hidden', true),
+      new GridMenuActionModel(this.testGridAction, 'Change Status'),
+    ], 'Edit', false,),
+    new GridMenuActionModel(this.testGridAction, 'Associations'),
+    new GridMenuActionModel([
+      new GridMenuActionModel(this.testGridAction, 'Product 1'),
+      new GridMenuActionModel(this.testGridAction, 'Product 2'),
+      new GridMenuActionModel(this.testGridAction, 'Product 3')
+    ], 'Products', false,),
+    new GridMenuActionModel(this.testGridAction, 'Impersonate'),
+    new GridMenuActionModel(this.testGridAction, 'Hidden', true)
+  ];
+
   /* SLIDEACCORDION */
 
   slideAccordionItem: any = {
@@ -713,11 +748,15 @@ export class KendoShowcaseComponent implements OnInit {
     this.loadProducts();
   }
 
+  // private loadProducts(): void {
+  //   this.gridView = {
+  //     data: orderBy(this.products, this.sort).slice(this.skip, this.skip + this.pageSize),
+  //     total: this.products.length
+  //   };
+  // }
+
   private loadProducts(): void {
-    this.gridView = {
-      data: orderBy(this.products, this.sort).slice(this.skip, this.skip + this.pageSize),
-      total: this.products.length
-    };
+    this.gridView = this.gridService.orderGridData(this.products, this.gridState);
   }
 
   private loadUsers(): void {

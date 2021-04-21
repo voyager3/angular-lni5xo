@@ -1788,16 +1788,16 @@
                   </div>
                   <div class="row p-2" id="grid-side-menu" *ngIf="selectedCustomShocaseItem === 'Grid Popup Actions'">
                       <div class="col-12">
-                        <grid-popup-actions class="pull-right">
-                            <ng-template>
-                                <lifecycle-transition
-                                    [allowTransitions]="lifecycleTransitionItem1"
-                                    (onTransitionChange)="onStatusChange($event, lifecycleTransitionItem1)"
-                                    [enableDialog]="true"
-                                    [disabled]="true">
-                                </lifecycle-transition>
-                            </ng-template>
-                        </grid-popup-actions>
+                          <grid-popup-actions class="float-right">
+                              <ng-template>
+                                  <lifecycle-transition
+                                          [allowTransitions]="lifecycleTransitionItem1"
+                                          (onTransitionChange)="onStatusChange($event, lifecycleTransitionItem1)"
+                                          [enableDialog]="true"
+                                          [disabled]="true">
+                                      </lifecycle-transition>
+                                </ng-template>
+                          </grid-popup-actions>
                       </div>
                       <div class="col-12">
                           <kendo-grid [data]="gridView" [pageable]="pageSettings" [pageSize]="gridState.take"
