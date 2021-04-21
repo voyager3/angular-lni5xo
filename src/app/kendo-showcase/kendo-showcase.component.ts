@@ -494,8 +494,8 @@ export class KendoShowcaseComponent implements OnInit {
 
   inputType: string = 'url';
   orderableListItems: any[] = [
-    {id:1, text: 'http://someurl.com', order: 1},
-    {id:2, text: 'test@test.com', order: 2}
+    { id: 1, text: 'http://someurl.com', order: 1 },
+    { id: 2, text: '', order: 2 }
   ]
 
   /* EXTENDED MULTISELECT*/

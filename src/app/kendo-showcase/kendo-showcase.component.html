@@ -1344,13 +1344,11 @@
                       </div>
                   </div>
                   <div class="row p-2" id="Orderable List" *ngIf="selectedCustomShocaseItem === 'Orderable List'">
-                      <div class="col-9">
-                          <orderable-list 
-                              [inputType]="inputType"
-                              [listItems]="orderableListItems"
+                      <div class="col-10">
+                          <orderable-list [inputType]="inputType" [listItems]="orderableListItems"
                               (onItemsChange)="onOrderableListChange($event)">
                           </orderable-list>
-                      </div>
+                        </div>
                   </div>
                   <div class="row p-2" id="Extended Multiselect" *ngIf="selectedCustomShocaseItem === 'Extended Multiselect'">
                       <div class="col-8">

@@ -12,6 +12,7 @@ export class OrderableListComponent implements OnInit {
 
   @Input() inputType: string = 'url';
   @Input() placeholder: string = '';
+  @Input() disabled: boolean;
   @Input() listItems: any[] = [];
   @Output() onItemsChange: EventEmitter<any> = new EventEmitter();
 
@@ -45,7 +46,7 @@ export class OrderableListComponent implements OnInit {
 
   addItem(){
     let index = this.listItems.length;
-    this.listWrapper.addDataItem({id: -1, text: '', order: index + 1}, index);
+    this.listWrapper.addDataItem({id: 0, text: '', order: index + 1}, index);
     this.emitter.next();
   }
 
@@ -56,8 +57,8 @@ export class OrderableListComponent implements OnInit {
   }
 
   private setupUrl(){
-    this.pattern = 'https?://.+';
-    this.placeholder = 'http://www.example.com';
+    this.pattern = '^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$';
+    this.placeholder = 'www.example.com';
   }
 
   private setupEmail(){
