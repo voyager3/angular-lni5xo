@@ -3,11 +3,13 @@ import { KMultiselectExtenderDirective } from './k-multiselect-extender/k-multis
 import { CheckboxToggleDirective } from './checkbox-toggle/checkbox-toggle.directive';
 import { ActivatedCheckboxDirective } from './activated-checkbox/activated-checkbox.directive';
 import { InfiniteScrollingDirective } from './infinite-scrolling/infinite-scrolling.directive';
+import { KMultiselectArrowExtenderDirective } from './k-multiselect-arrow-extender/k-multiselect-arrow-extender.directive';
 
 export const directives = [
     AppLoaderDirective,
     KMultiselectExtenderDirective,
     CheckboxToggleDirective,
-      InfiniteScrollingDirective,
-    ActivatedCheckboxDirective
+    InfiniteScrollingDirective,
+    ActivatedCheckboxDirective,
+    KMultiselectArrowExtenderDirective
 ]
